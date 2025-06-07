@@ -13,7 +13,10 @@ bots = [
     {"name": "Meal Plan Bot", "path": os.path.join("bots", "meal_plan_bot", "meal_plan_bot.py")},
     {"name": "Routine Bot", "path": os.path.join("bots", "routine_bot", "routine_bot.py")},
     {"name": "Plan Bot", "path": os.path.join("bots", "plan_bot", "plan_bot.py")},
-    {"name": "Weekly Planning Bot", "path": os.path.join("bots", "Weekly_planning_bot", "weekly_planning_bot.py")}
+    {"name": "Weekly Planning Bot", "path": os.path.join("bots", "Weekly_planning_bot", "weekly_planning_bot.py")},
+    {"name": "Wishlist Bot", "path": os.path.join("bots", "Wishlist_bot", "wishlist_bot.py")},
+    {"name": "Preisvergleich Bot", "path": os.path.join("bots", "preisvergleich_bot", "preisvergleich_bot.py")},
+    {"name": "Finance Bot", "path": os.path.join("bots", "finance_bot", "finance_bot.py")}
 ]
 
 processes = []

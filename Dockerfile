@@ -33,4 +33,4 @@ HEALTHCHECK --interval=60s --timeout=30s --start-period=20s --retries=3 \
   CMD python -c "import os; exit(0 if os.path.exists('/tmp/bots_running') else 1)"
 
 # Default command
-CMD ["python", "run_all_bots.py"] 
+CMD ["python", "runBots/run_all_bots.py"] 
