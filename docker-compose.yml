@@ -1,0 +1,64 @@
+services:
+  discord-bots:
+    build: .
+    container_name: discord-bots
+    restart: unless-stopped
+    environment:
+      # Discord Configuration
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      
+      # Channel IDs
+      - HAUSHALTSPLAN_CHANNEL_ID=${HAUSHALTSPLAN_CHANNEL_ID}
+      - ERINNERUNGEN_CHANNEL_ID=${ERINNERUNGEN_CHANNEL_ID}
+      - TODOLISTE_CHANNEL_ID=${TODOLISTE_CHANNEL_ID}
+      - EINKAUFSLISTE_CHANNEL_ID=${EINKAUFSLISTE_CHANNEL_ID}
+      - WISHLIST_CHANNEL_ID=${WISHLIST_CHANNEL_ID}
+      - FINANCE_CHANNEL_ID=${FINANCE_CHANNEL_ID}
+      - ROUTINE_CHANNEL_ID=${ROUTINE_CHANNEL_ID}
+      - WEEKLY_PLANNING_CHANNEL_ID=${WEEKLY_PLANNING_CHANNEL_ID}
+      
+      # API Keys
+      - NOTION_TOKEN=${NOTION_TOKEN}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - TODOIST_API_KEY=${TODOIST_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      
+      # Database IDs
+      - WEEKLY_PLANNING_DATABASE_ID=${WEEKLY_PLANNING_DATABASE_ID}
+      - NOTION_INTERESTS_DATABASE_ID=${NOTION_INTERESTS_DATABASE_ID}
+      - ROUTINE_DATABASE_ID=${ROUTINE_DATABASE_ID}
+      - PREISVERGLEICH_DATABASE_ID=${PREISVERGLEICH_DATABASE_ID}
+      
+      # External Services
+      - QDRANT_URL=${QDRANT_URL}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL}
+      - NEO4J_URI=${NEO4J_URI}
+      - NEO4J_USERNAME=${NEO4J_USERNAME}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD}
+      - REDIS_URL=${REDIS_URL}
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./completed_todos.json:/app/completed_todos.json
+    networks:
+      - discord-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; exit(0 if os.path.exists('/tmp/bots_running') else 1)"]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 20s
+
+networks:
+  discord-network:
+    driver: bridge
+
+volumes:
+  logs:
+  data: 
