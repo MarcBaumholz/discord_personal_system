@@ -1,0 +1,52 @@
+# Testing framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.0
+
+# Coverage reporting
+pytest-cov>=4.1.0
+coverage>=7.2.0
+
+# Enhanced reporting
+pytest-html>=3.2.0
+pytest-json-report>=1.5.0
+
+# Parallel test execution
+pytest-xdist>=3.3.0
+
+# Test utilities
+pytest-timeout>=2.1.0
+pytest-benchmark>=4.0.0
+
+# Mocking and fixtures
+responses>=0.23.0
+freezegun>=1.2.0
+
+# Discord.py and bot dependencies (for testing)
+discord.py>=2.3.2
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Notion API testing
+notion-client>=2.0.0
+
+# Database testing (sqlite3 is built into Python)
+
+# Image processing (for product presenter tests)
+Pillow>=9.5.0
+
+# HTTP testing
+aiohttp>=3.8.4
+httpx>=0.24.0
+
+# Date/time utilities
+python-dateutil>=2.8.2
+pytz>=2022.7
+
+# JSON and data processing
+beautifulsoup4>=4.12.0
+lxml>=4.9.2
+
+# Optional: Performance and debugging
+pytest-profiling>=1.7.0
+pytest-memray>=1.0.0 

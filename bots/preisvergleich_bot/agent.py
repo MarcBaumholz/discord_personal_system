@@ -48,7 +48,7 @@ class OfferSearchAgent:
         self.llm = ChatOpenAI(
             api_key=self.api_key,
             base_url="https://openrouter.ai/api/v1",
-            model="deepseek/deepseek-chat-v3-0324:free",
+            model="deepseek/deepseek-r1-0528:free",
             temperature=0.2,
             max_tokens=2000,
             streaming=False

@@ -10,6 +10,8 @@ from datetime import datetime
 from notion_manager import NotionProductManager
 from simple_agent import SimpleOfferSearchAgent
 from scheduler import OfferScheduler
+env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+load_dotenv(env_path)
 
 # Setup logging
 logging.basicConfig(
@@ -27,6 +29,7 @@ if CHANNEL_ID:
 
 # Set up Discord client
 intents = discord.Intents.default()
+intents.message_content = True  # Enable message content intent for commands
 client = discord.Client(intents=intents)
 
 # Initialize our services
@@ -67,6 +70,24 @@ async def on_ready():
             logger.error(f"Could not find channel with ID {CHANNEL_ID}")
     except Exception as e:
         logger.error(f"Error initializing services: {e}")
+
+@client.event
+async def on_message(message):
+    """Handle incoming messages"""
+    # Don't respond to ourselves
+    if message.author == client.user:
+        return
+    
+    # Check if message is in the correct channel
+    if message.channel.id != CHANNEL_ID:
+        return
+    
+    # Handle the producthunt command
+    if message.content.lower().strip() == "producthunt":
+        logger.info(f"Manual offer check triggered by {message.author}")
+        await message.add_reaction("🔍")  # Add reaction to show we're processing
+        await message.channel.send("🔍 **Manual offer check triggered!** Starting search...")
+        await check_offers()
 
 async def check_offers():
     """Check for offers and send notifications"""
