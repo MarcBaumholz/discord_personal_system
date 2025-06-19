@@ -2,7 +2,7 @@ import os
 import logging
 from typing import List, Optional
 from langchain.schema import Document as LangchainDocument
-from langchain_community.chat_models import ChatOpenRouter
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
@@ -18,8 +18,9 @@ class LLMService:
         if not self.api_key:
             raise ValueError("OPENROUTER_API_KEY environment variable not set")
         
-        # Initialize the LLM
-        self.llm = ChatOpenRouter(
+        # Initialize the LLM with OpenRouter
+        self.llm = ChatOpenAI(
+            base_url="https://openrouter.ai/api/v1",
             model="deepseek/deepseek-r1-0528-qwen3-8b:free",
             api_key=self.api_key
         )

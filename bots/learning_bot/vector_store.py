@@ -4,9 +4,24 @@ import os
 from pathlib import Path
 from langchain.schema import Document as LangchainDocument
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer
+import numpy as np
 
 logger = logging.getLogger(__name__)
+
+class CustomEmbeddings:
+    """Custom embeddings wrapper for sentence-transformers compatibility."""
+    
+    def __init__(self, model):
+        self.model = model
+    
+    def embed_documents(self, texts):
+        """Embed a list of documents."""
+        return self.model.encode(texts).tolist()
+    
+    def embed_query(self, text):
+        """Embed a single query."""
+        return self.model.encode([text])[0].tolist()
 
 class VectorStore:
     """Handles document storage and retrieval using FAISS vector store."""
@@ -21,10 +36,12 @@ class VectorStore:
         self.persist_directory = Path(persist_directory)
         self.persist_directory.mkdir(exist_ok=True)
         
-        # Initialize embeddings model
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
+        # Initialize free Hugging Face embedding model
+        logger.info("Loading sentence transformer model...")
+        self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        
+        # Create custom embeddings class for FAISS compatibility
+        self.embeddings = CustomEmbeddings(self.embedding_model)
         
         # Initialize or load vector store
         self.store = self._load_or_create_store()
