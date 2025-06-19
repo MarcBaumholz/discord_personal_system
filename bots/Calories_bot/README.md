@@ -10,6 +10,10 @@ An intelligent Discord bot that analyzes food images using AI vision, estimates 
 - **Real-time Analysis**: Processes images instantly when uploaded to Discord
 - **Confidence Scoring**: Shows how confident the AI is in its analysis
 - **Rich Discord Integration**: Beautiful embeds with analysis results and status updates
+- **📊 Monthly Reports**: Automated monthly calorie reports with beautiful charts and statistics
+- **📈 Data Visualization**: Interactive charts showing daily calorie intake patterns
+- **⏰ Scheduled Automation**: Automatic reports sent on the 1st of each month
+- **👥 Multi-User Support**: Individual reports for each user with personalized insights
 
 ## 🛠️ Tech Stack
 
@@ -18,6 +22,9 @@ An intelligent Discord bot that analyzes food images using AI vision, estimates 
 - **OpenRouter API**: AI vision analysis (using free qwen/qwen2-vl-7b-instruct model)
 - **Notion API**: Database storage and management
 - **aiohttp**: Async HTTP requests for image processing
+- **matplotlib**: Chart and visualization generation
+- **pandas**: Data processing and analysis
+- **schedule**: Automated task scheduling
 
 ## 📋 Prerequisites
 
@@ -106,6 +113,58 @@ Your Notion database should have these properties:
 - `!help_calories` - Show detailed help information
 - `!test_analysis` - Test bot connectivity and readiness
 
+## 📊 Monthly Reports Feature
+
+### Overview
+The Monthly Reports feature automatically generates comprehensive calorie reports for each user on the 1st of every month at 09:00 AM.
+
+### What's Included
+- **📈 Visual Charts**: Beautiful line charts showing daily calorie intake
+- **📊 Statistics**: Total, average, min/max calories for the month
+- **🎯 Insights**: Personalized feedback based on tracking consistency
+- **📅 Tracking Summary**: Number of days tracked and data quality
+
+### Automated Reports
+Reports are automatically sent to the calories channel for each user with data in the previous month. Each report includes:
+
+1. **Monthly Statistics Embed**:
+   - Total calories consumed
+   - Daily average
+   - Highest and lowest days
+   - Number of tracked days
+
+2. **Interactive Chart**:
+   - Daily calorie intake line graph
+   - Monthly average reference line
+   - Peak and low annotations
+   - Weekly summary bars
+
+### Manual Report Generation
+You can also generate reports manually:
+
+```bash
+# Generate report for previous month
+python scheduler.py manual
+
+# Generate report for specific month
+python scheduler.py manual 2024 12
+
+# Test the functionality
+python test_monthly_functionality.py
+```
+
+### File Structure
+```
+Calories_bot/
+├── calories_bot.py              # Main calorie analysis bot
+├── notion_data_reader.py        # Notion database data extraction
+├── chart_generator.py           # Chart/visualization creation
+├── monthly_report.py            # Report generation and Discord integration
+├── scheduler.py                 # Automated scheduling system
+├── test_monthly_functionality.py # Comprehensive test suite
+└── reports/                     # Temporary chart storage
+```
+
 ### Example Workflow
 
 1. User uploads image of pizza slice to calories channel
@@ -177,6 +236,65 @@ This will show:
 3. Verify analysis results in Discord
 4. Check Notion database for new entry
 
+## 🚀 Deployment & Automation
+
+### Starting the Monthly Report Scheduler
+
+1. **Start the scheduler** (runs continuously):
+   ```bash
+   python scheduler.py start
+   ```
+
+2. **Check scheduler status**:
+   ```bash
+   python scheduler.py status
+   ```
+
+3. **Stop the scheduler**:
+   ```bash
+   # Press Ctrl+C in the running terminal
+   ```
+
+### Production Deployment
+
+For production deployment, you can run the scheduler as a background service:
+
+```bash
+# Using nohup (Linux/Mac)
+nohup python scheduler.py start > scheduler.log 2>&1 &
+
+# Using systemd (Linux) - create /etc/systemd/system/calories-scheduler.service
+[Unit]
+Description=Calories Bot Monthly Report Scheduler
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Documents/discord/bots/Calories_bot
+ExecStart=/home/pi/Documents/discord/bots/Calories_bot/calories_env/bin/python scheduler.py start
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Testing Before Production
+
+Always test the functionality before going live:
+
+```bash
+# Run comprehensive tests
+python test_monthly_functionality.py
+
+# Test manual report generation
+python scheduler.py test
+
+# Generate a manual report for testing
+python scheduler.py manual
+```
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -195,6 +313,17 @@ This will show:
 - Verify `NOTION_TOKEN` has database access
 - Check database ID is correct: `20ed42a1faf5807497c2f350ff84ea8d`
 - Ensure all required properties exist in database
+
+**Monthly reports not generating**:
+- Check scheduler is running: `python scheduler.py status`
+- Verify users have data in the database
+- Check Discord bot permissions for sending messages
+- Review logs for error messages
+
+**Chart generation issues**:
+- Emoji warnings are normal and don't affect functionality
+- Ensure matplotlib dependencies are installed
+- Check file permissions for reports/ directory
 
 **Dependencies issues**:
 ```bash

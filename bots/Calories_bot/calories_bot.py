@@ -21,6 +21,14 @@ import re
 from notion_client import Client as NotionClient
 from openai import OpenAI
 
+# Import monthly report modules
+from notion_data_reader import CalorieDataExtractor
+from chart_generator import CalorieChartGenerator
+from monthly_report import MonthlyReportGenerator
+
+# Import logging system
+from logger_config import bot_logger
+
 # Load environment variables
 # Load environment variables from main discord directory
 env_path = os.path.join(os.path.dirname(__file__), '../../.env')
@@ -320,6 +328,13 @@ async def create_analysis_embed(analysis: FoodAnalysisResult, image_url: str) ->
 async def process_food_image(message: discord.Message, attachment: discord.Attachment):
     """Process a food image attachment"""
     try:
+        # Log image processing start
+        bot_logger.log_user_command(
+            str(message.author.display_name),
+            "upload_food_image",
+            str(message.channel)
+        )
+        
         # Send processing message
         processing_msg = await message.channel.send("🔄 Analyzing your food image...")
         
@@ -327,11 +342,28 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
         analysis = await AIVisionHandler.analyze_food_image(attachment.url)
         
         if analysis is None:
+            bot_logger.log_error(
+                "AI_ANALYSIS_FAILED",
+                "Could not analyze food image",
+                {"user": str(message.author.display_name), "image_url": attachment.url}
+            )
             await processing_msg.edit(content="❌ Sorry, I couldn't analyze this image. Please try again with a clearer food photo.")
             return
         
         # Save to Notion database
         saved = await NotionHandler.save_food_analysis(analysis, attachment.url, str(message.author))
+        
+        # Log the food analysis
+        bot_logger.log_food_analysis({
+            'user': str(message.author.display_name),
+            'food_name': analysis.food_name,
+            'calories': analysis.calories,
+            'confidence': analysis.confidence,
+            'description': analysis.description,
+            'image_url': attachment.url,
+            'saved_to_notion': saved,
+            'timestamp': analysis.timestamp.isoformat()
+        })
         
         # Create result embed
         embed = await create_analysis_embed(analysis, attachment.url)
@@ -340,6 +372,11 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
             embed.add_field(name="💾 Database", value="✅ Saved to FoodIate", inline=True)
         else:
             embed.add_field(name="💾 Database", value="❌ Failed to save", inline=True)
+            bot_logger.log_error(
+                "NOTION_SAVE_FAILED",
+                "Failed to save analysis to Notion",
+                {"user": str(message.author.display_name), "food": analysis.food_name}
+            )
         
         # Update the processing message with results
         await processing_msg.edit(content="", embed=embed)
@@ -349,13 +386,141 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
         
     except Exception as e:
         print(f"❌ Error processing food image: {e}")
+        bot_logger.log_error(
+            "IMAGE_PROCESSING_ERROR",
+            str(e),
+            {"user": str(message.author.display_name), "image_url": attachment.url}
+        )
         await message.channel.send("❌ An error occurred while processing your image. Please try again.")
+
+async def process_monthly_command(message: discord.Message):
+    """Process the 'month' command to generate last month's report"""
+    try:
+        # Log monthly command usage
+        bot_logger.log_user_command(
+            str(message.author.display_name),
+            "month_command",
+            str(message.channel)
+        )
+        
+        # Send processing message
+        processing_msg = await message.channel.send("📊 Generating your monthly report...")
+        
+        # Get last month's date
+        now = datetime.now()
+        if now.month == 1:
+            last_month = 12
+            last_year = now.year - 1
+        else:
+            last_month = now.month - 1
+            last_year = now.year
+        
+        # Initialize report generator
+        data_extractor = CalorieDataExtractor()
+        chart_generator = CalorieChartGenerator()
+        report_generator = MonthlyReportGenerator()
+        
+        # Get Discord username and match to Notion person
+        discord_username = str(message.author.display_name)
+        
+        # Try to find matching user in the data
+        all_users = data_extractor.get_all_users(last_year, last_month)
+        
+        if not all_users:
+            bot_logger.log_error(
+                "NO_DATA_FOUND",
+                f"No calorie data found for {last_month}/{last_year}",
+                {"user": discord_username, "period": f"{last_month}/{last_year}"}
+            )
+            await processing_msg.edit(content=f"❌ No calorie data found for {last_month}/{last_year}. Upload some food images first!")
+            return
+        
+        # Find best matching user
+        user_match = None
+        discord_name_lower = discord_username.lower()
+        
+        for user in all_users:
+            if user.lower() in discord_name_lower or discord_name_lower in user.lower():
+                user_match = user
+                break
+        
+        if not user_match:
+            # Use first available user if no match found
+            user_match = all_users[0]
+            bot_logger.log_system_event("USER_MATCH_FALLBACK", {
+                "discord_user": discord_username,
+                "matched_user": user_match,
+                "available_users": all_users
+            })
+            await processing_msg.edit(content=f"⚠️ Using data for '{user_match}' (couldn't match your Discord name exactly)")
+        
+        # Generate the monthly report
+        report_data = await report_generator.generate_monthly_report(last_year, last_month, user_match)
+        
+        # Log the monthly report generation
+        bot_logger.log_monthly_report({
+            **report_data,
+            'requested_by': discord_username,
+            'matched_user': user_match,
+            'period': f"{last_month}/{last_year}"
+        })
+        
+        if not report_data.get('success'):
+            await processing_msg.edit(content=f"❌ {report_data.get('message', 'No data found for last month')}")
+            return
+        
+        # Create and send embed
+        embed = report_generator.create_report_embed(report_data)
+        
+        # Send chart file if it exists
+        chart_path = report_data.get('chart_path')
+        if chart_path and os.path.exists(chart_path):
+            file = discord.File(chart_path, filename=f"monthly_chart_{user_match}.png")
+            await processing_msg.edit(content="", embed=embed)
+            await message.channel.send(file=file)
+            
+            # Log chart file info
+            bot_logger.log_system_event("CHART_GENERATED", {
+                "user": user_match,
+                "chart_path": chart_path,
+                "file_size": os.path.getsize(chart_path) if os.path.exists(chart_path) else 0
+            })
+            
+            # Clean up the chart file
+            try:
+                os.remove(chart_path)
+                bot_logger.log_system_event("CHART_CLEANUP", {"chart_path": chart_path})
+            except OSError:
+                pass
+        else:
+            await processing_msg.edit(content="", embed=embed)
+        
+        # Add success reaction
+        await message.add_reaction("📊")
+        
+    except Exception as e:
+        print(f"❌ Error processing monthly command: {e}")
+        bot_logger.log_error(
+            "MONTHLY_COMMAND_ERROR",
+            str(e),
+            {"user": str(message.author.display_name)}
+        )
+        await message.channel.send(f"❌ Error generating monthly report: {str(e)}")
 
 @bot.event
 async def on_ready():
     print(f'🤖 {bot.user} has connected to Discord!')
     print(f'📊 Monitoring channel ID: {CALORIES_CHANNEL_ID}')
     print(f'💾 Connected to Notion database: {FOODIATE_DB_ID}')
+    
+    # Log bot startup
+    bot_logger.log_bot_startup({
+        'bot_user': str(bot.user),
+        'channel_id': CALORIES_CHANNEL_ID,
+        'database_id': FOODIATE_DB_ID,
+        'openrouter_configured': bool(OPENROUTER_API_KEY),
+        'notion_configured': bool(NOTION_TOKEN)
+    })
 
 @bot.event
 async def on_message(message):
@@ -365,6 +530,11 @@ async def on_message(message):
     
     # Only process messages from the calories channel
     if message.channel.id != CALORIES_CHANNEL_ID:
+        return
+    
+    # Check for "month" command
+    if message.content.lower().strip() == "month":
+        await process_monthly_command(message)
         return
     
     # Check if message has image attachments
@@ -381,6 +551,13 @@ async def on_message(message):
 @bot.command(name="help_calories")
 async def help_calories(ctx):
     """Show help information for the calories bot"""
+    # Log help command usage
+    bot_logger.log_user_command(
+        str(ctx.author.display_name),
+        "help_calories",
+        str(ctx.channel)
+    )
+    
     embed = discord.Embed(
         title="🍽️ Calories Bot Help",
         description="Upload food images to get AI-powered calorie analysis!",
@@ -390,6 +567,12 @@ async def help_calories(ctx):
     embed.add_field(
         name="📸 How to Use",
         value="Simply upload an image of your food to this channel and I'll analyze it automatically!",
+        inline=False
+    )
+    
+    embed.add_field(
+        name="📊 Monthly Reports",
+        value="Type **month** to get your last month's calorie chart and statistics!",
         inline=False
     )
     
@@ -411,11 +594,24 @@ async def help_calories(ctx):
         inline=False
     )
     
+    embed.add_field(
+        name="⚡ Available Commands",
+        value="• `!help_calories` - Show this help\n• `!test_analysis` - Test bot status\n• Type `month` - Get monthly report\n• `!logs` - View logging info",
+        inline=False
+    )
+    
     await ctx.send(embed=embed)
 
 @bot.command(name="test_analysis")
 async def test_analysis(ctx):
     """Test the analysis system with a sample"""
+    # Log test command usage
+    bot_logger.log_user_command(
+        str(ctx.author.display_name),
+        "test_analysis",
+        str(ctx.channel)
+    )
+    
     if ctx.channel.id != CALORIES_CHANNEL_ID:
         await ctx.send("This command can only be used in the calories channel!")
         return
@@ -429,6 +625,7 @@ async def test_analysis(ctx):
     embed.add_field(name="🤖 Discord", value="✅ Connected", inline=True)
     embed.add_field(name="🧠 OpenRouter AI", value="✅ Ready" if OPENROUTER_API_KEY else "❌ No API Key", inline=True)
     embed.add_field(name="💾 Notion", value="✅ Connected" if NOTION_TOKEN else "❌ No Token", inline=True)
+    embed.add_field(name="📋 Logging", value="✅ Active", inline=True)
     
     embed.add_field(
         name="📋 Ready to Analyze",
@@ -437,6 +634,75 @@ async def test_analysis(ctx):
     )
     
     await ctx.send(embed=embed)
+
+@bot.command(name="logs")
+async def show_logs(ctx):
+    """Show logging information and statistics"""
+    # Log the logs command usage
+    bot_logger.log_user_command(
+        str(ctx.author.display_name),
+        "logs",
+        str(ctx.channel)
+    )
+    
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        # Get log summary
+        log_summary = bot_logger.get_log_summary()
+        
+        embed = discord.Embed(
+            title="📋 Bot Logging Information",
+            description="Current logging status and statistics",
+            color=0x00aaff
+        )
+        
+        embed.add_field(
+            name="📁 Log Directory",
+            value=f"`{log_summary.get('log_directory', 'logs/')}`",
+            inline=False
+        )
+        
+        # Show log categories
+        directories = log_summary.get('directories', [])
+        if directories:
+            log_info = []
+            for dir_info in directories:
+                path = dir_info.get('path', 'unknown')
+                file_count = dir_info.get('file_count', 0)
+                log_info.append(f"📊 **{path}**: {file_count} files")
+            
+            embed.add_field(
+                name="📚 Log Categories",
+                value="\n".join(log_info[:10]),  # Limit to 10 entries
+                inline=False
+            )
+        
+        embed.add_field(
+            name="🔍 Available Logs",
+            value="• Food analysis events\n• Monthly reports\n• User activity\n• System events\n• Error tracking",
+            inline=True
+        )
+        
+        embed.add_field(
+            name="📝 Log Features",
+            value="• JSON structured data\n• Rotating file logs\n• Daily organization\n• Error categorization",
+            inline=True
+        )
+        
+        embed.set_footer(text=f"Logs are stored locally and rotated automatically (max 10MB per file)")
+        
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        bot_logger.log_error(
+            "LOGS_COMMAND_ERROR",
+            str(e),
+            {"user": str(ctx.author.display_name)}
+        )
+        await ctx.send(f"❌ Error retrieving log information: {str(e)}")
 
 if __name__ == "__main__":
     if not DISCORD_TOKEN:
