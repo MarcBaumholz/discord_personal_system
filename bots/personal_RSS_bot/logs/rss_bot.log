@@ -1,0 +1,164 @@
+2025-06-19 18:54:56,579 - __main__ - INFO - Starting RSS News Bot...
+2025-06-19 18:54:56,580 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-19 18:54:56,703 - database - INFO - Database initialized successfully
+2025-06-19 18:54:56,704 - __main__ - INFO - Database manager initialized
+2025-06-19 18:54:56,704 - __main__ - INFO - RSS manager initialized
+2025-06-19 18:54:56,704 - llm_processor - WARNING - No OpenRouter API key provided. LLM features will be limited.
+2025-06-19 18:54:56,704 - __main__ - INFO - LLM processor initialized
+2025-06-19 18:54:56,705 - __main__ - WARNING - Discord configuration missing. Bot will run without Discord integration.
+2025-06-19 18:54:56,706 - __main__ - INFO - Scheduler initialized
+2025-06-19 18:54:56,706 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-19 18:54:56,717 - database - INFO - Added feed source: OpenAI Blog
+2025-06-19 18:54:56,728 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-19 18:54:56,744 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-19 18:54:56,756 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-19 18:54:56,767 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-19 18:54:56,786 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-19 18:54:56,798 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-19 18:54:56,811 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-19 18:54:56,820 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-19 18:54:56,831 - database - INFO - Added feed source: Harvard Business Review
+2025-06-19 18:54:56,843 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-19 18:54:56,855 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-19 18:54:56,867 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-19 18:54:56,877 - database - INFO - Added feed source: Psychological Science
+2025-06-19 18:54:56,891 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-19 18:54:56,904 - database - INFO - Added feed source: TechCrunch AI
+2025-06-19 18:54:56,917 - database - INFO - Added feed source: VentureBeat AI
+2025-06-19 18:54:56,927 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-19 18:54:56,937 - database - INFO - Added feed source: Flow Research Collective
+2025-06-19 18:54:56,949 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-19 18:54:56,949 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-19 18:54:56,949 - __main__ - INFO - All components initialized successfully
+2025-06-19 18:54:56,949 - __main__ - ERROR - Error starting scheduler: Invalid weekday name "sunday"
+2025-06-19 18:54:56,949 - __main__ - ERROR - Error in main run loop: Invalid weekday name "sunday"
+2025-06-19 18:54:56,949 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-19 18:54:56,949 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-19 18:54:56,949 - __main__ - ERROR - Fatal error: Invalid weekday name "sunday"
+2025-06-19 18:55:03,457 - __main__ - INFO - Starting RSS News Bot...
+2025-06-19 18:55:03,457 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-19 18:55:03,458 - database - INFO - Database initialized successfully
+2025-06-19 18:55:03,458 - __main__ - INFO - Database manager initialized
+2025-06-19 18:55:03,458 - __main__ - INFO - RSS manager initialized
+2025-06-19 18:55:03,458 - llm_processor - WARNING - No OpenRouter API key provided. LLM features will be limited.
+2025-06-19 18:55:03,458 - __main__ - INFO - LLM processor initialized
+2025-06-19 18:55:03,458 - __main__ - WARNING - Discord configuration missing. Bot will run without Discord integration.
+2025-06-19 18:55:03,460 - __main__ - INFO - Scheduler initialized
+2025-06-19 18:55:03,460 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-19 18:55:03,475 - database - INFO - Added feed source: OpenAI Blog
+2025-06-19 18:55:03,491 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-19 18:55:03,503 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-19 18:55:03,518 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-19 18:55:03,533 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-19 18:55:03,544 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-19 18:55:03,554 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-19 18:55:03,565 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-19 18:55:03,584 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-19 18:55:03,594 - database - INFO - Added feed source: Harvard Business Review
+2025-06-19 18:55:03,604 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-19 18:55:03,617 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-19 18:55:03,630 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-19 18:55:03,646 - database - INFO - Added feed source: Psychological Science
+2025-06-19 18:55:03,657 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-19 18:55:03,668 - database - INFO - Added feed source: TechCrunch AI
+2025-06-19 18:55:03,683 - database - INFO - Added feed source: VentureBeat AI
+2025-06-19 18:55:03,694 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-19 18:55:03,706 - database - INFO - Added feed source: Flow Research Collective
+2025-06-19 18:55:03,716 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-19 18:55:03,716 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-19 18:55:03,716 - __main__ - INFO - All components initialized successfully
+2025-06-19 18:55:03,717 - __main__ - ERROR - Error starting scheduler: Invalid weekday name "sunday"
+2025-06-19 18:55:03,717 - __main__ - ERROR - Error in main run loop: Invalid weekday name "sunday"
+2025-06-19 18:55:03,717 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-19 18:55:03,717 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-19 18:55:03,717 - __main__ - ERROR - Fatal error: Invalid weekday name "sunday"
+2025-06-19 18:56:49,084 - __main__ - INFO - Starting RSS News Bot...
+2025-06-19 18:56:49,085 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-19 18:56:49,087 - database - INFO - Database initialized successfully
+2025-06-19 18:56:49,093 - __main__ - INFO - Database manager initialized
+2025-06-19 18:56:49,094 - __main__ - INFO - RSS manager initialized
+2025-06-19 18:56:49,250 - __main__ - INFO - LLM processor initialized
+2025-06-19 18:56:49,252 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:56:49,257 - __main__ - INFO - Discord publisher initialized
+2025-06-19 18:56:49,261 - __main__ - INFO - Scheduler initialized
+2025-06-19 18:56:49,262 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-19 18:56:49,274 - database - INFO - Added feed source: OpenAI Blog
+2025-06-19 18:56:49,288 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-19 18:56:49,307 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-19 18:56:49,340 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-19 18:56:49,363 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-19 18:56:49,382 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-19 18:56:49,405 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-19 18:56:49,427 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-19 18:56:49,449 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-19 18:56:49,470 - database - INFO - Added feed source: Harvard Business Review
+2025-06-19 18:56:49,487 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-19 18:56:49,504 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-19 18:56:49,525 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-19 18:56:49,538 - database - INFO - Added feed source: Psychological Science
+2025-06-19 18:56:49,555 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-19 18:56:49,569 - database - INFO - Added feed source: TechCrunch AI
+2025-06-19 18:56:49,583 - database - INFO - Added feed source: VentureBeat AI
+2025-06-19 18:56:49,600 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-19 18:56:49,613 - database - INFO - Added feed source: Flow Research Collective
+2025-06-19 18:56:49,629 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-19 18:56:49,630 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-19 18:56:49,630 - __main__ - INFO - All components initialized successfully
+2025-06-19 18:56:49,630 - discord.client - INFO - logging in using static token
+2025-06-19 18:56:50,721 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d40ba1e0be09b8a34aaf4ffe4b31ed4d).
+2025-06-19 18:56:52,633 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 18:56:52,639 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-19 18:56:52,639 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 18:56:52,639 - __main__ - INFO - Scheduler started. Next weekly processing: 2025-06-22 09:00:00+02:00
+2025-06-19 18:56:52,639 - discord_publisher - ERROR - Bot not ready or target channel not found
+2025-06-19 18:56:52,640 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
+2025-06-19 18:56:52,730 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-19 18:56:52,731 - discord_publisher - INFO - Target channel found: news
+2025-06-19 18:57:56,428 - __main__ - INFO - Received signal 2. Initiating shutdown...
+2025-06-19 18:58:52,706 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-19 18:58:52,706 - __main__ - INFO - Scheduler stopped
+2025-06-19 18:58:52,706 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 18:58:52,828 - __main__ - INFO - Discord bot stopped
+2025-06-19 18:58:52,828 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-19 18:58:53,880 - __main__ - INFO - Starting RSS News Bot...
+2025-06-19 18:58:53,880 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-19 18:58:53,881 - database - INFO - Database initialized successfully
+2025-06-19 18:58:53,881 - __main__ - INFO - Database manager initialized
+2025-06-19 18:58:53,881 - __main__ - INFO - RSS manager initialized
+2025-06-19 18:58:53,934 - __main__ - INFO - LLM processor initialized
+2025-06-19 18:58:53,934 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:58:53,936 - __main__ - INFO - Discord publisher initialized
+2025-06-19 18:58:53,937 - __main__ - INFO - Scheduler initialized
+2025-06-19 18:58:53,937 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-19 18:58:53,950 - database - INFO - Added feed source: OpenAI Blog
+2025-06-19 18:58:53,960 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-19 18:58:53,971 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-19 18:58:53,982 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-19 18:58:53,993 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-19 18:58:54,002 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-19 18:58:54,012 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-19 18:58:54,032 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-19 18:58:54,042 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-19 18:58:54,052 - database - INFO - Added feed source: Harvard Business Review
+2025-06-19 18:58:54,065 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-19 18:58:54,075 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-19 18:58:54,085 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-19 18:58:54,095 - database - INFO - Added feed source: Psychological Science
+2025-06-19 18:58:54,108 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-19 18:58:54,119 - database - INFO - Added feed source: TechCrunch AI
+2025-06-19 18:58:54,131 - database - INFO - Added feed source: VentureBeat AI
+2025-06-19 18:58:54,141 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-19 18:58:54,151 - database - INFO - Added feed source: Flow Research Collective
+2025-06-19 18:58:54,161 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-19 18:58:54,162 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-19 18:58:54,162 - __main__ - INFO - All components initialized successfully
+2025-06-19 18:58:54,162 - discord.client - INFO - logging in using static token
+2025-06-19 18:58:55,318 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 94df77f0a0e6d004468c3ef264640880).
+2025-06-19 18:58:57,165 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 18:58:57,165 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-19 18:58:57,166 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 18:58:57,166 - __main__ - INFO - Scheduler started. Next weekly processing: 2025-06-22 09:00:00+02:00
+2025-06-19 18:58:57,166 - discord_publisher - ERROR - Bot not ready or target channel not found
+2025-06-19 18:58:57,166 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
+2025-06-19 18:58:57,323 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-19 18:58:57,323 - discord_publisher - INFO - Target channel found: news

@@ -1,0 +1,45 @@
+# Discord Bot Dependencies
+discord.py>=2.3.2
+
+# RSS Feed Processing
+feedparser>=6.0.11
+
+# HTTP Requests and API Integration
+requests>=2.32.3
+aiohttp>=3.9.5
+
+# OpenRouter API for LLM integration
+openai>=1.54.4
+
+# Database
+# sqlite3  # Built-in, no need to install
+
+# Scheduling
+APScheduler>=3.10.4
+
+# Configuration Management
+python-dotenv>=1.0.1
+
+# Data Processing
+python-dateutil>=2.9.0
+pytz>=2024.2
+
+# Logging and Monitoring
+structlog>=24.1.0
+
+# Testing Dependencies (for development)
+pytest>=8.0.0
+pytest-asyncio>=0.24.0
+
+# Code Quality
+black>=24.1.1
+flake8>=7.0.0
+mypy>=1.8.0
+
+# Text Processing and Analysis
+nltk>=3.9.1
+textstat>=0.7.3
+
+# Data Utilities
+# hashlib  # Built-in
+# json  # Built-in 

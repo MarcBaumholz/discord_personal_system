@@ -1,0 +1,173 @@
+{
+  "feeds": [
+    {
+      "name": "OpenAI Blog",
+      "url": "https://openai.com/news/rss.xml",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "Latest news and updates from OpenAI"
+    },
+    {
+      "name": "MIT News - Artificial Intelligence",
+      "url": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "MIT's latest research and news in AI"
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "Research breakthroughs from Google DeepMind"
+    },
+    {
+      "name": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "category": "AI_LLM",
+      "priority": 2,
+      "description": "AWS insights on machine learning and AI applications"
+    },
+    {
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "Open source AI and LLM developments"
+    },
+    {
+      "name": "Stanford AI Blog",
+      "url": "https://ai.stanford.edu/blog/feed.xml",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "Stanford's AI research and insights"
+    },
+    {
+      "name": "ArXiv AI Latest",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "category": "AI_LLM",
+      "priority": 2,
+      "description": "Latest AI research papers from ArXiv"
+    },
+    {
+      "name": "MIT Technology Review - AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "category": "AI_LLM",
+      "priority": 1,
+      "description": "In-depth analysis of AI trends and impact"
+    },
+    {
+      "name": "O'Reilly AI & ML",
+      "url": "https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml",
+      "category": "AI_LLM",
+      "priority": 2,
+      "description": "Practical AI and ML insights for practitioners"
+    },
+    {
+      "name": "Harvard Business Review",
+      "url": "https://hbr.org/topic/productivity/feed",
+      "category": "PRODUCTIVITY",
+      "priority": 1,
+      "description": "Business productivity and management insights"
+    },
+    {
+      "name": "Fast Company - Productivity",
+      "url": "https://www.fastcompany.com/rss",
+      "category": "PRODUCTIVITY",
+      "priority": 2,
+      "description": "Innovation and productivity in business"
+    },
+    {
+      "name": "MIT Sloan Management Review",
+      "url": "https://sloanreview.mit.edu/feed/",
+      "category": "PRODUCTIVITY",
+      "priority": 1,
+      "description": "Management and organizational productivity research"
+    },
+    {
+      "name": "Nature Neuroscience",
+      "url": "https://www.nature.com/neuro.rss",
+      "category": "COGNITIVE_SCIENCE",
+      "priority": 1,
+      "description": "Latest neuroscience research and discoveries"
+    },
+    {
+      "name": "Psychological Science",
+      "url": "https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=pssa&type=etoc&feed=rss",
+      "category": "COGNITIVE_SCIENCE",
+      "priority": 1,
+      "description": "Cutting-edge psychological research"
+    },
+    {
+      "name": "Scientific American - Mind & Brain",
+      "url": "https://rss.sciam.com/ScientificAmerican-Mind",
+      "category": "COGNITIVE_SCIENCE",
+      "priority": 2,
+      "description": "Popular science insights into cognition and neuroscience"
+    },
+    {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "category": "AUTOMATION",
+      "priority": 2,
+      "description": "Latest AI and automation in tech industry"
+    },
+    {
+      "name": "VentureBeat AI",
+      "url": "https://venturebeat.com/ai/feed/",
+      "category": "AUTOMATION",
+      "priority": 2,
+      "description": "AI industry news and automation trends"
+    },
+    {
+      "name": "IEEE Spectrum Automation",
+      "url": "https://spectrum.ieee.org/rss/blog/automaton/fulltext",
+      "category": "AUTOMATION",
+      "priority": 1,
+      "description": "Engineering insights on automation and robotics"
+    },
+    {
+      "name": "Flow Research Collective",
+      "url": "https://www.flowresearchcollective.com/blog-feed",
+      "category": "FLOW_PERFORMANCE",
+      "priority": 1,
+      "description": "Research and insights on flow states and peak performance"
+    },
+    {
+      "name": "Microsoft Research Blog",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "category": "AI_LLM",
+      "priority": 2,
+      "description": "Microsoft's research in AI and technology"
+    }
+  ],
+  "categories": {
+    "AI_LLM": {
+      "name": "AI & LLM Trends",
+      "weight": 0.3,
+      "description": "Latest in AI, LLM models, and machine learning breakthroughs"
+    },
+    "PRODUCTIVITY": {
+      "name": "Productivity & Personal Development",
+      "weight": 0.25,
+      "description": "Business productivity, personal development, and management insights"
+    },
+    "COGNITIVE_SCIENCE": {
+      "name": "Cognitive Sciences & Neuroscience",
+      "weight": 0.2,
+      "description": "Cognitive science research, neuroscience, and psychology"
+    },
+    "AUTOMATION": {
+      "name": "Automation & Assistant Systems",
+      "weight": 0.15,
+      "description": "Automation technologies, assistant systems, and robotics"
+    },
+    "FLOW_PERFORMANCE": {
+      "name": "Flow States & Performance",
+      "weight": 0.1,
+      "description": "Flow states, peak performance, and human optimization"
+    }
+  },
+  "update_frequency": "daily",
+  "last_updated": "2025-01-25T00:00:00Z"
+} 

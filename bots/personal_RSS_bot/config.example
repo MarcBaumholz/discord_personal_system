@@ -1,0 +1,38 @@
+# Personal RSS News Bot Configuration Template
+# Copy this file to .env and fill in your actual values
+
+# Discord Bot Configuration
+DISCORD_TOKEN=your_discord_bot_token_here
+DISCORD_CHANNEL_ID=1384292843216175266
+
+# OpenRouter API Configuration
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+
+# Bot Configuration
+BOT_NAME=Personal RSS News Bot
+SCHEDULE_TIME=09:00  # Weekly post time (24-hour format)
+SCHEDULE_DAY=sunday  # Day of the week for weekly posts
+TIMEZONE=UTC
+
+# Content Processing Configuration
+MAX_ARTICLES_PER_WEEK=25
+MIN_RELEVANCE_SCORE=0.7
+SUMMARY_MAX_LENGTH=1500
+DAYS_TO_FETCH=7  # How many days back to check for new articles
+
+# LLM Configuration
+PRIMARY_MODEL=meta-llama/llama-3.1-8b-instruct:free
+FALLBACK_MODEL=meta-llama/llama-3.1-8b-instruct:free
+MAX_TOKENS=2000
+TEMPERATURE=0.7
+
+# Database Configuration
+DATABASE_PATH=data/rss_bot.db
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=logs/rss_bot.log
+
+# RSS Feed Update Interval (in minutes)
+FEED_CHECK_INTERVAL=60 
