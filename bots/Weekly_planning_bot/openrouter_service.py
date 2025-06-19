@@ -88,7 +88,7 @@ The format should be visually engaging and easy to read in Discord.
             }
             
             payload = {
-                "model": "anthropic/claude-3-opus:beta",  # Using Claude for better formatting
+                "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",  # Using free DeepSeek model for formatting
                 "messages": [
                     {"role": "system", "content": "You are a weekly planning visualization expert who creates beautiful Discord-formatted planning views."},
                     {"role": "user", "content": prompt}
@@ -175,7 +175,7 @@ The format should be concise, information-dense, but very easy to scan in Discor
             }
             
             payload = {
-                "model": "anthropic/claude-3-opus:beta",  # Using Claude for better formatting
+                "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",  # Using free DeepSeek model for formatting
                 "messages": [
                     {"role": "system", "content": "You are a family planning expert who creates beautiful, detailed Discord-formatted family weekly plans."},
                     {"role": "user", "content": prompt}
