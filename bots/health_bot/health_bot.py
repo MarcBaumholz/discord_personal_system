@@ -36,6 +36,10 @@ class HealthBot(commands.Bot):
         self.health_analyzer = HealthAnalyzer()
         self.scheduler = AsyncIOScheduler()
         
+        # Cooldown tracking to prevent duplicate reports
+        self.last_report_time = None
+        self.report_cooldown_minutes = 15  # Minimum 15 minutes between reports
+        
     async def setup_hook(self) -> None:
         """Setup bot and scheduler."""
         logger.info("Setting up Health Bot...")
@@ -48,7 +52,7 @@ class HealthBot(commands.Bot):
         # Setup daily scheduler
         hour, minute = map(int, self.config.DAILY_SCHEDULE_TIME.split(':'))
         self.scheduler.add_job(
-            self.send_daily_health_report,
+            lambda: self.send_daily_health_report(force=True),
             CronTrigger(hour=hour, minute=minute),
             id='daily_health_report'
         )
@@ -86,9 +90,23 @@ class HealthBot(commands.Bot):
         # Process commands as well
         await self.process_commands(message)
         
-    async def send_daily_health_report(self):
+    async def send_daily_health_report(self, force=False):
         """Send daily health report to Discord channel."""
         try:
+            # Check cooldown to prevent duplicate reports (unless forced)
+            if not force and self.last_report_time:
+                time_since_last = datetime.now() - self.last_report_time
+                if time_since_last.total_seconds() < (self.report_cooldown_minutes * 60):
+                    remaining_minutes = self.report_cooldown_minutes - (time_since_last.total_seconds() / 60)
+                    logger.info(f"Report cooldown active. {remaining_minutes:.1f} minutes remaining.")
+                    
+                    # Send cooldown message only if manually triggered
+                    if not force:
+                        channel = self.get_channel(self.config.HEALTH_CHANNEL_ID)
+                        if channel:
+                            await channel.send(f"⏰ Health report cooldown active. Please wait {remaining_minutes:.1f} more minutes.")
+                    return
+            
             logger.info("Generating daily health report...")
             
             # Get yesterday's data
@@ -102,6 +120,9 @@ class HealthBot(commands.Bot):
             
             # Send Discord message
             await self._send_health_message(health_data, insight)
+            
+            # Update last report time
+            self.last_report_time = datetime.now()
             
             logger.info("Daily health report sent successfully")
             
@@ -150,6 +171,15 @@ class HealthBot(commands.Bot):
             inline=False
         )
         
+        # Add individual insights (2 specific recommendations)
+        if hasattr(insight, 'individual_insights') and insight.individual_insights:
+            insights_text = "\n".join([f"• {insight}" for insight in insight.individual_insights])
+            embed.add_field(
+                name="🎯 Personal Insights for Today",
+                value=insights_text,
+                inline=False
+            )
+        
         # Add tips
         if insight.tips:
             tips_text = "\n".join([f"• {tip}" for tip in insight.tips])
@@ -161,7 +191,7 @@ class HealthBot(commands.Bot):
         
         # Add targets for reference
         embed.add_field(
-            name="🎯 Daily Targets",
+            name="📊 Daily Targets",
             value=f"Calories: {self.config.TARGET_CALORIES} | Active: {self.config.TARGET_ACTIVE_CALORIES} | Steps: {self.config.TARGET_STEPS:,}",
             inline=False
         )
@@ -221,9 +251,23 @@ class HealthBot(commands.Bot):
             inline=True
         )
         
+        # Add cooldown info
+        cooldown_status = "Ready"
+        if self.last_report_time:
+            time_since_last = datetime.now() - self.last_report_time
+            if time_since_last.total_seconds() < (self.report_cooldown_minutes * 60):
+                remaining_minutes = self.report_cooldown_minutes - (time_since_last.total_seconds() / 60)
+                cooldown_status = f"Cooldown: {remaining_minutes:.1f}m remaining"
+        
+        embed.add_field(
+            name="⏱️ Report Status",
+            value=cooldown_status,
+            inline=True
+        )
+        
         embed.add_field(
             name="💬 Usage",
-            value="Type 'health' for report\nType 'status' for this info",
+            value="Type 'health' for report\nType 'status' for this info\n!healthtest (with cooldown)\n!healthforce (ignores cooldown)",
             inline=False
         )
         
@@ -231,13 +275,23 @@ class HealthBot(commands.Bot):
     
     @commands.command(name='healthtest')
     async def test_command(self, ctx):
-        """Test command to manually trigger health report."""
+        """Test command to manually trigger health report (respects cooldown)."""
         if ctx.channel.id != self.config.HEALTH_CHANNEL_ID:
             await ctx.send("This command can only be used in the health channel.")
             return
         
         await ctx.send("🔄 Generating health report...")
         await self.send_daily_health_report()
+    
+    @commands.command(name='healthforce')
+    async def force_command(self, ctx):
+        """Force health report (ignores cooldown - for testing)."""
+        if ctx.channel.id != self.config.HEALTH_CHANNEL_ID:
+            await ctx.send("This command can only be used in the health channel.")
+            return
+        
+        await ctx.send("🔄 Forcing health report generation (ignoring cooldown)...")
+        await self.send_daily_health_report(force=True)
     
     @commands.command(name='healthstatus')
     async def status_command(self, ctx):

@@ -22,6 +22,7 @@ class HealthInsight(BaseModel):
     message: str
     tips: List[str]
     detailed_metrics: dict
+    individual_insights: List[str]
 
 
 class HealthAnalyzer:
@@ -94,6 +95,9 @@ class HealthAnalyzer:
         # Generate tips
         tips = self._generate_tips(health_data)
         
+        # Generate 2 specific individual insights based on detailed data analysis
+        individual_insights = self._generate_individual_insights(health_data)
+        
         # Prepare detailed metrics
         detailed_metrics = self._prepare_detailed_metrics(health_data)
         
@@ -102,7 +106,8 @@ class HealthAnalyzer:
             score=overall_score,
             message=message,
             tips=tips,
-            detailed_metrics=detailed_metrics
+            detailed_metrics=detailed_metrics,
+            individual_insights=individual_insights
         )
     
     def _score_calories(self, total_calories: int) -> int:
@@ -260,6 +265,164 @@ class HealthAnalyzer:
             tips.append("🏆 Comprehensive health tracking! You have excellent data coverage for optimal insights")
         
         return tips[:3]  # Limit to 3 tips maximum
+    
+    def _generate_individual_insights(self, data: HealthData) -> List[str]:
+        """
+        Generate 2 specific individualized insights based on detailed data analysis.
+        
+        Args:
+            data: Comprehensive health data from Oura
+            
+        Returns:
+            List of exactly 2 specific, actionable insights
+        """
+        insights = []
+        
+        # INSIGHT 1: Sleep Quality Analysis (REM, Deep Sleep, etc.)
+        sleep_insight = self._analyze_sleep_details(data)
+        if sleep_insight:
+            insights.append(sleep_insight)
+        
+        # INSIGHT 2: Activity Balance & Recovery Analysis
+        activity_insight = self._analyze_activity_balance(data)
+        if activity_insight:
+            insights.append(activity_insight)
+        
+        # INSIGHT 3: Stress & Recovery Balance (if first two aren't available)
+        if len(insights) < 2:
+            stress_insight = self._analyze_stress_recovery(data)
+            if stress_insight:
+                insights.append(stress_insight)
+        
+        # INSIGHT 4: Cardiovascular & Respiratory Health (fallback)
+        if len(insights) < 2:
+            cardio_insight = self._analyze_cardio_respiratory(data)
+            if cardio_insight:
+                insights.append(cardio_insight)
+        
+        # Ensure we always return exactly 2 insights
+        if len(insights) < 2:
+            insights.append("📊 Keep wearing your Oura Ring consistently for more detailed insights tomorrow")
+        
+        return insights[:2]  # Return exactly 2 insights
+    
+    def _analyze_sleep_details(self, data: HealthData) -> str:
+        """Analyze detailed sleep contributors for specific improvements."""
+        if not data.sleep_contributors or not data.sleep_score:
+            return None
+        
+        contributors = data.sleep_contributors
+        sleep_score = data.sleep_score
+        
+        # Analyze specific sleep contributors
+        rem_sleep = contributors.get("rem_sleep")
+        deep_sleep = contributors.get("deep_sleep")
+        restfulness = contributors.get("restfulness")
+        sleep_efficiency = contributors.get("sleep_efficiency")
+        sleep_latency = contributors.get("sleep_latency")
+        
+        # Find the weakest sleep component for specific advice
+        weak_areas = []
+        
+        if rem_sleep and rem_sleep < 70:
+            weak_areas.append(("REM sleep", rem_sleep, "Go to bed 30 minutes earlier, keep room temperature 18-20°C, avoid alcohol 3+ hours before bed"))
+        
+        if deep_sleep and deep_sleep < 70:
+            weak_areas.append(("Deep sleep", deep_sleep, "Create cooler sleeping environment (16-19°C), avoid late meals, consider magnesium supplement"))
+        
+        if restfulness and restfulness < 70:
+            weak_areas.append(("Sleep restfulness", restfulness, "Reduce blue light 2 hours before bed, try blackout curtains, keep phone in airplane mode"))
+        
+        if sleep_efficiency and sleep_efficiency < 80:
+            weak_areas.append(("Sleep efficiency", sleep_efficiency, "Establish consistent bedtime routine, avoid caffeine after 2 PM, try 4-7-8 breathing"))
+        
+        if sleep_latency and sleep_latency < 70:
+            weak_areas.append(("Sleep onset", sleep_latency, "Practice progressive muscle relaxation, avoid screens 1 hour before bed, try chamomile tea"))
+        
+        if weak_areas:
+            # Pick the weakest area for targeted advice
+            weakest = min(weak_areas, key=lambda x: x[1])
+            return f"🛌 **Sleep Optimization**: Your {weakest[0]} scored {weakest[1]}/100. Try this: {weakest[2]}"
+        
+        # If sleep is good, give maintenance advice
+        if sleep_score >= 80:
+            return f"😴 **Sleep Excellence**: Your sleep score of {sleep_score}/100 is excellent! Maintain your current routine and bedtime consistency for continued success"
+        
+        return None
+    
+    def _analyze_activity_balance(self, data: HealthData) -> str:
+        """Analyze activity level and provide recovery/intensity guidance."""
+        if not data.activity_score:
+            return None
+        
+        activity_score = data.activity_score
+        readiness_score = data.readiness_score or 75  # Default if not available
+        
+        # Analyze activity vs readiness for recovery guidance
+        if activity_score < 50 and readiness_score > 80:
+            return f"🚀 **Activity Boost**: Yesterday's activity was low ({activity_score}/100) but your readiness is high ({readiness_score}/100). Perfect day for a challenging workout or new activity!"
+        
+        elif activity_score < 50 and readiness_score < 70:
+            return f"🚶 **Gentle Recovery**: Both activity ({activity_score}/100) and readiness ({readiness_score}/100) are low. Focus on 20-minute gentle walk + 10 minutes stretching instead of intense exercise"
+        
+        elif activity_score > 85 and readiness_score < 70:
+            return f"🛌 **Recovery Priority**: High activity yesterday ({activity_score}/100) with low readiness ({readiness_score}/100). Take a recovery day with light yoga or meditation"
+        
+        elif activity_score > 85 and readiness_score > 80:
+            return f"💪 **Peak Performance**: Excellent activity ({activity_score}/100) and readiness ({readiness_score}/100)! You're in optimal condition - consider trying a new fitness challenge"
+        
+        # Moderate activity recommendations
+        if 50 <= activity_score <= 85:
+            if data.steps and data.steps < 8000:
+                return f"👟 **Step Goal**: Activity score is moderate ({activity_score}/100) with {data.steps:,} steps. Aim for 10,000+ steps today with 3 short walking breaks"
+            else:
+                return f"⚡ **Activity Balance**: Good activity level ({activity_score}/100). Mix today with both cardio and strength training for optimal variety"
+        
+        return None
+    
+    def _analyze_stress_recovery(self, data: HealthData) -> str:
+        """Analyze stress and recovery balance."""
+        if not data.stress_high or not data.recovery_high:
+            return None
+        
+        stress_time = data.stress_high / 3600  # Convert to hours
+        recovery_time = data.recovery_high / 3600  # Convert to hours
+        
+        # Calculate stress-recovery ratio
+        if recovery_time > 0:
+            stress_ratio = stress_time / recovery_time
+        else:
+            stress_ratio = float('inf')
+        
+        if stress_ratio > 0.5:  # High stress relative to recovery
+            return f"🧘 **Stress Management**: High stress time ({stress_time:.1f}h) vs recovery ({recovery_time:.1f}h). Try 10 minutes meditation or deep breathing exercises today"
+        
+        elif stress_ratio < 0.2:  # Great recovery
+            return f"🌿 **Recovery Champion**: Excellent stress-recovery balance ({stress_time:.1f}h stress, {recovery_time:.1f}h recovery). Your body is well-adapted to current stress levels"
+        
+        else:  # Balanced
+            return f"⚖️ **Balanced State**: Good stress-recovery ratio ({stress_time:.1f}h:{recovery_time:.1f}h). Maintain current stress management practices"
+    
+    def _analyze_cardio_respiratory(self, data: HealthData) -> str:
+        """Analyze cardiovascular and respiratory health."""
+        insights = []
+        
+        # Cardiovascular age analysis
+        if data.cardiovascular_age:
+            if data.cardiovascular_age < 20:  # Exceptional
+                insights.append(f"❤️ **Cardio Superstar**: Cardiovascular age of {data.cardiovascular_age} is exceptional! Your heart health is in the top 5% for your age")
+            elif data.cardiovascular_age > 30:  # Needs improvement
+                insights.append(f"💓 **Cardio Focus**: Cardiovascular age of {data.cardiovascular_age} suggests focusing on aerobic exercise - aim for 150min moderate cardio weekly")
+        
+        # SpO2 analysis
+        if data.spo2_average:
+            if data.spo2_average >= 98:
+                insights.append(f"🫁 **Oxygen Efficiency**: SpO2 of {data.spo2_average:.1f}% is outstanding! Your respiratory system is performing excellently")
+            elif data.spo2_average < 95:
+                insights.append(f"💨 **Breathing Focus**: SpO2 of {data.spo2_average:.1f}% is below optimal. Try 5 minutes of box breathing (4-4-4-4 count) twice daily")
+        
+        # Return the best insight available
+        return insights[0] if insights else None
     
     def _prepare_detailed_metrics(self, data: HealthData) -> dict:
         """Prepare detailed metrics for display."""
