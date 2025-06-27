@@ -86,10 +86,16 @@ class RSSNewsBot:
             'min_relevance_score': float(os.getenv('MIN_RELEVANCE_SCORE', '0.7')),
             'max_articles_per_week': int(os.getenv('MAX_ARTICLES_PER_WEEK', '25')),
             
-            # Scheduling configuration  
+            # Weekly scheduling configuration  
             'schedule_day': int(os.getenv('SCHEDULE_DAY', '6')),  # 6 = Sunday (0=Monday)
             'schedule_hour': int(os.getenv('SCHEDULE_HOUR', '9')),
             'schedule_minute': int(os.getenv('SCHEDULE_MINUTE', '0')),
+            
+            # Daily news scheduling configuration (NEW)
+            'daily_news_enabled': os.getenv('DAILY_NEWS_ENABLED', 'true').lower() == 'true',
+            'daily_news_hour': int(os.getenv('DAILY_NEWS_HOUR', '8')),
+            'daily_news_minute': int(os.getenv('DAILY_NEWS_MINUTE', '30')),
+            'daily_news_timezone': os.getenv('DAILY_NEWS_TIMEZONE', 'UTC'),
             
             # Processing configuration
             'days_to_process': int(os.getenv('DAYS_TO_FETCH', '7')),
@@ -408,11 +414,124 @@ class RSSNewsBot:
                     color=0xff0000  # Red color for errors
                 )
     
+    async def run_daily_news_processing(self):
+        """Run the daily !news command processing workflow."""
+        try:
+            logger.info("=" * 40)
+            logger.info("STARTING DAILY NEWS PROCESSING")
+            logger.info("=" * 40)
+            
+            start_time = datetime.now(timezone.utc)
+            
+            # Step 1: Fetch recent articles (last 2 days for daily news)
+            logger.info("Fetching recent articles...")
+            new_articles = await self.fetch_and_process_articles()
+            
+            # Step 2: Analyze article relevance
+            logger.info("Analyzing article relevance...")
+            analyzed_articles = await self.analyze_article_relevance()
+            
+            # Step 3: Generate daily summary (smaller than weekly)
+            logger.info("Generating daily summary...")
+            summary = await self.generate_daily_summary()
+            
+            # Step 4: Publish to Discord
+            published = False
+            if summary:
+                logger.info("Publishing daily summary to Discord...")
+                published = await self.publish_daily_summary(summary)
+            
+            # Log processing statistics
+            end_time = datetime.now(timezone.utc)
+            processing_time = (end_time - start_time).total_seconds()
+            
+            logger.info("=" * 40)
+            logger.info("DAILY NEWS PROCESSING COMPLETE")
+            logger.info(f"Processing time: {processing_time:.1f} seconds")
+            logger.info(f"New articles fetched: {new_articles}")
+            logger.info(f"Articles analyzed: {analyzed_articles}")
+            logger.info(f"Summary published: {'Yes' if published else 'No'}")
+            logger.info("=" * 40)
+            
+        except Exception as e:
+            logger.error(f"Error in daily news processing: {e}")
+            
+            # Send error notification
+            if self.discord_publisher:
+                await self.discord_publisher.send_notification(
+                    "Daily News Processing Error",
+                    f"An error occurred during daily news processing: {str(e)}",
+                    color=0xff0000  # Red color for errors
+                )
+    
+    async def generate_daily_summary(self) -> Optional[str]:
+        """Generate a daily news summary with fewer articles than weekly."""
+        try:
+            # Get recent articles from last 2 days for daily news
+            articles = self.db_manager.get_recent_articles(
+                days=2,  # Last 2 days for daily news
+                min_relevance=self.config['min_relevance_score'],
+                limit=10  # Limit to 10 articles for daily summary
+            )
+            
+            if not articles:
+                logger.info("No relevant articles found for daily summary")
+                return None
+                
+            logger.info(f"Generating daily summary for {len(articles)} articles")
+            
+            # Generate summary using LLM
+            summary = await self.llm_processor.generate_summary(
+                articles, 
+                summary_type="daily",
+                max_length=800  # Shorter than weekly summaries
+            )
+            
+            return summary
+            
+        except Exception as e:
+            logger.error(f"Error generating daily summary: {e}")
+            return None
+    
+    async def publish_daily_summary(self, summary: str) -> bool:
+        """Publish daily summary to Discord."""
+        try:
+            if not self.discord_publisher:
+                logger.warning("Discord publisher not available")
+                return False
+            
+            # Get metadata for the summary
+            articles = self.db_manager.get_recent_articles(
+                days=2,
+                min_relevance=self.config['min_relevance_score'],
+                limit=10
+            )
+            categories = list(set(article['category'] for article in articles))
+            
+            # Publish to Discord
+            message_ids = await self.discord_publisher.publish_long_summary(
+                summary_content=summary,
+                title="🌅 Daily News Brief",
+                article_count=len(articles),
+                categories=categories
+            )
+            
+            if message_ids:
+                logger.info(f"Daily summary published successfully. Message IDs: {message_ids}")
+                return True
+            else:
+                logger.error("Failed to publish daily summary")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Error publishing daily summary: {e}")
+            return False
+    
     async def start_scheduler(self):
-        """Start the scheduled weekly processing."""
+        """Start the scheduled weekly and daily processing."""
         try:
             # Schedule weekly processing
-            trigger = CronTrigger(
+            weekly_trigger = CronTrigger(
                 day_of_week=self.config['schedule_day'],
                 hour=self.config['schedule_hour'],
                 minute=self.config['schedule_minute']
@@ -420,17 +539,40 @@ class RSSNewsBot:
             
             self.scheduler.add_job(
                 self.run_weekly_processing,
-                trigger=trigger,
+                trigger=weekly_trigger,
                 id='weekly_processing',
                 name='Weekly RSS Processing',
                 replace_existing=True,
                 misfire_grace_time=3600  # 1 hour grace period
             )
             
+            # Schedule daily news processing (if enabled)
+            if self.config['daily_news_enabled']:
+                daily_trigger = CronTrigger(
+                    hour=self.config['daily_news_hour'],
+                    minute=self.config['daily_news_minute']
+                )
+                
+                self.scheduler.add_job(
+                    self.run_daily_news_processing,
+                    trigger=daily_trigger,
+                    id='daily_news_processing',
+                    name='Daily News Processing',
+                    replace_existing=True,
+                    misfire_grace_time=1800  # 30 minutes grace period
+                )
+                
+                logger.info(f"Daily news processing scheduled for {self.config['daily_news_hour']:02d}:{self.config['daily_news_minute']:02d}")
+            
             self.scheduler.start()
             
-            next_run = self.scheduler.get_job('weekly_processing').next_run_time
-            logger.info(f"Scheduler started. Next weekly processing: {next_run}")
+            # Log scheduled jobs
+            weekly_next_run = self.scheduler.get_job('weekly_processing').next_run_time
+            logger.info(f"Weekly processing scheduled. Next run: {weekly_next_run}")
+            
+            if self.config['daily_news_enabled']:
+                daily_next_run = self.scheduler.get_job('daily_news_processing').next_run_time
+                logger.info(f"Daily news processing scheduled. Next run: {daily_next_run}")
             
         except Exception as e:
             logger.error(f"Error starting scheduler: {e}")
@@ -447,20 +589,48 @@ class RSSNewsBot:
             # Start Discord bot if configured
             if self.discord_publisher:
                 asyncio.create_task(self.discord_publisher.start_bot())
-                # Wait a moment for Discord bot to connect
-                await asyncio.sleep(3)
+                
+                # Wait for Discord bot to be ready
+                max_wait = 30  # Maximum 30 seconds wait
+                wait_time = 0
+                while not self.discord_publisher.is_ready and wait_time < max_wait:
+                    await asyncio.sleep(1)
+                    wait_time += 1
+                
+                if not self.discord_publisher.is_ready:
+                    logger.warning("Discord bot did not become ready in time")
+                else:
+                    logger.info("Discord bot is ready")
             
             # Start scheduler for weekly processing
             await self.start_scheduler()
             
-            # Send startup notification
-            if self.discord_publisher:
-                await self.discord_publisher.send_notification(
+            # Send startup notification after Discord is ready
+            if self.discord_publisher and self.discord_publisher.is_ready:
+                notification_msg = f"🤖 **RSS News Bot is now running!**\n\n"
+                notification_msg += f"**📋 Schedule:**\n"
+                notification_msg += f"📅 Weekly summaries: Sundays at {self.config['schedule_hour']:02d}:{self.config['schedule_minute']:02d}\n"
+                
+                if self.config['daily_news_enabled']:
+                    notification_msg += f"🌅 Daily news: Every day at {self.config['daily_news_hour']:02d}:{self.config['daily_news_minute']:02d}\n"
+                
+                notification_msg += f"\n**💬 Available Commands:**\n"
+                notification_msg += f"• `!news` - Generate fresh personalized summary\n"
+                notification_msg += f"• `!quicknews [days]` - Quick summary from recent articles\n"
+                notification_msg += f"• `!commands` - Show all commands\n"
+                notification_msg += f"• `!status` - Check bot status\n\n"
+                notification_msg += f"**📊 Sources:** 20 RSS feeds covering AI, productivity, cognitive science, automation, and performance."
+                
+                startup_message_id = await self.discord_publisher.send_notification(
                     "RSS News Bot Started",
-                    f"Bot is now running and scheduled for weekly processing every "
-                    f"{self.config['schedule_day']} at {self.config['schedule_hour']:02d}:{self.config['schedule_minute']:02d}",
+                    notification_msg,
                     color=0x00ff00  # Green color
                 )
+                
+                if startup_message_id:
+                    logger.info(f"Startup notification sent successfully. Message ID: {startup_message_id}")
+                else:
+                    logger.warning("Failed to send startup notification")
             
             self.is_running = True
             logger.info("RSS News Bot is running. Press Ctrl+C to stop.")

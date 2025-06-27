@@ -162,3 +162,1553 @@
 2025-06-19 18:58:57,166 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
 2025-06-19 18:58:57,323 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
 2025-06-19 18:58:57,323 - discord_publisher - INFO - Target channel found: news
+2025-06-19 19:15:11,937 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-19 19:35:41,281 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-19 20:05:17,220 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-19 22:51:52,372 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 00:07:41,926 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 01:26:23,557 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 04:13:00,073 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 07:39:07,153 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 09:06:37,562 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 12:03:32,284 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 12:23:07,550 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 13:25:22,717 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 14:18:32,562 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 16:27:45,643 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 17:17:57,793 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 17:33:56,745 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 18:04:41,207 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 18:50:45,397 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 22:06:54,323 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-20 23:26:06,460 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 94df77f0a0e6d004468c3ef264640880.
+2025-06-21 00:05:18,032 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2025-06-21 00:05:23,535 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5da900c751fee0565758ccb72ab1990d).
+2025-06-21 00:05:25,538 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-21 00:05:25,539 - discord_publisher - INFO - Target channel found: news
+2025-06-21 00:21:33,327 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 01:25:07,780 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 02:29:31,734 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 04:23:58,397 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 04:24:21,914 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 06:21:16,518 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 09:31:39,693 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 10:31:10,285 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 11:09:13,040 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 12:49:05,393 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 16:12:39,829 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 17:48:01,472 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 19:12:46,528 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 23:12:32,512 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-21 23:52:20,276 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 01:24:05,678 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 03:27:05,791 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 04:45:29,360 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 07:23:43,188 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 09:00:00,002 - apscheduler.executors.default - INFO - Running job "Weekly RSS Processing (trigger: cron[day_of_week='6', hour='9', minute='0'], next run at: 2025-06-29 09:00:00 CEST)" (scheduled at 2025-06-22 09:00:00+02:00)
+2025-06-22 09:00:00,003 - __main__ - INFO - ==================================================
+2025-06-22 09:00:00,003 - __main__ - INFO - STARTING WEEKLY RSS PROCESSING
+2025-06-22 09:00:00,003 - __main__ - INFO - ==================================================
+2025-06-22 09:00:00,003 - __main__ - INFO - Starting RSS feed processing...
+2025-06-22 09:00:00,004 - __main__ - INFO - Processing 20 RSS feeds
+2025-06-22 09:00:01,323 - rss_manager - INFO - Successfully fetched 576 articles from https://openai.com/news/rss.xml
+2025-06-22 09:00:01,340 - rss_manager - INFO - Extracted 576 articles from OpenAI Blog
+2025-06-22 09:00:01,400 - rss_manager - INFO - Successfully fetched 100 articles from https://deepmind.google/blog/rss.xml
+2025-06-22 09:00:01,403 - rss_manager - INFO - Extracted 100 articles from Google DeepMind Blog
+2025-06-22 09:00:01,538 - rss_manager - INFO - Successfully fetched 588 articles from https://huggingface.co/blog/feed.xml
+2025-06-22 09:00:01,550 - rss_manager - INFO - Extracted 588 articles from Hugging Face Blog
+2025-06-22 09:00:01,720 - rss_manager - INFO - Successfully fetched 50 articles from https://news.mit.edu/rss/topic/artificial-intelligence2
+2025-06-22 09:00:01,721 - rss_manager - INFO - Extracted 50 articles from MIT News - Artificial Intelligence
+2025-06-22 09:00:02,585 - rss_manager - INFO - Successfully fetched 10 articles from https://www.technologyreview.com/topic/artificial-intelligence/feed/
+2025-06-22 09:00:02,585 - rss_manager - INFO - Extracted 10 articles from MIT Technology Review - AI
+2025-06-22 09:00:02,659 - rss_manager - INFO - Successfully fetched 8 articles from https://www.nature.com/neuro.rss
+2025-06-22 09:00:02,659 - rss_manager - INFO - Extracted 8 articles from Nature Neuroscience
+2025-06-22 09:00:03,040 - rss_manager - INFO - Successfully fetched 30 articles from https://spectrum.ieee.org/rss/blog/automaton/fulltext
+2025-06-22 09:00:03,055 - rss_manager - INFO - Extracted 30 articles from IEEE Spectrum Automation
+2025-06-22 09:00:03,067 - rss_manager - INFO - Successfully fetched 8 articles from https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=pssa&type=etoc&feed=rss
+2025-06-22 09:00:03,068 - rss_manager - INFO - Extracted 8 articles from Psychological Science
+2025-06-22 09:00:03,913 - rss_manager - ERROR - Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-22 09:00:04,330 - rss_manager - ERROR - Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-22 09:00:04,539 - rss_manager - INFO - Successfully fetched 20 articles from https://sloanreview.mit.edu/feed/
+2025-06-22 09:00:04,540 - rss_manager - INFO - Extracted 20 articles from MIT Sloan Management Review
+2025-06-22 09:00:04,710 - rss_manager - INFO - Successfully fetched 15 articles from https://ai.stanford.edu/blog/feed.xml
+2025-06-22 09:00:04,723 - rss_manager - INFO - Extracted 15 articles from Stanford AI Blog
+2025-06-22 09:00:05,145 - rss_manager - INFO - Successfully fetched 20 articles from https://aws.amazon.com/blogs/machine-learning/feed/
+2025-06-22 09:00:05,145 - rss_manager - INFO - Extracted 20 articles from AWS Machine Learning Blog
+2025-06-22 09:00:05,589 - rss_manager - INFO - Successfully fetched 15 articles from https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml
+2025-06-22 09:00:05,589 - rss_manager - INFO - Extracted 15 articles from O'Reilly AI & ML
+2025-06-22 09:00:05,805 - rss_manager - INFO - Successfully fetched 20 articles from https://techcrunch.com/category/artificial-intelligence/feed/
+2025-06-22 09:00:05,805 - rss_manager - INFO - Extracted 20 articles from TechCrunch AI
+2025-06-22 09:00:06,260 - rss_manager - ERROR - Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-22 09:00:06,566 - rss_manager - INFO - Successfully fetched 10 articles from https://www.microsoft.com/en-us/research/feed/
+2025-06-22 09:00:06,567 - rss_manager - INFO - Extracted 10 articles from Microsoft Research Blog
+2025-06-22 09:00:06,807 - rss_manager - INFO - Successfully fetched 19 articles from https://www.fastcompany.com/rss
+2025-06-22 09:00:06,815 - rss_manager - INFO - Extracted 19 articles from Fast Company - Productivity
+2025-06-22 09:00:06,878 - rss_manager - WARNING - Feed parsing had issues for https://venturebeat.com/ai/feed/: <unknown>:31:1: undefined entity
+2025-06-22 09:00:18,061 - __main__ - INFO - Processed 576 articles from OpenAI Blog
+2025-06-22 09:00:18,977 - __main__ - INFO - Processed 50 articles from MIT News - Artificial Intelligence
+2025-06-22 09:00:22,592 - __main__ - INFO - Processed 100 articles from Google DeepMind Blog
+2025-06-22 09:00:34,617 - __main__ - INFO - Processed 588 articles from Hugging Face Blog
+2025-06-22 09:00:34,886 - __main__ - INFO - Processed 15 articles from Stanford AI Blog
+2025-06-22 09:00:35,093 - __main__ - INFO - Processed 10 articles from MIT Technology Review - AI
+2025-06-22 09:00:37,783 - __main__ - INFO - Processed 30 articles from IEEE Spectrum Automation
+2025-06-22 09:00:37,925 - __main__ - INFO - Processed 8 articles from Nature Neuroscience
+2025-06-22 09:00:38,095 - __main__ - INFO - Processed 8 articles from Psychological Science
+2025-06-22 09:00:38,096 - __main__ - ERROR - Failed to fetch Flow Research Collective: Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-22 09:00:38,106 - __main__ - ERROR - Failed to fetch Harvard Business Review: Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-22 09:00:38,495 - __main__ - INFO - Processed 20 articles from MIT Sloan Management Review
+2025-06-22 09:00:38,893 - __main__ - INFO - Processed 20 articles from AWS Machine Learning Blog
+2025-06-22 09:00:38,893 - __main__ - ERROR - Failed to fetch ArXiv AI Latest: No entries found in feed
+2025-06-22 09:00:39,170 - __main__ - INFO - Processed 15 articles from O'Reilly AI & ML
+2025-06-22 09:00:39,367 - __main__ - INFO - Processed 10 articles from Microsoft Research Blog
+2025-06-22 09:00:39,721 - __main__ - INFO - Processed 20 articles from TechCrunch AI
+2025-06-22 09:00:39,722 - __main__ - ERROR - Failed to fetch VentureBeat AI: No entries found in feed
+2025-06-22 09:00:39,730 - __main__ - ERROR - Failed to fetch Scientific American - Mind & Brain: Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-22 09:00:40,091 - __main__ - INFO - Processed 19 articles from Fast Company - Productivity
+2025-06-22 09:00:40,091 - __main__ - INFO - RSS processing complete: 1489 total articles, 1489 new articles
+2025-06-22 09:00:40,092 - __main__ - INFO - Starting article relevance analysis...
+2025-06-22 09:00:40,094 - __main__ - INFO - Analyzing relevance for 50 articles
+2025-06-22 09:00:42,223 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:45,968 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:49,401 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:51,576 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:55,634 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:57,286 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:00:58,835 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:01:04,122 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:01:06,049 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:01:08,130 - __main__ - INFO - Relevance analysis complete: 50 articles processed
+2025-06-22 09:01:08,130 - __main__ - INFO - Generating weekly summary...
+2025-06-22 09:01:08,131 - __main__ - INFO - Generating summary from 1 high-relevance articles
+2025-06-22 09:01:09,378 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-22 09:01:32,766 - database - INFO - Added weekly summary with ID: 1
+2025-06-22 09:01:32,766 - __main__ - INFO - Weekly summary generated and stored (ID: 1)
+2025-06-22 09:01:32,766 - __main__ - INFO - Publishing weekly summary to Discord...
+2025-06-22 09:01:33,202 - discord_publisher - INFO - Published summary in 1 parts
+2025-06-22 09:01:33,202 - __main__ - INFO - Weekly summary published successfully. Message IDs: [1386239672404934676]
+2025-06-22 09:01:33,202 - __main__ - ERROR - Error in weekly processing: day is out of range for month
+2025-06-22 09:01:33,390 - apscheduler.executors.default - INFO - Job "Weekly RSS Processing (trigger: cron[day_of_week='6', hour='9', minute='0'], next run at: 2025-06-29 09:00:00 CEST)" executed successfully
+2025-06-22 10:06:48,118 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 13:50:50,789 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 15:54:18,167 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 17:20:15,658 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 20:02:45,853 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 20:20:19,054 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-22 23:56:47,092 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 01:23:02,480 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 05:04:58,711 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 07:59:41,787 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 08:58:52,806 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 09:04:52,592 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 09:20:20,171 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 10:03:38,981 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 11:26:54,571 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 11:29:59,228 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 13:03:52,238 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 14:51:19,789 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 15:58:35,539 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 18:52:59,892 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 18:55:33,099 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 20:49:56,561 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 22:30:11,141 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "reload" is not found
+2025-06-23 22:30:57,524 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 22:41:34,995 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "remind" is not found
+2025-06-23 22:43:17,184 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "test_geburtstage" is not found
+2025-06-23 22:43:24,275 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "test_muell" is not found
+2025-06-23 22:43:38,649 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "remind" is not found
+2025-06-23 22:53:30,929 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "remind" is not found
+2025-06-23 22:53:58,053 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "remind" is not found
+2025-06-23 23:02:14,912 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "healthtest" is not found
+2025-06-23 23:02:32,979 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "healthforce" is not found
+2025-06-23 23:20:16,292 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ping" is not found
+2025-06-23 23:23:41,777 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ping" is not found
+2025-06-23 23:23:55,354 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "laern" is not found
+2025-06-23 23:24:09,853 - discord.http - WARNING - We are being rate limited. POST https://discord.com/api/v10/channels/1382090949387358389/messages responded with 429. Retrying in 0.92 seconds.
+2025-06-23 23:24:26,911 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-23 23:28:49,041 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-23 23:29:41,270 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "upload" is not found
+2025-06-23 23:36:13,316 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-23 23:38:15,784 - __main__ - INFO - Starting RSS Bot component testing...
+2025-06-23 23:38:15,784 - __main__ - INFO - This will test database, RSS feeds, and configuration...
+2025-06-23 23:38:15,785 - __main__ - INFO - Testing environment configuration...
+2025-06-23 23:38:15,785 - __main__ - INFO - ✅ PASS - Environment Config: All required environment variables configured
+2025-06-23 23:38:15,785 - __main__ - INFO - Testing database operations...
+2025-06-23 23:38:15,904 - database - INFO - Database initialized successfully
+2025-06-23 23:38:15,915 - database - INFO - Added feed source: Test Feed
+2025-06-23 23:38:15,931 - __main__ - INFO - ✅ PASS - Database Operations: Added feed and article, retrieved 1 feeds and 0 articles
+2025-06-23 23:38:15,931 - __main__ - INFO - Testing RSS feed operations...
+2025-06-23 23:38:15,931 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-23 23:38:17,286 - rss_manager - INFO - Successfully fetched 577 articles from https://openai.com/news/rss.xml
+2025-06-23 23:38:17,302 - rss_manager - INFO - Extracted 577 articles from OpenAI Blog
+2025-06-23 23:38:17,362 - rss_manager - INFO - Successfully fetched 100 articles from https://deepmind.google/blog/rss.xml
+2025-06-23 23:38:17,364 - rss_manager - INFO - Extracted 100 articles from Google DeepMind Blog
+2025-06-23 23:38:17,540 - rss_manager - INFO - Successfully fetched 50 articles from https://news.mit.edu/rss/topic/artificial-intelligence2
+2025-06-23 23:38:17,542 - rss_manager - INFO - Extracted 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:38:17,543 - __main__ - INFO - ✅ PASS - RSS Feeds: Fetched from 3/3 feeds, got 727 articles
+2025-06-23 23:38:17,544 - __main__ - INFO - 
+============================================================
+2025-06-23 23:38:17,544 - __main__ - INFO - RSS BOT TESTING SUMMARY
+2025-06-23 23:38:17,544 - __main__ - INFO - ============================================================
+2025-06-23 23:38:17,544 - __main__ - INFO - ✅ PASS Environment Config - All required environment variables configured
+2025-06-23 23:38:17,544 - __main__ - INFO - ✅ PASS Database Operations - Added feed and article, retrieved 1 feeds and 0 articles
+2025-06-23 23:38:17,544 - __main__ - INFO - ✅ PASS RSS Feeds - Fetched from 3/3 feeds, got 727 articles
+2025-06-23 23:38:17,544 - __main__ - INFO - ============================================================
+2025-06-23 23:38:17,544 - __main__ - INFO - OVERALL: 3/3 tests passed
+2025-06-23 23:38:17,544 - __main__ - INFO - 🎉 All tests passed! Bot is ready for deployment.
+2025-06-23 23:38:17,544 - __main__ - INFO - Run: python src/main.py
+2025-06-23 23:38:27,383 - __main__ - INFO - Starting RSS News Bot...
+2025-06-23 23:38:27,383 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-23 23:38:27,384 - database - INFO - Database initialized successfully
+2025-06-23 23:38:27,384 - __main__ - INFO - Database manager initialized
+2025-06-23 23:38:27,384 - __main__ - INFO - RSS manager initialized
+2025-06-23 23:38:27,456 - __main__ - INFO - LLM processor initialized
+2025-06-23 23:38:27,456 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 23:38:27,457 - __main__ - INFO - Discord publisher initialized
+2025-06-23 23:38:27,459 - __main__ - INFO - Scheduler initialized
+2025-06-23 23:38:27,459 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-23 23:38:27,469 - database - INFO - Added feed source: OpenAI Blog
+2025-06-23 23:38:27,483 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-23 23:38:27,492 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-23 23:38:27,503 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-23 23:38:27,514 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-23 23:38:27,526 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-23 23:38:27,537 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-23 23:38:27,547 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-23 23:38:27,559 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-23 23:38:27,572 - database - INFO - Added feed source: Harvard Business Review
+2025-06-23 23:38:27,582 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-23 23:38:27,592 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-23 23:38:27,606 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-23 23:38:27,617 - database - INFO - Added feed source: Psychological Science
+2025-06-23 23:38:27,627 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-23 23:38:27,639 - database - INFO - Added feed source: TechCrunch AI
+2025-06-23 23:38:27,652 - database - INFO - Added feed source: VentureBeat AI
+2025-06-23 23:38:27,662 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-23 23:38:27,672 - database - INFO - Added feed source: Flow Research Collective
+2025-06-23 23:38:27,685 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-23 23:38:27,685 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-23 23:38:27,686 - __main__ - INFO - All components initialized successfully
+2025-06-23 23:38:27,686 - discord.client - INFO - logging in using static token
+2025-06-23 23:38:28,616 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aa0572d20c0c933adc8429b321880bdc).
+2025-06-23 23:38:30,621 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-23 23:38:30,621 - discord_publisher - INFO - Target channel found: news
+2025-06-23 23:38:30,687 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-23 23:38:30,687 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-23 23:38:30,687 - __main__ - INFO - Daily news processing scheduled for 08:30
+2025-06-23 23:38:30,688 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-23 23:38:30,689 - apscheduler.scheduler - INFO - Added job "Daily News Processing" to job store "default"
+2025-06-23 23:38:30,689 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-23 23:38:30,689 - __main__ - INFO - Weekly processing scheduled. Next run: 2025-06-29 09:00:00+02:00
+2025-06-23 23:38:30,689 - __main__ - INFO - Daily news processing scheduled. Next run: 2025-06-24 08:30:00+02:00
+2025-06-23 23:38:30,960 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
+2025-06-23 23:38:56,596 - __main__ - INFO - Received signal 15. Initiating shutdown...
+2025-06-23 23:39:30,981 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-23 23:39:30,981 - __main__ - INFO - Scheduler stopped
+2025-06-23 23:39:30,982 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-23 23:39:31,095 - __main__ - INFO - Discord bot stopped
+2025-06-23 23:39:31,095 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-23 23:41:52,539 - __main__ - INFO - Starting RSS Bot component testing...
+2025-06-23 23:41:52,539 - __main__ - INFO - This will test database, RSS feeds, and configuration...
+2025-06-23 23:41:52,539 - __main__ - INFO - Testing environment configuration...
+2025-06-23 23:41:52,539 - __main__ - INFO - ✅ PASS - Environment Config: All required environment variables configured
+2025-06-23 23:41:52,539 - __main__ - INFO - Testing database operations...
+2025-06-23 23:41:52,540 - database - INFO - Database initialized successfully
+2025-06-23 23:41:52,606 - database - INFO - Added feed source: Test Feed
+2025-06-23 23:41:52,614 - __main__ - INFO - ❌ FAIL - Database - Add Article: Failed to add article
+2025-06-23 23:41:52,614 - __main__ - INFO - Testing RSS feed operations...
+2025-06-23 23:41:52,614 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-23 23:41:53,924 - rss_manager - INFO - Successfully fetched 577 articles from https://openai.com/news/rss.xml
+2025-06-23 23:41:53,940 - rss_manager - INFO - Extracted 577 articles from OpenAI Blog
+2025-06-23 23:41:53,988 - rss_manager - INFO - Successfully fetched 100 articles from https://deepmind.google/blog/rss.xml
+2025-06-23 23:41:53,991 - rss_manager - INFO - Extracted 100 articles from Google DeepMind Blog
+2025-06-23 23:41:54,166 - rss_manager - INFO - Successfully fetched 50 articles from https://news.mit.edu/rss/topic/artificial-intelligence2
+2025-06-23 23:41:54,168 - rss_manager - INFO - Extracted 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:41:54,169 - __main__ - INFO - ✅ PASS - RSS Feeds: Fetched from 3/3 feeds, got 727 articles
+2025-06-23 23:41:54,170 - __main__ - INFO - 
+============================================================
+2025-06-23 23:41:54,170 - __main__ - INFO - RSS BOT TESTING SUMMARY
+2025-06-23 23:41:54,170 - __main__ - INFO - ============================================================
+2025-06-23 23:41:54,170 - __main__ - INFO - ✅ PASS Environment Config - All required environment variables configured
+2025-06-23 23:41:54,170 - __main__ - INFO - ❌ FAIL Database - Add Article - Failed to add article
+2025-06-23 23:41:54,170 - __main__ - INFO - ✅ PASS RSS Feeds - Fetched from 3/3 feeds, got 727 articles
+2025-06-23 23:41:54,170 - __main__ - INFO - ============================================================
+2025-06-23 23:41:54,170 - __main__ - INFO - OVERALL: 2/3 tests passed
+2025-06-23 23:41:54,170 - __main__ - INFO - ⚠️  Some tests failed. Please fix the issues above.
+2025-06-23 23:41:54,170 - __main__ - INFO - 1. Copy config.example to .env
+2025-06-23 23:41:54,170 - __main__ - INFO - 2. Fill in your Discord token and OpenRouter API key
+2025-06-23 23:41:54,170 - __main__ - INFO - 3. Run tests again
+2025-06-23 23:42:04,212 - __main__ - INFO - Starting RSS News Bot...
+2025-06-23 23:42:04,212 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-23 23:42:04,212 - database - INFO - Database initialized successfully
+2025-06-23 23:42:04,213 - __main__ - INFO - Database manager initialized
+2025-06-23 23:42:04,213 - __main__ - INFO - RSS manager initialized
+2025-06-23 23:42:04,266 - __main__ - INFO - LLM processor initialized
+2025-06-23 23:42:04,267 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 23:42:04,268 - __main__ - INFO - Discord publisher initialized
+2025-06-23 23:42:04,269 - __main__ - INFO - Scheduler initialized
+2025-06-23 23:42:04,269 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-23 23:42:04,285 - database - INFO - Added feed source: OpenAI Blog
+2025-06-23 23:42:04,298 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-23 23:42:04,309 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-23 23:42:04,319 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-23 23:42:04,329 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-23 23:42:04,348 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-23 23:42:04,358 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-23 23:42:04,368 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-23 23:42:04,379 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-23 23:42:04,390 - database - INFO - Added feed source: Harvard Business Review
+2025-06-23 23:42:04,402 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-23 23:42:04,420 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-23 23:42:04,434 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-23 23:42:04,447 - database - INFO - Added feed source: Psychological Science
+2025-06-23 23:42:04,458 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-23 23:42:04,468 - database - INFO - Added feed source: TechCrunch AI
+2025-06-23 23:42:04,478 - database - INFO - Added feed source: VentureBeat AI
+2025-06-23 23:42:04,489 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-23 23:42:04,500 - database - INFO - Added feed source: Flow Research Collective
+2025-06-23 23:42:04,510 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-23 23:42:04,510 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-23 23:42:04,510 - __main__ - INFO - All components initialized successfully
+2025-06-23 23:42:04,511 - discord.client - INFO - logging in using static token
+2025-06-23 23:42:05,658 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 05760dd2768bc84c5181c4d8f8e927f1).
+2025-06-23 23:42:07,513 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-23 23:42:07,513 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-23 23:42:07,513 - __main__ - INFO - Daily news processing scheduled for 08:30
+2025-06-23 23:42:07,514 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-23 23:42:07,514 - apscheduler.scheduler - INFO - Added job "Daily News Processing" to job store "default"
+2025-06-23 23:42:07,514 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-23 23:42:07,514 - __main__ - INFO - Weekly processing scheduled. Next run: 2025-06-29 09:00:00+02:00
+2025-06-23 23:42:07,514 - __main__ - INFO - Daily news processing scheduled. Next run: 2025-06-24 08:30:00+02:00
+2025-06-23 23:42:07,514 - discord_publisher - ERROR - Bot not ready or target channel not found
+2025-06-23 23:42:07,514 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
+2025-06-23 23:42:07,664 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-23 23:42:07,664 - discord_publisher - INFO - Target channel found: news
+2025-06-23 23:42:28,998 - discord.http - WARNING - We are being rate limited. POST https://discord.com/api/v10/channels/1384292843216175266/messages responded with 429. Retrying in 0.78 seconds.
+2025-06-23 23:42:33,860 - __main__ - INFO - Starting RSS feed processing...
+2025-06-23 23:42:33,861 - __main__ - INFO - Processing 20 RSS feeds
+2025-06-23 23:42:34,829 - __main__ - INFO - Starting RSS feed processing...
+2025-06-23 23:42:34,830 - __main__ - INFO - Processing 20 RSS feeds
+2025-06-23 23:42:35,180 - rss_manager - INFO - Successfully fetched 577 articles from https://openai.com/news/rss.xml
+2025-06-23 23:42:35,195 - rss_manager - INFO - Extracted 577 articles from OpenAI Blog
+2025-06-23 23:42:35,386 - rss_manager - INFO - Successfully fetched 50 articles from https://news.mit.edu/rss/topic/artificial-intelligence2
+2025-06-23 23:42:35,388 - rss_manager - INFO - Extracted 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:42:35,428 - rss_manager - INFO - Successfully fetched 100 articles from https://deepmind.google/blog/rss.xml
+2025-06-23 23:42:35,430 - rss_manager - INFO - Extracted 100 articles from Google DeepMind Blog
+2025-06-23 23:42:35,567 - rss_manager - INFO - Successfully fetched 589 articles from https://huggingface.co/blog/feed.xml
+2025-06-23 23:42:35,580 - rss_manager - INFO - Extracted 589 articles from Hugging Face Blog
+2025-06-23 23:42:36,348 - rss_manager - INFO - Successfully fetched 10 articles from https://www.technologyreview.com/topic/artificial-intelligence/feed/
+2025-06-23 23:42:36,349 - rss_manager - INFO - Extracted 10 articles from MIT Technology Review - AI
+2025-06-23 23:42:36,392 - rss_manager - INFO - Successfully fetched 50 articles from https://news.mit.edu/rss/topic/artificial-intelligence2
+2025-06-23 23:42:36,395 - rss_manager - INFO - Extracted 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:42:36,601 - rss_manager - INFO - Successfully fetched 577 articles from https://openai.com/news/rss.xml
+2025-06-23 23:42:36,617 - rss_manager - INFO - Extracted 577 articles from OpenAI Blog
+2025-06-23 23:42:36,654 - rss_manager - INFO - Successfully fetched 100 articles from https://deepmind.google/blog/rss.xml
+2025-06-23 23:42:36,657 - rss_manager - INFO - Extracted 100 articles from Google DeepMind Blog
+2025-06-23 23:42:36,660 - rss_manager - INFO - Successfully fetched 8 articles from https://www.nature.com/neuro.rss
+2025-06-23 23:42:36,661 - rss_manager - INFO - Extracted 8 articles from Nature Neuroscience
+2025-06-23 23:42:36,794 - rss_manager - INFO - Successfully fetched 589 articles from https://huggingface.co/blog/feed.xml
+2025-06-23 23:42:36,807 - rss_manager - INFO - Extracted 589 articles from Hugging Face Blog
+2025-06-23 23:42:36,856 - rss_manager - INFO - Successfully fetched 30 articles from https://spectrum.ieee.org/rss/blog/automaton/fulltext
+2025-06-23 23:42:36,873 - rss_manager - INFO - Extracted 30 articles from IEEE Spectrum Automation
+2025-06-23 23:42:37,043 - rss_manager - INFO - Successfully fetched 15 articles from https://ai.stanford.edu/blog/feed.xml
+2025-06-23 23:42:37,057 - rss_manager - INFO - Extracted 15 articles from Stanford AI Blog
+2025-06-23 23:42:37,512 - rss_manager - INFO - Successfully fetched 10 articles from https://www.technologyreview.com/topic/artificial-intelligence/feed/
+2025-06-23 23:42:37,513 - rss_manager - INFO - Extracted 10 articles from MIT Technology Review - AI
+2025-06-23 23:42:37,720 - rss_manager - INFO - Successfully fetched 8 articles from https://www.nature.com/neuro.rss
+2025-06-23 23:42:37,720 - rss_manager - INFO - Extracted 8 articles from Nature Neuroscience
+2025-06-23 23:42:37,725 - rss_manager - ERROR - Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-23 23:42:37,974 - rss_manager - INFO - Successfully fetched 30 articles from https://spectrum.ieee.org/rss/blog/automaton/fulltext
+2025-06-23 23:42:37,991 - rss_manager - INFO - Extracted 30 articles from IEEE Spectrum Automation
+2025-06-23 23:42:38,166 - rss_manager - INFO - Successfully fetched 15 articles from https://ai.stanford.edu/blog/feed.xml
+2025-06-23 23:42:38,180 - rss_manager - INFO - Extracted 15 articles from Stanford AI Blog
+2025-06-23 23:42:38,221 - rss_manager - INFO - Successfully fetched 20 articles from https://sloanreview.mit.edu/feed/
+2025-06-23 23:42:38,222 - rss_manager - INFO - Extracted 20 articles from MIT Sloan Management Review
+2025-06-23 23:42:38,450 - rss_manager - INFO - Successfully fetched 8 articles from https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=pssa&type=etoc&feed=rss
+2025-06-23 23:42:38,450 - rss_manager - INFO - Extracted 8 articles from Psychological Science
+2025-06-23 23:42:38,504 - rss_manager - INFO - Successfully fetched 20 articles from https://aws.amazon.com/blogs/machine-learning/feed/
+2025-06-23 23:42:38,505 - rss_manager - INFO - Extracted 20 articles from AWS Machine Learning Blog
+2025-06-23 23:42:38,506 - rss_manager - ERROR - Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-23 23:42:38,593 - rss_manager - ERROR - Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-23 23:42:38,688 - rss_manager - INFO - Successfully fetched 8 articles from https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=pssa&type=etoc&feed=rss
+2025-06-23 23:42:38,689 - rss_manager - INFO - Extracted 8 articles from Psychological Science
+2025-06-23 23:42:39,135 - rss_manager - INFO - Successfully fetched 374 articles from https://rss.arxiv.org/rss/cs.AI
+2025-06-23 23:42:39,165 - rss_manager - INFO - Extracted 374 articles from ArXiv AI Latest
+2025-06-23 23:42:39,391 - rss_manager - ERROR - Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-23 23:42:39,526 - rss_manager - INFO - Successfully fetched 15 articles from https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml
+2025-06-23 23:42:39,527 - rss_manager - INFO - Extracted 15 articles from O'Reilly AI & ML
+2025-06-23 23:42:39,615 - rss_manager - INFO - Successfully fetched 20 articles from https://techcrunch.com/category/artificial-intelligence/feed/
+2025-06-23 23:42:39,616 - rss_manager - INFO - Extracted 20 articles from TechCrunch AI
+2025-06-23 23:42:39,641 - rss_manager - INFO - Successfully fetched 20 articles from https://aws.amazon.com/blogs/machine-learning/feed/
+2025-06-23 23:42:39,642 - rss_manager - INFO - Extracted 20 articles from AWS Machine Learning Blog
+2025-06-23 23:42:39,735 - rss_manager - INFO - Successfully fetched 20 articles from https://sloanreview.mit.edu/feed/
+2025-06-23 23:42:39,736 - rss_manager - INFO - Extracted 20 articles from MIT Sloan Management Review
+2025-06-23 23:42:40,115 - rss_manager - WARNING - Feed parsing had issues for https://venturebeat.com/ai/feed/: <unknown>:31:1: undefined entity
+2025-06-23 23:42:40,155 - rss_manager - INFO - Successfully fetched 374 articles from https://rss.arxiv.org/rss/cs.AI
+2025-06-23 23:42:40,186 - rss_manager - INFO - Extracted 374 articles from ArXiv AI Latest
+2025-06-23 23:42:40,292 - rss_manager - INFO - Successfully fetched 10 articles from https://www.microsoft.com/en-us/research/feed/
+2025-06-23 23:42:40,293 - rss_manager - INFO - Extracted 10 articles from Microsoft Research Blog
+2025-06-23 23:42:40,314 - rss_manager - INFO - Successfully fetched 15 articles from https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml
+2025-06-23 23:42:40,315 - rss_manager - INFO - Extracted 15 articles from O'Reilly AI & ML
+2025-06-23 23:42:40,346 - rss_manager - ERROR - Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-23 23:42:40,712 - rss_manager - INFO - Successfully fetched 20 articles from https://techcrunch.com/category/artificial-intelligence/feed/
+2025-06-23 23:42:40,713 - rss_manager - INFO - Extracted 20 articles from TechCrunch AI
+2025-06-23 23:42:40,760 - rss_manager - INFO - Successfully fetched 19 articles from https://www.fastcompany.com/rss
+2025-06-23 23:42:40,766 - rss_manager - INFO - Extracted 19 articles from Fast Company - Productivity
+2025-06-23 23:42:41,314 - rss_manager - INFO - Successfully fetched 10 articles from https://www.microsoft.com/en-us/research/feed/
+2025-06-23 23:42:42,468 - rss_manager - INFO - Extracted 10 articles from Microsoft Research Blog
+2025-06-23 23:42:42,494 - rss_manager - ERROR - Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-23 23:42:42,544 - rss_manager - WARNING - Feed parsing had issues for https://venturebeat.com/ai/feed/: <unknown>:31:1: undefined entity
+2025-06-23 23:42:42,728 - rss_manager - INFO - Successfully fetched 19 articles from https://www.fastcompany.com/rss
+2025-06-23 23:42:42,735 - rss_manager - INFO - Extracted 19 articles from Fast Company - Productivity
+2025-06-23 23:42:47,742 - database - ERROR - Error adding article Preparing for future AI risks in biology: database is locked
+2025-06-23 23:42:51,837 - __main__ - INFO - Processed 577 articles from OpenAI Blog
+2025-06-23 23:42:52,463 - __main__ - INFO - Processed 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:42:54,970 - __main__ - INFO - Processed 100 articles from Google DeepMind Blog
+2025-06-23 23:42:56,653 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 182, in news_command
+    new_articles = await bot_instance.fetch_and_process_articles()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 195, in fetch_and_process_articles
+    if self.db_manager.add_article(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/database.py", line 152, in add_article
+    cursor.execute("""
+
+2025-06-23 23:43:01,375 - __main__ - INFO - Processed 589 articles from Hugging Face Blog
+2025-06-23 23:43:01,514 - __main__ - INFO - Processed 15 articles from Stanford AI Blog
+2025-06-23 23:43:01,615 - __main__ - INFO - Processed 10 articles from MIT Technology Review - AI
+2025-06-23 23:43:01,897 - __main__ - INFO - Processed 30 articles from IEEE Spectrum Automation
+2025-06-23 23:43:02,005 - __main__ - INFO - Processed 8 articles from Nature Neuroscience
+2025-06-23 23:43:02,086 - __main__ - INFO - Processed 8 articles from Psychological Science
+2025-06-23 23:43:02,086 - __main__ - ERROR - Failed to fetch Flow Research Collective: Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-23 23:43:02,094 - __main__ - ERROR - Failed to fetch Harvard Business Review: Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-23 23:43:02,295 - __main__ - INFO - Processed 20 articles from MIT Sloan Management Review
+2025-06-23 23:43:02,515 - __main__ - INFO - Processed 20 articles from AWS Machine Learning Blog
+2025-06-23 23:43:05,062 - database - ERROR - Error adding article OpenAI’s technology explained: database is locked
+2025-06-23 23:43:06,654 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 182, in news_command
+    new_articles = await bot_instance.fetch_and_process_articles()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 195, in fetch_and_process_articles
+    if self.db_manager.add_article(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/database.py", line 152, in add_article
+    cursor.execute("""
+
+2025-06-23 23:43:10,066 - database - ERROR - Error adding article Simplifying contract reviews with AI: database is locked
+2025-06-23 23:43:10,646 - __main__ - INFO - Processed 374 articles from ArXiv AI Latest
+2025-06-23 23:43:10,797 - __main__ - INFO - Processed 15 articles from O'Reilly AI & ML
+2025-06-23 23:43:10,906 - __main__ - INFO - Processed 10 articles from Microsoft Research Blog
+2025-06-23 23:43:14,221 - __main__ - INFO - Processed 20 articles from TechCrunch AI
+2025-06-23 23:43:14,221 - __main__ - ERROR - Failed to fetch VentureBeat AI: No entries found in feed
+2025-06-23 23:43:14,230 - __main__ - ERROR - Failed to fetch Scientific American - Mind & Brain: Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-23 23:43:16,654 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 182, in news_command
+    new_articles = await bot_instance.fetch_and_process_articles()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 195, in fetch_and_process_articles
+    if self.db_manager.add_article(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/database.py", line 152, in add_article
+    cursor.execute("""
+
+2025-06-23 23:43:17,297 - __main__ - INFO - Processed 19 articles from Fast Company - Productivity
+2025-06-23 23:43:17,297 - __main__ - INFO - RSS processing complete: 1865 total articles, 414 new articles
+2025-06-23 23:43:17,580 - __main__ - INFO - Starting article relevance analysis...
+2025-06-23 23:43:19,958 - __main__ - INFO - Processed 577 articles from OpenAI Blog
+2025-06-23 23:43:20,316 - __main__ - INFO - Analyzing relevance for 50 articles
+2025-06-23 23:43:20,485 - __main__ - INFO - Processed 50 articles from MIT News - Artificial Intelligence
+2025-06-23 23:43:21,357 - __main__ - INFO - Processed 100 articles from Google DeepMind Blog
+2025-06-23 23:43:22,385 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:26,655 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 182, in news_command
+    new_articles = await bot_instance.fetch_and_process_articles()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 195, in fetch_and_process_articles
+    if self.db_manager.add_article(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/database.py", line 161, in add_article
+    conn.commit()
+
+2025-06-23 23:43:27,010 - __main__ - INFO - Processed 589 articles from Hugging Face Blog
+2025-06-23 23:43:27,172 - __main__ - INFO - Processed 15 articles from Stanford AI Blog
+2025-06-23 23:43:27,278 - __main__ - INFO - Processed 10 articles from MIT Technology Review - AI
+2025-06-23 23:43:27,559 - __main__ - INFO - Processed 30 articles from IEEE Spectrum Automation
+2025-06-23 23:43:27,643 - __main__ - INFO - Processed 8 articles from Nature Neuroscience
+2025-06-23 23:43:27,727 - __main__ - INFO - Processed 8 articles from Psychological Science
+2025-06-23 23:43:27,728 - __main__ - ERROR - Failed to fetch Flow Research Collective: Request error for https://www.flowresearchcollective.com/blog-feed: 404, message='Not Found', url='https://www.flowresearchcollective.com/blog-feed'
+2025-06-23 23:43:27,738 - __main__ - ERROR - Failed to fetch Harvard Business Review: Request error for https://hbr.org/topic/productivity/feed: 404, message='Not Found', url='https://hbr.org/topic/subject/productivity/feed'
+2025-06-23 23:43:27,953 - __main__ - INFO - Processed 20 articles from MIT Sloan Management Review
+2025-06-23 23:43:28,146 - __main__ - INFO - Processed 20 articles from AWS Machine Learning Blog
+2025-06-23 23:43:31,522 - __main__ - INFO - Processed 374 articles from ArXiv AI Latest
+2025-06-23 23:43:31,964 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:34,261 - __main__ - INFO - Processed 15 articles from O'Reilly AI & ML
+2025-06-23 23:43:34,447 - __main__ - INFO - Processed 10 articles from Microsoft Research Blog
+2025-06-23 23:43:34,624 - __main__ - INFO - Processed 20 articles from TechCrunch AI
+2025-06-23 23:43:34,624 - __main__ - ERROR - Failed to fetch VentureBeat AI: No entries found in feed
+2025-06-23 23:43:34,634 - __main__ - ERROR - Failed to fetch Scientific American - Mind & Brain: Request error for https://rss.sciam.com/ScientificAmerican-Mind: Cannot connect to host rss.sciam.com:443 ssl:default [None]
+2025-06-23 23:43:34,878 - __main__ - INFO - Processed 19 articles from Fast Company - Productivity
+2025-06-23 23:43:34,879 - __main__ - INFO - RSS processing complete: 1865 total articles, 0 new articles
+2025-06-23 23:43:35,136 - __main__ - INFO - Starting article relevance analysis...
+2025-06-23 23:43:35,138 - __main__ - INFO - Analyzing relevance for 50 articles
+2025-06-23 23:43:36,328 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:36,969 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:37,181 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 05760dd2768bc84c5181c4d8f8e927f1.
+2025-06-23 23:43:40,714 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:42,603 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:44,519 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:46,261 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:47,606 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:47,902 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:56,361 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:58,237 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:43:59,963 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:02,211 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:03,226 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:04,910 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:06,531 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:07,251 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:08,782 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:09,940 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:10,099 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:11,454 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:11,685 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:13,581 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:14,938 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:17,033 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:18,184 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:19,359 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:20,489 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:26,300 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-23 23:44:26,337 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 185, in news_command
+    analyzed_articles = await bot_instance.analyze_article_relevance()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 246, in analyze_article_relevance
+    relevance_score = await self.llm_processor.analyze_article_relevance(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 103, in analyze_article_relevance
+    llm_score = await self._llm_relevance_analysis(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 164, in _llm_relevance_analysis
+    response = self.client.chat.completions.create(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-06-23 23:44:28,743 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:28,743 - openai._base_client - INFO - Retrying request to /chat/completions in 0.420537 seconds
+2025-06-23 23:44:30,002 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:30,003 - openai._base_client - INFO - Retrying request to /chat/completions in 0.884355 seconds
+2025-06-23 23:44:31,704 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:31,705 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:32,533 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:32,534 - openai._base_client - INFO - Retrying request to /chat/completions in 0.432240 seconds
+2025-06-23 23:44:33,792 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:33,792 - openai._base_client - INFO - Retrying request to /chat/completions in 0.784716 seconds
+2025-06-23 23:44:35,428 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:35,428 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:36,281 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:36,283 - openai._base_client - INFO - Retrying request to /chat/completions in 0.462485 seconds
+2025-06-23 23:44:36,338 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 185, in news_command
+    analyzed_articles = await bot_instance.analyze_article_relevance()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 246, in analyze_article_relevance
+    relevance_score = await self.llm_processor.analyze_article_relevance(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 103, in analyze_article_relevance
+    llm_score = await self._llm_relevance_analysis(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 164, in _llm_relevance_analysis
+    response = self.client.chat.completions.create(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1023, in request
+    self._sleep_for_retry(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1063, in _sleep_for_retry
+    time.sleep(timeout)
+
+2025-06-23 23:44:37,566 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:37,567 - openai._base_client - INFO - Retrying request to /chat/completions in 0.923008 seconds
+2025-06-23 23:44:39,289 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:39,290 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:40,149 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:40,149 - openai._base_client - INFO - Retrying request to /chat/completions in 0.473482 seconds
+2025-06-23 23:44:41,421 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:41,422 - openai._base_client - INFO - Retrying request to /chat/completions in 0.759241 seconds
+2025-06-23 23:44:43,056 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:43,057 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:43,896 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:43,896 - openai._base_client - INFO - Retrying request to /chat/completions in 0.457864 seconds
+2025-06-23 23:44:45,149 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:45,149 - openai._base_client - INFO - Retrying request to /chat/completions in 0.919572 seconds
+2025-06-23 23:44:46,340 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 669, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 185, in news_command
+    analyzed_articles = await bot_instance.analyze_article_relevance()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 246, in analyze_article_relevance
+    relevance_score = await self.llm_processor.analyze_article_relevance(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 103, in analyze_article_relevance
+    llm_score = await self._llm_relevance_analysis(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 164, in _llm_relevance_analysis
+    response = self.client.chat.completions.create(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-06-23 23:44:46,878 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:46,879 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:46,917 - discord.client - ERROR - Attempting a reconnect in 1.84s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 704, in connect
+    await self.ws.poll_event()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 627, in poll_event
+    await self.received_message(msg.data)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 532, in received_message
+    await self.send_as_json(beat)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 663, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 659, in send
+    await self.socket.send_str(data)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/_websocket/writer.py", line 126, in send_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2025-06-23 23:44:49,745 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:49,745 - openai._base_client - INFO - Retrying request to /chat/completions in 0.489068 seconds
+2025-06-23 23:44:51,052 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:51,052 - openai._base_client - INFO - Retrying request to /chat/completions in 0.873187 seconds
+2025-06-23 23:44:52,735 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:52,736 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:53,597 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:53,599 - openai._base_client - INFO - Retrying request to /chat/completions in 0.457969 seconds
+2025-06-23 23:44:54,923 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:54,927 - openai._base_client - INFO - Retrying request to /chat/completions in 0.849453 seconds
+2025-06-23 23:44:56,588 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:56,589 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:44:57,401 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:57,401 - openai._base_client - INFO - Retrying request to /chat/completions in 0.418508 seconds
+2025-06-23 23:44:57,812 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 520, in <module>
+    logger.info(f"Daily summary published successfully. Message IDs: {message_ids}")
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 185, in news_command
+    analyzed_articles = await bot_instance.analyze_article_relevance()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 240, in analyze_article_relevance
+    for i in range(0, len(articles), batch_size):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 103, in analyze_article_relevance
+    llm_score = await self._llm_relevance_analysis(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 164, in _llm_relevance_analysis
+    response = self.client.chat.completions.create(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-06-23 23:44:58,590 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:44:58,590 - openai._base_client - INFO - Retrying request to /chat/completions in 0.756341 seconds
+2025-06-23 23:45:00,155 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:00,156 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715100000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:00,986 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:00,987 - openai._base_client - INFO - Retrying request to /chat/completions in 0.468222 seconds
+2025-06-23 23:45:02,338 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:02,339 - openai._base_client - INFO - Retrying request to /chat/completions in 0.816562 seconds
+2025-06-23 23:45:03,949 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:03,949 - openai._base_client - INFO - Retrying request to /chat/completions in 0.447571 seconds
+2025-06-23 23:45:03,974 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:03,974 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750723200000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:04,806 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:04,806 - openai._base_client - INFO - Retrying request to /chat/completions in 0.389324 seconds
+2025-06-23 23:45:05,157 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:05,157 - openai._base_client - INFO - Retrying request to /chat/completions in 0.751819 seconds
+2025-06-23 23:45:05,972 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:05,973 - openai._base_client - INFO - Retrying request to /chat/completions in 0.909174 seconds
+2025-06-23 23:45:06,684 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:06,685 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750723200000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:07,485 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:07,485 - openai._base_client - INFO - Retrying request to /chat/completions in 0.445204 seconds
+2025-06-23 23:45:07,683 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:07,684 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750723200000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:07,813 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 520, in <module>
+    logger.info(f"Daily summary published successfully. Message IDs: {message_ids}")
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1411, in on_message
+    await self.process_commands(message)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1408, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/discord_publisher.py", line 185, in news_command
+    analyzed_articles = await bot_instance.analyze_article_relevance()
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/main.py", line 240, in analyze_article_relevance
+    for i in range(0, len(articles), batch_size):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 103, in analyze_article_relevance
+    llm_score = await self._llm_relevance_analysis(article)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/src/llm_processor.py", line 164, in _llm_relevance_analysis
+    response = self.client.chat.completions.create(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1023, in request
+    self._sleep_for_retry(
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/openai/_base_client.py", line 1063, in _sleep_for_retry
+    time.sleep(timeout)
+
+2025-06-23 23:45:08,515 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:08,516 - openai._base_client - INFO - Retrying request to /chat/completions in 0.414188 seconds
+2025-06-23 23:45:08,684 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:08,685 - openai._base_client - INFO - Retrying request to /chat/completions in 0.836782 seconds
+2025-06-23 23:45:09,747 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:09,747 - openai._base_client - INFO - Retrying request to /chat/completions in 0.985879 seconds
+2025-06-23 23:45:10,304 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:10,305 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:11,082 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:11,082 - openai._base_client - INFO - Retrying request to /chat/completions in 0.403370 seconds
+2025-06-23 23:45:11,535 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:11,536 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:12,270 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:12,270 - openai._base_client - INFO - Retrying request to /chat/completions in 0.993690 seconds
+2025-06-23 23:45:12,360 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:12,361 - openai._base_client - INFO - Retrying request to /chat/completions in 0.400879 seconds
+2025-06-23 23:45:13,589 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:13,589 - openai._base_client - INFO - Retrying request to /chat/completions in 0.967602 seconds
+2025-06-23 23:45:14,019 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:14,020 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:14,874 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:14,874 - openai._base_client - INFO - Retrying request to /chat/completions in 0.469688 seconds
+2025-06-23 23:45:15,833 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:15,834 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:16,219 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:16,219 - openai._base_client - INFO - Retrying request to /chat/completions in 0.778471 seconds
+2025-06-23 23:45:16,660 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:16,661 - openai._base_client - INFO - Retrying request to /chat/completions in 0.466155 seconds
+2025-06-23 23:45:17,785 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:17,785 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:17,896 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:17,897 - openai._base_client - INFO - Retrying request to /chat/completions in 0.811175 seconds
+2025-06-23 23:45:18,096 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-23 23:45:19,502 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:19,503 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:19,803 - __main__ - INFO - Relevance analysis complete: 50 articles processed
+2025-06-23 23:45:20,065 - __main__ - INFO - Generating weekly summary...
+2025-06-23 23:45:20,066 - __main__ - INFO - Generating summary from 2 high-relevance articles
+2025-06-23 23:45:20,377 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:20,378 - openai._base_client - INFO - Retrying request to /chat/completions in 0.407417 seconds
+2025-06-23 23:45:20,856 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:20,857 - openai._base_client - INFO - Retrying request to /chat/completions in 0.494192 seconds
+2025-06-23 23:45:21,603 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:21,603 - openai._base_client - INFO - Retrying request to /chat/completions in 0.919963 seconds
+2025-06-23 23:45:22,116 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:22,116 - openai._base_client - INFO - Retrying request to /chat/completions in 0.855972 seconds
+2025-06-23 23:45:23,364 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:23,364 - llm_processor - ERROR - LLM relevance analysis failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:23,509 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 05760dd2768bc84c5181c4d8f8e927f1.
+2025-06-23 23:45:23,725 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:23,726 - llm_processor - ERROR - Weekly summary generation failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:23,735 - database - INFO - Added weekly summary with ID: 2
+2025-06-23 23:45:23,736 - __main__ - INFO - Weekly summary generated and stored (ID: 2)
+2025-06-23 23:45:23,961 - discord_publisher - INFO - Published summary in 1 parts
+2025-06-23 23:45:25,387 - __main__ - INFO - Relevance analysis complete: 50 articles processed
+2025-06-23 23:45:25,725 - __main__ - INFO - Generating weekly summary...
+2025-06-23 23:45:25,726 - __main__ - INFO - Generating summary from 2 high-relevance articles
+2025-06-23 23:45:26,601 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:26,601 - openai._base_client - INFO - Retrying request to /chat/completions in 0.380370 seconds
+2025-06-23 23:45:27,796 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:27,797 - openai._base_client - INFO - Retrying request to /chat/completions in 0.826927 seconds
+2025-06-23 23:45:29,434 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-23 23:45:29,436 - llm_processor - ERROR - Weekly summary generation failed: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1750715160000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-06-23 23:45:29,452 - database - INFO - Added weekly summary with ID: 3
+2025-06-23 23:45:29,453 - __main__ - INFO - Weekly summary generated and stored (ID: 3)
+2025-06-23 23:45:29,690 - discord_publisher - INFO - Published summary in 1 parts
+2025-06-23 23:47:07,697 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_help" is not found
+2025-06-23 23:47:07,712 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_help" is not found
+2025-06-23 23:47:28,670 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_test" is not found
+2025-06-23 23:47:28,672 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_test" is not found
+2025-06-23 23:47:36,755 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_reminder" is not found
+2025-06-23 23:47:36,766 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tagebuch_reminder" is not found
+2025-06-23 23:53:23,000 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "plan" is not found
+2025-06-23 23:53:23,006 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "plan" is not found
+2025-06-23 23:55:47,271 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-23 23:55:47,271 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-24 00:12:22,932 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 01:21:57,671 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 05760dd2768bc84c5181c4d8f8e927f1.
+2025-06-24 01:22:08,391 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 01:42:54,309 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 05760dd2768bc84c5181c4d8f8e927f1.
+2025-06-24 03:55:36,078 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 06:07:23,119 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 06:29:51,133 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 08:21:13,186 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-24 08:43:20,621 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 09:02:41,691 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 09:37:24,704 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 11:46:52,381 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 12:57:12,772 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 15:15:07,603 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 17:01:38,195 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 20:47:57,222 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 21:02:01,596 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-24 22:51:01,902 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 01:10:36,407 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 01:21:14,240 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 04:37:06,499 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 04:49:34,459 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 05:17:52,221 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 06:00:15,256 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 08:21:15,024 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 10:57:09,345 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 13:19:43,860 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 15:23:32,711 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 17:40:46,055 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 18:16:42,922 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 18:31:49,867 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 20:35:26,563 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 20:55:50,404 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-25 21:51:18,269 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 01:19:56,301 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 02:31:25,361 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 03:33:42,280 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 04:36:02,142 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 06:01:11,042 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 09:06:22,806 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 11:50:01,141 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 15:07:44,966 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 15:42:18,877 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 17:18:13,547 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 19:13:36,234 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 21:07:22,971 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-26 21:56:14,515 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 00:14:12,282 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 01:19:08,897 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 02:32:50,277 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 03:03:02,008 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 05:28:50,100 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 06:44:57,456 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 07:49:28,168 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 09:42:11,773 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 11:08:46,921 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 11:47:21,246 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 12:06:12,056 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 14:29:59,041 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 17:10:05,928 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 5da900c751fee0565758ccb72ab1990d.
+2025-06-27 17:35:09,763 - discord.client - ERROR - Attempting a reconnect in 0.03s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:09,801 - discord.client - ERROR - Attempting a reconnect in 3.98s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:13,783 - discord.client - ERROR - Attempting a reconnect in 5.37s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:19,167 - discord.client - ERROR - Attempting a reconnect in 7.60s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:26,776 - discord.client - ERROR - Attempting a reconnect in 3.58s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:30,362 - discord.client - ERROR - Attempting a reconnect in 26.20s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:35:56,566 - discord.client - ERROR - Attempting a reconnect in 9.03s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:36:05,607 - discord.client - ERROR - Attempting a reconnect in 203.06s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1512, in _create_direct_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1128, in _resolve_host
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1159, in _resolve_host_with_throttle
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/resolver.py", line 40, in resolve
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 867, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/client.py", line 701, in connect
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/gateway.py", line 375, in from_client
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/discord/http.py", line 554, in ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 1061, in _ws_connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 770, in _request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 622, in connect
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1189, in _create_connection
+  File "/home/pi/Documents/discord/bots/personal_RSS_bot/rss_env/lib/python3.11/site-packages/aiohttp/connector.py", line 1518, in _create_direct_connection
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2025-06-27 17:39:29,008 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2025-06-27 17:39:34,498 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fee1a0dacafeb38de096bc5bd13c266).
+2025-06-27 17:39:36,503 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-27 17:39:36,503 - discord_publisher - INFO - Target channel found: news
+2025-06-27 18:25:23,037 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2fee1a0dacafeb38de096bc5bd13c266.
+2025-06-27 19:40:35,812 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "learn" is not found
+2025-06-27 19:44:28,998 - __main__ - INFO - Starting RSS News Bot...
+2025-06-27 19:44:28,998 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-27 19:44:29,001 - database - INFO - Database initialized successfully
+2025-06-27 19:44:29,001 - __main__ - INFO - Database manager initialized
+2025-06-27 19:44:29,001 - __main__ - INFO - RSS manager initialized
+2025-06-27 19:44:29,056 - __main__ - INFO - LLM processor initialized
+2025-06-27 19:44:29,057 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-27 19:44:29,058 - __main__ - INFO - Discord publisher initialized
+2025-06-27 19:44:29,060 - __main__ - INFO - Scheduler initialized
+2025-06-27 19:44:29,060 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-27 19:44:29,071 - database - INFO - Added feed source: OpenAI Blog
+2025-06-27 19:44:29,082 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-27 19:44:29,092 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-27 19:44:29,102 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-27 19:44:29,115 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-27 19:44:29,127 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-27 19:44:29,138 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-27 19:44:29,154 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-27 19:44:29,170 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-27 19:44:29,180 - database - INFO - Added feed source: Harvard Business Review
+2025-06-27 19:44:29,192 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-27 19:44:29,223 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-27 19:44:29,237 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-27 19:44:29,247 - database - INFO - Added feed source: Psychological Science
+2025-06-27 19:44:29,262 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-27 19:44:29,272 - database - INFO - Added feed source: TechCrunch AI
+2025-06-27 19:44:29,282 - database - INFO - Added feed source: VentureBeat AI
+2025-06-27 19:44:29,293 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-27 19:44:29,304 - database - INFO - Added feed source: Flow Research Collective
+2025-06-27 19:44:29,314 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-27 19:44:29,314 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-27 19:44:29,314 - __main__ - INFO - All components initialized successfully
+2025-06-27 19:44:29,314 - discord.client - INFO - logging in using static token
+2025-06-27 19:44:30,509 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 40c7d8a73dede9e7f934f97e239d1f61).
+2025-06-27 19:44:32,317 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-27 19:44:32,317 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-27 19:44:32,317 - __main__ - INFO - Daily news processing scheduled for 08:30
+2025-06-27 19:44:32,318 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-27 19:44:32,318 - apscheduler.scheduler - INFO - Added job "Daily News Processing" to job store "default"
+2025-06-27 19:44:32,318 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-27 19:44:32,318 - __main__ - INFO - Weekly processing scheduled. Next run: 2025-06-29 09:00:00+02:00
+2025-06-27 19:44:32,318 - __main__ - INFO - Daily news processing scheduled. Next run: 2025-06-28 08:30:00+02:00
+2025-06-27 19:44:32,318 - discord_publisher - ERROR - Bot not ready or target channel not found
+2025-06-27 19:44:32,318 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.
+2025-06-27 19:44:32,515 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-27 19:44:32,515 - discord_publisher - INFO - Target channel found: news
+2025-06-27 19:48:55,130 - __main__ - INFO - Received signal 15. Initiating shutdown...
+2025-06-27 19:48:55,131 - __main__ - INFO - Received signal 15. Initiating shutdown...
+2025-06-27 19:49:32,361 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-27 19:49:32,361 - __main__ - INFO - Scheduler stopped
+2025-06-27 19:49:32,362 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-27 19:49:32,485 - __main__ - INFO - Discord bot stopped
+2025-06-27 19:49:32,485 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-27 19:49:55,099 - __main__ - INFO - Shutting down RSS News Bot...
+2025-06-27 19:49:55,100 - __main__ - INFO - Scheduler stopped
+2025-06-27 19:49:55,101 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-27 19:49:55,214 - __main__ - INFO - Discord bot stopped
+2025-06-27 19:49:55,214 - __main__ - INFO - RSS News Bot shutdown complete
+2025-06-27 19:57:35,091 - __main__ - INFO - Starting RSS News Bot...
+2025-06-27 19:57:35,091 - __main__ - INFO - Initializing RSS News Bot components...
+2025-06-27 19:57:35,092 - database - INFO - Database initialized successfully
+2025-06-27 19:57:35,092 - __main__ - INFO - Database manager initialized
+2025-06-27 19:57:35,092 - __main__ - INFO - RSS manager initialized
+2025-06-27 19:57:35,151 - __main__ - INFO - LLM processor initialized
+2025-06-27 19:57:35,153 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-27 19:57:35,154 - __main__ - INFO - Discord publisher initialized
+2025-06-27 19:57:35,156 - __main__ - INFO - Scheduler initialized
+2025-06-27 19:57:35,156 - rss_manager - INFO - Loaded 20 RSS feeds from config
+2025-06-27 19:57:39,754 - database - INFO - Added feed source: OpenAI Blog
+2025-06-27 19:57:51,712 - database - INFO - Added feed source: MIT News - Artificial Intelligence
+2025-06-27 19:57:52,406 - database - INFO - Added feed source: Google DeepMind Blog
+2025-06-27 19:57:52,594 - database - INFO - Added feed source: AWS Machine Learning Blog
+2025-06-27 19:57:52,835 - database - INFO - Added feed source: Hugging Face Blog
+2025-06-27 19:57:53,068 - database - INFO - Added feed source: Stanford AI Blog
+2025-06-27 19:58:01,540 - database - INFO - Added feed source: ArXiv AI Latest
+2025-06-27 19:58:11,162 - database - INFO - Added feed source: MIT Technology Review - AI
+2025-06-27 19:58:30,414 - database - INFO - Added feed source: O'Reilly AI & ML
+2025-06-27 19:58:46,895 - database - INFO - Added feed source: Harvard Business Review
+2025-06-27 19:58:48,195 - database - INFO - Added feed source: Fast Company - Productivity
+2025-06-27 19:59:18,301 - database - INFO - Added feed source: MIT Sloan Management Review
+2025-06-27 19:59:20,148 - database - INFO - Added feed source: Nature Neuroscience
+2025-06-27 19:59:21,848 - database - INFO - Added feed source: Psychological Science
+2025-06-27 19:59:32,455 - database - INFO - Added feed source: Scientific American - Mind & Brain
+2025-06-27 19:59:32,470 - database - INFO - Added feed source: TechCrunch AI
+2025-06-27 19:59:32,485 - database - INFO - Added feed source: VentureBeat AI
+2025-06-27 19:59:32,502 - database - INFO - Added feed source: IEEE Spectrum Automation
+2025-06-27 19:59:32,515 - database - INFO - Added feed source: Flow Research Collective
+2025-06-27 19:59:32,529 - database - INFO - Added feed source: Microsoft Research Blog
+2025-06-27 19:59:32,530 - __main__ - INFO - Loaded 20 RSS feeds from configuration
+2025-06-27 19:59:32,530 - __main__ - INFO - All components initialized successfully
+2025-06-27 19:59:32,530 - discord.client - INFO - logging in using static token
+2025-06-27 19:59:33,652 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 82fac6502f5768764fbecbd87b1e1037).
+2025-06-27 19:59:35,655 - discord_publisher - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-27 19:59:35,655 - discord_publisher - INFO - Target channel found: news
+2025-06-27 19:59:36,076 - discord_publisher - INFO - Simple startup message sent
+2025-06-27 19:59:36,534 - __main__ - INFO - Discord bot is ready
+2025-06-27 19:59:36,535 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-27 19:59:36,535 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-27 19:59:36,535 - __main__ - INFO - Daily news processing scheduled for 08:30
+2025-06-27 19:59:36,536 - apscheduler.scheduler - INFO - Added job "Weekly RSS Processing" to job store "default"
+2025-06-27 19:59:36,536 - apscheduler.scheduler - INFO - Added job "Daily News Processing" to job store "default"
+2025-06-27 19:59:36,536 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-27 19:59:36,537 - __main__ - INFO - Weekly processing scheduled. Next run: 2025-06-29 09:00:00+02:00
+2025-06-27 19:59:36,537 - __main__ - INFO - Daily news processing scheduled. Next run: 2025-06-28 08:30:00+02:00
+2025-06-27 19:59:37,026 - __main__ - INFO - Startup notification sent successfully. Message ID: 1388217219296661674
+2025-06-27 19:59:37,026 - __main__ - INFO - RSS News Bot is running. Press Ctrl+C to stop.

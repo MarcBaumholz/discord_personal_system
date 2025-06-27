@@ -52,6 +52,20 @@ class DiscordPublisher:
             if self.target_channel:
                 logger.info(f'Target channel found: {self.target_channel.name}')
                 self.is_ready = True
+                
+                # Send simple "bot is running" message immediately
+                try:
+                    simple_embed = discord.Embed(
+                        title="🟢 Bot Connected",
+                        description="RSS News Bot is now online and ready!",
+                        color=0x00ff00,
+                        timestamp=datetime.now(timezone.utc)
+                    )
+                    await self.target_channel.send(embed=simple_embed)
+                    logger.info("Simple startup message sent")
+                except Exception as e:
+                    logger.error(f"Error sending simple startup message: {e}")
+                    
             else:
                 logger.error(f'Target channel with ID {self.target_channel_id} not found')
             
