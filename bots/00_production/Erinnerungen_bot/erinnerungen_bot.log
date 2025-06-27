@@ -1,0 +1,120 @@
+2025-06-19 15:39:06,703 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 15:39:06,704 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-19 15:39:06,705 - discord.client - INFO - logging in using static token
+2025-06-19 15:39:06,954 - erinnerungen_bot - ERROR - Error starting bot: Improper token has been passed.
+2025-06-19 15:44:30,276 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 15:44:30,277 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-19 15:44:30,278 - discord.client - INFO - logging in using static token
+2025-06-19 15:44:30,494 - erinnerungen_bot - ERROR - Error starting bot: Improper token has been passed.
+2025-06-19 15:48:30,964 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 15:56:42,262 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 15:56:42,263 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-19 15:56:42,264 - discord.client - INFO - logging in using static token
+2025-06-19 15:56:42,504 - erinnerungen_bot - ERROR - Error starting bot: Improper token has been passed.
+2025-06-19 15:59:15,487 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 15:59:15,488 - erinnerungen_bot - ERROR - DISCORD_TOKEN not found or is placeholder
+2025-06-19 15:59:15,488 - erinnerungen_bot - ERROR - Please update .env file with real Discord bot token
+2025-06-19 15:59:15,488 - erinnerungen_bot - ERROR - Get token from: https://discord.com/developers/applications
+2025-06-19 15:59:15,488 - erinnerungen_bot - ERROR - Or run: python test_bot.py for demo mode
+2025-06-19 18:41:11,218 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:41:11,219 - erinnerungen_bot - ERROR - DISCORD_TOKEN not found or is placeholder
+2025-06-19 18:41:11,219 - erinnerungen_bot - ERROR - Please update .env file with real Discord bot token
+2025-06-19 18:41:11,219 - erinnerungen_bot - ERROR - Get token from: https://discord.com/developers/applications
+2025-06-19 18:41:11,219 - erinnerungen_bot - ERROR - Or run: python test_bot.py for demo mode
+2025-06-19 18:41:59,127 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:41:59,128 - erinnerungen_bot - ERROR - DISCORD_TOKEN not found or is placeholder
+2025-06-19 18:41:59,128 - erinnerungen_bot - ERROR - Please update .env file with real Discord bot token
+2025-06-19 18:41:59,128 - erinnerungen_bot - ERROR - Get token from: https://discord.com/developers/applications
+2025-06-19 18:41:59,128 - erinnerungen_bot - ERROR - Or run: python test_bot.py for demo mode
+2025-06-19 18:42:47,402 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:42:47,403 - erinnerungen_bot - ERROR - DISCORD_TOKEN not found or is placeholder
+2025-06-19 18:42:47,403 - erinnerungen_bot - ERROR - Please update .env file with real Discord bot token
+2025-06-19 18:42:47,403 - erinnerungen_bot - ERROR - Get token from: https://discord.com/developers/applications
+2025-06-19 18:42:47,403 - erinnerungen_bot - ERROR - Or run: python test_bot.py for demo mode
+2025-06-19 18:43:35,917 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:43:35,918 - erinnerungen_bot - ERROR - DISCORD_TOKEN not found or is placeholder
+2025-06-19 18:43:35,918 - erinnerungen_bot - ERROR - Please update .env file with real Discord bot token
+2025-06-19 18:43:35,919 - erinnerungen_bot - ERROR - Get token from: https://discord.com/developers/applications
+2025-06-19 18:43:35,919 - erinnerungen_bot - ERROR - Or run: python test_bot.py for demo mode
+2025-06-19 18:44:27,679 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-19 18:44:27,680 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-19 18:44:27,681 - discord.client - INFO - logging in using static token
+2025-06-19 18:44:28,858 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe57bd954c115e0513e2daf8f7191d2e).
+2025-06-19 18:44:30,862 - erinnerungen_bot - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-19 18:44:30,863 - erinnerungen_bot - INFO - Bot is ready and serving 1 guilds
+2025-06-19 18:44:30,863 - erinnerungen_bot.notion_manager - INFO - Initializing Notion Manager
+2025-06-19 18:44:30,941 - erinnerungen_bot.notion_manager - INFO - Notion Manager initialized with database ID: 214d42a1faf580fa8eccd0ddfd69ca98
+2025-06-19 18:44:30,942 - erinnerungen_bot - INFO - Notion manager initialized
+2025-06-19 18:44:30,942 - erinnerungen_bot.geburtstage - INFO - Geburtstage Manager initialized
+2025-06-19 18:44:30,942 - erinnerungen_bot - INFO - Geburtstage manager initialized
+2025-06-19 18:44:30,942 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:44:30,942 - erinnerungen_bot - INFO - Müllkalender manager initialized
+2025-06-19 18:44:30,942 - erinnerungen_bot.scheduler - INFO - Scheduler initialized for channel 1361084010847015241
+2025-06-19 18:44:30,942 - erinnerungen_bot.scheduler - INFO - Scheduled tasks configured:
+2025-06-19 18:44:30,942 - erinnerungen_bot.scheduler - INFO - - Birthday check: 07:00 daily
+2025-06-19 18:44:30,942 - erinnerungen_bot.scheduler - INFO - - Waste collection check: 20:00 daily
+2025-06-19 18:44:30,942 - erinnerungen_bot.scheduler - INFO - Scheduler started
+2025-06-19 18:44:30,942 - erinnerungen_bot - INFO - Scheduler started
+2025-06-23 22:38:00,072 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 22:38:00,073 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-23 22:38:00,074 - discord.client - INFO - logging in using static token
+2025-06-23 22:38:01,032 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e643e2d47d979d789861005c8cb77e5).
+2025-06-23 22:38:03,036 - erinnerungen_bot - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-23 22:38:03,036 - erinnerungen_bot - INFO - Bot is ready and serving 1 guilds
+2025-06-23 22:38:03,036 - erinnerungen_bot.notion_manager - INFO - Initializing Notion Manager
+2025-06-23 22:38:03,149 - erinnerungen_bot.notion_manager - INFO - Notion Manager initialized with database ID: 214d42a1faf580fa8eccd0ddfd69ca98
+2025-06-23 22:38:03,149 - erinnerungen_bot - INFO - Notion manager initialized
+2025-06-23 22:38:03,149 - erinnerungen_bot.geburtstage - INFO - Geburtstage Manager initialized
+2025-06-23 22:38:03,149 - erinnerungen_bot - INFO - Geburtstage manager initialized
+2025-06-23 22:38:03,149 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:38:03,150 - erinnerungen_bot - INFO - Müllkalender manager initialized
+2025-06-23 22:38:03,150 - erinnerungen_bot.scheduler - INFO - Scheduler initialized for channel 1361084010847015241
+2025-06-23 22:38:03,150 - erinnerungen_bot.scheduler - INFO - Scheduled tasks configured:
+2025-06-23 22:38:03,150 - erinnerungen_bot.scheduler - INFO - - Birthday check: 07:00 daily
+2025-06-23 22:38:03,150 - erinnerungen_bot.scheduler - INFO - - Waste collection check: 20:00 daily
+2025-06-23 22:38:03,151 - erinnerungen_bot.scheduler - INFO - Scheduler started
+2025-06-23 22:38:03,151 - erinnerungen_bot - INFO - Scheduler started
+2025-06-23 22:41:34,993 - erinnerungen_bot - INFO - Processing remind command for weekly overview
+2025-06-23 22:41:34,993 - erinnerungen_bot.notion_manager - INFO - Fetching all birthdays from Notion database
+2025-06-23 22:41:36,057 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/databases/214d42a1faf580fa8eccd0ddfd69ca98/query "HTTP/1.1 200 OK"
+2025-06-23 22:41:36,060 - erinnerungen_bot.notion_manager - INFO - Found 3 birthday entries
+2025-06-23 22:41:36,060 - erinnerungen_bot - INFO - Found 0 upcoming birthdays
+2025-06-23 22:41:36,060 - erinnerungen_bot - INFO - Found 2 upcoming waste collections
+2025-06-23 22:41:36,336 - erinnerungen_bot - INFO - Remind command completed successfully
+2025-06-23 22:53:11,803 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 22:53:11,804 - erinnerungen_bot - INFO - Starting Erinnerungen Bot...
+2025-06-23 22:53:11,805 - discord.client - INFO - logging in using static token
+2025-06-23 22:53:12,863 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 16d25a53d79a1a0daf9402c561325143).
+2025-06-23 22:53:14,866 - erinnerungen_bot - INFO - Marc Baumholz#5492 has connected to Discord!
+2025-06-23 22:53:14,867 - erinnerungen_bot - INFO - Bot is ready and serving 1 guilds
+2025-06-23 22:53:14,867 - erinnerungen_bot.notion_manager - INFO - Initializing Notion Manager
+2025-06-23 22:53:14,943 - erinnerungen_bot.notion_manager - INFO - Notion Manager initialized with database ID: 214d42a1faf580fa8eccd0ddfd69ca98
+2025-06-23 22:53:14,943 - erinnerungen_bot - INFO - Notion manager initialized
+2025-06-23 22:53:14,943 - erinnerungen_bot.geburtstage - INFO - Geburtstage Manager initialized
+2025-06-23 22:53:14,943 - erinnerungen_bot - INFO - Geburtstage manager initialized
+2025-06-23 22:53:14,943 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:53:14,943 - erinnerungen_bot - INFO - Müllkalender manager initialized
+2025-06-23 22:53:14,943 - erinnerungen_bot.scheduler - INFO - Scheduler initialized for channel 1361084010847015241
+2025-06-23 22:53:14,944 - erinnerungen_bot.scheduler - INFO - Scheduled tasks configured:
+2025-06-23 22:53:14,944 - erinnerungen_bot.scheduler - INFO - - Birthday check: 07:00 daily
+2025-06-23 22:53:14,944 - erinnerungen_bot.scheduler - INFO - - Waste collection check: 20:00 daily
+2025-06-23 22:53:14,944 - erinnerungen_bot.scheduler - INFO - Scheduler started
+2025-06-23 22:53:14,944 - erinnerungen_bot - INFO - Scheduler started
+2025-06-23 22:53:30,924 - erinnerungen_bot - INFO - Processing remind command for weekly overview
+2025-06-23 22:53:30,925 - erinnerungen_bot.notion_manager - INFO - Fetching all birthdays from Notion database
+2025-06-23 22:53:31,396 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/databases/214d42a1faf580fa8eccd0ddfd69ca98/query "HTTP/1.1 200 OK"
+2025-06-23 22:53:31,398 - erinnerungen_bot.notion_manager - INFO - Found 4 birthday entries
+2025-06-23 22:53:31,399 - erinnerungen_bot - INFO - Found 3 upcoming birthdays
+2025-06-23 22:53:31,399 - erinnerungen_bot.muellkalender - INFO - Loaded 49 waste collection dates from CSV
+2025-06-23 22:53:31,399 - erinnerungen_bot.muellkalender - INFO - Found 2 collections in next 7 days
+2025-06-23 22:53:31,400 - erinnerungen_bot - INFO - Found 2 upcoming waste collections
+2025-06-23 22:53:31,760 - erinnerungen_bot - INFO - Remind command completed successfully
+2025-06-23 22:53:58,038 - erinnerungen_bot - INFO - Processing remind command for weekly overview
+2025-06-23 22:53:58,039 - erinnerungen_bot.notion_manager - INFO - Fetching all birthdays from Notion database
+2025-06-23 22:53:58,360 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/databases/214d42a1faf580fa8eccd0ddfd69ca98/query "HTTP/1.1 200 OK"
+2025-06-23 22:53:58,361 - erinnerungen_bot.notion_manager - INFO - Found 4 birthday entries
+2025-06-23 22:53:58,362 - erinnerungen_bot - INFO - Found 3 upcoming birthdays
+2025-06-23 22:53:58,363 - erinnerungen_bot.muellkalender - INFO - Loaded 49 waste collection dates from CSV
+2025-06-23 22:53:58,363 - erinnerungen_bot.muellkalender - INFO - Found 2 collections in next 7 days
+2025-06-23 22:53:58,364 - erinnerungen_bot - INFO - Found 2 upcoming waste collections
+2025-06-23 22:53:58,696 - erinnerungen_bot - INFO - Remind command completed successfully

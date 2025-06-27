@@ -1,0 +1,38 @@
+2025-06-23 23:46:17,606 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 23:46:17,607 - tagebuch_bot - INFO - 🚀 Starting Tagebuch Bot...
+2025-06-23 23:46:17,608 - discord.client - INFO - logging in using static token
+2025-06-23 23:46:18,883 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: af300622ac9054c3fa06a8599ec52d4e).
+2025-06-23 23:46:20,888 - tagebuch_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-06-23 23:46:20,888 - tagebuch_bot - INFO - 📍 Monitoring channel ID: 1384289197115838625
+2025-06-23 23:46:20,906 - tagebuch_bot.notion_manager - INFO - Notion Manager initialized
+2025-06-23 23:46:21,616 - httpx - INFO - HTTP Request: GET https://api.notion.com/v1/databases/214d42a1faf5803193c6c71b7d4d7c3f "HTTP/1.1 200 OK"
+2025-06-23 23:46:21,617 - tagebuch_bot.notion_manager - INFO - ✅ Connected to Notion database: tagebuch
+2025-06-23 23:46:21,617 - tagebuch_bot.scheduler - INFO - Reminder Scheduler initialized
+2025-06-23 23:46:21,617 - tagebuch_bot.scheduler - INFO - 📅 Daily reminder scheduled for 22:00
+2025-06-23 23:46:21,617 - tagebuch_bot - INFO - ✅ All components initialized successfully
+2025-06-23 23:47:29,567 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-06-23 23:47:29,576 - tagebuch_bot.notion_manager - ERROR - ❌ Error creating journal entry: Datum is not a property that exists.
+2025-06-23 23:47:36,782 - tagebuch_bot.scheduler - INFO - 🧪 Testing reminder system
+2025-06-23 23:47:36,782 - tagebuch_bot.scheduler - INFO - 🔔 Triggering daily journal reminder
+2025-06-23 23:47:36,783 - tagebuch_bot.scheduler - ERROR - Error sending reminder: Cannot run the event loop while another loop is running
+2025-06-23 23:47:44,254 - tagebuch_bot.text_processor - INFO - Generated title: 'heute war ein produktiver tag' from text length: 29
+2025-06-23 23:47:47,196 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-06-23 23:47:47,200 - tagebuch_bot.notion_manager - ERROR - ❌ Error creating journal entry: Datum is not a property that exists.
+2025-06-23 23:47:47,433 - tagebuch_bot - ERROR - ❌ Failed to save journal entry: Datum is not a property that exists.
+2025-06-23 23:51:42,370 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-06-23 23:51:42,371 - tagebuch_bot - INFO - 🚀 Starting Tagebuch Bot...
+2025-06-23 23:51:42,372 - discord.client - INFO - logging in using static token
+2025-06-23 23:51:43,413 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2cb90d0c9b9ce7cf70168a8ab2659bed).
+2025-06-23 23:51:45,420 - tagebuch_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-06-23 23:51:45,420 - tagebuch_bot - INFO - 📍 Monitoring channel ID: 1384289197115838625
+2025-06-23 23:51:45,431 - tagebuch_bot.notion_manager - INFO - Notion Manager initialized
+2025-06-23 23:51:46,862 - httpx - INFO - HTTP Request: GET https://api.notion.com/v1/databases/214d42a1faf5803193c6c71b7d4d7c3f "HTTP/1.1 200 OK"
+2025-06-23 23:51:46,862 - tagebuch_bot.notion_manager - INFO - ✅ Connected to Notion database: tagebuch
+2025-06-23 23:51:46,862 - tagebuch_bot.scheduler - INFO - Reminder Scheduler initialized
+2025-06-23 23:51:46,863 - tagebuch_bot.scheduler - INFO - 📅 Daily reminder scheduled for 22:00
+2025-06-23 23:51:46,863 - tagebuch_bot - INFO - ✅ All components initialized successfully
+2025-06-23 23:54:44,499 - tagebuch_bot.text_processor - INFO - Generated title: 'journal today was good' from text length: 22
+2025-06-23 23:54:45,094 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-06-23 23:54:45,095 - tagebuch_bot.notion_manager - INFO - ✅ Created journal entry: 'journal today was good'
+2025-06-23 23:54:45,459 - tagebuch_bot - INFO - ✅ Journal entry saved for klumpenklarmarc: 'journal today was good'
+2025-06-24 01:22:06,243 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2cb90d0c9b9ce7cf70168a8ab2659bed.

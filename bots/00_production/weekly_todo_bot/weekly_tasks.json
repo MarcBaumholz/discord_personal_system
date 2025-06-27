@@ -1,0 +1,26 @@
+{
+  "date": "2025-06-23",
+  "tasks": [
+    {
+      "name": "Bäder",
+      "description": "",
+      "priority": 5,
+      "improved_desc": "",
+      "completed": false
+    },
+    {
+      "name": "Wischen",
+      "description": "",
+      "priority": 5,
+      "improved_desc": "",
+      "completed": false
+    },
+    {
+      "name": "Saugen",
+      "description": "",
+      "priority": 5,
+      "improved_desc": "",
+      "completed": false
+    }
+  ]
+}

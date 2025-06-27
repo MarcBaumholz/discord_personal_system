@@ -1,0 +1,79 @@
+2025-06-19 15:58:48,534 - test_bot - INFO - Testing birthday check...
+2025-06-19 15:58:48,534 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 15:58:48,534 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-19 15:58:49,535 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 15:58:49,536 - test_bot - INFO - Testing waste collection check...
+2025-06-19 15:58:49,536 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-20
+2025-06-19 15:58:49,536 - erinnerungen_bot.muellkalender - INFO - Waste collection tomorrow: 1 types
+2025-06-19 15:58:49,536 - test_bot - INFO - ✅ Waste collection test complete - reminder sent
+2025-06-19 18:49:07,868 - test_bot - INFO - Testing birthday check...
+2025-06-19 18:49:07,868 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:07,868 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-19 18:49:08,870 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:08,870 - test_bot - INFO - Testing waste collection check...
+2025-06-19 18:49:08,870 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-20
+2025-06-19 18:49:08,870 - erinnerungen_bot.muellkalender - INFO - Waste collection tomorrow: 1 types
+2025-06-19 18:49:08,870 - test_bot - INFO - ✅ Waste collection test complete - reminder sent
+2025-06-19 18:49:09,872 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:09,872 - test_bot - INFO - Testing weekly overview command...
+2025-06-19 18:49:09,872 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:09,872 - test_bot - ERROR - ❌ Error in remind test: name 'timedelta' is not defined
+2025-06-19 18:49:43,107 - test_bot - INFO - Testing birthday check...
+2025-06-19 18:49:43,108 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:43,108 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-19 18:49:44,110 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:44,114 - test_bot - INFO - Testing waste collection check...
+2025-06-19 18:49:44,115 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-20
+2025-06-19 18:49:44,115 - erinnerungen_bot.muellkalender - INFO - Waste collection tomorrow: 1 types
+2025-06-19 18:49:44,115 - test_bot - INFO - ✅ Waste collection test complete - reminder sent
+2025-06-19 18:49:45,117 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:45,117 - test_bot - INFO - Testing weekly overview command...
+2025-06-19 18:49:45,117 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:46,118 - test_bot - INFO - ✅ Remind command test complete
+2025-06-19 18:49:52,990 - test_bot - INFO - Testing birthday check...
+2025-06-19 18:49:52,991 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:52,991 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-19 18:49:53,993 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:53,994 - test_bot - INFO - Testing waste collection check...
+2025-06-19 18:49:53,994 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-20
+2025-06-19 18:49:53,995 - erinnerungen_bot.muellkalender - INFO - Waste collection tomorrow: 1 types
+2025-06-19 18:49:53,995 - test_bot - INFO - ✅ Waste collection test complete - reminder sent
+2025-06-19 18:49:54,998 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:49:54,999 - test_bot - INFO - Testing weekly overview command...
+2025-06-19 18:49:54,999 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-19 18:49:56,001 - test_bot - INFO - ✅ Remind command test complete
+2025-06-19 18:50:29,204 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-19 18:50:29,204 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:37:29,401 - test_bot - INFO - Testing birthday check...
+2025-06-23 22:37:29,401 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:37:29,401 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-23 22:37:30,402 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:37:30,402 - test_bot - INFO - Testing waste collection check...
+2025-06-23 22:37:30,402 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-24
+2025-06-23 22:37:30,403 - erinnerungen_bot.muellkalender - INFO - Waste collection tomorrow: 1 types
+2025-06-23 22:37:30,403 - test_bot - INFO - ✅ Waste collection test complete - reminder sent
+2025-06-23 22:37:31,404 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:37:31,404 - test_bot - INFO - Testing weekly overview command...
+2025-06-23 22:37:31,404 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:37:32,406 - test_bot - INFO - ✅ Remind command test complete
+2025-06-23 22:37:46,950 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:37:46,951 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:49:27,089 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:49:27,089 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:49:27,092 - erinnerungen_bot.muellkalender - INFO - Loaded 49 waste collection dates from CSV
+2025-06-23 22:49:27,092 - erinnerungen_bot.muellkalender - INFO - Found 2 collections in next 7 days
+2025-06-23 22:49:55,587 - test_bot - INFO - Testing birthday check...
+2025-06-23 22:49:55,588 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:49:55,588 - test_bot - INFO - ✅ Birthday test complete - 1 birthdays found
+2025-06-23 22:49:56,589 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:49:56,589 - test_bot - INFO - Testing waste collection check...
+2025-06-23 22:49:56,589 - erinnerungen_bot.muellkalender - INFO - Checking waste collection for tomorrow: 2025-06-24
+2025-06-23 22:49:56,592 - erinnerungen_bot.muellkalender - INFO - Loaded 49 waste collection dates from CSV
+2025-06-23 22:49:56,593 - erinnerungen_bot.muellkalender - INFO - No waste collection tomorrow
+2025-06-23 22:49:56,593 - test_bot - INFO - ✅ Waste collection test complete - no collection tomorrow
+2025-06-23 22:49:57,594 - erinnerungen_bot.muellkalender - INFO - Müllkalender Manager initialized for Schwaikheim
+2025-06-23 22:49:57,595 - test_bot - INFO - Testing weekly overview command...
+2025-06-23 22:49:57,595 - test_bot - INFO - Mock: Fetching birthdays from Notion database
+2025-06-23 22:49:57,596 - erinnerungen_bot.muellkalender - INFO - Loaded 49 waste collection dates from CSV
+2025-06-23 22:49:57,597 - erinnerungen_bot.muellkalender - INFO - Found 2 collections in next 7 days
+2025-06-23 22:49:58,598 - test_bot - INFO - ✅ Remind command test complete
