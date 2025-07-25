@@ -16,7 +16,7 @@ from health_analyzer import HealthAnalyzer, HealthInsight
 # Import bot status manager
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
 from bot_status_utils import BotStatusManager
 
 # Setup logging

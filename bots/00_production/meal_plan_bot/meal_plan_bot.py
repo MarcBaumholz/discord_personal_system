@@ -19,7 +19,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 # Load environment variables from main discord directory
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Configuration
@@ -327,7 +327,22 @@ async def on_ready():
     
     channel = bot.get_channel(MEALPLAN_CHANNEL_ID)
     if channel:
-        await channel.send("🍽️ Meal Plan Bot is online! React with 👍 or type 'meal' to get recipes. Auto-posting every Friday at 5 PM!")
+        startup_message = (
+            "🍽️ **Meal Plan Bot ist online!** 🤖\n\n"
+            "Ich helfe dir bei der Essensplanung! Das kann ich:\n"
+            "• 📚 Zufällige Rezepte aus deiner Notion-Datenbank holen\n"
+            "• 🛒 Intelligente Einkaufslisten mit AI generieren\n"
+            "• ✅ Automatisch Einkaufsaufgaben zu Todoist hinzufügen\n"
+            "• � Automatische wöchentliche Meal Plans (Freitags 17:00)\n"
+            "• 🤖 LLM-unterstützte Rezept-Verbesserungen\n\n"
+            "**Befehle:**\n"
+            "• `!help_meal` - Detaillierte Hilfe anzeigen\n"
+            "• `!test_meal` - Test Meal Plan generieren\n"
+            "• `!next_meal` - Sofort neuen Meal Plan erstellen\n\n"
+            "Reagiere mit 👍 oder schreibe 'meal' für sofortige Rezepte!\n"
+            "Automatische Posts jeden Freitag um 17:00 Uhr."
+        )
+        await channel.send(startup_message)
     
     # Start scheduler in background
     def run_scheduler():

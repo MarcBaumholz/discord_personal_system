@@ -6,6 +6,20 @@ __pycache__/
 # C extensions
 *.so
 
+# Sensitive and secret files
+bots/00_production/youtube_bot/token.pickle
+.env
+*.env
+*.pickle
+*.pkl
+*.log
+bots/00_production/money_bot-1/bot.py
+bots/learning_bot/LEARNING_BOT_EXECUTION_SUMMARY.md
+config.json
+secrets.json
+client_secrets.json
+
+*.pickle
 # Distribution / packaging
 .Python
 build/

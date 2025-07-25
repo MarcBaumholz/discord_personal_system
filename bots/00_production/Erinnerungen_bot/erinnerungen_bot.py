@@ -22,7 +22,7 @@ from muellkalender import MuellkalenderManager
 from scheduler import ErinnerungsScheduler
 
 # Load environment variables from parent directory
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Setup logging
@@ -86,6 +86,32 @@ async def on_ready():
         scheduler_thread = threading.Thread(target=scheduler.start, daemon=True)
         scheduler_thread.start()
         logger.info("Scheduler started")
+        
+        # Send startup message to Discord channel
+        try:
+            channel = bot.get_channel(ERINNERUNGEN_CHANNEL_ID)
+            if channel:
+                startup_message = (
+                    "🔔 **Erinnerungen Bot ist online!** 🤖\n\n"
+                    "Ich helfe dir bei deinen täglichen Erinnerungen! Das kann ich:\n"
+                    "• 🎂 Überwache Geburtstage und sende tägliche Erinnerungen\n"
+                    "• 🗑️ Erinnere an Müllabholung am Vorabend\n"
+                    "• 📅 Zeige wöchentliche Übersichten für kommende Ereignisse\n"
+                    "• 🔄 Automatische tägliche Checks um 7:00 Uhr\n"
+                    "• 💾 Integriert mit Notion für Geburtstags-Datenbank\n\n"
+                    "**Befehle:**\n"
+                    "• `!test_geburtstage` - Teste Geburtstags-Check\n"
+                    "• `!test_muell` - Teste Müllkalender-Check\n"
+                    "• `!remind` - Zeige wöchentliche Übersicht\n\n"
+                    "Automatische Erinnerungen sind aktiviert!\n"
+                    "Ich checke täglich Geburtstage und Müllabholung für dich."
+                )
+                await channel.send(startup_message)
+                logger.info("✅ Startup notification sent to erinnerungen channel")
+            else:
+                logger.error(f"Could not find channel with ID {ERINNERUNGEN_CHANNEL_ID}")
+        except Exception as e:
+            logger.error(f"❌ Error sending startup notification: {e}")
         
     except Exception as e:
         logger.error(f"Error initializing services: {e}")

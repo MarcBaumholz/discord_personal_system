@@ -1,0 +1,9 @@
+discord.py>=2.0.0
+python-dotenv>=0.19.0
+google-api-python-client>=2.0.0
+google-auth>=2.0.0
+google-auth-oauthlib>=0.5.0
+google-auth-httplib2>=0.1.0
+requests>=2.25.0
+pytz>=2021.1
+youtube-transcript-api>=0.6.0

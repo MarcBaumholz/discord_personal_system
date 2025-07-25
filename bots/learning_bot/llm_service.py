@@ -25,7 +25,7 @@ class LLMService:
             api_key=self.api_key
         )
         
-        # Create the prompt template
+        # Create the prompt template for regular Q&A
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", """You are a helpful AI assistant that answers questions based on the provided context.
             If you cannot find the answer in the context, say so. Do not make up information.
@@ -33,10 +33,25 @@ class LLMService:
             ("human", "Context: {context}\n\nQuestion: {question}")
         ])
         
-        # Create the chain
+        # Create the prompt template for detailed learning
+        self.learning_prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are an expert learning facilitator who creates comprehensive, actionable learning content.
+            Your task is to transform raw content into well-structured, actionable learning experiences.
+            Always provide practical, immediately applicable insights that help users turn knowledge into action."""),
+            ("human", "{content}")
+        ])
+        
+        # Create the chains
         self.chain = (
             {"context": RunnablePassthrough(), "question": RunnablePassthrough()}
             | self.prompt
+            | self.llm
+            | StrOutputParser()
+        )
+        
+        self.learning_chain = (
+            {"content": RunnablePassthrough()}
+            | self.learning_prompt
             | self.llm
             | StrOutputParser()
         )
@@ -65,4 +80,22 @@ class LLMService:
             return response
         except Exception as e:
             logger.error(f"Error generating response: {e}")
-            return "I apologize, but I encountered an error while generating the response. Please try again." 
+            return "I apologize, but I encountered an error while generating the response. Please try again."
+    
+    def generate_detailed_learning(self, learning_content: str) -> str:
+        """
+        Generate a detailed learning response with comprehensive structure.
+        
+        Args:
+            learning_content: The content/prompt for generating detailed learning
+            
+        Returns:
+            Structured learning response
+        """
+        try:
+            # Generate comprehensive learning response
+            response = self.learning_chain.invoke(learning_content)
+            return response
+        except Exception as e:
+            logger.error(f"Error generating detailed learning: {e}")
+            return "I apologize, but I encountered an error while generating your learning content. Please try again." 

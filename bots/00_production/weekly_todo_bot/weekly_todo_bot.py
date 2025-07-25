@@ -22,7 +22,7 @@ from notion_client import Client as NotionClient
 from openai import OpenAI
 
 # Load environment variables from main discord directory
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Configuration
@@ -348,9 +348,29 @@ async def on_ready():
     print(f"🤖 {bot.user} ist online!")
     print(f"📍 Kanal ID: {HAUSHALTSPLAN_CHANNEL_ID}")
     
+@bot.event
+async def on_ready():
+    print(f"🤖 {bot.user} ist online!")
+    print(f"📍 Kanal ID: {HAUSHALTSPLAN_CHANNEL_ID}")
+    
     channel = bot.get_channel(HAUSHALTSPLAN_CHANNEL_ID)
     if channel:
-        await channel.send("🤖 Weekly Todo Bot ist online! Schreibe 'Cleaning' für wöchentliche Aufgaben.")
+        startup_message = (
+            "🗓️ **Weekly Todo Bot ist online!** 🤖\n\n"
+            "Ich organisiere deine wöchentlichen Haushaltsaufgaben! Das kann ich:\n"
+            "• 📋 Aufgaben aus deiner Notion-Datenbank holen\n"
+            "• 🤖 AI-unterstützte Aufgaben-Verbesserungen und Priorisierung\n"
+            "• ✅ Interaktive Todo-Listen mit Reaktions-Abhaken\n"
+            "• 📅 Automatische wöchentliche Posts (Freitags 8:00)\n"
+            "• ⭐ Intelligente Prioritäts-Bewertung\n\n"
+            "**Befehle:**\n"
+            "• `!weekly_status` - Aktuellen Status anzeigen\n"
+            "• `!help_weekly` - Detaillierte Hilfe\n"
+            "• Schreibe `Cleaning` - Sofortige wöchentliche Aufgaben\n\n"
+            "Reagiere mit Zahlen (1️⃣-9️⃣) um Aufgaben abzuhaken!\n"
+            "Automatische Posts jeden Freitag um 8:00 Uhr."
+        )
+        await channel.send(startup_message)
     
     # Start scheduler in background
     def run_scheduler():

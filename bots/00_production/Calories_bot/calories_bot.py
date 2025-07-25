@@ -31,7 +31,7 @@ from logger_config import bot_logger
 
 # Load environment variables
 # Load environment variables from main discord directory
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Configuration
@@ -521,6 +521,33 @@ async def on_ready():
         'openrouter_configured': bool(OPENROUTER_API_KEY),
         'notion_configured': bool(NOTION_TOKEN)
     })
+    
+    # Send startup message to Discord channel
+    try:
+        channel = bot.get_channel(CALORIES_CHANNEL_ID)
+        if channel:
+            startup_message = (
+                "🍽️ **Calories Bot is now online!** 🤖\n\n"
+                "I'm ready to analyze your food! Here's what I can do:\n"
+                "• 📸 Analyze food images and estimate calories using AI vision\n"
+                "• 🍎 Identify foods and provide nutritional information\n"
+                "• 💾 Automatically save food entries to your Notion database\n"
+                "• 📊 Generate monthly calorie reports with charts\n"
+                "• 🎯 Provide confidence ratings for food analysis\n\n"
+                "**Commands:**\n"
+                "• `!help_calories` - Show detailed help\n"
+                "• `!test_analysis` - Test the AI analysis\n"
+                "• `!logs` - View recent activity logs\n"
+                "• Send `month` - Generate monthly report\n\n"
+                "Just upload food photos and I'll analyze them automatically!\n"
+                "Monthly reports are generated when you type 'month'."
+            )
+            await channel.send(startup_message)
+            print("✅ Startup notification sent to calories channel")
+        else:
+            print(f"❌ Could not find channel with ID {CALORIES_CHANNEL_ID}")
+    except Exception as e:
+        print(f"❌ Error sending startup notification: {e}")
 
 @bot.event
 async def on_message(message):

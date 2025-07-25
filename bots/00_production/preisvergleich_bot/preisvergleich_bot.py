@@ -10,7 +10,7 @@ from datetime import datetime
 from notion_manager import NotionProductManager
 from simple_agent import SimpleOfferSearchAgent
 from scheduler import OfferScheduler
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Setup logging
@@ -65,7 +65,20 @@ async def on_ready():
         # Send startup message
         channel = client.get_channel(CHANNEL_ID)
         if channel:
-            await channel.send("🔍 Preisvergleich Bot is online! I'll check for product offers every Sunday evening.")
+            startup_message = (
+                "🔍 **Preisvergleich Bot ist online!** 🤖\n\n"
+                "Ich überwache Produktpreise für dich! Das kann ich:\n"
+                "• 👀 Automatische Überwachung deiner Notion-Wunschliste\n"
+                "• 💰 Wöchentliche Angebots-Checks (Sonntags 20:00)\n"
+                "• 🏷️ Preisvergleiche und Rabatt-Benachrichtigungen\n"
+                "• 📊 Detaillierte Angebots-Informationen mit Links\n"
+                "• 💸 Berechnung der Gesamt-Ersparnis\n\n"
+                "**Befehle:**\n"
+                "• `producthunt` - Sofortige Angebots-Suche starten\n\n"
+                "Ich checke automatisch jeden Sonntag um 20:00 Uhr!\n"
+                "Stelle sicher, dass deine Wunschliste in Notion aktuell ist."
+            )
+            await channel.send(startup_message)
         else:
             logger.error(f"Could not find channel with ID {CHANNEL_ID}")
     except Exception as e:

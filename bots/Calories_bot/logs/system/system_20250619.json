@@ -1,8 +1,0 @@
-[
-  {
-    "timestamp": "2025-06-19T14:48:27.149997",
-    "event": "system_event",
-    "event_type": "TEST_EVENT",
-    "test": true
-  }
-]

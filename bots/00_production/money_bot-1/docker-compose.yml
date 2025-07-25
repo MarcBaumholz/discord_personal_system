@@ -1,0 +1,31 @@
+services:
+  money-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: money-bot
+    restart: unless-stopped
+    env_file:
+      # Load environment variables from the .env file in the parent discord directory
+      - ../../../.env
+    volumes:
+      # Mount logs directory to persist logs
+      - ./logs:/app/logs
+      # Mount .env file from parent discord directory to the expected location
+      - ../../../.env:/app/../../.env:ro
+    networks:
+      - money-bot-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  money-bot-network:
+    driver: bridge
+
+volumes:
+  money-bot-logs:
+    driver: local

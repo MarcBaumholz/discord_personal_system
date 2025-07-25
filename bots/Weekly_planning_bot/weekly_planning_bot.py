@@ -59,13 +59,10 @@ async def on_ready():
         # Start background tasks
         weekly_plan_reminder.start()
         
-        # Send welcome message
+        # Send startup message
         channel = bot.get_channel(WEEKLY_PLANNING_CHANNEL_ID)
         if channel:
-            await channel.send("📆 Weekly Planning Bot is online! I'll help you plan and organize your week. Type `!plan` to see your current weekly plan or use 👨‍👧‍👦 for family planning.")
-            
-            # Generate and post a sample weekly plan for demo purposes
-            await post_sample_plan(channel)
+            await channel.send("🟢 **Bot is running!** Ready to help with your weekly planning. Type `!plan` to get started.")
             
         logger.info("Weekly Planning Bot is ready!")
     except Exception as e:

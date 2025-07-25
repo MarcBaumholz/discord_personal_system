@@ -1,0 +1,618 @@
+2025-07-21 19:33:44,553 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-21 19:33:44,554 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-21 19:33:44,554 - discord.client - INFO - logging in using static token
+2025-07-21 19:33:45,511 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fef66370b6339cf41c7c3198e3517e24).
+2025-07-21 19:33:47,515 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-21 19:33:47,515 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-21 19:35:31,372 - money_bot - INFO - Processing text from Marc: 30 euro essen...
+2025-07-21 19:35:33,352 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-21 19:35:33,353 - openai._base_client - INFO - Retrying request to /chat/completions in 0.495754 seconds
+2025-07-21 19:35:35,269 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:35:35,978 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 30,
+    "category": "Food",
+    "description": "essen"
+}
+```
+2025-07-21 19:35:35,978 - money_bot - INFO - Saving to Notion: {'amount': 30.0, 'category': 'Food', 'description': 'essen', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:35:37,625 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:35:37,626 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be multi_select. Date is not a property that exists.
+2025-07-21 19:42:04,956 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-21 19:42:04,957 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-21 19:42:04,958 - discord.client - INFO - logging in using static token
+2025-07-21 19:42:05,962 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 53ac84d505926328f615cf529d4b87df).
+2025-07-21 19:42:07,967 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-21 19:42:07,968 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-21 19:42:08,220 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-21 19:42:31,900 - money_bot - INFO - Processing text from Marc: 30 Euro essen heute...
+2025-07-21 19:42:31,934 - money_bot - INFO - Processing text from Marc: 30 Euro essen heute...
+2025-07-21 19:42:33,345 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-21 19:42:33,345 - openai._base_client - INFO - Retrying request to /chat/completions in 0.415338 seconds
+2025-07-21 19:42:33,746 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:42:34,411 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 30,
+    "category": "Food",
+    "description": "essen heute"
+}
+```
+2025-07-21 19:42:34,411 - money_bot - INFO - Saving to Notion: {'amount': 30.0, 'category': 'Food', 'description': 'essen heute', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:42:34,954 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:42:34,955 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be multi_select.
+2025-07-21 19:42:36,154 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:42:37,008 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 30,
+    "category": "Food",
+    "description": "essen heute"
+}
+```
+2025-07-21 19:42:37,009 - money_bot - INFO - Saving to Notion: {'amount': 30.0, 'category': 'Food', 'description': 'essen heute', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:42:37,523 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:42:37,524 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be multi_select.
+2025-07-21 19:43:22,799 - money_bot - INFO - Processing text from Marc: 20 euro social life heute...
+2025-07-21 19:43:22,799 - money_bot - INFO - Processing text from Marc: 20 euro social life heute...
+2025-07-21 19:43:25,017 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:43:26,186 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 20,
+    "category": "Social Life",
+    "description": "Social life expense today"
+}
+```
+2025-07-21 19:43:26,186 - money_bot - INFO - Saving to Notion: {'amount': 20.0, 'category': 'Social Life', 'description': 'Social life expense today', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:43:27,024 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:43:27,025 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be rich_text.
+2025-07-21 19:43:27,607 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:43:28,639 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 20,
+    "category": "Social Life",
+    "description": "social life heute"
+}
+```
+2025-07-21 19:43:28,640 - money_bot - INFO - Saving to Notion: {'amount': 20.0, 'category': 'Social Life', 'description': 'social life heute', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:43:28,945 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:43:28,945 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be rich_text.
+2025-07-21 19:46:27,271 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-21 19:46:27,272 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-21 19:46:27,272 - discord.client - INFO - logging in using static token
+2025-07-21 19:46:28,202 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ba939d7ce24ce942d075af2af985bebd).
+2025-07-21 19:46:30,205 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-21 19:46:30,205 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-21 19:46:30,448 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-21 19:46:40,181 - money_bot - INFO - Processing text from Marc: 10 euro Food...
+2025-07-21 19:46:40,188 - money_bot - INFO - Processing text from Marc: 10 euro Food...
+2025-07-21 19:46:41,998 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-21 19:46:41,999 - openai._base_client - INFO - Retrying request to /chat/completions in 0.389599 seconds
+2025-07-21 19:46:44,004 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-21 19:46:44,004 - openai._base_client - INFO - Retrying request to /chat/completions in 0.758382 seconds
+2025-07-21 19:46:45,305 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:46:46,035 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 10,
+    "category": "Food",
+    "description": "Food expense"
+}
+```
+2025-07-21 19:46:46,035 - money_bot - INFO - Saving to Notion: {'amount': 10.0, 'category': 'Food', 'description': 'Food expense', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:46:46,577 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-21 19:46:46,578 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-21 19:46:46,681 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:46:56,318 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 10,
+    "category": "Food",
+    "description": "Food"
+}
+```
+2025-07-21 19:46:56,318 - money_bot - INFO - Saving to Notion: {'amount': 10.0, 'category': 'Food', 'description': 'Food', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:46:56,616 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:46:56,617 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be multi_select.
+2025-07-21 19:47:07,092 - money_bot - INFO - Processing text from Marc: 20 euro bäcker...
+2025-07-21 19:47:07,104 - money_bot - INFO - Processing text from Marc: 20 euro bäcker...
+2025-07-21 19:47:08,877 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-21 19:47:08,878 - openai._base_client - INFO - Retrying request to /chat/completions in 0.456000 seconds
+2025-07-21 19:47:10,105 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:47:10,942 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 20,
+    "category": "Food",
+    "description": "Bäcker (bakery)"
+}
+```
+2025-07-21 19:47:10,942 - money_bot - INFO - Saving to Notion: {'amount': 20.0, 'category': 'Food', 'description': 'Bäcker (bakery)', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:47:12,076 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-07-21 19:47:12,077 - money_bot - ERROR - ❌ Error saving to Notion: kategorie is expected to be multi_select.
+2025-07-21 19:47:12,312 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-21 19:47:13,083 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 20,
+    "category": "Food",
+    "description": "Bäcker (bakery)"
+}
+```
+2025-07-21 19:47:13,083 - money_bot - INFO - Saving to Notion: {'amount': 20.0, 'category': 'Food', 'description': 'Bäcker (bakery)', 'author': 'Marc', 'type': 'text'}
+2025-07-21 19:47:13,617 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-21 19:47:13,617 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-21 20:24:20,094 - discord.gateway - INFO - Shard ID None has successfully RESUMED session ba939d7ce24ce942d075af2af985bebd.
+2025-07-21 21:46:45,643 - discord.gateway - INFO - Shard ID None has successfully RESUMED session ba939d7ce24ce942d075af2af985bebd.
+2025-07-21 22:16:38,560 - discord.gateway - INFO - Shard ID None has successfully RESUMED session fef66370b6339cf41c7c3198e3517e24.
+2025-07-21 22:27:43,163 - discord.gateway - INFO - Shard ID None has successfully RESUMED session ba939d7ce24ce942d075af2af985bebd.
+2025-07-22 20:42:38,121 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-22 20:42:38,123 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-22 20:42:38,123 - discord.client - INFO - logging in using static token
+2025-07-22 20:42:39,125 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe91132a66023fe2be580eaefde6307b).
+2025-07-22 20:42:41,130 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-22 20:42:41,130 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-22 20:42:41,395 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-22 20:42:41,395 - money_bot - INFO - 📅 Monthly check task started
+2025-07-22 20:43:18,614 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/databases/237d42a1faf5802496cadffa99784181/query "HTTP/1.1 200 OK"
+2025-07-22 20:43:18,615 - money_bot - INFO - Retrieved 3 expenses for 7/2025
+2025-07-22 20:43:20,578 - money_bot - INFO - Generated 3 charts
+2025-07-22 20:43:23,463 - money_bot - INFO - ✅ Monthly analysis completed for 7/2025
+2025-07-22 20:57:28,575 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-22 20:57:28,576 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-22 20:57:28,576 - discord.client - INFO - logging in using static token
+2025-07-22 20:57:29,571 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: dc68a242074034ae70f21c5fc57e77ee).
+2025-07-22 20:57:31,578 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-22 20:57:31,578 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-22 20:57:31,821 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-22 20:57:31,821 - money_bot - INFO - 📅 Monthly check task started
+2025-07-22 20:57:39,764 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/databases/237d42a1faf5802496cadffa99784181/query "HTTP/1.1 200 OK"
+2025-07-22 20:57:39,766 - money_bot - INFO - Retrieved 3 expenses for 7/2025
+2025-07-22 20:57:41,757 - money_bot - INFO - Generated 3 charts
+2025-07-22 20:57:44,523 - money_bot - INFO - ✅ Monthly analysis completed for 7/2025
+2025-07-22 21:59:37,541 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-22 21:59:37,542 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-22 21:59:37,542 - discord.client - INFO - logging in using static token
+2025-07-22 21:59:38,644 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b4986854d0a18fc63f188c854a47bbba).
+2025-07-22 21:59:40,646 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-22 21:59:40,646 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-22 21:59:40,911 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-22 21:59:40,911 - money_bot - INFO - 📅 Monthly check task started
+2025-07-22 22:51:12,964 - money_bot - INFO - Processing text from Marc: 10€ Mittagessen...
+2025-07-22 22:51:16,088 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 22:51:16,623 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 10,
+    "category": "Food",
+    "description": "Mittagessen"
+}
+```
+2025-07-22 22:51:16,623 - money_bot - INFO - Saving to Notion: {'amount': 10.0, 'category': 'Food', 'description': 'Mittagessen', 'author': 'Marc', 'type': 'text'}
+2025-07-22 22:51:17,844 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-22 22:51:17,844 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-23 01:02:04,165 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 01:33:19,482 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 01:57:23,547 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 03:42:32,568 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 04:33:32,899 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 07:32:11,564 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b4986854d0a18fc63f188c854a47bbba.
+2025-07-23 08:08:41,392 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-23 08:08:41,393 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-23 08:08:41,393 - discord.client - INFO - logging in using static token
+2025-07-23 08:08:42,239 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a1027614747d6347bb07840d3b05c293).
+2025-07-23 08:08:44,243 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-23 08:08:44,243 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-23 08:08:44,451 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-23 08:08:44,451 - money_bot - INFO - 📅 Monthly check task started
+2025-07-23 11:15:35,449 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1027614747d6347bb07840d3b05c293.
+2025-07-23 23:49:46,927 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-23 23:49:46,928 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-23 23:49:46,929 - discord.client - INFO - logging in using static token
+2025-07-23 23:49:47,870 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1b95894a8a869b3b06e88f83ae007eb5).
+2025-07-23 23:49:50,363 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-23 23:49:50,364 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-23 23:49:50,661 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-23 23:49:50,662 - money_bot - INFO - 📅 Monthly check task started
+2025-07-23 23:57:40,572 - money_bot - INFO - Processing text from Marc: 8.9 Döner...
+2025-07-23 23:57:43,265 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 23:57:43,661 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 8.9,
+    "category": "Food",
+    "description": "Döner"
+}
+```
+2025-07-23 23:57:43,661 - money_bot - INFO - Saving to Notion: {'amount': 8.9, 'category': 'Food', 'description': 'Döner', 'author': 'Marc', 'type': 'text'}
+2025-07-23 23:57:50,595 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-23 23:57:50,596 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-23 23:58:02,137 - money_bot - INFO - Processing text from Marc: 6€ Pizza...
+2025-07-23 23:58:04,710 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 23:58:05,213 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 6,
+    "category": "Food",
+    "description": "Pizza"
+}
+```
+2025-07-23 23:58:05,214 - money_bot - INFO - Saving to Notion: {'amount': 6.0, 'category': 'Food', 'description': 'Pizza', 'author': 'Marc', 'type': 'text'}
+2025-07-23 23:58:05,740 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-23 23:58:05,741 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-23 23:58:14,120 - money_bot - INFO - Processing text from Marc: 16€ Sozialleben Mac...
+2025-07-23 23:58:16,619 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 23:58:17,192 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 16,
+    "category": "Entertainment",
+    "description": "Social life expense at Mac"
+}
+```
+2025-07-23 23:58:17,192 - money_bot - INFO - Saving to Notion: {'amount': 16.0, 'category': 'Entertainment', 'description': 'Social life expense at Mac', 'author': 'Marc', 'type': 'text'}
+2025-07-23 23:58:17,743 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-23 23:58:17,744 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-24 01:32:36,244 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 1b95894a8a869b3b06e88f83ae007eb5.
+2025-07-25 11:00:17,500 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-25 11:00:17,501 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-25 11:00:17,502 - discord.client - INFO - logging in using static token
+2025-07-25 11:00:18,858 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fd0f5c66a3ad7d56c80ff3c244f3c53a).
+2025-07-25 11:00:20,862 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-25 11:00:20,862 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-25 11:00:21,161 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-25 11:00:21,161 - money_bot - INFO - 📅 Monthly check task started
+2025-07-25 11:01:27,623 - money_bot - INFO - Processing text from Marc: 3 € essen...
+2025-07-25 11:01:31,737 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:01:51,007 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 850, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 675, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 711, in process_money_entry
+    analysis = await MoneyAnalyzer.analyze_text(message.content, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 91, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:01:56,960 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 3,
+    "category": "Food",
+    "description": "essen"
+}
+```
+2025-07-25 11:01:56,961 - money_bot - INFO - Saving to Notion: {'amount': 3.0, 'category': 'Food', 'description': 'essen', 'author': 'Marc', 'type': 'text'}
+2025-07-25 11:02:00,924 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:02:00,925 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:02:00,928 - discord.client - ERROR - Attempting a reconnect in 1.46s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 704, in connect
+    await self.ws.poll_event()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 627, in poll_event
+    await self.received_message(msg.data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 532, in received_message
+    await self.send_as_json(beat)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 663, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 659, in send
+    await self.socket.send_str(data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/_websocket/writer.py", line 126, in send_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2025-07-25 11:02:02,699 - discord.gateway - INFO - Shard ID None has successfully RESUMED session fd0f5c66a3ad7d56c80ff3c244f3c53a.
+2025-07-25 11:03:30,121 - money_bot - INFO - Processing text from Marc: 5 € sport...
+2025-07-25 11:03:40,447 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:04:13,893 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 5,
+    "category": "Sports",
+    "description": "sport"
+}
+```
+2025-07-25 11:04:13,893 - money_bot - INFO - Saving to Notion: {'amount': 5.0, 'category': 'Sports', 'description': 'sport', 'author': 'Marc', 'type': 'text'}
+2025-07-25 11:04:14,519 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:04:14,520 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:18:55,090 - money_bot - INFO - Processing text from Marc: 1 € sport...
+2025-07-25 11:18:56,657 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:18:57,166 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 1,
+    "category": "Sports",
+    "description": "Sport-related expense"
+}
+```
+2025-07-25 11:18:57,166 - money_bot - INFO - Saving to Notion: {'amount': 1.0, 'category': 'Sports', 'description': 'Sport-related expense', 'author': 'Marc', 'type': 'text'}
+2025-07-25 11:19:00,843 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:19:00,844 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:19:01,070 - discord.http - WARNING - We are being rate limited. PUT https://discord.com/api/v10/channels/1396903503624016024/messages/1398233041339416637/reactions/%E2%9C%85/@me responded with 429. Retrying in 0.30 seconds.
+2025-07-25 11:20:06,914 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-25 11:20:06,915 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-25 11:20:06,916 - discord.client - INFO - logging in using static token
+2025-07-25 11:20:07,924 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b6e126e7007fa4ff06ad2b3c8e75827).
+2025-07-25 11:20:09,928 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-25 11:20:09,928 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-25 11:20:10,182 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-25 11:20:10,183 - money_bot - INFO - 📅 Monthly check task started
+2025-07-25 11:20:15,537 - money_bot - INFO - Processing user message from: Marc
+2025-07-25 11:20:15,537 - money_bot - INFO - Processing text from Marc: 1 euro sport...
+2025-07-25 11:20:25,921 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:20:58,994 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 874, in <module>
+    logger.error("❌ NOTION_TOKEN not found in environment!")
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    try:
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 730, in process_money_entry
+    return
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 92, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:21:08,995 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 874, in <module>
+    logger.error("❌ DISCORD_TOKEN not found in environment!")
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 730, in process_money_entry
+    await message.reply(f"💰 Saved: €{analysis['amount']:.2f} - {analysis['category']}")
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 92, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:21:15,904 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 1,
+    "category": "Sports",
+    "description": "Sport-related expense"
+}
+```
+2025-07-25 11:21:15,905 - money_bot - INFO - Saving to Notion: {'amount': 1.0, 'category': 'Sports', 'description': 'Sport-related expense', 'author': 'Marc', 'type': 'text'}
+2025-07-25 11:21:18,999 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 874, in <module>
+    logger.error("❌ DISCORD_TOKEN not found in environment!")
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 734, in process_money_entry
+    return
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 270, in save_money_entry
+    new_page = notion.pages.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/notion_client/api_endpoints.py", line 227, in create
+    return self.parent.request(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/notion_client/client.py", line 191, in request
+    response = self.client.send(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:21:26,314 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:21:26,315 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:21:26,626 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 7b6e126e7007fa4ff06ad2b3c8e75827.
+2025-07-25 11:24:36,117 - money_bot - INFO - Processing webhook message from: Marc Baumholz Money Webhook
+2025-07-25 11:24:36,117 - money_bot - INFO - Processing image from Marc Baumholz Money Webhook
+2025-07-25 11:24:49,950 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:24:52,637 - money_bot - INFO - AI Image Analysis: Since I don't have the ability to analyze images, I can't extract the requested information from the image you're referring to. However, here's an example of how the JSON response would look if the data were available:
+
+```json
+{
+    "amount": 0,
+    "category": "",
+    "description": ""
+}
+```
+
+If you can provide the text or details from the image, I can help format it into the requested JSON structure. Let me know how you'd like to proceed!
+2025-07-25 11:24:53,144 - money_bot - INFO - Processing text from Marc Baumholz Money Webhook: 2€...
+2025-07-25 11:24:55,083 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:24:57,150 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 2,
+    "category": "Unknown",
+    "description": "No description provided"
+}
+```
+2025-07-25 11:24:57,151 - money_bot - INFO - Saving to Notion: {'amount': 2.0, 'category': 'Unknown', 'description': 'No description provided', 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-07-25 11:24:57,707 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:24:57,708 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:25:55,245 - money_bot - INFO - Processing webhook message from: Marc Baumholz Money Webhook
+2025-07-25 11:25:55,245 - money_bot - INFO - Processing text from Marc Baumholz Money Webhook: 6€ Sport...
+2025-07-25 11:25:57,723 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:25:58,000 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 6,
+    "category": "Sports",
+    "description": "Sport-related expense"
+}
+```
+2025-07-25 11:25:58,000 - money_bot - INFO - Saving to Notion: {'amount': 6.0, 'category': 'Sports', 'description': 'Sport-related expense', 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-07-25 11:26:00,266 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:26:00,267 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-25 11:31:22,095 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-25 11:31:22,096 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-25 11:31:22,097 - discord.client - INFO - logging in using static token
+2025-07-25 11:31:24,398 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7a2855488fdd882bbe9d00c4b395b8e8).
+2025-07-25 11:31:26,419 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-25 11:31:26,419 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-25 11:31:26,648 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-25 11:31:26,648 - money_bot - INFO - 📅 Monthly check task started

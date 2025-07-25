@@ -1,0 +1,37 @@
+# LinkedIn Network Analyzer Bot Environment Configuration
+
+# Discord Bot Configuration
+DISCORD_TOKEN=your_discord_bot_token_here
+LINKEDIN_CHANNEL_ID=your_linkedin_channel_id_here
+
+# Notion Integration
+NOTION_TOKEN=your_notion_integration_token_here
+LINKEDIN_CONTACTS_DB_ID=your_linkedin_contacts_database_id_here
+
+# OpenRouter Integration (for AI analysis)
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+# Instructions:
+# 1. Copy this file to .env in the main discord directory
+# 2. Replace the placeholder values with your actual credentials
+# 
+# Discord Setup:
+# - Get bot token from: https://discord.com/developers/applications
+# - Get channel ID by right-clicking on Discord channel and selecting "Copy ID"
+# - Invite bot with permissions: Send Messages, Embed Links, Attach Files
+#
+# Notion Setup:
+# - Create integration at: https://www.notion.so/my-integrations
+# - Create a new database or use the bot command to auto-create
+# - Share the database with your integration
+# - Copy the database ID from the URL
+#
+# OpenRouter Setup:
+# - Get API key from: https://openrouter.ai/keys (free tier available)
+# - Used for AI-powered contact analysis and categorization
+#
+# LinkedIn Data Export:
+# - Go to LinkedIn Settings & Privacy
+# - Data privacy → Get a copy of your data
+# - Select "Connections" and download CSV
+# - Upload CSV file for analysis

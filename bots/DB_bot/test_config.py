@@ -1,1 +1,0 @@
-import os; from dotenv import load_dotenv; env_path = os.path.join(os.path.dirname(__file__), "../../.env"); load_dotenv(env_path); DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", ""); print("Token present:", bool(DISCORD_TOKEN))

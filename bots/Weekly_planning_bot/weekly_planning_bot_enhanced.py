@@ -85,41 +85,10 @@ async def on_ready():
         weekly_plan_reminder.start()
         analytics_snapshot.start()
         
-        # Send welcome message
+        # Send startup message
         channel = bot.get_channel(WEEKLY_PLANNING_CHANNEL_ID)
         if channel:
-            embed = discord.Embed(
-                title="🎉 Enhanced Weekly Planning Bot Online!",
-                description="Your upgraded planning assistant is ready with new features:",
-                color=discord.Color.green()
-            )
-            
-            embed.add_field(
-                name="🆕 New Features",
-                value="• 📊 Advanced analytics with charts\n"
-                      "• 🎮 Interactive task management\n"
-                      "• 💾 Persistent data storage\n"
-                      "• 📅 Google Calendar integration\n"
-                      "• 📈 Productivity trends & insights",
-                inline=False
-            )
-            
-            embed.add_field(
-                name="🎯 Enhanced Commands",
-                value="`!plan` - Enhanced weekly planning\n"
-                      "`!tasks` - Interactive task management\n"
-                      "`!analytics` - Advanced productivity insights\n"
-                      "`!calendar` - Calendar integration\n"
-                      "`!help enhanced` - Full command list",
-                inline=False
-            )
-            
-            embed.set_footer(text="💡 Try !analytics chart to see your productivity trends!")
-            
-            await channel.send(embed=embed)
-            
-            # Generate and post a sample enhanced plan
-            await post_enhanced_sample_plan(channel)
+            await channel.send("🟢 **Enhanced Bot is running!** Ready with task management, analytics & calendar sync. Type `!plan` to get started.")
             
         logger.info("🎉 Enhanced Weekly Planning Bot is ready!")
         

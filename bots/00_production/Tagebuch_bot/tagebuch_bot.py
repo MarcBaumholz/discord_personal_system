@@ -17,7 +17,7 @@ from notion_manager import NotionManager
 from text_processor import TextProcessor
 from scheduler import ReminderScheduler
 
-env_path = os.path.join(os.path.dirname(__file__), '.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Configuration
@@ -70,6 +70,32 @@ async def on_ready():
         scheduler.start_scheduler()
         
         logger.info("✅ All components initialized successfully")
+        
+        # Send startup message to Discord channel
+        try:
+            channel = bot.get_channel(TAGEBUCH_CHANNEL_ID)
+            if channel:
+                startup_message = (
+                    "📔 **Tagebuch Bot ist online!** 🤖\n\n"
+                    "Ich helfe dir beim Tagebuch schreiben! Das kann ich:\n"
+                    "• ✍️ Automatisch Tagebucheinträge erkennen und speichern\n"
+                    "• 📝 Intelligente Titel für deine Einträge generieren\n"
+                    "• 💾 Direkt in deine Notion-Datenbank speichern\n"
+                    "• ⏰ Tägliche Erinnerungen um 22:00 Uhr senden\n"
+                    "• 🔄 Automatische Textformatierung für Notion\n\n"
+                    "**Befehle:**\n"
+                    "• `!tagebuch_help` - Detaillierte Hilfe anzeigen\n"
+                    "• `!tagebuch_test` - Test-Eintrag erstellen\n"
+                    "• `!tagebuch_reminder` - Test-Erinnerung senden\n\n"
+                    "Schreibe einfach deine Gedanken in diesen Chat!\n"
+                    "Ich erkenne automatisch Tagebucheinträge und speichere sie."
+                )
+                await channel.send(startup_message)
+                logger.info("✅ Startup notification sent to tagebuch channel")
+            else:
+                logger.error(f"Could not find channel with ID {TAGEBUCH_CHANNEL_ID}")
+        except Exception as e:
+            logger.error(f"❌ Error sending startup notification: {e}")
         
     except Exception as e:
         logger.error(f"❌ Error during initialization: {e}")
