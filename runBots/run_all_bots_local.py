@@ -15,20 +15,18 @@ def discover_bots():
     """Automatically discover all bot files in the bots directory"""
     # Use curated list of known bots to avoid false positives
     known_bots = [
-        {"name": "Calories Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/Calories_bot", "calories_bot.py")},
-        {"name": "Health Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/health_bot", "health_bot.py")},
-        {"name": "Decision Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/decision_bot", "decision_bot.py")},
-        {"name": "Erinnerungen Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/Erinnerungen_bot", "erinnerungen_bot.py")},
-        {"name": "Tagebuch Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/Tagebuch_bot", "tagebuch_bot.py")},
-        {"name": "Preisvergleich Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/preisvergleich_bot", "preisvergleich_bot.py")},
-        {"name": "Meal Plan Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/meal_plan_bot", "meal_plan_bot.py")},
-        {"name": "Weekly Todo Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/weekly_todo_bot", "weekly_todo_bot.py")},
-        {"name": "Money Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/money_bot-1", "bot.py")},
-        {"name": "YouTube Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/youtube_bot", "youtube_bot.py")},
-        {"name": "Learning Bot", "path": os.path.join("/home/pi/Documents/discord/bots/learning_bot", "learning_bot.py")},
-        {"name": "LinkedIn Network Analyzer", "path": os.path.join("/home/pi/Documents/discord/bots/linkedin_bot", "linkedin_bot.py")},
-        # {"name": "Personal RSS Bot", "path": os.path.join("/home/pi/Documents/discord/bots/personal_RSS_bot/src", "start_bot.py")},
-        {"name": "Weekly Planning Bot", "path": os.path.join("/home/pi/Documents/discord/bots/Weekly_planning_bot", "weekly_planning_bot.py")},
+        {"name": "Calories Bot", "path": os.path.join("bots", "00_production", "Calories_bot", "calories_bot.py")},
+        {"name": "Health Bot", "path": os.path.join("bots", "00_production", "health_bot", "health_bot.py")},
+        {"name": "Decision Bot", "path": os.path.join("bots", "00_production", "decision_bot", "decision_bot.py")},
+        {"name": "DB Bot", "path": os.path.join("bots", "00_improve", "DB_bot", "bot.py")},
+        {"name": "Erinnerungen Bot", "path": os.path.join("bots", "00_production", "Erinnerungen_bot", "erinnerungen_bot.py")},
+        {"name": "Learning Bot", "path": os.path.join("bots", "learning_bot", "learning_bot.py")},
+        {"name": "Personal RSS Bot", "path": os.path.join("bots", "personal_RSS_bot", "src", "main.py")},
+        {"name": "Tagebuch Bot", "path": os.path.join("bots", "00_production", "Tagebuch_bot", "tagebuch_bot.py")},
+        {"name": "Weekly Planning Bot", "path": os.path.join("bots", "Weekly_planning_bot", "weekly_planning_bot.py")},
+        {"name": "Preisvergleich Bot", "path": os.path.join("bots", "00_production", "preisvergleich_bot", "preisvergleich_bot.py")},
+        {"name": "Meal Plan Bot", "path": os.path.join("bots", "00_production", "meal_plan_bot", "meal_plan_bot.py")},
+        {"name": "Weekly Todo Bot", "path": os.path.join("bots", "00_production", "weekly_todo_bot", "weekly_todo_bot.py")}
     ]
     
     # Add directory information for each bot
@@ -47,8 +45,8 @@ def setup_logging():
     """Setup logging configuration"""
     try:
         # Try to create logs directory and set up file logging
-        os.makedirs('/home/pi/Documents/discord/runBots/logs', exist_ok=True)
-        log_file = '/home/pi/Documents/discord/runBots/logs/bot_runner.log'
+        os.makedirs('/home/pi/Documents/discord/logs', exist_ok=True)
+        log_file = '/home/pi/Documents/discord/logs/bot_runner.log'
         
         # Check if we can write to the log file
         with open(log_file, 'a') as f:
@@ -101,7 +99,7 @@ def update_status_file():
     """Update the JSON status file for dashboard consumption"""
     try:
         # Create data directory if it doesn't exist
-        os.makedirs('/home/pi/Documents/discord/runBots/data', exist_ok=True)
+        os.makedirs('/home/pi/Documents/discord/data', exist_ok=True)
         
         status_data = {
             "timestamp": datetime.now().isoformat(),
@@ -156,7 +154,7 @@ def update_status_file():
             status_data["bots"].append(bot_data)
         
         # Write to status file
-        with open('/home/pi/Documents/discord/runBots/data/bot_status.json', 'w') as f:
+        with open('/home/pi/Documents/discord/data/bot_status.json', 'w') as f:
             json.dump(status_data, f, indent=2)
         
         return status_data
@@ -227,7 +225,7 @@ def start_bots():
     
     # Log file logging status
     if file_logging_available:
-        logger.info("✅ File logging enabled: /home/pi/Documents/discord/runBots/logs/bot_runner.log")
+        logger.info("✅ File logging enabled: /home/pi/Documents/discord/logs/bot_runner.log")
     else:
         logger.info("⚠️ File logging disabled - using console only")
     
@@ -247,7 +245,7 @@ def start_bots():
         try:
             # Create a new process for each bot with proper environment
             env = os.environ.copy()
-            env['PYTHONPATH'] = '/home/pi/Documents/discord/runBots'
+            env['PYTHONPATH'] = '/home/pi/Documents/discord'
             env['PYTHONUNBUFFERED'] = '1'
             # Add bot startup environment variable
             env['BOT_STARTUP_MESSAGE'] = 'true'
@@ -257,9 +255,9 @@ def start_bots():
             # Determine working directory based on bot location
             bot_dir = os.path.dirname(bot['path'])
             if bot_dir:
-                working_dir = os.path.join('/home/pi/Documents/discord/runBots', bot_dir)
+                working_dir = os.path.join('/home/pi/Documents/discord', bot_dir)
             else:
-                working_dir = '/home/pi/Documents/discord/runBots'
+                working_dir = '/home/pi/Documents/discord'
             
             process = subprocess.Popen(
                 [sys.executable, bot['path']], 
@@ -289,7 +287,7 @@ def start_bots():
     
     # Create health check file
     try:
-        with open('/home/pi/Documents/discord/runBots/data/bots_running', 'w') as f:
+        with open('/tmp/bots_running', 'w') as f:
             f.write(f'running:{successful_starts}/{len(available_bots)}:{datetime.now().isoformat()}')
         logger.info("✅ Health check file created")
     except Exception as e:
@@ -328,36 +326,12 @@ def monitor_bots():
                     logger.warning(f"Bot {failed_bot['name']} (PID {failed_bot['process'].pid}) has stopped")
                     # Remove from active processes
                     processes.remove(failed_bot)
-
-                    # Retry starting the bot
-                    logger.info(f"Retrying {failed_bot['name']}...")
-                    try:
-                        process = subprocess.Popen(
-                            [sys.executable, failed_bot['path']], 
-                            stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE,
-                            universal_newlines=True,
-                            env=os.environ.copy(),
-                            cwd=failed_bot['working_dir']
-                        )
-
-                        processes.append({
-                            "name": failed_bot['name'], 
-                            "process": process,
-                            "path": failed_bot['path'],
-                            "start_time": datetime.now(),
-                            "working_dir": failed_bot['working_dir']
-                        })
-
-                        logger.info(f"✅ {failed_bot['name']} restarted with PID {process.pid}")
-                    except Exception as e:
-                        logger.error(f"❌ Error restarting {failed_bot['name']}: {e}")
-
+            
             # Update status file
             update_status_file()
             
             # Update health check
-            with open('/home/pi/Documents/discord/runBots/data/bots_running', 'w') as f:
+            with open('/tmp/bots_running', 'w') as f:
                 active_count = len([p for p in processes if p["process"].poll() is None])
                 f.write(f'running:{active_count}/{len(bots)}:{datetime.now().isoformat()}')
             
@@ -406,14 +380,14 @@ def stop_bots():
     
     # Remove health check file
     try:
-        os.remove('/home/pi/Documents/discord/runBots/data/bots_running')
+        os.remove('/tmp/bots_running')
         logger.info("✅ Health check file removed")
     except:
         pass
     
     # Remove status file
     try:
-        os.remove('/home/pi/Documents/discord/runBots/data/bot_status.json')
+        os.remove('/home/pi/Documents/discord/data/bot_status.json')
         logger.info("✅ Status file removed")
     except:
         pass
@@ -446,4 +420,4 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Unexpected error: {e}")
         stop_bots()
-        sys.exit(1)
+        sys.exit(1) 

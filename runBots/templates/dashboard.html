@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .status-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            margin-bottom: 1rem;
+        }
+        
+        .status-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .status-running {
+            border-left: 5px solid #28a745;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        }
+        
+        .status-stopped {
+            border-left: 5px solid #ffc107;
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        }
+        
+        .status-failed {
+            border-left: 5px solid #dc3545;
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+        }
+        
+        .status-unknown {
+            border-left: 5px solid #6c757d;
+            background: linear-gradient(135deg, #e2e3e5, #d6d8db);
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .metric-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .last-update {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .bot-name {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .bot-details {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .indicator-running { background-color: #28a745; }
+        .indicator-stopped { background-color: #ffc107; }
+        .indicator-failed { background-color: #dc3545; }
+        .indicator-unknown { background-color: #6c757d; }
+        
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .updating {
+            animation: pulse 2s infinite;
+        }
+        
+        .system-info {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-0">
+                        <i class="fas fa-robot me-3"></i>
+                        Discord Bot Dashboard
+                    </h1>
+                    <p class="mb-0 mt-2">Real-time monitoring of all Discord bots</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="last-update text-light" id="lastUpdate">
+                        <i class="fas fa-clock me-1"></i>
+                        Connecting...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="refresh-indicator">
+        <div class="badge bg-success" id="connectionStatus">
+            <i class="fas fa-wifi me-1"></i>
+            Connected
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- System Overview -->
+        <div class="system-info">
+            <h4 class="mb-3">
+                <i class="fas fa-server me-2"></i>
+                System Overview
+            </h4>
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-number text-primary" id="totalBots">12</div>
+                        <div class="metric-label">Total Bots</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-number text-success" id="runningCount">0</div>
+                        <div class="metric-label">Running</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-number text-warning" id="stoppedCount">0</div>
+                        <div class="metric-label">Stopped</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-number text-danger" id="failedCount">0</div>
+                        <div class="metric-label">Failed</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="bot-details">
+                        <i class="fas fa-clock me-1"></i>
+                        <strong>System Uptime:</strong> <span id="systemUptime">Starting...</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bot-details">
+                        <i class="fas fa-calendar me-1"></i>
+                        <strong>Started:</strong> <span id="systemStartTime">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Status Grid -->
+        <h4 class="mb-3">
+            <i class="fas fa-list me-2"></i>
+            Bot Status
+        </h4>
+        <div class="row" id="botGrid">
+            <!-- Bot cards will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        class BotDashboard {
+            constructor() {
+                this.eventSource = null;
+                this.isConnected = false;
+                this.retryCount = 0;
+                this.maxRetries = 5;
+                this.retryDelay = 5000;
+                
+                this.initializeEventSource();
+                this.updateConnectionStatus();
+            }
+            
+            initializeEventSource() {
+                try {
+                    this.eventSource = new EventSource('/api/events');
+                    
+                    this.eventSource.onopen = () => {
+                        console.log('Connected to bot status stream');
+                        this.isConnected = true;
+                        this.retryCount = 0;
+                        this.updateConnectionStatus();
+                    };
+                    
+                    this.eventSource.onmessage = (event) => {
+                        try {
+                            const data = JSON.parse(event.data);
+                            this.updateDashboard(data);
+                        } catch (error) {
+                            console.error('Error parsing status data:', error);
+                        }
+                    };
+                    
+                    this.eventSource.onerror = (error) => {
+                        console.error('EventSource error:', error);
+                        this.isConnected = false;
+                        this.updateConnectionStatus();
+                        
+                        if (this.retryCount < this.maxRetries) {
+                            this.retryCount++;
+                            setTimeout(() => {
+                                console.log(`Retrying connection (${this.retryCount}/${this.maxRetries})...`);
+                                this.eventSource.close();
+                                this.initializeEventSource();
+                            }, this.retryDelay);
+                        }
+                    };
+                } catch (error) {
+                    console.error('Failed to initialize EventSource:', error);
+                    this.fallbackToPolling();
+                }
+            }
+            
+            fallbackToPolling() {
+                console.log('Falling back to polling mode');
+                setInterval(() => {
+                    fetch('/api/status')
+                        .then(response => response.json())
+                        .then(data => this.updateDashboard(data))
+                        .catch(error => console.error('Polling error:', error));
+                }, 5000);
+            }
+            
+            updateConnectionStatus() {
+                const statusElement = document.getElementById('connectionStatus');
+                if (this.isConnected) {
+                    statusElement.className = 'badge bg-success';
+                    statusElement.innerHTML = '<i class="fas fa-wifi me-1"></i>Connected';
+                } else {
+                    statusElement.className = 'badge bg-danger';
+                    statusElement.innerHTML = '<i class="fas fa-wifi-slash me-1"></i>Disconnected';
+                }
+            }
+            
+            updateDashboard(data) {
+                // Update metrics
+                document.getElementById('totalBots').textContent = data.total_bots || 0;
+                document.getElementById('runningCount').textContent = data.running_count || 0;
+                document.getElementById('stoppedCount').textContent = data.stopped_count || 0;
+                document.getElementById('failedCount').textContent = data.failed_count || 0;
+                document.getElementById('systemUptime').textContent = data.system_uptime || 'Unknown';
+                
+                // Update system start time
+                if (data.system_start_time) {
+                    const startTime = new Date(data.system_start_time);
+                    document.getElementById('systemStartTime').textContent = startTime.toLocaleString();
+                }
+                
+                // Update last update time
+                const updateTime = new Date(data.timestamp || Date.now());
+                document.getElementById('lastUpdate').innerHTML = 
+                    `<i class="fas fa-clock me-1"></i>Last update: ${updateTime.toLocaleTimeString()}`;
+                
+                // Update bot grid
+                this.updateBotGrid(data.bots || []);
+            }
+            
+            updateBotGrid(bots) {
+                const grid = document.getElementById('botGrid');
+                grid.innerHTML = '';
+                
+                bots.forEach(bot => {
+                    const botCard = this.createBotCard(bot);
+                    grid.appendChild(botCard);
+                });
+            }
+            
+            createBotCard(bot) {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-4';
+                
+                const statusClass = `status-${bot.status}`;
+                const indicatorClass = `indicator-${bot.status}`;
+                
+                const statusIcon = {
+                    'running': 'fas fa-play-circle text-success',
+                    'stopped': 'fas fa-pause-circle text-warning',
+                    'failed': 'fas fa-times-circle text-danger',
+                    'unknown': 'fas fa-question-circle text-secondary'
+                }[bot.status] || 'fas fa-question-circle text-secondary';
+                
+                col.innerHTML = `
+                    <div class="status-card ${statusClass} card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="bot-name mb-0">${bot.name}</h6>
+                                <i class="${statusIcon}"></i>
+                            </div>
+                            
+                            <div class="bot-details mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <span>Status:</span>
+                                    <span>
+                                        <span class="status-indicator ${indicatorClass}"></span>
+                                        ${bot.status.charAt(0).toUpperCase() + bot.status.slice(1)}
+                                    </span>
+                                </div>
+                                
+                                ${bot.pid ? `
+                                <div class="d-flex justify-content-between">
+                                    <span>PID:</span>
+                                    <span>${bot.pid}</span>
+                                </div>
+                                ` : ''}
+                                
+                                <div class="d-flex justify-content-between">
+                                    <span>Uptime:</span>
+                                    <span>${bot.uptime}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bot-details" style="font-size: 0.75rem;">
+                                <div class="text-truncate" title="${bot.path}">
+                                    <i class="fas fa-folder me-1"></i>
+                                    ${bot.path.split('/').pop()}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                return col;
+            }
+        }
+        
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            new BotDashboard();
+        });
+    </script>
+</body>
+</html> 

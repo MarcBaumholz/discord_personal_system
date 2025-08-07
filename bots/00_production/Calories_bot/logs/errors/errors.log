@@ -1,0 +1,11 @@
+2025-08-07 22:33:25,359 | ERROR | ❌ NOTION_SAVE_FAILED: Failed to save analysis to Notion
+2025-08-07 22:33:25,359 | ERROR | Context: {'user': 'Marc', 'food': 'Panini Sandwich and French Fries'}
+2025-08-07 22:48:11,751 | ERROR | ❌ WEEKLY_COMMAND_ERROR: name 'timedelta' is not defined
+2025-08-07 22:48:11,751 | ERROR | Context: {'user': 'Marc'}
+2025-08-07 22:48:17,111 | ERROR | ❌ NO_DATA_FOUND: No calorie data found for 7/2025
+2025-08-07 22:48:17,111 | ERROR | Context: {'user': 'Marc', 'period': '7/2025'}
+2025-08-07 22:52:12,554 | ERROR | ❌ WEEKLY_COMMAND_ERROR: name 'timedelta' is not defined
+2025-08-07 22:52:12,554 | ERROR | Context: {'user': 'Marc'}
+2025-08-07 23:06:10,552 | ERROR | ❌ NO_DATA_FOUND: No calorie data found for 7/2025
+2025-08-07 23:06:10,552 | ERROR | Context: {'user': 'Marc', 'period': '7/2025'}
+2025-08-07 23:11:51,795 | ERROR | Failed to write to JSON file logs/monthly_reports/reports_0_00.json: keys must be str, int, float, bool or None, not date

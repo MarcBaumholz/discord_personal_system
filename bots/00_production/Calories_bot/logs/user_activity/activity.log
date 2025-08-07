@@ -1,0 +1,21 @@
+2025-08-07 22:33:13,248 | ⚡ Marc used command: upload_food_image in calories
+2025-08-07 22:33:25,358 | 🍽️ Marc analyzed food: Panini Sandwich and French Fries (650 kcal)
+2025-08-07 22:42:53,798 | ⚡ Marc Calories used command: upload_food_image in calories
+2025-08-07 22:46:20,562 | ⚡ Marc Calories used command: upload_food_image in calories
+2025-08-07 22:46:36,882 | 🍽️ Marc Calories analyzed food: Grilled Sandwich with French Fries and Bacon (750 kcal)
+2025-08-07 22:47:14,843 | ⚡ Marc used command: help_calories in calories
+2025-08-07 22:47:30,480 | ⚡ Marc used command: logs in calories
+2025-08-07 22:47:42,049 | ⚡ Marc used command: test_analysis in calories
+2025-08-07 22:48:11,751 | ⚡ Marc used command: weekly_nutrition in calories
+2025-08-07 22:48:16,559 | ⚡ Marc used command: month_command in calories
+2025-08-07 22:48:31,222 | ⚡ Marc used command: frequent_meals in calories
+2025-08-07 22:50:19,563 | ⚡ Marc used command: nutrition_today in calories
+2025-08-07 22:51:54,820 | ⚡ Marc used command: nutrition_today in calories
+2025-08-07 22:52:12,553 | ⚡ Marc used command: weekly_nutrition in calories
+2025-08-07 22:52:37,296 | ⚡ Marc used command: test_analysis in calories
+2025-08-07 22:53:22,598 | ⚡ Marc used command: frequent_meals in calories
+2025-08-07 23:05:51,864 | ⚡ Marc used command: nutrition_today in calories
+2025-08-07 23:05:57,051 | ⚡ Marc used command: weekly_summary in calories
+2025-08-07 23:06:09,811 | ⚡ Marc used command: month_command in calories
+2025-08-07 23:11:39,031 | ⚡ Marc used command: month_command in calories
+2025-08-07 23:11:51,781 | 📊 Unknown generated monthly report for 0/0

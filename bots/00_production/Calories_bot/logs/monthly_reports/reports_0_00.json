@@ -1,0 +1,46 @@
+[
+  {
+    "timestamp": "2025-08-07T23:11:51.781842",
+    "event": "monthly_report",
+    "success": true,
+    "stats": {
+      "username": "Marc",
+      "month": 8,
+      "year": 2025,
+      "total_calories": 750,
+      "average_daily": 750,
+      "max_daily": 750,
+      "min_daily": 750,
+      "days_tracked": 1
+    },
+    "meal_frequency": {
+      "total_meals": 1,
+      "unique_foods": 1,
+      "variety_score": 100.0,
+      "top_meals": [
+        [
+          "Grilled Sandwich with French Fries and Bacon",
+          1
+        ]
+      ],
+      "similar_meal_groups": {},
+      "most_repeated_meal": [
+        "Grilled Sandwich with French Fries and Bacon",
+        1
+      ]
+    },
+    "macro_analysis": {
+      "total_protein": 25,
+      "total_carbs": 80,
+      "total_fat": 35,
+      "total_calories": 750,
+      "avg_daily_protein": 25.0,
+      "avg_daily_carbs": 80.0,
+      "avg_daily_fat": 35.0,
+      "avg_daily_calories": 750.0,
+      "protein_percentage": 17.9,
+      "carbs_percentage": 57.1,
+      "fat_percentage": 25.0,
+      "days_tracked": 1,
+      "daily_breakdown": {
+        

@@ -13,12 +13,16 @@ from dotenv import load_dotenv
 import re
 
 # Load environment variables
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
+print(f"🔍 Loading .env from: {env_path}")
 load_dotenv(env_path)
 
 # Configuration
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 FOODIATE_DB_ID = os.getenv("FOODIATE_DB_ID", "20ed42a1faf5807497c2f350ff84ea8d")
+
+print(f"🔍 NOTION_TOKEN loaded: {'✅ Yes' if NOTION_TOKEN else '❌ No'}")
+print(f"🔍 FOODIATE_DB_ID: {FOODIATE_DB_ID}")
 
 # Initialize Notion client
 notion = NotionClient(auth=NOTION_TOKEN)
@@ -124,6 +128,24 @@ class CalorieDataExtractor:
                     if "confidence" in properties and properties["confidence"]["number"]:
                         confidence = properties["confidence"]["number"]
                     
+                    # Extract macronutrient data
+                    protein = 0.0
+                    if "Protein" in properties and properties["Protein"]["number"]:
+                        protein = properties["Protein"]["number"]
+                    
+                    carbohydrates = 0.0
+                    if "Carbs" in properties and properties["Carbs"]["number"]:
+                        carbohydrates = properties["Carbs"]["number"]
+                    
+                    fat = 0.0
+                    if "Fat" in properties and properties["Fat"]["number"]:
+                        fat = properties["Fat"]["number"]
+                    
+                    # Extract meal hash for similarity detection
+                    meal_hash = ""
+                    if "meal_hash" in properties and properties["meal_hash"]["rich_text"]:
+                        meal_hash = properties["meal_hash"]["rich_text"][0]["text"]["content"]
+                    
                     # Process the data
                     calories = self.extract_calories_from_text(calories_raw)
                     
@@ -133,9 +155,13 @@ class CalorieDataExtractor:
                             "date": datetime.fromisoformat(date_str).date(),
                             "food_name": food_name,
                             "calories": calories,
+                            "protein": protein,
+                            "carbohydrates": carbohydrates,
+                            "fat": fat,
                             "person": person,
                             "confidence": confidence,
-                            "calories_raw": calories_raw
+                            "calories_raw": calories_raw,
+                            "meal_hash": meal_hash
                         })
                     
                 except Exception as e:
@@ -250,6 +276,146 @@ class CalorieDataExtractor:
         except Exception as e:
             print(f"❌ Error calculating stats: {e}")
             return {}
+    
+    def get_meal_frequency_analysis(self, data: List[Dict[str, Any]], username: str) -> Dict[str, Any]:
+        """
+        Analyze meal frequency and repetition patterns
+        
+        Args:
+            data: List of food entries
+            username: Target username
+            
+        Returns:
+            Dictionary with meal frequency analysis
+        """
+        try:
+            # Filter data for the specific user
+            user_data = [entry for entry in data if entry.get("person") == username]
+            
+            if not user_data:
+                return {"error": "No data found for user"}
+            
+            # Count meal frequencies by name and hash
+            meal_counts = {}
+            meal_hashes = {}
+            
+            for entry in user_data:
+                food_name = entry.get("food_name", "Unknown")
+                meal_hash = entry.get("meal_hash", "")
+                
+                # Count by food name
+                if food_name in meal_counts:
+                    meal_counts[food_name] += 1
+                else:
+                    meal_counts[food_name] = 1
+                
+                # Count by meal hash (for similar meals)
+                if meal_hash and meal_hash in meal_hashes:
+                    meal_hashes[meal_hash]["count"] += 1
+                    meal_hashes[meal_hash]["names"].append(food_name)
+                elif meal_hash:
+                    meal_hashes[meal_hash] = {
+                        "count": 1,
+                        "names": [food_name],
+                        "representative_name": food_name
+                    }
+            
+            # Get top 10 most frequent meals
+            top_meals = sorted(meal_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+            
+            # Get similar meal groups (meals with same hash appearing more than once)
+            similar_meals = {
+                hash_val: data for hash_val, data in meal_hashes.items() 
+                if data["count"] > 1
+            }
+            
+            # Calculate variety metrics
+            total_meals = len(user_data)
+            unique_foods = len(meal_counts)
+            variety_score = (unique_foods / total_meals * 100) if total_meals > 0 else 0
+            
+            return {
+                "total_meals": total_meals,
+                "unique_foods": unique_foods,
+                "variety_score": round(variety_score, 1),
+                "top_meals": top_meals,
+                "similar_meal_groups": similar_meals,
+                "most_repeated_meal": top_meals[0] if top_meals else ("None", 0)
+            }
+            
+        except Exception as e:
+            print(f"❌ Error in meal frequency analysis: {e}")
+            return {"error": str(e)}
+    
+    def get_macronutrient_analysis(self, data: List[Dict[str, Any]], username: str) -> Dict[str, Any]:
+        """
+        Analyze macronutrient distribution and patterns
+        
+        Args:
+            data: List of food entries
+            username: Target username
+            
+        Returns:
+            Dictionary with macronutrient analysis
+        """
+        try:
+            # Filter data for the specific user
+            user_data = [entry for entry in data if entry.get("person") == username]
+            
+            if not user_data:
+                return {"error": "No data found for user"}
+            
+            # Calculate totals
+            total_protein = sum(entry.get("protein", 0) for entry in user_data)
+            total_carbs = sum(entry.get("carbohydrates", 0) for entry in user_data)
+            total_fat = sum(entry.get("fat", 0) for entry in user_data)
+            total_calories = sum(entry.get("calories", 0) for entry in user_data)
+            
+            # Calculate averages per day
+            unique_dates = len(set(entry.get("date") for entry in user_data))
+            avg_protein = total_protein / unique_dates if unique_dates > 0 else 0
+            avg_carbs = total_carbs / unique_dates if unique_dates > 0 else 0
+            avg_fat = total_fat / unique_dates if unique_dates > 0 else 0
+            avg_calories = total_calories / unique_dates if unique_dates > 0 else 0
+            
+            # Calculate macronutrient distribution percentages
+            total_macros = total_protein + total_carbs + total_fat
+            protein_pct = (total_protein / total_macros * 100) if total_macros > 0 else 0
+            carbs_pct = (total_carbs / total_macros * 100) if total_macros > 0 else 0
+            fat_pct = (total_fat / total_macros * 100) if total_macros > 0 else 0
+            
+            # Daily breakdowns
+            daily_macros = {}
+            for entry in user_data:
+                date = entry.get("date")
+                if date not in daily_macros:
+                    daily_macros[date] = {
+                        "protein": 0, "carbs": 0, "fat": 0, "calories": 0
+                    }
+                daily_macros[date]["protein"] += entry.get("protein", 0)
+                daily_macros[date]["carbs"] += entry.get("carbohydrates", 0)
+                daily_macros[date]["fat"] += entry.get("fat", 0)
+                daily_macros[date]["calories"] += entry.get("calories", 0)
+            
+            return {
+                "total_protein": round(total_protein, 1),
+                "total_carbs": round(total_carbs, 1),
+                "total_fat": round(total_fat, 1),
+                "total_calories": total_calories,
+                "avg_daily_protein": round(avg_protein, 1),
+                "avg_daily_carbs": round(avg_carbs, 1),
+                "avg_daily_fat": round(avg_fat, 1),
+                "avg_daily_calories": round(avg_calories, 1),
+                "protein_percentage": round(protein_pct, 1),
+                "carbs_percentage": round(carbs_pct, 1),
+                "fat_percentage": round(fat_pct, 1),
+                "days_tracked": unique_dates,
+                "daily_breakdown": daily_macros
+            }
+            
+        except Exception as e:
+            print(f"❌ Error in macronutrient analysis: {e}")
+            return {"error": str(e)}
 
 # Test function
 async def test_data_extraction():

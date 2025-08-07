@@ -616,3 +616,1170 @@ If you can provide the text or details from the image, I can help format it into
 2025-07-25 11:31:26,419 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
 2025-07-25 11:31:26,648 - money_bot - INFO - ✅ Startup notification sent to money channel
 2025-07-25 11:31:26,648 - money_bot - INFO - 📅 Monthly check task started
+2025-07-25 11:42:20,870 - money_bot - INFO - 📥 Processing message from: Marc (ID: 1398238937683853492)
+2025-07-25 11:42:20,870 - money_bot - INFO - 📝 Processing TEXT from Marc: 5 € sport...
+2025-07-25 11:42:23,137 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-25 11:42:23,137 - openai._base_client - INFO - Retrying request to /chat/completions in 0.484731 seconds
+2025-07-25 11:42:32,887 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 705, in process_money_entry
+    await process_text_entry(message, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 746, in process_text_entry
+    analysis = await MoneyAnalyzer.analyze_text(message.content, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 92, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:42:33,876 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:42:42,888 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 705, in process_money_entry
+    await process_text_entry(message, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 746, in process_text_entry
+    analysis = await MoneyAnalyzer.analyze_text(message.content, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 92, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:42:52,888 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 705, in process_money_entry
+    await process_text_entry(message, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 746, in process_text_entry
+    analysis = await MoneyAnalyzer.analyze_text(message.content, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 92, in analyze_text
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-25 11:58:34,515 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-25 11:58:34,516 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-25 11:58:34,517 - discord.client - INFO - logging in using static token
+2025-07-25 11:58:35,448 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fec008a2f6666212cebb5195d4595fb).
+2025-07-25 11:58:37,452 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-25 11:58:37,452 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-25 11:58:37,696 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-25 11:58:37,696 - money_bot - INFO - 📅 Monthly check task started
+2025-07-25 11:58:47,112 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1398243074257457193)
+2025-07-25 11:58:47,112 - money_bot - INFO - 📝 Processing TEXT from Marc Baumholz Money Webhook: 2€...
+2025-07-25 11:58:50,001 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:58:54,423 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 2,
+    "category": null,
+    "description": null
+}
+```
+2025-07-25 11:58:54,424 - money_bot - INFO - Saving to Notion: {'amount': 2.0, 'category': None, 'description': None, 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-07-25 11:58:54,424 - money_bot - ERROR - ❌ Error saving to Notion: 'NoneType' object is not subscriptable
+2025-07-25 11:59:22,169 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1398243221137526837)
+2025-07-25 11:59:22,169 - money_bot - INFO - 📝 Processing TEXT from Marc Baumholz Money Webhook: 2€ essen...
+2025-07-25 11:59:25,423 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-25 11:59:25,594 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 2,
+    "category": "Food",
+    "description": "essen"
+}
+```
+2025-07-25 11:59:25,594 - money_bot - INFO - Saving to Notion: {'amount': 2.0, 'category': 'Food', 'description': 'essen', 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-07-25 11:59:26,107 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-25 11:59:26,108 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-29 22:28:43,054 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-29 22:28:43,066 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-29 22:28:43,066 - discord.client - INFO - logging in using static token
+2025-07-29 22:28:44,453 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 89623e0083e194e1a8af5cf955bb1872).
+2025-07-29 22:28:46,457 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-29 22:28:46,457 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-29 22:28:46,860 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-29 22:28:46,860 - money_bot - INFO - 📅 Monthly check task started
+2025-07-29 22:29:50,274 - money_bot - INFO - 📥 Processing message from: Marc (ID: 1399851435230756936)
+2025-07-29 22:29:50,274 - money_bot - INFO - 📝 Processing TEXT from Marc: 75 eurp home assistant...
+2025-07-29 22:29:54,713 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-29 22:29:59,110 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 75,
+    "category": "Bills",
+    "description": "home assistant"
+}
+```
+2025-07-29 22:29:59,110 - money_bot - INFO - Saving to Notion: {'amount': 75.0, 'category': 'Bills', 'description': 'home assistant', 'author': 'Marc', 'type': 'text'}
+2025-07-29 22:29:59,702 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-07-29 22:29:59,702 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-07-29 22:35:22,233 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-29 22:35:22,234 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-29 22:35:22,234 - discord.client - INFO - logging in using static token
+2025-07-29 22:35:23,671 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d3e1b6ac15a3bc0f57ea54a31c06f76a).
+2025-07-29 22:35:25,675 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-29 22:35:25,675 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-29 22:35:25,902 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-29 22:35:25,902 - money_bot - INFO - 📅 Monthly check task started
+2025-07-29 22:35:51,602 - money_bot - INFO - 📥 Processing message from: Marc (ID: 1399852949899051240)
+2025-07-29 22:35:51,603 - money_bot - INFO - 🖼️ Processing IMAGE from Marc
+2025-07-29 22:35:57,289 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-29 22:36:14,435 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    await process_money_entry(message)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 702, in process_money_entry
+    await process_image_entry(message, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 722, in process_image_entry
+    analysis = await MoneyAnalyzer.analyze_image(attachment.url, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 148, in analyze_image
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-29 22:36:16,919 - money_bot - INFO - AI Image Analysis: Since I don't have the ability to analyze images, I can't extract the requested information from the image you're referring to. However, here's an example JSON response based on a hypothetical scenario:
+
+```json
+{
+    "amount": 0,
+    "category": "Unknown",
+    "description": "No image provided for analysis"
+}
+```
+
+If you'd like me to analyze an image, you would need to provide the image file or describe its contents in text form, and I can attempt to extract the relevant information based on your description. 
+
+For actual image analysis, you would typically need:
+1. To upload the image file
+2. Or provide a detailed text description of any visible financial information in the image
+
+Would you like to provide more details about the image?
+2025-07-29 23:02:42,890 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1399859707870580806)
+2025-07-29 23:02:42,890 - money_bot - INFO - 🖼️ Processing IMAGE from Marc Baumholz Money Webhook
+2025-07-29 23:02:43,103 - discord.http - WARNING - We are being rate limited. PUT https://discord.com/api/v10/channels/1396903503624016024/messages/1399859707870580806/reactions/%F0%9F%94%84/@me responded with 429. Retrying in 0.30 seconds.
+2025-07-29 23:02:57,907 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-29 23:03:15,692 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    if 'error' in report:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    def format_report_message(report: Dict[str, Any]) -> str:
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 702, in process_money_entry
+    message += "\n👥 **Spending by Person:**\n"
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 722, in process_image_entry
+    "• 📝 Analyze text messages for money amounts and categories\n"
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 148, in analyze_image
+    1. The total amount paid (in euros or convert to euros if different currency)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-29 23:03:25,693 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 886, in <module>
+    await ctx.send("❌ Month must be between 1 and 12")
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 681, in on_message
+    def format_report_message(report: Dict[str, Any]) -> str:
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 702, in process_money_entry
+    message += "\n👥 **Spending by Person:**\n"
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 722, in process_image_entry
+    "• 📝 Analyze text messages for money amounts and categories\n"
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 148, in analyze_image
+    1. The total amount paid (in euros or convert to euros if different currency)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-29 23:03:31,799 - money_bot - INFO - AI Image Analysis: Since I don't have access to the image you're referring to, I can't analyze it directly. However, here's an example of how the JSON response would look if the image contained a receipt for groceries:
+
+```json
+{
+    "amount": 12.50,
+    "category": "Food",
+    "description": "Groceries from local supermarket"
+}
+```
+
+If you'd like me to analyze a specific image, please upload it, and I can then extract the relevant information for you. Otherwise, here's a default response when no image is provided:
+
+```json
+{
+    "amount": 0,
+    "category": "Unknown",
+    "description": "No image provided for analysis"
+}
+```
+2025-07-29 23:03:31,799 - money_bot - ERROR - Error analyzing image: Extra data: line 6 column 1 (char 103)
+2025-07-29 23:03:31,802 - discord.client - ERROR - Attempting a reconnect in 0.55s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 704, in connect
+    await self.ws.poll_event()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 627, in poll_event
+    await self.received_message(msg.data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 532, in received_message
+    await self.send_as_json(beat)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 663, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 659, in send
+    await self.socket.send_str(data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/_websocket/writer.py", line 126, in send_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2025-07-29 23:03:32,682 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d3e1b6ac15a3bc0f57ea54a31c06f76a.
+2025-07-29 23:04:38,798 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-29 23:04:38,799 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-29 23:04:38,800 - discord.client - INFO - logging in using static token
+2025-07-29 23:04:43,057 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2025-07-29 23:04:48,565 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b76a7d2b451f55f0f16a11f1f975754f).
+2025-07-29 23:04:50,569 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-29 23:04:50,570 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-29 23:04:51,093 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-29 23:04:51,093 - money_bot - INFO - 📅 Monthly check task started
+2025-07-29 23:05:21,333 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1399860372638404720)
+2025-07-29 23:05:21,334 - money_bot - INFO - 🖼️ Processing IMAGE from Marc Baumholz Money Webhook
+2025-07-29 23:05:21,558 - discord.http - WARNING - We are being rate limited. PUT https://discord.com/api/v10/channels/1396903503624016024/messages/1399860372638404720/reactions/%F0%9F%94%84/@me responded with 429. Retrying in 0.30 seconds.
+2025-07-29 23:05:22,395 - money_bot - INFO - 🖼️ Starting image analysis for Marc Baumholz Money Webhook
+2025-07-29 23:05:22,541 - money_bot - INFO - Starting image analysis for Marc Baumholz Money Webhook
+2025-07-29 23:05:23,271 - money_bot - INFO - Image downloaded successfully, size: 4589632 bytes
+2025-07-29 23:05:23,272 - money_bot - INFO - Trying model: deepseek/deepseek-chat-v3-0324:free
+2025-07-29 23:05:23,272 - money_bot - INFO - Using DeepSeek model deepseek/deepseek-chat-v3-0324:free with smart image handling
+2025-07-29 23:05:29,026 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-29 23:05:34,612 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 987, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 802, in analyze_and_save
+    analysis = await MoneyAnalyzer.analyze_image(attachment.url, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 204, in analyze_image
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-29 23:05:44,894 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 987, in <module>
+    bot.run(DISCORD_TOKEN)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 906, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 802, in analyze_and_save
+    analysis = await MoneyAnalyzer.analyze_image(attachment.url, author)
+  File "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py", line 204, in analyze_image
+    response = openai_client.chat.completions.create(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1087, in create
+    return self._post(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/openai/_base_client.py", line 972, in request
+    response = self._client.send(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.11/ssl.py", line 1296, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.11/ssl.py", line 1169, in read
+    return self._sslobj.read(len)
+
+2025-07-29 23:05:50,704 - money_bot - INFO - AI Image Analysis successful with deepseek/deepseek-chat-v3-0324:free: ```json
+{
+    "amount": 0,
+    "category": "Other",
+    "description": "Image uploaded - please type amount and details manually for accurate tracking"
+}
+```
+2025-07-29 23:05:50,705 - money_bot - INFO - Parsed result: {'amount': 0.0, 'category': 'Other', 'description': 'Image uploaded - please type amount and details manually for accurate tracking', 'author': 'Marc Baumholz Money Webhook', 'type': 'image', 'image_url': 'https://cdn.discordapp.com/attachments/1396903503624016024/1399860371891949608/522A2F98-D762-4CFB-8421-F72BF952F442_2025-07-29_at_23.05.17.jpeg?ex=688a8910&is=68893790&hm=b63b10606e9b19bb1447db07f75ffea47fd4653835ec898b1c5cdd9b68a3bc63&'}
+2025-07-29 23:05:50,706 - money_bot - INFO - 💭 No money amount detected in image from Marc Baumholz Money Webhook
+2025-07-29 23:05:50,707 - discord.client - ERROR - Attempting a reconnect in 0.51s
+Traceback (most recent call last):
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/client.py", line 704, in connect
+    await self.ws.poll_event()
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 627, in poll_event
+    await self.received_message(msg.data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 532, in received_message
+    await self.send_as_json(beat)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 663, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/discord/gateway.py", line 659, in send
+    await self.socket.send_str(data)
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+  File "/home/pi/Documents/discord/venv/lib/python3.11/site-packages/aiohttp/_websocket/writer.py", line 126, in send_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2025-07-29 23:05:51,553 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b76a7d2b451f55f0f16a11f1f975754f.
+2025-07-29 23:11:28,135 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-29 23:11:28,136 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-29 23:11:28,137 - discord.client - INFO - logging in using static token
+2025-07-29 23:11:29,600 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 18055027ee2841c8d94285085e902804).
+2025-07-29 23:11:31,603 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-29 23:11:31,604 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-29 23:11:31,877 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-29 23:11:31,877 - money_bot - INFO - 📅 Monthly check task started
+2025-07-29 23:12:52,223 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1399862263875375247)
+2025-07-29 23:12:52,223 - money_bot - INFO - 🖼️ Processing IMAGE from Marc Baumholz Money Webhook
+2025-07-29 23:12:52,720 - money_bot - INFO - 🖼️ Processing image from Marc Baumholz Money Webhook - using quick response strategy
+2025-07-29 23:12:52,920 - discord.http - WARNING - We are being rate limited. PUT https://discord.com/api/v10/channels/1396903503624016024/messages/1399862263875375247/reactions/%E2%9D%93/@me responded with 429. Retrying in 0.30 seconds.
+2025-07-29 23:29:33,619 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399866464860766268)
+2025-07-29 23:29:33,619 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 🎉 Text Input Webhook ist jetzt aktiv! Das Setup ...
+2025-07-29 23:29:35,120 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:29:35,121 - openai._base_client - INFO - Retrying request to /chat/completions in 0.480827 seconds
+2025-07-29 23:29:36,370 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:29:36,371 - openai._base_client - INFO - Retrying request to /chat/completions in 0.935036 seconds
+2025-07-29 23:29:38,135 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:29:38,137 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:29:38,137 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:35:21,770 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-07-29 23:35:21,771 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-07-29 23:35:21,772 - discord.client - INFO - logging in using static token
+2025-07-29 23:35:22,845 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d13d18a95d4d9856facf84c1c3c3af46).
+2025-07-29 23:35:24,849 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-07-29 23:35:24,849 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-07-29 23:35:25,135 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-07-29 23:35:25,135 - money_bot - INFO - 📅 Monthly check task started
+2025-07-29 23:35:47,588 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399868033484329134)
+2025-07-29 23:35:47,589 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 Widget setup script executed successfully! 🎉 (vo...
+2025-07-29 23:35:47,602 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399868033702297660)
+2025-07-29 23:35:47,602 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 🏠 Bin zu Hause angekommen! 23:35...
+2025-07-29 23:35:49,145 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:49,146 - openai._base_client - INFO - Retrying request to /chat/completions in 0.462184 seconds
+2025-07-29 23:35:49,398 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:49,398 - openai._base_client - INFO - Retrying request to /chat/completions in 0.433338 seconds
+2025-07-29 23:35:50,558 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:50,559 - openai._base_client - INFO - Retrying request to /chat/completions in 0.878280 seconds
+2025-07-29 23:35:50,676 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:50,677 - openai._base_client - INFO - Retrying request to /chat/completions in 0.907020 seconds
+2025-07-29 23:35:52,372 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:52,374 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753824960000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:35:52,374 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:35:52,375 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:35:52,377 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753824960000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:35:52,377 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:42:37,511 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399869752985260214)
+2025-07-29 23:42:37,511 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 🍎 iOS Setup Guide ist bereit! Ihr Discord Webhoo...
+2025-07-29 23:42:38,876 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:42:38,877 - openai._base_client - INFO - Retrying request to /chat/completions in 0.395756 seconds
+2025-07-29 23:42:40,063 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:42:40,067 - openai._base_client - INFO - Retrying request to /chat/completions in 0.782653 seconds
+2025-07-29 23:42:41,678 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:42:41,679 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:42:41,679 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:43:36,484 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399870000319172679)
+2025-07-29 23:43:36,485 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 Test von iOS Setup Script! 📱 (von: Setup Script)...
+2025-07-29 23:43:36,507 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399870000004595825)
+2025-07-29 23:43:36,507 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 🚨 NOTFALL ALERT! Test Notfall vom Setup Script 🚨...
+2025-07-29 23:43:36,552 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399870000616968222)
+2025-07-29 23:43:36,552 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 🏠 Bin zu Hause angekommen! 23:43...
+2025-07-29 23:43:37,889 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:37,890 - openai._base_client - INFO - Retrying request to /chat/completions in 0.431344 seconds
+2025-07-29 23:43:38,469 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:38,469 - openai._base_client - INFO - Retrying request to /chat/completions in 0.413245 seconds
+2025-07-29 23:43:39,126 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:39,129 - openai._base_client - INFO - Retrying request to /chat/completions in 0.438080 seconds
+2025-07-29 23:43:39,159 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:39,160 - openai._base_client - INFO - Retrying request to /chat/completions in 0.907141 seconds
+2025-07-29 23:43:39,684 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:39,685 - openai._base_client - INFO - Retrying request to /chat/completions in 0.773212 seconds
+2025-07-29 23:43:40,338 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:40,338 - openai._base_client - INFO - Retrying request to /chat/completions in 0.971902 seconds
+2025-07-29 23:43:40,860 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:40,861 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753825440000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:43:40,862 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:43:41,243 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:41,244 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753825440000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:43:41,245 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:43:42,085 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:43:42,086 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753825440000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:43:42,086 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:48:42,745 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399871284866715789)
+2025-07-29 23:48:42,745 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 🎉 Home Assistant Widgets sind jetzt aktiv! Dashb...
+2025-07-29 23:48:44,197 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:48:44,198 - openai._base_client - INFO - Retrying request to /chat/completions in 0.463605 seconds
+2025-07-29 23:48:45,582 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:48:45,584 - openai._base_client - INFO - Retrying request to /chat/completions in 0.996132 seconds
+2025-07-29 23:48:47,409 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:48:47,411 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:48:47,411 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:49:42,862 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399871536784998556)
+2025-07-29 23:49:42,862 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬 5 eurp essne...
+2025-07-29 23:49:44,237 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:49:44,238 - openai._base_client - INFO - Retrying request to /chat/completions in 0.459338 seconds
+2025-07-29 23:49:45,499 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:49:45,500 - openai._base_client - INFO - Retrying request to /chat/completions in 0.983106 seconds
+2025-07-29 23:49:47,231 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:49:47,233 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:49:47,233 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:52:23,606 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399872211208114276)
+2025-07-29 23:52:23,606 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬...
+2025-07-29 23:52:25,081 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:25,082 - openai._base_client - INFO - Retrying request to /chat/completions in 0.433365 seconds
+2025-07-29 23:52:26,274 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:26,275 - openai._base_client - INFO - Retrying request to /chat/completions in 0.803286 seconds
+2025-07-29 23:52:27,927 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:27,929 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:52:27,929 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:52:31,613 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399872244657684491)
+2025-07-29 23:52:31,614 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬...
+2025-07-29 23:52:33,158 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:33,159 - openai._base_client - INFO - Retrying request to /chat/completions in 0.438617 seconds
+2025-07-29 23:52:34,342 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:34,343 - openai._base_client - INFO - Retrying request to /chat/completions in 0.761171 seconds
+2025-07-29 23:52:35,932 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:52:35,934 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753825980000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:52:35,934 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:53:36,735 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399872517782638674)
+2025-07-29 23:53:36,735 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬...
+2025-07-29 23:53:38,228 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:53:38,229 - openai._base_client - INFO - Retrying request to /chat/completions in 0.399012 seconds
+2025-07-29 23:53:39,421 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:53:39,422 - openai._base_client - INFO - Retrying request to /chat/completions in 0.843222 seconds
+2025-07-29 23:53:41,093 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:53:41,094 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:53:41,094 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:54:36,341 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399872767968673793)
+2025-07-29 23:54:36,341 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬...
+2025-07-29 23:54:38,119 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:54:38,120 - openai._base_client - INFO - Retrying request to /chat/completions in 0.385278 seconds
+2025-07-29 23:54:39,331 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:54:39,333 - openai._base_client - INFO - Retrying request to /chat/completions in 0.761423 seconds
+2025-07-29 23:54:40,931 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:54:40,932 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:54:40,932 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:55:31,926 - money_bot - INFO - 📥 Processing message from: Home Assistant (ID: 1399873001087832214)
+2025-07-29 23:55:31,926 - money_bot - INFO - 📝 Processing TEXT from Home Assistant: 💬...
+2025-07-29 23:55:33,272 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:55:33,273 - openai._base_client - INFO - Retrying request to /chat/completions in 0.458306 seconds
+2025-07-29 23:55:34,509 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:55:34,510 - openai._base_client - INFO - Retrying request to /chat/completions in 0.932146 seconds
+2025-07-29 23:55:36,265 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:55:36,267 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:55:36,267 - money_bot - INFO - 💭 No money amount detected in text from Home Assistant
+2025-07-29 23:57:08,944 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873407776194604)
+2025-07-29 23:57:08,945 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 🎉 Test mit neuem Namen - Marc Home Assistant ist...
+2025-07-29 23:57:10,361 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:57:10,395 - openai._base_client - INFO - Retrying request to /chat/completions in 0.485596 seconds
+2025-07-29 23:57:11,651 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:57:11,652 - openai._base_client - INFO - Retrying request to /chat/completions in 0.969010 seconds
+2025-07-29 23:57:13,408 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:57:13,409 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:57:13,410 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-29 23:58:23,382 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873720226414662)
+2025-07-29 23:58:23,382 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 5 euro esssen...
+2025-07-29 23:58:24,992 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:24,993 - openai._base_client - INFO - Retrying request to /chat/completions in 0.484678 seconds
+2025-07-29 23:58:26,322 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:26,323 - openai._base_client - INFO - Retrying request to /chat/completions in 0.889356 seconds
+2025-07-29 23:58:28,112 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:28,114 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:58:28,114 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-29 23:58:42,527 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873800547340318)
+2025-07-29 23:58:42,527 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 🛒 Einkaufen - 23:58...
+2025-07-29 23:58:44,024 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:44,025 - openai._base_client - INFO - Retrying request to /chat/completions in 0.403548 seconds
+2025-07-29 23:58:45,226 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:45,231 - openai._base_client - INFO - Retrying request to /chat/completions in 0.830280 seconds
+2025-07-29 23:58:46,892 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:46,893 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826340000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:58:46,894 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-29 23:58:49,312 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873829035180092)
+2025-07-29 23:58:49,312 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 🛒 Einkaufen - 23:58...
+2025-07-29 23:58:50,593 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:50,594 - openai._base_client - INFO - Retrying request to /chat/completions in 0.465836 seconds
+2025-07-29 23:58:51,952 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:51,953 - openai._base_client - INFO - Retrying request to /chat/completions in 0.958951 seconds
+2025-07-29 23:58:54,124 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:54,125 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826340000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:58:54,125 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-29 23:58:58,080 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873865798385915)
+2025-07-29 23:58:58,080 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 🚗 Verlasse das Haus! 29.07.2025 23:58...
+2025-07-29 23:58:59,418 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:58:59,419 - openai._base_client - INFO - Retrying request to /chat/completions in 0.476267 seconds
+2025-07-29 23:59:00,751 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:59:00,752 - openai._base_client - INFO - Retrying request to /chat/completions in 0.995850 seconds
+2025-07-29 23:59:02,578 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:59:02,579 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:59:02,579 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-29 23:59:04,152 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399873891119398953)
+2025-07-29 23:59:04,152 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💼 Bin auf der Arbeit angekommen! 29.07.2025 23:59...
+2025-07-29 23:59:05,472 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:59:05,472 - openai._base_client - INFO - Retrying request to /chat/completions in 0.490120 seconds
+2025-07-29 23:59:06,850 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:59:06,851 - openai._base_client - INFO - Retrying request to /chat/completions in 0.992755 seconds
+2025-07-29 23:59:08,670 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-29 23:59:08,671 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826400000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-29 23:59:08,671 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:01:05,625 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874400731402381)
+2025-07-30 00:01:05,625 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 🎉 Neue Widget Scripts sind aktiv! Mehrere versch...
+2025-07-30 00:01:07,226 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:01:07,227 - openai._base_client - INFO - Retrying request to /chat/completions in 0.403012 seconds
+2025-07-30 00:01:08,536 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:01:08,537 - openai._base_client - INFO - Retrying request to /chat/completions in 0.791482 seconds
+2025-07-30 00:01:10,141 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:01:10,142 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:01:10,142 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:02:15,763 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874694940983377)
+2025-07-30 00:02:15,763 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:02:16,749 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874699080503336)
+2025-07-30 00:02:16,749 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:02:17,067 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:17,068 - openai._base_client - INFO - Retrying request to /chat/completions in 0.380680 seconds
+2025-07-30 00:02:18,206 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:18,206 - openai._base_client - INFO - Retrying request to /chat/completions in 0.801756 seconds
+2025-07-30 00:02:19,255 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874709600075906)
+2025-07-30 00:02:19,255 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:02:19,356 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:19,357 - openai._base_client - INFO - Retrying request to /chat/completions in 0.390568 seconds
+2025-07-30 00:02:19,864 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:19,865 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:02:19,866 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:02:19,980 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874712519180341)
+2025-07-30 00:02:19,980 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:02:20,523 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:20,524 - openai._base_client - INFO - Retrying request to /chat/completions in 0.807132 seconds
+2025-07-30 00:02:20,699 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:20,701 - openai._base_client - INFO - Retrying request to /chat/completions in 0.425472 seconds
+2025-07-30 00:02:21,887 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:21,888 - openai._base_client - INFO - Retrying request to /chat/completions in 0.946800 seconds
+2025-07-30 00:02:22,213 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:22,215 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826580000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:02:22,215 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:02:22,802 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:22,804 - openai._base_client - INFO - Retrying request to /chat/completions in 0.445940 seconds
+2025-07-30 00:02:23,593 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:23,594 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826580000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:02:23,595 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:02:24,070 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:24,072 - openai._base_client - INFO - Retrying request to /chat/completions in 0.791840 seconds
+2025-07-30 00:02:24,776 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399874732760891615)
+2025-07-30 00:02:24,777 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:02:25,633 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:25,634 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826580000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:02:25,635 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:02:26,082 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:26,083 - openai._base_client - INFO - Retrying request to /chat/completions in 0.450815 seconds
+2025-07-30 00:02:27,292 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:27,293 - openai._base_client - INFO - Retrying request to /chat/completions in 0.979741 seconds
+2025-07-30 00:02:29,023 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:02:29,024 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826580000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:02:29,025 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:03:34,939 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399875026978607247)
+2025-07-30 00:03:34,939 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:03:36,354 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:36,355 - openai._base_client - INFO - Retrying request to /chat/completions in 0.442661 seconds
+2025-07-30 00:03:37,598 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:37,599 - openai._base_client - INFO - Retrying request to /chat/completions in 0.963710 seconds
+2025-07-30 00:03:39,432 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:39,434 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:03:39,434 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:03:47,772 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399875080825344021)
+2025-07-30 00:03:47,772 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 🏠 Bin zu Hause angekommen! 00:03...
+2025-07-30 00:03:49,100 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:49,101 - openai._base_client - INFO - Retrying request to /chat/completions in 0.468498 seconds
+2025-07-30 00:03:50,357 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:50,358 - openai._base_client - INFO - Retrying request to /chat/completions in 0.961236 seconds
+2025-07-30 00:03:52,211 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:52,213 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753826640000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:03:52,213 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:03:57,246 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399875120595734548)
+2025-07-30 00:03:57,246 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:03:58,659 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:58,660 - openai._base_client - INFO - Retrying request to /chat/completions in 0.447023 seconds
+2025-07-30 00:03:59,882 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:03:59,883 - openai._base_client - INFO - Retrying request to /chat/completions in 0.786499 seconds
+2025-07-30 00:04:01,475 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:04:01,476 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:04:01,476 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:14:15,581 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399877714080694404)
+2025-07-30 00:14:15,581 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 🎉 iOS Widget Setup verbessert! Quick Discord Das...
+2025-07-30 00:14:16,989 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:16,990 - openai._base_client - INFO - Retrying request to /chat/completions in 0.426798 seconds
+2025-07-30 00:14:18,234 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:18,235 - openai._base_client - INFO - Retrying request to /chat/completions in 0.997013 seconds
+2025-07-30 00:14:20,079 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:20,080 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:14:20,080 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:14:48,262 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399877851167068260)
+2025-07-30 00:14:48,262 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:14:49,791 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:49,792 - openai._base_client - INFO - Retrying request to /chat/completions in 0.375340 seconds
+2025-07-30 00:14:51,021 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:51,022 - openai._base_client - INFO - Retrying request to /chat/completions in 0.973861 seconds
+2025-07-30 00:14:54,069 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:14:54,070 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827300000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:14:54,070 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:16:39,571 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399878317993103513)
+2025-07-30 00:16:39,571 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:16:41,428 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:41,428 - openai._base_client - INFO - Retrying request to /chat/completions in 0.438666 seconds
+2025-07-30 00:16:42,124 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399878328751489144)
+2025-07-30 00:16:42,124 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:16:42,692 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:42,693 - openai._base_client - INFO - Retrying request to /chat/completions in 0.826797 seconds
+2025-07-30 00:16:43,436 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:43,437 - openai._base_client - INFO - Retrying request to /chat/completions in 0.413003 seconds
+2025-07-30 00:16:44,304 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:44,305 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:16:44,305 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:16:44,648 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:44,649 - openai._base_client - INFO - Retrying request to /chat/completions in 0.938814 seconds
+2025-07-30 00:16:46,985 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:46,986 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827420000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:16:46,986 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:16:49,955 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399878361601413233)
+2025-07-30 00:16:49,956 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:16:51,299 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:51,300 - openai._base_client - INFO - Retrying request to /chat/completions in 0.383977 seconds
+2025-07-30 00:16:52,483 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:52,484 - openai._base_client - INFO - Retrying request to /chat/completions in 0.838107 seconds
+2025-07-30 00:16:54,345 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:16:54,346 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827420000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:16:54,346 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:18:59,104 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399878903123939418)
+2025-07-30 00:18:59,104 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 5 Euro Essen...
+2025-07-30 00:19:00,448 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:19:00,449 - openai._base_client - INFO - Retrying request to /chat/completions in 0.465610 seconds
+2025-07-30 00:19:01,704 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:19:01,705 - openai._base_client - INFO - Retrying request to /chat/completions in 0.910045 seconds
+2025-07-30 00:19:03,357 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:19:03,358 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:19:03,358 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:21:31,571 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399879542650179656)
+2025-07-30 00:21:31,572 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:21:32,893 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:32,894 - openai._base_client - INFO - Retrying request to /chat/completions in 0.383924 seconds
+2025-07-30 00:21:34,024 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:34,025 - openai._base_client - INFO - Retrying request to /chat/completions in 0.901942 seconds
+2025-07-30 00:21:35,715 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:35,716 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:21:35,717 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:21:40,459 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399879579719438343)
+2025-07-30 00:21:40,459 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:21:41,405 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399879584031182900)
+2025-07-30 00:21:41,405 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:21:41,739 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:41,740 - openai._base_client - INFO - Retrying request to /chat/completions in 0.383438 seconds
+2025-07-30 00:21:42,145 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399879587076243507)
+2025-07-30 00:21:42,145 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 🏠 Bin zu Hause angekommen! 00:21...
+2025-07-30 00:21:42,637 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:42,638 - openai._base_client - INFO - Retrying request to /chat/completions in 0.391522 seconds
+2025-07-30 00:21:43,014 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399879590683349042)
+2025-07-30 00:21:43,014 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬...
+2025-07-30 00:21:43,027 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:43,027 - openai._base_client - INFO - Retrying request to /chat/completions in 0.805727 seconds
+2025-07-30 00:21:43,571 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:43,572 - openai._base_client - INFO - Retrying request to /chat/completions in 0.444802 seconds
+2025-07-30 00:21:43,863 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:43,863 - openai._base_client - INFO - Retrying request to /chat/completions in 0.948232 seconds
+2025-07-30 00:21:44,360 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:44,364 - openai._base_client - INFO - Retrying request to /chat/completions in 0.471129 seconds
+2025-07-30 00:21:44,745 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:44,746 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827720000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:21:44,746 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:21:44,828 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:44,829 - openai._base_client - INFO - Retrying request to /chat/completions in 0.807985 seconds
+2025-07-30 00:21:45,647 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:45,648 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827720000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:21:45,648 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:21:45,661 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:45,662 - openai._base_client - INFO - Retrying request to /chat/completions in 0.788206 seconds
+2025-07-30 00:21:46,571 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:46,572 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827720000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:21:46,572 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:21:47,302 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:21:47,303 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753827720000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:21:47,303 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:24:39,461 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399880330697244732)
+2025-07-30 00:24:39,462 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: []...
+2025-07-30 00:24:40,885 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:24:40,886 - openai._base_client - INFO - Retrying request to /chat/completions in 0.409777 seconds
+2025-07-30 00:24:42,073 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:24:42,074 - openai._base_client - INFO - Retrying request to /chat/completions in 0.788279 seconds
+2025-07-30 00:24:43,677 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:24:43,678 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:24:43,678 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:25:17,125 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399880488801533984)
+2025-07-30 00:25:17,126 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 🎉 Custom Widget für Textfeld + Senden Button ist...
+2025-07-30 00:25:18,582 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:25:18,583 - openai._base_client - INFO - Retrying request to /chat/completions in 0.468127 seconds
+2025-07-30 00:25:19,884 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:25:19,885 - openai._base_client - INFO - Retrying request to /chat/completions in 0.868562 seconds
+2025-07-30 00:25:21,579 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:25:21,580 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:25:21,581 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:27:51,037 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399881134363381962)
+2025-07-30 00:27:51,037 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💬 5 euro...
+2025-07-30 00:27:52,399 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:27:52,400 - openai._base_client - INFO - Retrying request to /chat/completions in 0.385853 seconds
+2025-07-30 00:27:53,610 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:27:53,611 - openai._base_client - INFO - Retrying request to /chat/completions in 0.828644 seconds
+2025-07-30 00:27:55,192 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:27:55,193 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:27:55,193 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:41:13,440 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884499600543870)
+2025-07-30 00:41:13,440 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:41:14,929 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:14,930 - openai._base_client - INFO - Retrying request to /chat/completions in 0.479172 seconds
+2025-07-30 00:41:16,193 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:16,194 - openai._base_client - INFO - Retrying request to /chat/completions in 0.876966 seconds
+2025-07-30 00:41:16,516 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884512757944462)
+2025-07-30 00:41:16,516 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:41:17,920 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:17,921 - openai._base_client - INFO - Retrying request to /chat/completions in 0.412082 seconds
+2025-07-30 00:41:18,052 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:18,053 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:41:18,053 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:41:19,160 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:19,161 - openai._base_client - INFO - Retrying request to /chat/completions in 0.976134 seconds
+2025-07-30 00:41:20,955 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:41:20,956 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753828920000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:41:20,957 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:42:11,210 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884742211534981)
+2025-07-30 00:42:11,210 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:42:12,560 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:12,560 - openai._base_client - INFO - Retrying request to /chat/completions in 0.480290 seconds
+2025-07-30 00:42:13,797 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:13,798 - openai._base_client - INFO - Retrying request to /chat/completions in 0.878059 seconds
+2025-07-30 00:42:15,454 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:15,455 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:42:15,455 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:42:26,112 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884804526444757)
+2025-07-30 00:42:26,113 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:42:27,671 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:27,672 - openai._base_client - INFO - Retrying request to /chat/completions in 0.481701 seconds
+2025-07-30 00:42:29,019 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:29,020 - openai._base_client - INFO - Retrying request to /chat/completions in 0.787094 seconds
+2025-07-30 00:42:30,599 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:30,600 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753828980000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:42:30,600 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:42:32,491 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884831428575433)
+2025-07-30 00:42:32,491 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie: rt...
+2025-07-30 00:42:33,722 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:33,723 - openai._base_client - INFO - Retrying request to /chat/completions in 0.380133 seconds
+2025-07-30 00:42:35,021 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:35,022 - openai._base_client - INFO - Retrying request to /chat/completions in 0.898356 seconds
+2025-07-30 00:42:36,765 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:36,766 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753828980000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:42:36,766 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:42:37,421 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399884851880132790)
+2025-07-30 00:42:37,421 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:42:38,737 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:38,738 - openai._base_client - INFO - Retrying request to /chat/completions in 0.487772 seconds
+2025-07-30 00:42:40,002 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:40,003 - openai._base_client - INFO - Retrying request to /chat/completions in 0.971730 seconds
+2025-07-30 00:42:41,778 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:42:41,780 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753828980000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:42:41,780 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:44:20,812 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399885285755457671)
+2025-07-30 00:44:20,812 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie: fe...
+2025-07-30 00:44:22,300 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:44:22,300 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401474 seconds
+2025-07-30 00:44:23,517 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:44:23,518 - openai._base_client - INFO - Retrying request to /chat/completions in 0.860203 seconds
+2025-07-30 00:44:25,137 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:44:25,138 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:44:25,139 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:48:01,868 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399886212600434860)
+2025-07-30 00:48:01,869 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:48:06,438 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:06,439 - openai._base_client - INFO - Retrying request to /chat/completions in 0.458314 seconds
+2025-07-30 00:48:07,686 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:07,687 - openai._base_client - INFO - Retrying request to /chat/completions in 0.919765 seconds
+2025-07-30 00:48:09,386 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:09,388 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:48:09,388 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:48:50,064 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399886414874935368)
+2025-07-30 00:48:50,064 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie:...
+2025-07-30 00:48:51,381 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:51,382 - openai._base_client - INFO - Retrying request to /chat/completions in 0.494388 seconds
+2025-07-30 00:48:52,635 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:52,636 - openai._base_client - INFO - Retrying request to /chat/completions in 0.933620 seconds
+2025-07-30 00:48:54,346 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:48:54,347 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753829340000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:48:54,348 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 00:51:34,625 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1399887105295126662)
+2025-07-30 00:51:34,625 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: 💕 Nachricht für Maggie: 2€ essen...
+2025-07-30 00:51:36,229 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:51:36,230 - openai._base_client - INFO - Retrying request to /chat/completions in 0.463649 seconds
+2025-07-30 00:51:37,454 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:51:37,455 - openai._base_client - INFO - Retrying request to /chat/completions in 0.810585 seconds
+2025-07-30 00:51:39,135 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-30 00:51:39,136 - money_bot - ERROR - Error analyzing text: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1753833600000'}, 'provider_name': None}}, 'user_id': 'user_2yKZcvUncliRQSIKWLiFsU0XWNG'}
+2025-07-30 00:51:39,136 - money_bot - INFO - 💭 No money amount detected in text from Marc Home Assistant
+2025-07-30 01:25:41,908 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
+2025-07-30 02:26:22,712 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
+2025-07-30 02:43:31,031 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
+2025-07-30 02:56:09,524 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.

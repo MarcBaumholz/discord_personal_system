@@ -8,6 +8,12 @@ A comprehensive collection of specialized Discord bots for productivity, plannin
 
 ## 🚀 Features
 
+### 📊 **Real-time Dashboard**
+- **Web Dashboard** - Monitor all bots in real-time via web interface
+- **Status Monitoring** - See which bots are running, stopped, or failed
+- **Health Metrics** - Track uptime, process IDs, and system health
+- **Mobile Responsive** - Access from any device with responsive design
+
 ### 📅 **Planning & Organization**
 - **Weekly Planning Bot** - AI-powered weekly schedule planning with Notion integration
 - **Daily Todo Bot** - Daily task management and reminders
@@ -63,7 +69,15 @@ docker compose ps
 
 # View logs
 docker compose logs -f
+
+# Access dashboard
+open http://localhost:8080
 ```
+
+### 4. Monitor Your Bots
+- **Web Dashboard**: Open `http://localhost:8080` in your browser
+- **Real-time Status**: See which bots are running, their uptime, and health
+- **Mobile Access**: Dashboard works on phones and tablets
 
 ## ⚙️ Configuration
 
@@ -131,10 +145,10 @@ WEEKLY_PLANNING_DATABASE_ID=your_notion_db_id
 
 ### Essential Commands
 ```bash
-# Start all bots
+# Start all bots and dashboard
 docker compose up -d
 
-# Stop all bots
+# Stop all bots and dashboard
 docker compose down
 
 # Restart after code changes
@@ -145,12 +159,36 @@ docker compose logs [bot-name]
 
 # Check status
 docker compose ps
+
+# Access dashboard
+curl http://localhost:8080/api/status  # API status
+open http://localhost:8080             # Web dashboard
 ```
 
 ### Health Monitoring
 - Built-in health checks for all containers
 - Automatic restart on failure
 - Log aggregation and monitoring
+
+## 📊 Dashboard Usage
+
+### Access the Dashboard
+Once your container is running, you can access the real-time dashboard at:
+- **Local**: `http://localhost:8080`
+- **Remote**: `http://your-server-ip:8080`
+
+### Dashboard Features
+- **Real-time Updates**: Status updates every 5 seconds automatically
+- **Bot Status Cards**: Visual indicators for each bot (green=running, red=failed, yellow=stopped)
+- **System Overview**: Total bots, running count, failed count, system uptime
+- **Mobile Support**: Responsive design works on phones, tablets, and desktops
+- **Process Information**: PID, uptime, and working directory for each bot
+
+### Understanding Bot Status
+- 🟢 **Running**: Bot is active and functioning normally
+- 🟡 **Stopped**: Bot was running but has stopped (may restart automatically)
+- 🔴 **Failed**: Bot failed to start or crashed
+- ⚪ **Unknown**: Status cannot be determined
 
 ## 🔧 Development
 
@@ -174,6 +212,9 @@ pip install -r requirements.txt
 
 # Run specific bot
 python bots/daily_todo_bot/daily_todo_bot.py
+
+# Run with dashboard
+python start_services.py
 ```
 
 ## 📊 Monitoring & Logs

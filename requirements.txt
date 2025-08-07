@@ -1,3 +1,110 @@
+# ==============================================
+# CONSOLIDATED DISCORD BOTS REQUIREMENTS
+# ==============================================
+# Generated for all Discord bots deployment
+# Includes dependencies from all bot directories
+
+# Core Discord Bot Framework
 discord.py>=2.3.2
-python-dotenv>=1.0.0
-requests>=2.31.0 
+
+# Environment and Configuration
+python-dotenv>=1.0.1
+
+# HTTP Clients and API Integration
+requests>=2.32.3
+aiohttp>=3.9.5
+httpx>=0.28.0
+
+# Web Dashboard
+Flask>=3.0.0
+
+# OpenAI and LLM Integration
+openai>=1.54.4
+
+# Notion API Integration (used by multiple bots)
+notion-client>=2.0.0
+
+# Database Support
+aiosqlite>=0.20.0
+
+# Scheduling and Task Management
+schedule>=1.2.0
+APScheduler>=3.10.4
+
+# Date and Time Handling
+python-dateutil>=2.9.0
+pytz>=2024.2
+
+# Data Processing and Analysis
+pandas>=2.0.3
+numpy>=1.24.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+
+# Image Processing
+Pillow>=10.0.0
+
+# Machine Learning and AI
+torch>=2.0.0
+transformers>=4.35.0
+sentence-transformers>=2.2.2
+
+# Vector Databases and Search
+faiss-cpu>=1.7.4
+chromadb>=0.4.22
+
+# LangChain Ecosystem
+langchain>=0.1.0
+langchain-core>=0.1.10
+langchain-openai>=0.0.5
+langchain-community>=0.0.10
+langgraph>=0.0.20
+
+# RSS Feed Processing
+feedparser>=6.0.11
+
+# Document Processing
+pypdf>=3.17.1
+python-docx>=1.0.1
+
+# Text Processing and NLP
+nltk>=3.9.1
+textstat>=0.7.3
+
+# Data Validation
+pydantic>=2.5.2
+
+# Logging and Monitoring
+structlog>=24.1.0
+
+# Async Utilities
+asyncio-throttle>=1.0.0
+aiofiles>=24.0.0
+
+# External APIs
+tavily-python>=0.3.0
+
+# YouTube API Integration
+google-api-python-client>=2.0.0
+google-auth>=2.0.0
+google-auth-oauthlib>=0.5.0
+google-auth-httplib2>=0.1.0
+youtube-transcript-api>=0.6.0
+
+# Development and Testing Dependencies
+pytest>=8.0.0
+pytest-asyncio>=0.24.0
+pytest-mock>=3.12.0
+
+# Code Quality Tools (Optional for production)
+black>=24.1.1
+flake8>=7.0.0
+mypy>=1.8.0
+
+# ==============================================
+# NOTES:
+# - All version conflicts resolved to highest compatible version
+# - Removed duplicate dependencies
+# - Organized by functionality for easier maintenance
+# - Some packages might be unused by certain bots but included for completeness
+# ============================================== 

@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2025-08-07T22:33:23.899348",
+    "event": "food_analysis",
+    "user": "Marc",
+    "food_name": "Panini Sandwich and French Fries",
+    "calories": 650,
+    "protein": 25.0,
+    "carbohydrates": 70.0,
+    "fat": 25.0,
+    "confidence": 80.0,
+    "description": "A panini sandwich with visible fillings such as chicken, cheese, and vegetables, served alongside a portion of French fries with a small amount of ketchup. The sandwich appears to be half-eaten.",
+    "meal_hash": "a60cd43e",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1403113776500310148/IMG_8541.jpg?ex=68965f08&is=68950d88&hm=6644e2f548dc75cb1475f94492a06eaf4731654a2cd9794d9f351464c6578f63&",
+    "saved_to_notion": false
+  },
+  {
+    "timestamp": "2025-08-07T22:46:34.198466",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Grilled Sandwich with French Fries and Bacon",
+    "calories": 750,
+    "protein": 25.0,
+    "carbohydrates": 80.0,
+    "fat": 35.0,
+    "confidence": 75.0,
+    "description": "The image shows a grilled sandwich on a plate, a portion of French fries in a takeout container, and a few slices of bacon. The sandwich appears to be made with white bread and contains various fillings, possibly including cheese and vegetables. The fries are golden and crispy, and the bacon is cooked and slightly crispy.",
+    "meal_hash": "ed413ffb",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1403117077983793332/DCD6DE4E-E326-4302-B694-499F00730038_2025-08-07_at_22.46.16.jpeg?ex=6896621c&is=6895109c&hm=e9456287a9675c263c911f3ff152201386a4ede5437598f5129a750495a8d930&",
+    "saved_to_notion": true
+  }
+]

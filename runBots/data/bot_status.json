@@ -1,0 +1,141 @@
+{
+  "timestamp": "2025-07-23T08:06:44.170677",
+  "system_start_time": "2025-07-23T08:03:34.610668",
+  "system_uptime": "3m 9s",
+  "total_bots": 13,
+  "running_count": 13,
+  "stopped_count": 0,
+  "failed_count": 0,
+  "bots": [
+    {
+      "name": "Calories Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/Calories_bot/calories_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/Calories_bot",
+      "status": "running",
+      "pid": 3560830,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.091810",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/Calories_bot"
+    },
+    {
+      "name": "Health Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/health_bot/health_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/health_bot",
+      "status": "running",
+      "pid": 3560831,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.092934",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/health_bot"
+    },
+    {
+      "name": "Decision Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/decision_bot/decision_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/decision_bot",
+      "status": "running",
+      "pid": 3560832,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.094511",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/decision_bot"
+    },
+    {
+      "name": "Erinnerungen Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/Erinnerungen_bot/erinnerungen_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/Erinnerungen_bot",
+      "status": "running",
+      "pid": 3560833,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.098620",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/Erinnerungen_bot"
+    },
+    {
+      "name": "Tagebuch Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/Tagebuch_bot/tagebuch_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/Tagebuch_bot",
+      "status": "running",
+      "pid": 3560834,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.102744",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/Tagebuch_bot"
+    },
+    {
+      "name": "Preisvergleich Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/preisvergleich_bot/preisvergleich_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/preisvergleich_bot",
+      "status": "running",
+      "pid": 3560835,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.106626",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/preisvergleich_bot"
+    },
+    {
+      "name": "Meal Plan Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/meal_plan_bot/meal_plan_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/meal_plan_bot",
+      "status": "running",
+      "pid": 3560836,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.119029",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/meal_plan_bot"
+    },
+    {
+      "name": "Weekly Todo Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/weekly_todo_bot/weekly_todo_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/weekly_todo_bot",
+      "status": "running",
+      "pid": 3560837,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.122966",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/weekly_todo_bot"
+    },
+    {
+      "name": "Money Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/money_bot-1/bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/money_bot-1",
+      "status": "running",
+      "pid": 3560838,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.126167",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/money_bot-1"
+    },
+    {
+      "name": "YouTube Bot",
+      "path": "/home/pi/Documents/discord/bots/00_production/youtube_bot/youtube_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/00_production/youtube_bot",
+      "status": "running",
+      "pid": 3560839,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.139010",
+      "working_dir": "/home/pi/Documents/discord/bots/00_production/youtube_bot"
+    },
+    {
+      "name": "Learning Bot",
+      "path": "/home/pi/Documents/discord/bots/learning_bot/learning_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/learning_bot",
+      "status": "running",
+      "pid": 3560840,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.143051",
+      "working_dir": "/home/pi/Documents/discord/bots/learning_bot"
+    },
+    {
+      "name": "LinkedIn Network Analyzer",
+      "path": "/home/pi/Documents/discord/bots/linkedin_bot/linkedin_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/linkedin_bot",
+      "status": "running",
+      "pid": 3560841,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.163395",
+      "working_dir": "/home/pi/Documents/discord/bots/linkedin_bot"
+    },
+    {
+      "name": "Weekly Planning Bot",
+      "path": "/home/pi/Documents/discord/bots/Weekly_planning_bot/weekly_planning_bot.py",
+      "directory": "/home/pi/Documents/discord/bots/Weekly_planning_bot",
+      "status": "running",
+      "pid": 3560842,
+      "uptime": "0s",
+      "start_time": "2025-07-23T08:06:44.169891",
+      "working_dir": "/home/pi/Documents/discord/bots/Weekly_planning_bot"
+    }
+  ]
+}

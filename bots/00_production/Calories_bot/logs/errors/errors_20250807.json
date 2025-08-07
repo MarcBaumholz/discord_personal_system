@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-08-07T22:33:25.359653",
+    "event": "error",
+    "error_type": "NOTION_SAVE_FAILED",
+    "error_message": "Failed to save analysis to Notion",
+    "context": {
+      "user": "Marc",
+      "food": "Panini Sandwich and French Fries"
+    }
+  },
+  {
+    "timestamp": "2025-08-07T22:48:11.752062",
+    "event": "error",
+    "error_type": "WEEKLY_COMMAND_ERROR",
+    "error_message": "name 'timedelta' is not defined",
+    "context": {
+      "user": "Marc"
+    }
+  },
+  {
+    "timestamp": "2025-08-07T22:48:17.111539",
+    "event": "error",
+    "error_type": "NO_DATA_FOUND",
+    "error_message": "No calorie data found for 7/2025",
+    "context": {
+      "user": "Marc",
+      "period": "7/2025"
+    }
+  },
+  {
+    "timestamp": "2025-08-07T22:52:12.554294",
+    "event": "error",
+    "error_type": "WEEKLY_COMMAND_ERROR",
+    "error_message": "name 'timedelta' is not defined",
+    "context": {
+      "user": "Marc"
+    }
+  },
+  {
+    "timestamp": "2025-08-07T23:06:10.552516",
+    "event": "error",
+    "error_type": "NO_DATA_FOUND",
+    "error_message": "No calorie data found for 7/2025",
+    "context": {
+      "user": "Marc",
+      "period": "7/2025"
+    }
+  }
+]

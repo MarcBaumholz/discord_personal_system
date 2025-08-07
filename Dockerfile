@@ -19,9 +19,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy all bot files
 COPY . .
 
-# Create a non-root user for security
+# Create logs directory with proper permissions
+RUN mkdir -p /app/logs && chmod 755 /app/logs
+
+# Create a non-root user for security and set proper ownership
 RUN useradd --create-home --shell /bin/bash botuser && \
-    chown -R botuser:botuser /app
+    chown -R botuser:botuser /app && \
+    chmod -R 755 /app/logs
+
+# Switch to non-root user
 USER botuser
 
 # Set environment variables
@@ -32,5 +38,5 @@ ENV PYTHONUNBUFFERED=1
 HEALTHCHECK --interval=60s --timeout=30s --start-period=20s --retries=3 \
   CMD python -c "import os; exit(0 if os.path.exists('/tmp/bots_running') else 1)"
 
-# Default command
-CMD ["python", "runBots/run_all_bots.py"] 
+# Default command - start both bot runner and dashboard
+CMD ["python", "start_services.py"] 

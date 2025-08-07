@@ -12,10 +12,13 @@ import json
 import asyncio
 import aiohttp
 import base64
+import hashlib
+import re
 from io import BytesIO
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, Any, Optional
 import re
+import hashlib
 
 # API Clients
 from notion_client import Client as NotionClient
@@ -56,13 +59,24 @@ intents.guild_messages = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 class FoodAnalysisResult:
-    """Represents the result of AI food analysis"""
-    def __init__(self, food_name: str, calories: int, confidence: float, description: str = ""):
+    """Represents the result of AI food analysis with macronutrients"""
+    def __init__(self, food_name: str, calories: int, confidence: float, description: str = "", 
+                 protein: float = 0.0, carbohydrates: float = 0.0, fat: float = 0.0):
         self.food_name = food_name
         self.calories = calories
         self.confidence = confidence
         self.description = description
+        self.protein = protein  # in grams
+        self.carbohydrates = carbohydrates  # in grams
+        self.fat = fat  # in grams
         self.timestamp = datetime.now()
+        
+    def get_meal_hash(self) -> str:
+        """Generate a hash for meal similarity detection"""
+        import hashlib
+        # Create a simplified version of the food name for comparison
+        simplified_name = re.sub(r'[^a-z0-9\s]', '', self.food_name.lower().strip())
+        return hashlib.md5(simplified_name.encode()).hexdigest()[:8]
 
 class AIVisionHandler:
     """Handles OpenRouter AI vision analysis"""
@@ -93,21 +107,28 @@ class AIVisionHandler:
             
             # Create the prompt for food analysis
             prompt = """
-            Please analyze this food image and provide:
+            Please analyze this food image and provide detailed nutritional information:
             1. The name of the food item(s) you see
             2. An estimate of the total calories in this serving
-            3. A confidence score (0-100) for your analysis
-            4. A brief description of what you see
+            3. Estimate of protein content in grams
+            4. Estimate of carbohydrates content in grams
+            5. Estimate of fat content in grams
+            6. A confidence score (0-100) for your analysis
+            7. A brief description of what you see
             
             Please respond in this exact JSON format:
             {
                 "food_name": "name of the food",
                 "calories": 123,
+                "protein": 15.5,
+                "carbohydrates": 45.2,
+                "fat": 8.3,
                 "confidence": 85,
                 "description": "brief description of the food and portion"
             }
             
-            Focus on being accurate with calorie estimation. If you see multiple food items, provide the total calories for everything visible.
+            Focus on being accurate with nutritional estimation. If you see multiple food items, provide the total nutrition for everything visible.
+            Protein, carbohydrates, and fat should be in grams. Be as precise as possible but realistic about portion sizes.
             """
             
             # Call OpenRouter API with vision model
@@ -143,6 +164,9 @@ class AIVisionHandler:
                 return FoodAnalysisResult(
                     food_name=json_data.get("food_name", "Unknown Food"),
                     calories=int(json_data.get("calories", 0)),
+                    protein=float(json_data.get("protein", 0.0)),
+                    carbohydrates=float(json_data.get("carbohydrates", 0.0)),
+                    fat=float(json_data.get("fat", 0.0)),
                     confidence=float(json_data.get("confidence", 0)),
                     description=json_data.get("description", "")
                 )
@@ -151,6 +175,9 @@ class AIVisionHandler:
                 lines = response_text.split('\n')
                 food_name = "Unknown Food"
                 calories = 0
+                protein = 0.0
+                carbohydrates = 0.0
+                fat = 0.0
                 confidence = 50.0
                 description = "Analysis completed"
                 
@@ -161,12 +188,25 @@ class AIVisionHandler:
                         cal_match = re.search(r'(\d+)', line)
                         if cal_match:
                             calories = int(cal_match.group(1))
+                    elif 'protein' in line.lower():
+                        prot_match = re.search(r'(\d+\.?\d*)', line)
+                        if prot_match:
+                            protein = float(prot_match.group(1))
+                    elif 'carb' in line.lower():
+                        carb_match = re.search(r'(\d+\.?\d*)', line)
+                        if carb_match:
+                            carbohydrates = float(carb_match.group(1))
+                    elif 'fat' in line.lower():
+                        fat_match = re.search(r'(\d+\.?\d*)', line)
+                        if fat_match:
+                            fat = float(fat_match.group(1))
                     elif 'confidence' in line.lower():
                         conf_match = re.search(r'(\d+)', line)
                         if conf_match:
                             confidence = float(conf_match.group(1))
                 
-                return FoodAnalysisResult(food_name, calories, confidence, description)
+                return FoodAnalysisResult(food_name, calories, confidence, description, 
+                                        protein, carbohydrates, fat)
                 
         except Exception as e:
             print(f"❌ Error in AI analysis: {e}")
@@ -264,6 +304,15 @@ class NotionHandler:
                         }
                     ]
                 },
+                "Protein": {
+                    "number": analysis.protein
+                },
+                "Carbs": {
+                    "number": analysis.carbohydrates
+                },
+                "Fat": {
+                    "number": analysis.fat
+                },
                 "date": {
                     "date": {
                         "start": analysis.timestamp.isoformat()
@@ -271,6 +320,15 @@ class NotionHandler:
                 },
                 "confidence": {
                     "number": analysis.confidence
+                },
+                "meal_hash": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": analysis.get_meal_hash()
+                            }
+                        }
+                    ]
                 },
                 "Picture": {
                     "files": [
@@ -307,21 +365,39 @@ class NotionHandler:
             return False
 
 async def create_analysis_embed(analysis: FoodAnalysisResult, image_url: str) -> discord.Embed:
-    """Create a Discord embed with the analysis results"""
+    """Create a Discord embed with the analysis results including macronutrients"""
     embed = discord.Embed(
         title="🍽️ Food Analysis Complete!",
         color=0x00ff00 if analysis.confidence > 70 else 0xffaa00
     )
     
     embed.add_field(name="🥗 Food Identified", value=analysis.food_name, inline=True)
-    embed.add_field(name="🔥 Estimated Calories", value=f"{analysis.calories} kcal", inline=True)
+    embed.add_field(name="🔥 Calories", value=f"{analysis.calories} kcal", inline=True)
     embed.add_field(name="🎯 Confidence", value=f"{analysis.confidence:.1f}%", inline=True)
+    
+    # Add macronutrient information
+    embed.add_field(name="🥩 Protein", value=f"{analysis.protein:.1f}g", inline=True)
+    embed.add_field(name="🍞 Carbs", value=f"{analysis.carbohydrates:.1f}g", inline=True)
+    embed.add_field(name="🧈 Fat", value=f"{analysis.fat:.1f}g", inline=True)
+    
+    # Calculate macronutrient distribution
+    total_macros = analysis.protein + analysis.carbohydrates + analysis.fat
+    if total_macros > 0:
+        protein_pct = (analysis.protein / total_macros) * 100
+        carbs_pct = (analysis.carbohydrates / total_macros) * 100
+        fat_pct = (analysis.fat / total_macros) * 100
+        
+        embed.add_field(
+            name="📊 Macro Distribution", 
+            value=f"P: {protein_pct:.0f}% | C: {carbs_pct:.0f}% | F: {fat_pct:.0f}%", 
+            inline=False
+        )
     
     if analysis.description:
         embed.add_field(name="📝 Description", value=analysis.description, inline=False)
     
     embed.set_image(url=image_url)
-    embed.set_footer(text=f"Analysis completed at {analysis.timestamp.strftime('%H:%M:%S')}")
+    embed.set_footer(text=f"Analysis completed at {analysis.timestamp.strftime('%H:%M:%S')} | Meal ID: {analysis.get_meal_hash()}")
     
     return embed
 
@@ -353,13 +429,17 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
         # Save to Notion database
         saved = await NotionHandler.save_food_analysis(analysis, attachment.url, str(message.author))
         
-        # Log the food analysis
+        # Log the food analysis with enhanced nutrition data
         bot_logger.log_food_analysis({
             'user': str(message.author.display_name),
             'food_name': analysis.food_name,
             'calories': analysis.calories,
+            'protein': analysis.protein,
+            'carbohydrates': analysis.carbohydrates,
+            'fat': analysis.fat,
             'confidence': analysis.confidence,
             'description': analysis.description,
+            'meal_hash': analysis.get_meal_hash(),
             'image_url': attachment.url,
             'saved_to_notion': saved,
             'timestamp': analysis.timestamp.isoformat()
@@ -393,27 +473,39 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
         )
         await message.channel.send("❌ An error occurred while processing your image. Please try again.")
 
-async def process_monthly_command(message: discord.Message):
-    """Process the 'month' command to generate last month's report"""
+async def process_monthly_command(message: discord.Message, current_month: bool = True):
+    """Process the 'month' or 'month_before' command to generate monthly report"""
     try:
+        # Determine which month to analyze
+        command_type = "month_command" if current_month else "month_before_command"
+        
         # Log monthly command usage
         bot_logger.log_user_command(
             str(message.author.display_name),
-            "month_command",
+            command_type,
             str(message.channel)
         )
         
         # Send processing message
-        processing_msg = await message.channel.send("📊 Generating your monthly report...")
-        
-        # Get last month's date
-        now = datetime.now()
-        if now.month == 1:
-            last_month = 12
-            last_year = now.year - 1
+        if current_month:
+            processing_msg = await message.channel.send("📊 Generating your current month's report...")
         else:
-            last_month = now.month - 1
-            last_year = now.year
+            processing_msg = await message.channel.send("📊 Generating your previous month's report...")
+        
+        # Get the target month's date
+        now = datetime.now()
+        
+        if current_month:
+            target_month = now.month
+            target_year = now.year
+        else:
+            # Previous month
+            if now.month == 1:
+                target_month = 12
+                target_year = now.year - 1
+            else:
+                target_month = now.month - 1
+                target_year = now.year
         
         # Initialize report generator
         data_extractor = CalorieDataExtractor()
@@ -424,15 +516,16 @@ async def process_monthly_command(message: discord.Message):
         discord_username = str(message.author.display_name)
         
         # Try to find matching user in the data
-        all_users = data_extractor.get_all_users(last_year, last_month)
+        all_users = data_extractor.get_all_users(target_year, target_month)
         
         if not all_users:
             bot_logger.log_error(
                 "NO_DATA_FOUND",
-                f"No calorie data found for {last_month}/{last_year}",
-                {"user": discord_username, "period": f"{last_month}/{last_year}"}
+                f"No calorie data found for {target_month}/{target_year}",
+                {"user": discord_username, "period": f"{target_month}/{target_year}"}
             )
-            await processing_msg.edit(content=f"❌ No calorie data found for {last_month}/{last_year}. Upload some food images first!")
+            month_name = datetime(target_year, target_month, 1).strftime('%B %Y')
+            await processing_msg.edit(content=f"❌ No calorie data found for {month_name}. Upload some food images first!")
             return
         
         # Find best matching user
@@ -455,14 +548,15 @@ async def process_monthly_command(message: discord.Message):
             await processing_msg.edit(content=f"⚠️ Using data for '{user_match}' (couldn't match your Discord name exactly)")
         
         # Generate the monthly report
-        report_data = await report_generator.generate_monthly_report(last_year, last_month, user_match)
+        report_data = await report_generator.generate_monthly_report(target_year, target_month, user_match)
         
         # Log the monthly report generation
         bot_logger.log_monthly_report({
             **report_data,
             'requested_by': discord_username,
             'matched_user': user_match,
-            'period': f"{last_month}/{last_year}"
+            'period': f"{target_month}/{target_year}",
+            'report_type': 'current_month' if current_month else 'previous_month'
         })
         
         if not report_data.get('success'):
@@ -527,23 +621,37 @@ async def on_ready():
         channel = bot.get_channel(CALORIES_CHANNEL_ID)
         if channel:
             startup_message = (
-                "🍽️ **Calories Bot is now online!** 🤖\n\n"
-                "I'm ready to analyze your food! Here's what I can do:\n"
-                "• 📸 Analyze food images and estimate calories using AI vision\n"
-                "• 🍎 Identify foods and provide nutritional information\n"
-                "• 💾 Automatically save food entries to your Notion database\n"
-                "• 📊 Generate monthly calorie reports with charts\n"
-                "• 🎯 Provide confidence ratings for food analysis\n\n"
-                "**Commands:**\n"
-                "• `!help_calories` - Show detailed help\n"
-                "• `!test_analysis` - Test the AI analysis\n"
-                "• `!logs` - View recent activity logs\n"
-                "• Send `month` - Generate monthly report\n\n"
-                "Just upload food photos and I'll analyze them automatically!\n"
-                "Monthly reports are generated when you type 'month'."
+                "🍽️ **Enhanced Calories Bot is now online!** 🤖\n\n"
+                "I'm your AI-powered nutrition assistant! Here's what I can do:\n\n"
+                "**🔍 AI Food Analysis:**\n"
+                "• 📸 Analyze food images using advanced AI vision\n"
+                "• 🔥 Estimate calories, protein, carbs, and fat content\n"
+                "• 💾 Automatically save to your Notion database\n"
+                "• 🎯 Provide confidence ratings for accuracy\n\n"
+                "**📊 Available Commands:**\n"
+                "• `!help_calories` - Show detailed help information\n"
+                "• `!nutrition` - Show today's nutrition summary with macros\n"
+                "• `!nutrition_weekly` - Display this week's nutrition overview\n"
+                "• `!weekly` - Display this week's calories and tracking summary\n"
+                "• `!meals` - View your most frequent meals this month\n"
+                "• `!test_analysis` - Test bot connectivity and status\n"
+                "• `!logs` - View recent activity and system logs\n"
+                "• Type `month` - Generate current month's comprehensive report\n"
+                "• Type `month_before` - Generate previous month's comprehensive report\n\n"
+                "**🚀 How to Use:**\n"
+                "• Simply upload food photos and I'll analyze them automatically!\n"
+                "• Each analysis includes calories, protein, carbs, and fat\n"
+                "• Use commands to track your nutrition progress\n"
+                "• Monthly reports show trends and meal frequency\n\n"
+                "**💡 Enhanced Features:**\n"
+                "• Macronutrient tracking (protein, carbs, fat)\n"
+                "• Meal similarity detection and frequency analysis\n"
+                "• Daily, weekly, and monthly nutrition summaries\n"
+                "• Detailed nutritional breakdowns and distributions\n\n"
+                "Ready to track your nutrition! 🎯"
             )
             await channel.send(startup_message)
-            print("✅ Startup notification sent to calories channel")
+            print("✅ Enhanced startup notification sent to calories channel")
         else:
             print(f"❌ Could not find channel with ID {CALORIES_CHANNEL_ID}")
     except Exception as e:
@@ -559,9 +667,14 @@ async def on_message(message):
     if message.channel.id != CALORIES_CHANNEL_ID:
         return
     
-    # Check for "month" command
+    # Check for "month" command (current month)
     if message.content.lower().strip() == "month":
-        await process_monthly_command(message)
+        await process_monthly_command(message, current_month=True)
+        return
+    
+    # Check for "month_before" command (previous month)
+    if message.content.lower().strip() == "month_before":
+        await process_monthly_command(message, current_month=False)
         return
     
     # Check if message has image attachments
@@ -575,6 +688,426 @@ async def on_message(message):
     # Process commands
     await bot.process_commands(message)
 
+@bot.command(name="nutrition")
+async def nutrition_today(ctx):
+    """Show today's nutrition summary"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        # Log command usage
+        bot_logger.log_user_command(
+            str(ctx.author.display_name),
+            "nutrition_today",
+            str(ctx.channel)
+        )
+        
+        # Get today's data
+        today = datetime.now()
+        discord_username = str(ctx.author.display_name)
+        
+        # Extract today's data
+        data_extractor = CalorieDataExtractor()
+        monthly_data = data_extractor.get_monthly_data(today.year, today.month)
+        
+        # Filter for today and user
+        user_data = [
+            entry for entry in monthly_data 
+            if entry.get("person", "").lower() in discord_username.lower() or 
+               discord_username.lower() in entry.get("person", "").lower()
+        ]
+        
+        today_data = [
+            entry for entry in user_data 
+            if entry.get("date") == today.date()
+        ]
+        
+        if not today_data:
+            embed = discord.Embed(
+                title="🍽️ Heute's Ernährung",
+                description="Noch keine Mahlzeiten heute erfasst.",
+                color=0xffaa00
+            )
+            await ctx.send(embed=embed)
+            return
+        
+        # Calculate today's totals
+        total_calories = sum(entry.get("calories", 0) for entry in today_data)
+        total_protein = sum(entry.get("protein", 0) for entry in today_data)
+        total_carbs = sum(entry.get("carbohydrates", 0) for entry in today_data)
+        total_fat = sum(entry.get("fat", 0) for entry in today_data)
+        
+        # Create embed
+        embed = discord.Embed(
+            title="🍽️ Heute's Ernährung",
+            description=f"**{len(today_data)} Mahlzeit(en) erfasst**",
+            color=0x00ff00
+        )
+        
+        embed.add_field(name="🔥 Kalorien", value=f"{total_calories} kcal", inline=True)
+        embed.add_field(name="🥩 Protein", value=f"{total_protein:.1f}g", inline=True)
+        embed.add_field(name="🍞 Kohlenhydrate", value=f"{total_carbs:.1f}g", inline=True)
+        embed.add_field(name="🧈 Fette", value=f"{total_fat:.1f}g", inline=True)
+        
+        # Macronutrient distribution
+        total_macros = total_protein + total_carbs + total_fat
+        if total_macros > 0:
+            protein_pct = (total_protein / total_macros) * 100
+            carbs_pct = (total_carbs / total_macros) * 100
+            fat_pct = (total_fat / total_macros) * 100
+            
+            embed.add_field(
+                name="📊 Verteilung", 
+                value=f"P: {protein_pct:.0f}% | C: {carbs_pct:.0f}% | F: {fat_pct:.0f}%", 
+                inline=False
+            )
+        
+        # List today's meals
+        meals_text = "\n".join([
+            f"• {entry.get('food_name', 'Unknown')} ({entry.get('calories', 0)} kcal)"
+            for entry in today_data
+        ])
+        
+        if len(meals_text) > 1024:  # Discord embed field limit
+            meals_text = meals_text[:1020] + "..."
+        
+        embed.add_field(name="🥗 Heutige Mahlzeiten", value=meals_text, inline=False)
+        embed.set_footer(text=f"Stand: {today.strftime('%H:%M')} Uhr")
+        
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        bot_logger.log_error(
+            "NUTRITION_COMMAND_ERROR",
+            str(e),
+            {"user": str(ctx.author.display_name)}
+        )
+        await ctx.send(f"❌ Fehler beim Abrufen der Ernährungsdaten: {str(e)}")
+
+@bot.command(name="meals")
+async def frequent_meals(ctx):
+    """Show most frequent meals this month"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        # Log command usage
+        bot_logger.log_user_command(
+            str(ctx.author.display_name),
+            "frequent_meals",
+            str(ctx.channel)
+        )
+        
+        # Get this month's data
+        today = datetime.now()
+        discord_username = str(ctx.author.display_name)
+        
+        # Extract data
+        data_extractor = CalorieDataExtractor()
+        monthly_data = data_extractor.get_monthly_data(today.year, today.month)
+        
+        # Find matching user
+        all_users = list(set(entry.get("person", "") for entry in monthly_data))
+        user_match = None
+        
+        for user in all_users:
+            if user.lower() in discord_username.lower() or discord_username.lower() in user.lower():
+                user_match = user
+                break
+        
+        if not user_match and all_users:
+            user_match = all_users[0]
+        
+        if not user_match:
+            await ctx.send("❌ Keine Daten für diesen Monat gefunden.")
+            return
+        
+        # Get meal frequency analysis
+        meal_frequency = data_extractor.get_meal_frequency_analysis(monthly_data, user_match)
+        
+        if meal_frequency.get('error'):
+            await ctx.send("❌ Fehler bei der Mahlzeiten-Analyse.")
+            return
+        
+        # Create embed
+        embed = discord.Embed(
+            title="🍽️ Häufigste Mahlzeiten",
+            description=f"**{meal_frequency['total_meals']} Mahlzeiten** | **{meal_frequency['unique_foods']} verschiedene Gerichte**",
+            color=0x00ff00
+        )
+        
+        # Add variety score
+        embed.add_field(
+            name="🌈 Vielfalt-Score",
+            value=f"{meal_frequency['variety_score']}%",
+            inline=True
+        )
+        
+        # Add most repeated meal
+        most_repeated = meal_frequency['most_repeated_meal']
+        embed.add_field(
+            name="🔝 Häufigstes Gericht",
+            value=f"{most_repeated[0]} ({most_repeated[1]}x)",
+            inline=True
+        )
+        
+        # List top meals
+        top_meals = meal_frequency.get('top_meals', [])[:10]
+        if top_meals:
+            meals_text = "\n".join([
+                f"{i+1}. {meal[0]} - **{meal[1]}x**"
+                for i, meal in enumerate(top_meals)
+            ])
+            if len(meals_text) > 1024:
+                meals_text = meals_text[:1020] + "..."
+            embed.add_field(name="📊 Top 10 Mahlzeiten", value=meals_text, inline=False)
+        
+        embed.set_footer(text=f"Analyse für {today.strftime('%B %Y')}")
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        print(f"❌ Error in meals command: {e}")
+        bot_logger.log_error(
+            "MEALS_COMMAND_ERROR",
+            str(e),
+            {"user": str(ctx.author.display_name)}
+        )
+        await ctx.send("❌ Fehler beim Abrufen der Mahlzeiten-Daten.")
+
+@bot.command(name="weekly")
+async def weekly_summary(ctx):
+    """Show this week's nutrition summary"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        # Log command usage
+        bot_logger.log_user_command(
+            str(ctx.author.display_name),
+            "weekly_summary",
+            str(ctx.channel)
+        )
+        
+        # Get this week's data
+        today = datetime.now()
+        week_start = today - timedelta(days=today.weekday())  # Monday
+        discord_username = str(ctx.author.display_name)
+        
+        # Extract monthly data (we'll filter for the week)
+        data_extractor = CalorieDataExtractor()
+        monthly_data = data_extractor.get_monthly_data(today.year, today.month)
+        
+        # Filter for user and this week
+        user_data = [
+            entry for entry in monthly_data 
+            if entry.get("person", "").lower() in discord_username.lower() or 
+               discord_username.lower() in entry.get("person", "").lower()
+        ]
+        
+        week_data = [
+            entry for entry in user_data 
+            if entry.get("date") >= week_start.date() and entry.get("date") <= today.date()
+        ]
+        
+        if not week_data:
+            embed = discord.Embed(
+                title="📅 Wochenübersicht",
+                description="Noch keine Mahlzeiten diese Woche erfasst.",
+                color=0xffaa00
+            )
+            await ctx.send(embed=embed)
+            return
+        
+        # Calculate weekly totals
+        total_calories = sum(entry.get("calories", 0) for entry in week_data)
+        total_protein = sum(entry.get("protein", 0) for entry in week_data)
+        total_carbs = sum(entry.get("carbohydrates", 0) for entry in week_data)
+        total_fat = sum(entry.get("fat", 0) for entry in week_data)
+        
+        # Calculate daily averages
+        unique_days = len(set(entry.get("date") for entry in week_data))
+        avg_calories = total_calories / unique_days if unique_days > 0 else 0
+        avg_protein = total_protein / unique_days if unique_days > 0 else 0
+        avg_carbs = total_carbs / unique_days if unique_days > 0 else 0
+        avg_fat = total_fat / unique_days if unique_days > 0 else 0
+        
+        # Create embed
+        embed = discord.Embed(
+            title="📅 Wochenübersicht",
+            description=f"**{len(week_data)} Mahlzeiten** an **{unique_days} Tagen**",
+            color=0x00ff00
+        )
+        
+        # Weekly totals
+        embed.add_field(name="🔥 Gesamt Kalorien", value=f"{total_calories} kcal", inline=True)
+        embed.add_field(name="🥩 Gesamt Protein", value=f"{total_protein:.1f}g", inline=True)
+        embed.add_field(name="🍞 Gesamt Carbs", value=f"{total_carbs:.1f}g", inline=True)
+        embed.add_field(name="🧈 Gesamt Fette", value=f"{total_fat:.1f}g", inline=True)
+        
+        # Daily averages
+        embed.add_field(name="📊 Ø Kalorien/Tag", value=f"{avg_calories:.0f} kcal", inline=True)
+        embed.add_field(name="📊 Ø Protein/Tag", value=f"{avg_protein:.1f}g", inline=True)
+        
+        # Macronutrient distribution
+        total_macros = total_protein + total_carbs + total_fat
+        if total_macros > 0:
+            protein_pct = (total_protein / total_macros) * 100
+            carbs_pct = (total_carbs / total_macros) * 100
+            fat_pct = (total_fat / total_macros) * 100
+            
+            embed.add_field(
+                name="📊 Makro-Verteilung (Woche)", 
+                value=f"P: {protein_pct:.0f}% | C: {carbs_pct:.0f}% | F: {fat_pct:.0f}%", 
+                inline=False
+            )
+        
+        # Daily breakdown
+        daily_breakdown = {}
+        for entry in week_data:
+            date = entry.get("date")
+            if date not in daily_breakdown:
+                daily_breakdown[date] = {"calories": 0, "meals": 0}
+            daily_breakdown[date]["calories"] += entry.get("calories", 0)
+            daily_breakdown[date]["meals"] += 1
+        
+        daily_text = ""
+        for date in sorted(daily_breakdown.keys()):
+            day_name = date.strftime("%a")
+            calories = daily_breakdown[date]["calories"]
+            meals = daily_breakdown[date]["meals"]
+            daily_text += f"{day_name}: {calories} kcal ({meals} Mahlzeiten)\n"
+        
+        if daily_text:
+            embed.add_field(name="📅 Tägliche Aufschlüsselung", value=daily_text, inline=False)
+        
+        week_range = f"{week_start.strftime('%d.%m')} - {today.strftime('%d.%m.%Y')}"
+        embed.set_footer(text=f"Woche: {week_range}")
+        
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        print(f"❌ Error in weekly command: {e}")
+        bot_logger.log_error(
+            "WEEKLY_COMMAND_ERROR",
+            str(e),
+            {"user": str(ctx.author.display_name)}
+        )
+        await ctx.send("❌ Fehler beim Abrufen der Wochendaten.")
+
+@bot.command(name="nutrition_weekly")
+async def weekly_nutrition(ctx):
+    """Show this week's nutrition summary"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        # Log command usage
+        bot_logger.log_user_command(
+            str(ctx.author.display_name),
+            "weekly_nutrition",
+            str(ctx.channel)
+        )
+        
+        # Get this week's data
+        today = datetime.now()
+        week_start = today - timedelta(days=today.weekday())  # Monday
+        discord_username = str(ctx.author.display_name)
+        
+        # Extract data
+        data_extractor = CalorieDataExtractor()
+        monthly_data = data_extractor.get_monthly_data(today.year, today.month)
+        
+        # Filter for user and this week
+        user_data = [
+            entry for entry in monthly_data 
+            if entry.get("person", "").lower() in discord_username.lower() or 
+               discord_username.lower() in entry.get("person", "").lower()
+        ]
+        
+        week_data = [
+            entry for entry in user_data 
+            if entry.get("date") >= week_start.date() and entry.get("date") <= today.date()
+        ]
+        
+        if not week_data:
+            embed = discord.Embed(
+                title="📅 Diese Woche",
+                description="Noch keine Mahlzeiten diese Woche erfasst.",
+                color=0xffaa00
+            )
+            await ctx.send(embed=embed)
+            return
+        
+        # Calculate weekly totals and averages
+        total_calories = sum(entry.get("calories", 0) for entry in week_data)
+        total_protein = sum(entry.get("protein", 0) for entry in week_data)
+        total_carbs = sum(entry.get("carbohydrates", 0) for entry in week_data)
+        total_fat = sum(entry.get("fat", 0) for entry in week_data)
+        
+        # Calculate unique days with data
+        unique_days = len(set(entry.get("date") for entry in week_data))
+        
+        avg_calories = total_calories / unique_days if unique_days > 0 else 0
+        avg_protein = total_protein / unique_days if unique_days > 0 else 0
+        avg_carbs = total_carbs / unique_days if unique_days > 0 else 0
+        avg_fat = total_fat / unique_days if unique_days > 0 else 0
+        
+        # Create embed
+        embed = discord.Embed(
+            title="📅 Diese Woche",
+            description=f"**{week_start.strftime('%d.%m.')} - {today.strftime('%d.%m.%Y')}**",
+            color=0x00ff00
+        )
+        
+        embed.add_field(name="🔥 Gesamt Kalorien", value=f"{total_calories} kcal", inline=True)
+        embed.add_field(name="📈 Ø Kalorien/Tag", value=f"{avg_calories:.0f} kcal", inline=True)
+        embed.add_field(name="📅 Getrackte Tage", value=f"{unique_days}/7", inline=True)
+        
+        embed.add_field(name="🥩 Ø Protein/Tag", value=f"{avg_protein:.1f}g", inline=True)
+        embed.add_field(name="🍞 Ø Kohlenhydrate/Tag", value=f"{avg_carbs:.1f}g", inline=True)
+        embed.add_field(name="🧈 Ø Fette/Tag", value=f"{avg_fat:.1f}g", inline=True)
+        
+        # Daily breakdown
+        daily_breakdown = {}
+        for entry in week_data:
+            date = entry.get("date")
+            if date not in daily_breakdown:
+                daily_breakdown[date] = {"calories": 0, "meals": 0}
+            daily_breakdown[date]["calories"] += entry.get("calories", 0)
+            daily_breakdown[date]["meals"] += 1
+        
+        # Show daily summary
+        daily_text = []
+        for i in range(7):
+            day = week_start + timedelta(days=i)
+            day_date = day.date()
+            if day_date in daily_breakdown:
+                data = daily_breakdown[day_date]
+                daily_text.append(f"**{day.strftime('%a %d.%m.')}:** {data['calories']} kcal ({data['meals']} Mahlzeiten)")
+            else:
+                daily_text.append(f"{day.strftime('%a %d.%m.')}: Keine Daten")
+        
+        embed.add_field(
+            name="📊 Tägliche Übersicht",
+            value="\n".join(daily_text),
+            inline=False
+        )
+        
+        embed.set_footer(text=f"Woche {today.isocalendar()[1]}, {today.year}")
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        bot_logger.log_error(
+            "WEEKLY_COMMAND_ERROR",
+            str(e),
+            {"user": str(ctx.author.display_name)}
+        )
+        await ctx.send(f"❌ Fehler bei der Wochen-Analyse: {str(e)}")
+
 @bot.command(name="help_calories")
 async def help_calories(ctx):
     """Show help information for the calories bot"""
@@ -586,8 +1119,8 @@ async def help_calories(ctx):
     )
     
     embed = discord.Embed(
-        title="🍽️ Calories Bot Help",
-        description="Upload food images to get AI-powered calorie analysis!",
+        title="🍽️ Enhanced Calories Bot Help",
+        description="AI-powered food analysis with comprehensive nutrition tracking!",
         color=0x00aaff
     )
     
@@ -598,32 +1131,32 @@ async def help_calories(ctx):
     )
     
     embed.add_field(
-        name="📊 Monthly Reports",
-        value="Type **month** to get your last month's calorie chart and statistics!",
-        inline=False
-    )
-    
-    embed.add_field(
-        name="🔍 What I Analyze",
-        value="• Food identification\n• Calorie estimation\n• Portion size assessment\n• Confidence scoring",
+        name=" What I Analyze",
+        value="• Food identification\n• Calorie estimation\n• Protein content (grams)\n• Carbohydrate content (grams)\n• Fat content (grams)\n• Macronutrient distribution\n• Confidence scoring",
         inline=True
     )
     
     embed.add_field(
         name="💾 Data Storage",
-        value="Results are automatically saved to your FoodIate Notion database",
+        value="Results are automatically saved to your FoodIate Notion database with full nutritional data",
         inline=True
+    )
+    
+    embed.add_field(
+        name="⚡ Available Commands",
+        value="• `!help_calories` - Show this help\n• `!test_analysis` - Test bot status\n• Type `month` - Current month report with macros\n• Type `month_before` - Previous month report\n• `!nutrition` - Today's nutrition\n• `!weekly` - This week's summary\n• `!meals` - Most frequent meals\n• `!logs` - View logging info",
+        inline=False
+    )
+    
+    embed.add_field(
+        name="📊 Enhanced Reports",
+        value="• **Monthly**: Calories, macros, meal frequency\n• **Daily**: Current day nutrition breakdown\n• **Weekly**: 7-day nutrition trends\n• **Meal Analysis**: Frequency and variety tracking",
+        inline=False
     )
     
     embed.add_field(
         name="🎯 Tips for Better Results",
         value="• Use good lighting\n• Show the full portion\n• Avoid blurry images\n• Include reference objects (plate, utensils)",
-        inline=False
-    )
-    
-    embed.add_field(
-        name="⚡ Available Commands",
-        value="• `!help_calories` - Show this help\n• `!test_analysis` - Test bot status\n• Type `month` - Get monthly report\n• `!logs` - View logging info",
         inline=False
     )
     

@@ -20,7 +20,7 @@ from chart_generator import CalorieChartGenerator
 from logger_config import bot_logger
 
 # Load environment variables
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 # Configuration
@@ -54,7 +54,7 @@ class MonthlyReportGenerator:
     
     async def generate_monthly_report(self, year: int, month: int, username: str) -> Dict[str, Any]:
         """
-        Generate complete monthly report for a user
+        Generate complete monthly report for a user with enhanced macronutrient analysis
         
         Args:
             year: Target year
@@ -65,9 +65,10 @@ class MonthlyReportGenerator:
             Dictionary with report data and file paths
         """
         try:
-            print(f"📊 Generating monthly report for {username} - {month}/{year}")
+            print(f"📊 Generating enhanced monthly report for {username} - {month}/{year}")
             
-            # Extract data from Notion
+            # Extract basic data from Notion
+            monthly_data = self.data_extractor.get_monthly_data(year, month)
             df = self.data_extractor.get_user_monthly_data(year, month, username)
             stats = self.data_extractor.get_monthly_stats(year, month, username)
             
@@ -78,6 +79,10 @@ class MonthlyReportGenerator:
                     'message': f'Keine Kaloriendaten für {username} im {self._get_month_name(month)} {year} gefunden.',
                     'stats': stats
                 }
+            
+            # Get enhanced analysis
+            meal_frequency = self.data_extractor.get_meal_frequency_analysis(monthly_data, username)
+            macro_analysis = self.data_extractor.get_macronutrient_analysis(monthly_data, username)
             
             # Generate chart
             chart_filename = f"calorie_report_{username}_{year}_{month:02d}.png"
@@ -98,6 +103,8 @@ class MonthlyReportGenerator:
             return {
                 'success': True,
                 'stats': stats,
+                'meal_frequency': meal_frequency,
+                'macro_analysis': macro_analysis,
                 'chart_path': chart_path,
                 'chart_filename': chart_filename,
                 'data_points': len(df)
@@ -176,6 +183,75 @@ class MonthlyReportGenerator:
                 value=f"**{report_data['data_points']}**",
                 inline=True
             )
+            
+            # Add macronutrient information if available
+            macro_analysis = report_data.get('macro_analysis', {})
+            if macro_analysis and not macro_analysis.get('error'):
+                embed.add_field(
+                    name="🥩 Protein (Ø/Tag)",
+                    value=f"**{macro_analysis.get('avg_daily_protein', 0):.1f}g**",
+                    inline=True
+                )
+                
+                embed.add_field(
+                    name="🍞 Kohlenhydrate (Ø/Tag)", 
+                    value=f"**{macro_analysis.get('avg_daily_carbs', 0):.1f}g**",
+                    inline=True
+                )
+                
+                embed.add_field(
+                    name="🧈 Fette (Ø/Tag)",
+                    value=f"**{macro_analysis.get('avg_daily_fat', 0):.1f}g**",
+                    inline=True
+                )
+                
+                # Macronutrient distribution
+                protein_pct = macro_analysis.get('protein_percentage', 0)
+                carbs_pct = macro_analysis.get('carbs_percentage', 0)
+                fat_pct = macro_analysis.get('fat_percentage', 0)
+                
+                embed.add_field(
+                    name="📊 Makro-Verteilung",
+                    value=f"P: {protein_pct:.0f}% | C: {carbs_pct:.0f}% | F: {fat_pct:.0f}%",
+                    inline=False
+                )
+            
+            # Add meal frequency information if available
+            meal_frequency = report_data.get('meal_frequency', {})
+            if meal_frequency and not meal_frequency.get('error'):
+                top_meals = meal_frequency.get('top_meals', [])
+                variety_score = meal_frequency.get('variety_score', 0)
+                most_repeated = meal_frequency.get('most_repeated_meal', ('None', 0))
+                
+                embed.add_field(
+                    name="🍽️ Vielfalt-Score",
+                    value=f"**{variety_score:.1f}%**",
+                    inline=True
+                )
+                
+                embed.add_field(
+                    name="🔄 Häufigstes Gericht",
+                    value=f"**{most_repeated[0]}** ({most_repeated[1]}x)",
+                    inline=True
+                )
+                
+                embed.add_field(
+                    name="📈 Einzigartige Gerichte",
+                    value=f"**{meal_frequency.get('unique_foods', 0)}**",
+                    inline=True
+                )
+                
+                # Top 3 meals
+                if top_meals:
+                    top_3_text = "\n".join([
+                        f"**{i+1}.** {meal[0]} ({meal[1]}x)" 
+                        for i, meal in enumerate(top_meals[:3])
+                    ])
+                    embed.add_field(
+                        name="🏆 Top 3 Gerichte",
+                        value=top_3_text,
+                        inline=False
+                    )
             
             # Add motivational message
             motivation = self._get_motivational_message(stats)

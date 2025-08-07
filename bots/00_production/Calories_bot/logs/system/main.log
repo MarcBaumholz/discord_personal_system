@@ -14,3 +14,44 @@
 2025-07-23 08:08:48,044 | INFO | Channel ID: 1382099540391497818
 2025-07-23 08:08:48,044 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
 2025-07-23 08:08:48,044 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 22:25:38,401 | INFO | ==================================================
+2025-08-07 22:25:38,402 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-07 22:25:38,402 | INFO | ==================================================
+2025-08-07 22:25:38,402 | INFO | Bot User: Marc Baumholz#5492
+2025-08-07 22:25:38,402 | INFO | Channel ID: 1382099540391497818
+2025-08-07 22:25:38,402 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-07 22:25:38,402 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 22:44:50,621 | INFO | ==================================================
+2025-08-07 22:44:50,622 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-07 22:44:50,622 | INFO | ==================================================
+2025-08-07 22:44:50,622 | INFO | Bot User: Marc Baumholz#5492
+2025-08-07 22:44:50,622 | INFO | Channel ID: 1382099540391497818
+2025-08-07 22:44:50,622 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-07 22:44:50,622 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 22:51:34,786 | INFO | ==================================================
+2025-08-07 22:51:34,786 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-07 22:51:34,787 | INFO | ==================================================
+2025-08-07 22:51:34,787 | INFO | Bot User: Marc Baumholz#5492
+2025-08-07 22:51:34,787 | INFO | Channel ID: 1382099540391497818
+2025-08-07 22:51:34,787 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-07 22:51:34,787 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 23:05:30,454 | INFO | ==================================================
+2025-08-07 23:05:30,454 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-07 23:05:30,454 | INFO | ==================================================
+2025-08-07 23:05:30,454 | INFO | Bot User: Marc Baumholz#5492
+2025-08-07 23:05:30,454 | INFO | Channel ID: 1382099540391497818
+2025-08-07 23:05:30,454 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-07 23:05:30,454 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 23:11:26,334 | INFO | ==================================================
+2025-08-07 23:11:26,334 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-07 23:11:26,334 | INFO | ==================================================
+2025-08-07 23:11:26,334 | INFO | Bot User: Marc Baumholz#5492
+2025-08-07 23:11:26,334 | INFO | Channel ID: 1382099540391497818
+2025-08-07 23:11:26,334 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-07 23:11:26,334 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-07 23:11:54,013 | INFO | 🔧 SYSTEM EVENT: CHART_GENERATED
+2025-08-07 23:11:54,013 | INFO |   user: Marc
+2025-08-07 23:11:54,014 | INFO |   chart_path: /home/pi/Documents/discord/bots/00_production/Calories_bot/reports/calorie_report_Marc_2025_08.png
+2025-08-07 23:11:54,014 | INFO |   file_size: 374086
+2025-08-07 23:11:54,014 | INFO | 🔧 SYSTEM EVENT: CHART_CLEANUP
+2025-08-07 23:11:54,014 | INFO |   chart_path: /home/pi/Documents/discord/bots/00_production/Calories_bot/reports/calorie_report_Marc_2025_08.png

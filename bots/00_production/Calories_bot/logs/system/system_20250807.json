@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-08-07T23:11:54.014112",
+    "event": "system_event",
+    "event_type": "CHART_GENERATED",
+    "user": "Marc",
+    "chart_path": "/home/pi/Documents/discord/bots/00_production/Calories_bot/reports/calorie_report_Marc_2025_08.png",
+    "file_size": 374086
+  },
+  {
+    "timestamp": "2025-08-07T23:11:54.014533",
+    "event": "system_event",
+    "event_type": "CHART_CLEANUP",
+    "chart_path": "/home/pi/Documents/discord/bots/00_production/Calories_bot/reports/calorie_report_Marc_2025_08.png"
+  }
+]

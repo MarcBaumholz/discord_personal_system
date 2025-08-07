@@ -1,0 +1,128 @@
+[
+  {
+    "timestamp": "2025-08-07T22:33:13.248477",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "upload_food_image",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:42:53.798546",
+    "event": "user_command",
+    "user": "Marc Calories",
+    "command": "upload_food_image",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:46:20.563196",
+    "event": "user_command",
+    "user": "Marc Calories",
+    "command": "upload_food_image",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:47:14.843714",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "help_calories",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:47:30.481072",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "logs",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:47:42.049343",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "test_analysis",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:48:11.751336",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "weekly_nutrition",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:48:16.560039",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "month_command",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:48:31.222438",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "frequent_meals",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:50:19.563448",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "nutrition_today",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:51:54.820625",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "nutrition_today",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:52:12.553632",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "weekly_nutrition",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:52:37.296390",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "test_analysis",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:22.598261",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "frequent_meals",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T23:05:51.864585",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "nutrition_today",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T23:05:57.051547",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "weekly_summary",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T23:06:09.811310",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "month_command",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-08-07T23:11:39.031368",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "month_command",
+    "channel": "calories"
+  }
+]
