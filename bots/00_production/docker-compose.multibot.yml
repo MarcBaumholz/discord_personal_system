@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  multibot:
+    build:
+      context: ../..
+      dockerfile: discord/bots/00_production/Dockerfile.multibot
+    container_name: discord_multibot
+    restart: unless-stopped
+    environment:
+      - PYTHONPATH=/app
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    working_dir: /app/discord
+    command: ["python", "bots/00_production/start_multibot.py"]
+    healthcheck:
+      test: ["CMD", "python", "bots/00_production/healthcheck_multibot.py"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    networks:
+      - discord_network
+
+networks:
+  discord_network:
+    driver: bridge

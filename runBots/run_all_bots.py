@@ -15,6 +15,7 @@ def discover_bots():
     """Automatically discover all bot files in the bots directory"""
     # Use curated list of known bots to avoid false positives
     known_bots = [
+        {"name": "Allgemeine Wohl Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/allgemeineWohl", "allgemeine_wohl_bot.py")},
         {"name": "Calories Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/Calories_bot", "calories_bot.py")},
         {"name": "Health Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/health_bot", "health_bot.py")},
         {"name": "Decision Bot", "path": os.path.join("/home/pi/Documents/discord/bots/00_production/decision_bot", "decision_bot.py")},

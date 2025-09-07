@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-09-02T20:42:55.765681",
+    "event": "error",
+    "error_type": "File not found",
+    "error_message": "Ground truth database file not found",
+    "context": {}
+  }
+]

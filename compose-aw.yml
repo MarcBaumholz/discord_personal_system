@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  allgemeinewohl-bot:
+    build:
+      context: ./
+      dockerfile: Dockerfile.allgemeinewohl
+    env_file:
+      - ./bots/00_production/allgemeineWohl/.env.bot
+    restart: unless-stopped
+    networks:
+      - allgemeinewohl-net
+    volumes:
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+networks:
+  allgemeinewohl-net:
+    driver: bridge

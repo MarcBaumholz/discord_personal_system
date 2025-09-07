@@ -92,7 +92,7 @@ To find this information, you should search the internet for current flyers, pro
             
             # Prepare the request
             payload = {
-                "model": "deepseek/deepseek-chat-v3-0324:free",
+                "model": "meta-llama/llama-3.1-8b-instruct:free",  # Updated to newest free model
                 "temperature": 0.2,
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 2000

@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2025-08-19T11:22:54.051488",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Wiener Schnitzel with Sp\u00e4tzle",
+    "calories": 650,
+    "protein": 35.0,
+    "carbohydrates": 70.0,
+    "fat": 25.0,
+    "confidence": 80.0,
+    "description": "A plate containing Wiener Schnitzel, a breaded and fried veal cutlet, served with a portion of Sp\u00e4tzle, a type of German egg noodle. The serving appears to be a standard restaurant portion.",
+    "meal_hash": "c6ee7dce",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1407323889394253844/5A11FD64-B718-4244-9A84-4F206CF45ED9_2025-08-19_at_13.22.38.jpeg?ex=68a5b002&is=68a45e82&hm=4e8b2a44a50fbcbf33dfa2b85012b45ec54b57b3583599a85b5bc3a4a13fc5e1&",
+    "saved_to_notion": true
+  }
+]

@@ -1,0 +1,19 @@
+# Global docker ignore to speed up the minimal build
+*.pyc
+__pycache__/
+.git/
+.gitignore
+logs/
+data/
+tests/
+test/
+*.md
+*.log
+*.env
+venv/
+calories_env/
+*.sqlite*
+*.db
+node_modules/
+*.tmp
+completed_todos.json

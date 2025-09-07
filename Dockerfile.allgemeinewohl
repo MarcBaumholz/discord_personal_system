@@ -1,0 +1,56 @@
+# Lightweight image just for the Allgemeine Wohl bot
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+  && rm -rf /var/lib/apt/lists/*
+
+COPY requirements-allgemeinewohl.txt .
+RUN pip install --no-cache-dir -r requirements-allgemeinewohl.txt
+
+COPY bots/00_production/allgemeineWohl/ bots/00_production/allgemeineWohl/
+
+RUN mkdir -p /app/logs
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app
+
+RUN useradd --create-home --shell /bin/bash botuser && chown -R botuser:botuser /app
+USER botuser
+
+HEALTHCHECK --interval=60s --timeout=20s --start-period=20s --retries=3 CMD python -c "print('ok')"
+
+CMD ["python", "bots/00_production/allgemeineWohl/allgemeine_wohl_bot.py"]
+# Lightweight image just for the Allgemeine Wohl bot
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system build deps only if needed (kept minimal)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+  && rm -rf /var/lib/apt/lists/*
+
+# Copy minimal requirements and install
+COPY requirements-allgemeinewohl.txt .
+RUN pip install --no-cache-dir -r requirements-allgemeinewohl.txt
+
+# Copy only the bot directory (preserve path used in code for .env traversal)
+COPY bots/00_production/allgemeineWohl/ bots/00_production/allgemeineWohl/
+
+# Create logs directory
+RUN mkdir -p /app/logs
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app
+
+# Non-root user
+RUN useradd --create-home --shell /bin/bash botuser && chown -R botuser:botuser /app
+USER botuser
+
+# Simple healthcheck (just prints ok)
+HEALTHCHECK --interval=60s --timeout=20s --start-period=20s --retries=3 CMD python -c "print('ok')"
+
+CMD ["python", "bots/00_production/allgemeineWohl/allgemeine_wohl_bot.py"]

@@ -9,3 +9,4 @@
 2025-08-07 23:06:10,552 | ERROR | ❌ NO_DATA_FOUND: No calorie data found for 7/2025
 2025-08-07 23:06:10,552 | ERROR | Context: {'user': 'Marc', 'period': '7/2025'}
 2025-08-07 23:11:51,795 | ERROR | Failed to write to JSON file logs/monthly_reports/reports_0_00.json: keys must be str, int, float, bool or None, not date
+2025-09-02 20:42:55,765 | ERROR | ❌ File not found: Ground truth database file not found

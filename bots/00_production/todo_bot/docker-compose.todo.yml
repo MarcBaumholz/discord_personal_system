@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  todo-bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: discord-todo-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - TODOIST_API_KEY=${TODOIST_API_KEY}
+      - WEEKLY_PLANNING_CHANNEL_ID=${WEEKLY_PLANNING_CHANNEL_ID}
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - TIMEZONE=${TIMEZONE:-Europe/Berlin}
+    env_file:
+      - ../../.env  # Use the main .env file
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - todo-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "health_check.py", "--docker"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    labels:
+      - "com.docker.compose.project=discord-bots"
+      - "com.docker.compose.service=todo-bot"
+
+networks:
+  todo-network:
+    driver: bridge
+    name: discord-todo-network
+
+volumes:
+  logs:
+    driver: local
+  data:
+    driver: local

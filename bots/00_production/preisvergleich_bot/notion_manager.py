@@ -25,9 +25,9 @@ class NotionProductManager:
             raise ValueError("Notion token is required. Set NOTION_TOKEN in .env or pass as argument.")
         
         # Get the database ID and clean it if needed
-        raw_database_id = database_id or os.getenv("PREISVERGLEICH_DATABASE_ID")
+        raw_database_id = database_id or os.getenv("NOTION_DATABASE_ID")
         if not raw_database_id:
-            raise ValueError("Notion database ID is required. Set PREISVERGLEICH_DATABASE_ID in .env or pass as argument.")
+            raise ValueError("Notion database ID is required. Set NOTION_DATABASE_ID in .env or pass as argument.")
         
         # Clean the database ID if it's in URL format
         self.database_id = self._clean_database_id(raw_database_id)

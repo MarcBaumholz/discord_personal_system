@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  {BOT_NAME}-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: {BOT_NAME}-bot
+    restart: unless-stopped
+    env_file:
+      # Load environment variables from the main discord .env file
+      - ../../../.env
+    volumes:
+      # Mount logs directory to persist logs
+      - ./logs:/app/logs
+      # Mount data directory for persistent storage (if needed)
+      - ./data:/app/data
+      # Mount .env file from parent discord directory
+      - ../../../.env:/app/../../.env:ro
+    networks:
+      - {BOT_NAME}-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    # Uncomment if your bot needs to expose ports
+    # ports:
+    #   - "8080:8080"
+
+networks:
+  {BOT_NAME}-network:
+    driver: bridge
+
+volumes:
+  {BOT_NAME}-logs:
+    driver: local
+  {BOT_NAME}-data:
+    driver: local

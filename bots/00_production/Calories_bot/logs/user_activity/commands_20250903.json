@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-09-03T09:55:05.647198",
+    "event": "user_command",
+    "user": "Marc Calories",
+    "command": "upload_food_image",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-09-03T10:08:34.333099",
+    "event": "user_command",
+    "user": "Marc Calories",
+    "command": "upload_food_image",
+    "channel": "calories"
+  }
+]

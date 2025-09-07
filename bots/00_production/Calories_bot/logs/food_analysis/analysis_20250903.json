@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2025-09-03T09:55:23.872588",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Walnuts and M&M's (small serving)",
+    "calories": 250,
+    "protein": 6.5,
+    "carbohydrates": 25.0,
+    "fat": 18.0,
+    "confidence": 80.0,
+    "description": "A small serving of walnuts and M&M's candies placed on a dark countertop. The walnuts are roughly 15-20 pieces, and the M&M's are about 15 pieces.",
+    "meal_hash": "4346d08a",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1412737657758285854/DE939A89-2DE6-4459-932E-EE74A804B7E8_2025-09-03_at_11.55.00.jpeg?ex=68b961f9&is=68b81079&hm=94044b859bb6fd5c5a332e87c3fe0aca38b2d6f29532470a1b848bca3a6f6566&",
+    "saved_to_notion": true
+  },
+  {
+    "timestamp": "2025-09-03T10:08:55.330450",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Scrambled Eggs with Sausage and Onions (serving for 2 people)",
+    "calories": 600,
+    "protein": 35.0,
+    "carbohydrates": 10.0,
+    "fat": 40.0,
+    "confidence": 75.0,
+    "description": "The image shows a partially eaten plate of scrambled eggs mixed with sausage and onions. There is also a frying pan with remnants of the same dish. The portion size appears to be enough for two people, with about half of the meal remaining on the plate.",
+    "meal_hash": "ce72e497",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1412741050144915496/45FA6198-316F-4CFE-9CDD-F14C0B19A3ED_2025-09-03_at_12.08.29.jpeg?ex=68b96521&is=68b813a1&hm=763d48225ce1f30decbd72bfb291820d6a9971dafa2b807f0a0ac2d0533d13b4&",
+    "saved_to_notion": true
+  }
+]

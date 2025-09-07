@@ -30,7 +30,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 HAUSHALTSPLAN_CHANNEL_ID = int(os.getenv("HAUSHALTSPLAN_CHANNEL_ID"))
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 NOTION_DATABASE_ID = os.getenv("CLEANDB_ID")
-OPENAI_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENAI_API_KEY = "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"
 
 # Initialize clients
 notion = NotionClient(auth=NOTION_TOKEN)
@@ -146,7 +146,7 @@ class LLMHandler:
             """
             
             response = openai_client.chat.completions.create(
-                model="deepseek/deepseek-r1-0528:free",
+                model="moonshotai/kimi-k2:free",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=200,
                 temperature=0.3
@@ -201,7 +201,7 @@ class LLMHandler:
             """
             
             response = openai_client.chat.completions.create(
-                model="deepseek/deepseek-r1-0528:free",
+                model="moonshotai/kimi-k2:free",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=150,
                 temperature=0.7
@@ -234,7 +234,7 @@ class LLMHandler:
             """
             
             response = openai_client.chat.completions.create(
-                model="deepseek/deepseek-r1-0528:free",
+                model="moonshotai/kimi-k2:free",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=100,
                 temperature=0.8

@@ -13,7 +13,7 @@ logging.basicConfig(
 logger = logging.getLogger('offer_finder')
 
 class OfferFinder:
-    def __init__(self, api_key: Optional[str] = None, model: str = "deepseek/deepseek-chat-v3-0324:free"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "moonshotai/kimi-k2:free"):
         """
         Initialize the OfferFinder with OpenRouter API key
         
@@ -21,7 +21,7 @@ class OfferFinder:
             api_key: OpenRouter API key (defaults to OPENROUTER_API_KEY env variable)
             model: LLM model to use for web search and reasoning
         """
-        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+        self.api_key = "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"
         if not self.api_key:
             raise ValueError("OpenRouter API key is required. Set OPENROUTER_API_KEY in .env or pass as argument.")
         

@@ -1,0 +1,168 @@
+{
+  "foods": {
+    "butterbrezel mit honig": {
+      "food_name": "Butterbrezel mit Honig",
+      "calories": 420,
+      "protein": 12.5,
+      "carbohydrates": 58.2,
+      "fat": 16.8,
+      "confidence": 100,
+      "description": "Frische Butterbrezel mit natürlichem Honig - typisch bayerische Brotzeit",
+      "vitamins": {
+        "vitamin_b1": 0.12,
+        "vitamin_b2": 0.08,
+        "vitamin_e": 2.1,
+        "folate": 45
+      },
+      "minerals": {
+        "calcium": 85,
+        "iron": 2.4,
+        "magnesium": 35,
+        "phosphorus": 125,
+        "potassium": 180,
+        "sodium": 580,
+        "zinc": 1.2
+      },
+      "fiber": 3.2,
+      "sugar": 18.5,
+      "saturated_fat": 7.2,
+      "cholesterol": 25,
+      "keywords": ["butterbrezel", "brezel", "honig", "laugenbrot"]
+    },
+    "apfel": {
+      "food_name": "Apfel (mittelgroß)",
+      "calories": 95,
+      "protein": 0.5,
+      "carbohydrates": 25.1,
+      "fat": 0.3,
+      "confidence": 100,
+      "description": "Frischer mittelgroßer Apfel mit Schale",
+      "vitamins": {
+        "vitamin_c": 8.4,
+        "vitamin_k": 4.0,
+        "vitamin_a": 98,
+        "folate": 5
+      },
+      "minerals": {
+        "calcium": 11,
+        "iron": 0.18,
+        "magnesium": 9,
+        "phosphorus": 20,
+        "potassium": 195,
+        "sodium": 2
+      },
+      "fiber": 4.4,
+      "sugar": 18.9,
+      "keywords": ["apfel", "apple", "obst", "frucht"]
+    },
+    "schnitzel wiener art": {
+      "food_name": "Schnitzel Wiener Art (paniert)",
+      "calories": 350,
+      "protein": 28.5,
+      "carbohydrates": 12.8,
+      "fat": 22.1,
+      "confidence": 100,
+      "description": "Paniertes Schweineschnitzel nach Wiener Art mit Semmelbrösel",
+      "vitamins": {
+        "vitamin_b1": 0.8,
+        "vitamin_b6": 0.4,
+        "vitamin_b12": 0.7,
+        "niacin": 5.2
+      },
+      "minerals": {
+        "calcium": 25,
+        "iron": 1.8,
+        "magnesium": 28,
+        "phosphorus": 220,
+        "potassium": 320,
+        "sodium": 450,
+        "zinc": 2.1
+      },
+      "fiber": 0.8,
+      "saturated_fat": 7.5,
+      "cholesterol": 85,
+      "keywords": ["schnitzel", "wiener", "paniert", "fleisch", "schwein"]
+    },
+    "pizza margherita": {
+      "food_name": "Pizza Margherita (1 Stück, ⅛ einer 30cm Pizza)",
+      "calories": 285,
+      "protein": 12.2,
+      "carbohydrates": 35.8,
+      "fat": 10.5,
+      "confidence": 100,
+      "description": "Klassische Pizza Margherita mit Tomatensauce, Mozzarella und Basilikum",
+      "vitamins": {
+        "vitamin_a": 156,
+        "vitamin_c": 3.2,
+        "vitamin_k": 8.1,
+        "folate": 43
+      },
+      "minerals": {
+        "calcium": 144,
+        "iron": 1.9,
+        "magnesium": 25,
+        "phosphorus": 152,
+        "potassium": 172,
+        "sodium": 598
+      },
+      "fiber": 2.3,
+      "sugar": 4.1,
+      "saturated_fat": 4.9,
+      "keywords": ["pizza", "margherita", "käse", "tomate", "italienisch"]
+    },
+    "banane": {
+      "food_name": "Banane (mittelgroß)",
+      "calories": 105,
+      "protein": 1.3,
+      "carbohydrates": 27.0,
+      "fat": 0.4,
+      "confidence": 100,
+      "description": "Reife mittelgroße Banane ohne Schale",
+      "vitamins": {
+        "vitamin_c": 10.3,
+        "vitamin_b6": 0.4,
+        "folate": 25,
+        "vitamin_a": 81
+      },
+      "minerals": {
+        "calcium": 6,
+        "iron": 0.31,
+        "magnesium": 32,
+        "phosphorus": 26,
+        "potassium": 422,
+        "sodium": 1
+      },
+      "fiber": 3.1,
+      "sugar": 14.4,
+      "keywords": ["banane", "banana", "obst", "frucht", "gelb"]
+    },
+    "döner kebab": {
+      "food_name": "Döner Kebab (Hähnchen, mit Salat und Sauce)",
+      "calories": 520,
+      "protein": 35.2,
+      "carbohydrates": 42.1,
+      "fat": 24.8,
+      "confidence": 100,
+      "description": "Döner Kebab mit Hähnchenfleisch, Fladenbrot, Salat, Tomate, Zwiebel und Sauce",
+      "vitamins": {
+        "vitamin_a": 245,
+        "vitamin_c": 15.2,
+        "vitamin_b3": 8.5,
+        "vitamin_b6": 0.6
+      },
+      "minerals": {
+        "calcium": 95,
+        "iron": 2.8,
+        "magnesium": 42,
+        "phosphorus": 285,
+        "potassium": 385,
+        "sodium": 890,
+        "zinc": 2.4
+      },
+      "fiber": 3.8,
+      "saturated_fat": 6.2,
+      "cholesterol": 78,
+      "keywords": ["döner", "kebab", "hähnchen", "fladenbrot", "türkisch"]
+    }
+  }
+}

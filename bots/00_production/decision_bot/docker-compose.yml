@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  decision-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: decision-bot
+    restart: unless-stopped
+    env_file:
+      - ../../../.env
+    volumes:
+      - ./logs:/app/logs
+      - ./upload:/app/upload
+      - ./vector_index:/app/vector_index
+      - ../../../.env:/app/../../.env:ro
+    networks:
+      - decision-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  decision-network:
+    driver: bridge

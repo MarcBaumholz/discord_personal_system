@@ -1,0 +1,30 @@
+# Simple multi-bot container for 5 production bots
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system deps (add others if needed later)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy only requirements first for better caching
+COPY bots/00_production/requirements.multibot.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Copy source
+COPY . /app
+
+# Environment
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app
+
+# Create a non-root user
+RUN useradd -m botuser && chown -R botuser:botuser /app
+USER botuser
+
+# Healthcheck: ensure all 5 processes alive (naive check)
+HEALTHCHECK --interval=60s --timeout=15s --start-period=20s --retries=3 CMD python /app/bots/00_production/healthcheck_multibot.py
+
+CMD ["python", "bots/00_production/start_multibot.py"]

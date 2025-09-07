@@ -29,7 +29,7 @@ class OfferSearchAgent:
         Args:
             api_key: OpenRouter API key (defaults to OPENROUTER_API_KEY env variable)
         """
-        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+        self.api_key = "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"
         if not self.api_key:
             raise ValueError("OpenRouter API key is required. Set OPENROUTER_API_KEY in .env or pass as argument.")
         
@@ -48,7 +48,7 @@ class OfferSearchAgent:
         self.llm = ChatOpenAI(
             api_key=self.api_key,
             base_url="https://openrouter.ai/api/v1",
-            model="deepseek/deepseek-r1-0528:free",
+            model="moonshotai/kimi-k2:free",
             temperature=0.2,
             max_tokens=2000,
             streaming=False

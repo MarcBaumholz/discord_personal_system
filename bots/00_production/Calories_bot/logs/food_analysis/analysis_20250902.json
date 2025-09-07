@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2025-09-02T10:39:22.123533",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Chicken Stir-Fry with Rice and Vegetables",
+    "calories": 450,
+    "protein": 30.0,
+    "carbohydrates": 55.0,
+    "fat": 12.0,
+    "confidence": 80.0,
+    "description": "A plate of chicken stir-fry with rice and vegetables, including zucchini, carrots, and green onions. The portion appears to be a single serving.",
+    "meal_hash": "afec7d46",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1412386360740024351/6DC93CFC-622F-403A-B1A6-5BA9C3061502_2025-09-02_at_12.39.05.jpeg?ex=68b81acd&is=68b6c94d&hm=ce28db764016669de676b547b59c83b45a505d39ea72b5b13c447791fdc56e44&",
+    "saved_to_notion": true
+  }
+]

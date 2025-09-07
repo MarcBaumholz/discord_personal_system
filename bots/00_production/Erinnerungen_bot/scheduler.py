@@ -44,15 +44,15 @@ class ErinnerungsScheduler:
         # Birthday check at 07:00 daily
         schedule.every().day.at("07:00").do(self._run_birthday_check)
         
-        # Waste collection check at 20:00 daily
-        schedule.every().day.at("20:00").do(self._run_waste_check)
+        # Waste collection check at 18:00 daily (6pm) - one day in advance
+        schedule.every().day.at("18:00").do(self._run_waste_check)
         
         # Test check every 10 minutes (remove in production)
         # schedule.every(10).minutes.do(self._run_test_check)
         
         logger.info("Scheduled tasks configured:")
         logger.info("- Birthday check: 07:00 daily")
-        logger.info("- Waste collection check: 20:00 daily")
+        logger.info("- Waste collection check: 18:00 daily (one day in advance)")
     
     def start(self):
         """Start the scheduler in a loop"""

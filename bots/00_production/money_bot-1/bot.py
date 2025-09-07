@@ -40,7 +40,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 MONEY_CHANNEL_ID = 1396903503624016024  # Money channel ID
 NOTION_TOKEN = os.getenv("NOTION_TOKEN") 
 MONEY_DB_ID = "237d42a1faf5802496cadffa99784181"  # Money database ID
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_API_KEY = "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"
 
 # Initialize clients
 notion = NotionClient(auth=NOTION_TOKEN)
@@ -96,7 +96,7 @@ class MoneyAnalyzer:
             """
             
             response = await openai_client.chat.completions.create(
-                model="deepseek/deepseek-chat-v3-0324:free",  # Free model - no costs!
+                model="moonshotai/kimi-k2:free",  # Free Kimi model - reliable and fast!
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=300,
                 temperature=0.3,
@@ -168,9 +168,9 @@ class MoneyAnalyzer:
             If you cannot clearly identify a monetary amount, set amount to 0.
             """
             
-            # Use DeepSeek as primary free model - it works excellently for both text and image analysis
+            # Use Kimi as primary free model - reliable and excellent for analysis
             models_to_try = [
-                "deepseek/deepseek-chat-v3-0324:free",  # Primary free model - excellent performance
+                "moonshotai/kimi-k2:free",               # Primary free model - excellent performance
                 "anthropic/claude-3-haiku:beta",        # Backup free model
             ]
             
@@ -178,11 +178,10 @@ class MoneyAnalyzer:
                 try:
                     logger.info(f"Trying model: {model}")
                     
-                    # Since DeepSeek doesn't support vision but is excellent at analysis,
-                    # we'll provide helpful context for image analysis
-                    if "deepseek" in model.lower():
-                        # For DeepSeek, use intelligent text-based analysis
-                        logger.info(f"Using DeepSeek model {model} with smart image handling")
+                    # Since Kimi might not support vision, provide helpful context for image analysis
+                    if "kimi" in model.lower():
+                        # For Kimi, use intelligent text-based analysis
+                        logger.info(f"Using Kimi model {model} with smart image handling")
                         
                         smart_prompt = f"""
                         A user has uploaded a receipt/expense image. While I cannot see the image directly, 
@@ -290,18 +289,27 @@ class NotionManager:
     """Manages Notion database operations"""
     
     @staticmethod
-    def get_person_from_author(author: str) -> str:
-        """Map Discord author to Notion Person select options"""
+    def get_person_from_author(author: str, text: str = "") -> str:
+        """Map Discord author or name in text to Notion Person select options"""
+        # Check for names in the text first (higher priority)
+        text_lower = text.lower()
+        if 'marc' in text_lower or 'baumholz' in text_lower:
+            return "Marc"
+        if 'ralf' in text_lower:
+            return "Ralf"
+        if 'nick' in text_lower or 'jolenmann' in text_lower:
+            return "Nick"
+            
+        # If no name in text, check the author
         author_lower = author.lower()
         if 'marc' in author_lower or 'baumholz' in author_lower:
-            return 'Marc'
+            return "Marc"
         elif 'ralf' in author_lower:
-            return 'Ralf'
-        elif 'nick' in author_lower:
-            return 'Nick'
+            return "Ralf"
+        elif 'nick' in author_lower or 'jolenmann' in author_lower:
+            return "Nick"
         else:
-            logger.info(f"Unknown author '{author}', defaulting to Marc")
-            return 'Marc'  # Default fallback
+            return "Sonstiges"
     
     @staticmethod
     async def save_money_entry(data: Dict[str, Any]) -> bool:
@@ -332,7 +340,7 @@ class NotionManager:
                 },
                 "Person": {
                     "select": {
-                        "name": NotionManager.get_person_from_author(data["author"])
+                        "name": NotionManager.get_person_from_author(data["author"], data["description"])
                     }
                 },
                 "Beschreibung": {

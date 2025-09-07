@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  allgemeine-wohl-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: allgemeine-wohl-bot
+    restart: unless-stopped
+    env_file:
+      # Load environment variables from the .env file in the parent discord directory
+      - ../../../.env
+    volumes:
+      # Mount logs directory to persist logs
+      - ./logs:/app/logs
+      # Mount bot state file to persist state
+      - ./bot_state.json:/app/bot_state.json
+      # Mount .env file from parent discord directory to the expected location
+      - ../../../.env:/app/../../.env:ro
+    networks:
+      - allgemeine-wohl-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  allgemeine-wohl-network:
+    driver: bridge
+
+volumes:
+  allgemeine-wohl-logs:
+    driver: local

@@ -1783,3 +1783,113 @@ aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing tr
 2025-07-30 02:26:22,712 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
 2025-07-30 02:43:31,031 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
 2025-07-30 02:56:09,524 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d13d18a95d4d9856facf84c1c3c3af46.
+2025-08-09 11:19:43,617 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-09 11:19:43,618 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-08-09 11:19:43,619 - discord.client - INFO - logging in using static token
+2025-08-09 11:19:44,688 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 114c39579d46b4532f375c5c3adcbfcd).
+2025-08-09 11:19:46,692 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-08-09 11:19:46,692 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-08-09 11:19:46,906 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-08-09 11:19:46,906 - money_bot - INFO - 📅 Monthly check task started
+2025-08-09 11:20:02,703 - money_bot - INFO - 📥 Processing message from: Marc (ID: 1403669142967422976)
+2025-08-09 11:20:02,704 - money_bot - INFO - 📝 Processing TEXT from Marc: 7,5 Linsen Eintopf...
+2025-08-09 11:20:05,624 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-09 11:20:08,107 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 0,
+    "category": "Food",
+    "description": "7,5 Linsen Eintopf"
+}
+```
+2025-08-09 11:20:08,107 - money_bot - INFO - 💭 No money amount detected in text from Marc
+2025-08-09 11:20:38,694 - money_bot - INFO - 📥 Processing message from: Marc (ID: 1403669294008631358)
+2025-08-09 11:20:38,694 - money_bot - INFO - 📝 Processing TEXT from Marc: 7,5 € Linsen Eintopf...
+2025-08-09 11:20:40,329 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-09 11:20:40,330 - openai._base_client - INFO - Retrying request to /chat/completions in 0.405572 seconds
+2025-08-09 11:20:41,563 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-09 11:20:42,212 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 7.5,
+    "category": "Food",
+    "description": "Linsen Eintopf"
+}
+```
+2025-08-09 11:20:42,212 - money_bot - INFO - Saving to Notion: {'amount': 7.5, 'category': 'Food', 'description': 'Linsen Eintopf', 'author': 'Marc', 'type': 'text'}
+2025-08-09 11:20:43,340 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-08-09 11:20:43,341 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-08-09 11:21:30,610 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-09 11:21:30,611 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-08-09 11:21:30,612 - discord.client - INFO - logging in using static token
+2025-08-09 11:21:33,545 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9a96b71ec505ba456d18d28dd9c8219d).
+2025-08-09 11:21:35,549 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-08-09 11:21:35,549 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-08-09 11:21:35,875 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-08-09 11:21:35,875 - money_bot - INFO - 📅 Monthly check task started
+2025-08-09 11:45:07,183 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1403675453343928380)
+2025-08-09 11:45:07,184 - money_bot - INFO - 📝 Processing TEXT from Marc Baumholz Money Webhook: 33€ einkaufen...
+2025-08-09 11:45:09,494 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-09 11:45:10,266 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 33,
+    "category": "Shopping",
+    "description": "einkaufen"
+}
+```
+2025-08-09 11:45:10,267 - money_bot - INFO - Saving to Notion: {'amount': 33.0, 'category': 'Shopping', 'description': 'einkaufen', 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-08-09 11:45:14,739 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-08-09 11:45:14,742 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-08-09 12:21:35,661 - money_bot - INFO - 📥 Processing message from: Marc Baumholz Money Webhook (ID: 1403684631970185218)
+2025-08-09 12:21:35,661 - money_bot - INFO - 📝 Processing TEXT from Marc Baumholz Money Webhook: 13 essen...
+2025-08-09 12:21:38,308 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-09 12:21:40,220 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 13,
+    "category": "Food",
+    "description": "essen (German for 'eat' or 'food')"
+}
+```
+2025-08-09 12:21:40,220 - money_bot - INFO - Saving to Notion: {'amount': 13.0, 'category': 'Food', 'description': "essen (German for 'eat' or 'food')", 'author': 'Marc Baumholz Money Webhook', 'type': 'text'}
+2025-08-09 12:21:43,354 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-08-09 12:21:43,355 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-08-09 12:23:52,727 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9a96b71ec505ba456d18d28dd9c8219d.
+2025-08-09 14:09:15,231 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9a96b71ec505ba456d18d28dd9c8219d.
+2025-08-09 14:41:12,442 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9a96b71ec505ba456d18d28dd9c8219d.
+2025-08-09 15:44:00,652 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9a96b71ec505ba456d18d28dd9c8219d.
+2025-08-11 23:41:00,606 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-11 23:41:00,607 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-08-11 23:41:00,607 - discord.client - INFO - logging in using static token
+2025-08-11 23:41:01,846 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0ea2001c3cbfb7610521f75be2c9fa7a).
+2025-08-11 23:41:03,850 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-08-11 23:41:03,850 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-08-11 23:41:04,297 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-08-11 23:41:04,297 - money_bot - INFO - 📅 Monthly check task started
+2025-08-11 23:41:35,033 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1404580533119357089)
+2025-08-11 23:41:35,033 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: Nick hat 59,45€ für Essen ausgegeben....
+2025-08-11 23:41:45,768 - openai._base_client - INFO - Retrying request to /chat/completions in 0.458475 seconds
+2025-08-11 23:41:49,346 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-11 23:41:50,566 - money_bot - WARNING - ⏰ Text analysis timed out for Marc Home Assistant
+2025-08-11 23:45:04,162 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-11 23:45:04,163 - money_bot - INFO - 🚀 Starting Money Bot...
+2025-08-11 23:45:04,164 - discord.client - INFO - logging in using static token
+2025-08-11 23:45:05,191 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 134f666baeab6b10a2130e0894fe6cf7).
+2025-08-11 23:45:07,196 - money_bot - INFO - 🤖 Marc Baumholz#5492 is now online!
+2025-08-11 23:45:07,196 - money_bot - INFO - 📍 Monitoring money channel ID: 1396903503624016024
+2025-08-11 23:45:07,524 - money_bot - INFO - ✅ Startup notification sent to money channel
+2025-08-11 23:45:07,524 - money_bot - INFO - 📅 Monthly check task started
+2025-08-11 23:45:16,155 - money_bot - INFO - 📥 Processing message from: Marc Home Assistant (ID: 1404581460618379436)
+2025-08-11 23:45:16,155 - money_bot - INFO - 📝 Processing TEXT from Marc Home Assistant: Nick hat 20€ für Essen ausgegeben....
+2025-08-11 23:45:26,820 - openai._base_client - INFO - Retrying request to /chat/completions in 0.422935 seconds
+2025-08-11 23:45:28,998 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-11 23:45:29,601 - money_bot - INFO - AI Analysis: ```json
+{
+    "amount": 20,
+    "category": "Food",
+    "description": "Nick spent money on food."
+}
+```
+2025-08-11 23:45:29,601 - money_bot - INFO - Saving to Notion: {'amount': 20.0, 'category': 'Food', 'description': 'Nick spent money on food.', 'author': 'Marc Home Assistant', 'type': 'text'}
+2025-08-11 23:45:31,043 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-08-11 23:45:31,087 - money_bot - INFO - ✅ Successfully saved to Notion
+2025-08-12 00:27:41,970 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 134f666baeab6b10a2130e0894fe6cf7.
+2025-08-12 01:10:38,593 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 134f666baeab6b10a2130e0894fe6cf7.
+2025-08-12 02:03:35,397 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 134f666baeab6b10a2130e0894fe6cf7.

@@ -1,0 +1,6 @@
+# Minimal dependencies for the Allgemeine Wohl bot
+# Keep versions aligned with main requirements where possible
+discord.py>=2.3.2
+python-dotenv>=1.0.1
+openai>=1.54.4
+notion-client>=2.0.0

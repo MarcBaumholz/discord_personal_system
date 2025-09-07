@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2025-08-18T11:10:54.375485",
+    "event": "food_analysis",
+    "user": "Marc Calories",
+    "food_name": "Chicken Fried Rice with Carrots and Green Onions",
+    "calories": 450,
+    "protein": 20.0,
+    "carbohydrates": 65.0,
+    "fat": 10.0,
+    "confidence": 80.0,
+    "description": "A plate of chicken fried rice topped with sliced green onions and accompanied by carrot sticks. The portion appears to be a standard serving size.",
+    "meal_hash": "1e5da2ae",
+    "image_url": "https://cdn.discordapp.com/attachments/1382099540391497818/1406958486620737637/38B3CEEF-D022-4712-9E56-B3669C20477B_2025-08-18_at_13.10.39.jpeg?ex=68a45bb3&is=68a30a33&hm=668fab502cd6caf7d10fd728332b92ec6c8f77b4147356b58979590666dc19de&",
+    "saved_to_notion": true
+  }
+]

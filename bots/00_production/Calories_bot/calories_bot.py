@@ -42,7 +42,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 CALORIES_CHANNEL_ID = int(os.getenv("CALORIES_CHANNEL_ID", "1382099540391497818"))
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 FOODIATE_DB_ID = os.getenv("FOODIATE_DB_ID", "20ed42a1faf5807497c2f350ff84ea8d")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_API_KEY = "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"
 
 # Initialize clients
 notion = NotionClient(auth=NOTION_TOKEN)
@@ -59,9 +59,12 @@ intents.guild_messages = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 class FoodAnalysisResult:
-    """Represents the result of AI food analysis with macronutrients"""
+    """Represents the result of AI food analysis with complete nutritional information"""
     def __init__(self, food_name: str, calories: int, confidence: float, description: str = "", 
-                 protein: float = 0.0, carbohydrates: float = 0.0, fat: float = 0.0):
+                 protein: float = 0.0, carbohydrates: float = 0.0, fat: float = 0.0,
+                 vitamins: dict = None, minerals: dict = None, fiber: float = 0.0,
+                 sugar: float = 0.0, saturated_fat: float = 0.0, cholesterol: float = 0.0,
+                 analysis_source: str = "ai"):
         self.food_name = food_name
         self.calories = calories
         self.confidence = confidence
@@ -69,6 +72,13 @@ class FoodAnalysisResult:
         self.protein = protein  # in grams
         self.carbohydrates = carbohydrates  # in grams
         self.fat = fat  # in grams
+        self.vitamins = vitamins or {}  # vitamins dict
+        self.minerals = minerals or {}  # minerals dict
+        self.fiber = fiber  # in grams
+        self.sugar = sugar  # in grams
+        self.saturated_fat = saturated_fat  # in grams
+        self.cholesterol = cholesterol  # in mg
+        self.analysis_source = analysis_source  # "ground_truth" or "ai"
         self.timestamp = datetime.now()
         
     def get_meal_hash(self) -> str:
@@ -77,6 +87,182 @@ class FoodAnalysisResult:
         # Create a simplified version of the food name for comparison
         simplified_name = re.sub(r'[^a-z0-9\s]', '', self.food_name.lower().strip())
         return hashlib.md5(simplified_name.encode()).hexdigest()[:8]
+
+class GroundTruthHandler:
+    """Handles ground truth food database for accurate nutrition data"""
+    
+    def __init__(self):
+        self.ground_truth_file = os.path.join(os.path.dirname(__file__), 'ground_truth_foods.json')
+        self.foods_db = self._load_ground_truth_db()
+    
+    def _load_ground_truth_db(self) -> dict:
+        """Load the ground truth foods database"""
+        try:
+            if os.path.exists(self.ground_truth_file):
+                with open(self.ground_truth_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            else:
+                bot_logger.log_error("File not found", "Ground truth database file not found")
+                return {"foods": {}}
+        except Exception as e:
+            bot_logger.log_error("Ground truth error", f"Error loading ground truth database: {e}")
+            return {"foods": {}}
+    
+    def search_ground_truth(self, text: str) -> Optional[FoodAnalysisResult]:
+        """Search for food in ground truth database"""
+        try:
+            text_lower = text.lower().strip()
+            
+            # Direct match first
+            if text_lower in self.foods_db.get("foods", {}):
+                return self._create_result_from_ground_truth(text_lower, self.foods_db["foods"][text_lower])
+            
+            # Keyword matching
+            for food_key, food_data in self.foods_db.get("foods", {}).items():
+                keywords = food_data.get("keywords", [])
+                for keyword in keywords:
+                    if keyword.lower() in text_lower or text_lower in keyword.lower():
+                        print(f"Ground truth match found: {food_key} (keyword: {keyword})")
+                        return self._create_result_from_ground_truth(food_key, food_data)
+            
+            return None
+            
+        except Exception as e:
+            bot_logger.error(f"Error searching ground truth: {e}")
+            return None
+    
+    def _create_result_from_ground_truth(self, food_key: str, food_data: dict) -> FoodAnalysisResult:
+        """Create FoodAnalysisResult from ground truth data"""
+        return FoodAnalysisResult(
+            food_name=food_data.get("food_name", food_key),
+            calories=food_data.get("calories", 0),
+            confidence=food_data.get("confidence", 100.0),
+            description=food_data.get("description", ""),
+            protein=food_data.get("protein", 0.0),
+            carbohydrates=food_data.get("carbohydrates", 0.0),
+            fat=food_data.get("fat", 0.0),
+            vitamins=food_data.get("vitamins", {}),
+            minerals=food_data.get("minerals", {}),
+            fiber=food_data.get("fiber", 0.0),
+            sugar=food_data.get("sugar", 0.0),
+            saturated_fat=food_data.get("saturated_fat", 0.0),
+            cholesterol=food_data.get("cholesterol", 0.0),
+            analysis_source="ground_truth"
+        )
+    
+    def add_food_to_ground_truth(self, food_text: str, nutrition_data: dict):
+        """Add new food to ground truth database"""
+        try:
+            if "foods" not in self.foods_db:
+                self.foods_db["foods"] = {}
+            
+            self.foods_db["foods"][food_text.lower()] = nutrition_data
+            
+            # Save to file
+            with open(self.ground_truth_file, 'w', encoding='utf-8') as f:
+                json.dump(self.foods_db, f, indent=2, ensure_ascii=False)
+            
+            print(f"Added {food_text} to ground truth database")
+            return True
+            
+        except Exception as e:
+            bot_logger.error(f"Error adding food to ground truth: {e}")
+            return False
+
+class AITextHandler:
+    """Handles AI text analysis for food descriptions"""
+    
+    @staticmethod
+    async def analyze_food_text(text: str) -> Optional[FoodAnalysisResult]:
+        """Analyze food text using AI"""
+        try:
+            print(f"🔍 Analyzing food text: {text}")
+            
+            # Enhanced prompt for comprehensive nutrition analysis
+            prompt = f"""
+            Analyze this food description and provide detailed nutritional information:
+            Text: "{text}"
+            
+            Please identify the food and provide:
+            1. Food name (German preferred if applicable)
+            2. Estimated calories for typical serving size
+            3. Protein content in grams
+            4. Carbohydrates content in grams  
+            5. Fat content in grams
+            6. Confidence score (0-100) for your analysis
+            7. Brief description with serving size estimate
+            8. Fiber content in grams
+            9. Sugar content in grams
+            10. Saturated fat in grams
+            11. Key vitamins (vitamin_c, vitamin_a, vitamin_b6, etc.) in mg/mcg
+            12. Key minerals (calcium, iron, potassium, sodium, etc.) in mg
+            
+            Respond in this exact JSON format:
+            {{
+                "food_name": "name of the food with typical serving size",
+                "calories": 123,
+                "protein": 15.5,
+                "carbohydrates": 45.2,
+                "fat": 8.3,
+                "confidence": 85,
+                "description": "detailed description with serving size",
+                "fiber": 3.2,
+                "sugar": 12.1,
+                "saturated_fat": 2.8,
+                "vitamins": {{
+                    "vitamin_c": 15.2,
+                    "vitamin_a": 98,
+                    "vitamin_b6": 0.4
+                }},
+                "minerals": {{
+                    "calcium": 120,
+                    "iron": 2.1,
+                    "potassium": 300,
+                    "sodium": 450
+                }}
+            }}
+            
+            Base your estimates on typical serving sizes and be realistic about portions.
+            """
+            
+            # Use Kimi model for text analysis - fix: use sync client
+            response = openai_client.chat.completions.create(
+                model="moonshotai/kimi-k2:free",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=800,
+                temperature=0.3
+            )
+            
+            response_text = response.choices[0].message.content.strip()
+            print(f"🤖 AI Text Response: {response_text}")
+            
+            # Extract JSON from response
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                json_data = json.loads(json_match.group())
+                
+                return FoodAnalysisResult(
+                    food_name=json_data.get("food_name", "Unknown Food"),
+                    calories=int(json_data.get("calories", 0)),
+                    protein=float(json_data.get("protein", 0.0)),
+                    carbohydrates=float(json_data.get("carbohydrates", 0.0)),
+                    fat=float(json_data.get("fat", 0.0)),
+                    confidence=float(json_data.get("confidence", 0)),
+                    description=json_data.get("description", ""),
+                    fiber=float(json_data.get("fiber", 0.0)),
+                    sugar=float(json_data.get("sugar", 0.0)),
+                    saturated_fat=float(json_data.get("saturated_fat", 0.0)),
+                    vitamins=json_data.get("vitamins", {}),
+                    minerals=json_data.get("minerals", {}),
+                    analysis_source="ai"
+                )
+            else:
+                bot_logger.warning("Could not extract JSON from AI response")
+                return None
+                
+        except Exception as e:
+            bot_logger.error(f"Error analyzing food text: {e}")
+            return None
 
 class AIVisionHandler:
     """Handles OpenRouter AI vision analysis"""
@@ -105,30 +291,49 @@ class AIVisionHandler:
             # Encode image to base64
             image_base64 = await AIVisionHandler.encode_image_to_base64(image_url)
             
-            # Create the prompt for food analysis
+            # Create the enhanced prompt for comprehensive food analysis
             prompt = """
-            Please analyze this food image and provide detailed nutritional information:
+            Please analyze this food image and provide comprehensive nutritional information:
             1. The name of the food item(s) you see
             2. An estimate of the total calories in this serving
             3. Estimate of protein content in grams
             4. Estimate of carbohydrates content in grams
             5. Estimate of fat content in grams
             6. A confidence score (0-100) for your analysis
-            7. A brief description of what you see
+            7. A brief description of what you see with portion size
+            8. Fiber content in grams
+            9. Sugar content in grams 
+            10. Saturated fat content in grams
+            11. Key vitamins (vitamin_c, vitamin_a, vitamin_b6, etc.) in mg/mcg
+            12. Key minerals (calcium, iron, potassium, sodium, etc.) in mg
             
             Please respond in this exact JSON format:
             {
-                "food_name": "name of the food",
+                "food_name": "name of the food with serving size",
                 "calories": 123,
                 "protein": 15.5,
                 "carbohydrates": 45.2,
                 "fat": 8.3,
                 "confidence": 85,
-                "description": "brief description of the food and portion"
+                "description": "detailed description of the food and portion size",
+                "fiber": 3.2,
+                "sugar": 12.1,
+                "saturated_fat": 2.8,
+                "vitamins": {
+                    "vitamin_c": 15.2,
+                    "vitamin_a": 98,
+                    "vitamin_b6": 0.4
+                },
+                "minerals": {
+                    "calcium": 120,
+                    "iron": 2.1,
+                    "potassium": 300,
+                    "sodium": 450
+                }
             }
             
             Focus on being accurate with nutritional estimation. If you see multiple food items, provide the total nutrition for everything visible.
-            Protein, carbohydrates, and fat should be in grams. Be as precise as possible but realistic about portion sizes.
+            All nutrients should be realistic estimates based on typical food composition databases.
             """
             
             # Call OpenRouter API with vision model
@@ -168,7 +373,13 @@ class AIVisionHandler:
                     carbohydrates=float(json_data.get("carbohydrates", 0.0)),
                     fat=float(json_data.get("fat", 0.0)),
                     confidence=float(json_data.get("confidence", 0)),
-                    description=json_data.get("description", "")
+                    description=json_data.get("description", ""),
+                    fiber=float(json_data.get("fiber", 0.0)),
+                    sugar=float(json_data.get("sugar", 0.0)),
+                    saturated_fat=float(json_data.get("saturated_fat", 0.0)),
+                    vitamins=json_data.get("vitamins", {}),
+                    minerals=json_data.get("minerals", {}),
+                    analysis_source="ai"
                 )
             else:
                 # Fallback parsing if JSON not found
@@ -364,6 +575,167 @@ class NotionHandler:
             print(f"❌ Error saving to Notion: {e}")
             return False
 
+async def save_to_notion(analysis: FoodAnalysisResult, discord_user: str, image_url: str = None) -> bool:
+    """Wrapper function to save analysis to Notion"""
+    try:
+        if image_url:
+            return await NotionHandler.save_food_analysis(analysis, image_url, discord_user)
+        else:
+            # For text-based analysis, create a dummy image URL or modify the save function
+            return await NotionHandler.save_food_analysis(analysis, "text_analysis", discord_user)
+    except Exception as e:
+        bot_logger.log_error(f"Error saving to Notion: {e}")
+        return False
+
+async def process_food_text(message: discord.Message):
+    """Process a text food description"""
+    try:
+        # Log text processing start
+        bot_logger.log_user_command(
+            str(message.author.display_name),
+            "text_food_analysis",
+            str(message.channel)
+        )
+        
+        # Send processing message
+        processing_msg = await message.channel.send("🔍 Analyzing your food description...")
+        
+        food_text = message.content.strip()
+        
+        # Step 1: Check ground truth database first
+        ground_truth_result = ground_truth_handler.search_ground_truth(food_text)
+        
+        if ground_truth_result:
+            # Found in ground truth database
+            bot_logger.log_food_analysis(ground_truth_result)
+            
+            # Create enhanced embed
+            embed = await create_enhanced_analysis_embed(ground_truth_result, source_text=food_text)
+            
+            # Try to save to Notion
+            saved = await save_to_notion(ground_truth_result, message.author.display_name)
+            
+            # Update embed footer
+            if saved:
+                embed.set_footer(text=f"✅ Saved to database | Source: Ground Truth | Meal ID: {ground_truth_result.get_meal_hash()}")
+            else:
+                embed.set_footer(text=f"❌ Failed to save | Source: Ground Truth | Meal ID: {ground_truth_result.get_meal_hash()}")
+            
+            await processing_msg.edit(content="", embed=embed)
+            
+        else:
+            # Not found in ground truth, use AI analysis
+            analysis = await AITextHandler.analyze_food_text(food_text)
+            
+            if analysis:
+                # Convert analysis to dict for logging
+                analysis_dict = {
+                    'food_name': analysis.food_name,
+                    'calories': analysis.calories,
+                    'confidence': analysis.confidence,
+                    'protein': analysis.protein,
+                    'carbohydrates': analysis.carbohydrates,
+                    'fat': analysis.fat,
+                    'user': message.author.display_name,
+                    'analysis_source': analysis.analysis_source
+                }
+                bot_logger.log_food_analysis(analysis_dict)
+                
+                # Create enhanced embed
+                embed = await create_enhanced_analysis_embed(analysis, source_text=food_text)
+                
+                # Try to save to Notion
+                saved = await save_to_notion(analysis, message.author.display_name)
+                
+                # Update embed footer
+                if saved:
+                    embed.set_footer(text=f"✅ Saved to database | Source: AI Analysis | Meal ID: {analysis.get_meal_hash()}")
+                else:
+                    embed.set_footer(text=f"❌ Failed to save | Source: AI Analysis | Meal ID: {analysis.get_meal_hash()}")
+                
+                await processing_msg.edit(content="", embed=embed)
+                
+            else:
+                await processing_msg.edit(content="❌ Sorry, I couldn't analyze that food description. Please try again with more details.")
+    
+    except Exception as e:
+        bot_logger.log_error("Text processing error", f"Error processing food text: {e}")
+        await message.channel.send(f"❌ Error processing food text: {e}")
+
+async def create_enhanced_analysis_embed(analysis: FoodAnalysisResult, image_url: str = None, source_text: str = None) -> discord.Embed:
+    """Create an enhanced Discord embed with complete nutrition analysis"""
+    # Color based on confidence and source
+    if analysis.analysis_source == "ground_truth":
+        color = 0x00AA00  # Green for ground truth
+        title = "🍽️ Food Analysis Complete! (Ground Truth Data)"
+    else:
+        color = 0x00ff00 if analysis.confidence > 70 else 0xffaa00
+        title = "🍽️ Food Analysis Complete! (AI Analysis)"
+    
+    embed = discord.Embed(title=title, color=color)
+    
+    # Basic info
+    embed.add_field(name="🥗 Food Identified", value=analysis.food_name, inline=True)
+    embed.add_field(name="🔥 Calories", value=f"{analysis.calories} kcal", inline=True)
+    embed.add_field(name="🎯 Confidence", value=f"{analysis.confidence:.1f}%", inline=True)
+    
+    # Macronutrients
+    embed.add_field(name="🥩 Protein", value=f"{analysis.protein:.1f}g", inline=True)
+    embed.add_field(name="🍞 Carbs", value=f"{analysis.carbohydrates:.1f}g", inline=True)
+    embed.add_field(name="🧈 Fat", value=f"{analysis.fat:.1f}g", inline=True)
+    
+    # Additional nutrients if available
+    if analysis.fiber > 0:
+        embed.add_field(name="🌾 Fiber", value=f"{analysis.fiber:.1f}g", inline=True)
+    if analysis.sugar > 0:
+        embed.add_field(name="🍯 Sugar", value=f"{analysis.sugar:.1f}g", inline=True)
+    if analysis.saturated_fat > 0:
+        embed.add_field(name="🧈 Sat. Fat", value=f"{analysis.saturated_fat:.1f}g", inline=True)
+    
+    # Vitamins
+    if analysis.vitamins:
+        vitamin_text = ""
+        for vitamin, amount in analysis.vitamins.items():
+            if amount > 0:
+                vitamin_text += f"{vitamin.replace('_', ' ').title()}: {amount:.1f}\n"
+        if vitamin_text:
+            embed.add_field(name="💊 Key Vitamins", value=vitamin_text[:1024], inline=True)
+    
+    # Minerals  
+    if analysis.minerals:
+        mineral_text = ""
+        for mineral, amount in analysis.minerals.items():
+            if amount > 0:
+                mineral_text += f"{mineral.replace('_', ' ').title()}: {amount:.1f}mg\n"
+        if mineral_text:
+            embed.add_field(name="⚡ Key Minerals", value=mineral_text[:1024], inline=True)
+    
+    # Calculate macronutrient distribution
+    total_macros = analysis.protein + analysis.carbohydrates + analysis.fat
+    if total_macros > 0:
+        protein_pct = (analysis.protein / total_macros) * 100
+        carbs_pct = (analysis.carbohydrates / total_macros) * 100
+        fat_pct = (analysis.fat / total_macros) * 100
+        
+        embed.add_field(
+            name="📊 Macro Distribution", 
+            value=f"P: {protein_pct:.0f}% | C: {carbs_pct:.0f}% | F: {fat_pct:.0f}%", 
+            inline=False
+        )
+    
+    if analysis.description:
+        embed.add_field(name="📝 Description", value=analysis.description, inline=False)
+    
+    if source_text:
+        embed.add_field(name="📥 Your Input", value=f'"{source_text}"', inline=False)
+    
+    if image_url:
+        embed.set_image(url=image_url)
+    
+    embed.set_footer(text=f"Analysis completed at {analysis.timestamp.strftime('%H:%M:%S')} | Meal ID: {analysis.get_meal_hash()}")
+    
+    return embed
+
 async def create_analysis_embed(analysis: FoodAnalysisResult, image_url: str) -> discord.Embed:
     """Create a Discord embed with the analysis results including macronutrients"""
     embed = discord.Embed(
@@ -445,8 +817,8 @@ async def process_food_image(message: discord.Message, attachment: discord.Attac
             'timestamp': analysis.timestamp.isoformat()
         })
         
-        # Create result embed
-        embed = await create_analysis_embed(analysis, attachment.url)
+        # Create result embed - use enhanced embed function
+        embed = await create_enhanced_analysis_embed(analysis, image_url=attachment.url)
         
         if saved:
             embed.add_field(name="💾 Database", value="✅ Saved to FoodIate", inline=True)
@@ -601,6 +973,9 @@ async def process_monthly_command(message: discord.Message, current_month: bool 
         )
         await message.channel.send(f"❌ Error generating monthly report: {str(e)}")
 
+# Initialize handlers after class definitions
+ground_truth_handler = GroundTruthHandler()
+
 @bot.event
 async def on_ready():
     print(f'🤖 {bot.user} has connected to Discord!')
@@ -684,6 +1059,9 @@ async def on_message(message):
             if any(attachment.filename.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.gif', '.webp']):
                 await process_food_image(message, attachment)
                 break
+    # Check if message is a text food description (not a command)
+    elif message.content and not message.content.startswith('!') and len(message.content.strip()) > 3:
+        await process_food_text(message)
     
     # Process commands
     await bot.process_commands(message)
@@ -1263,6 +1641,130 @@ async def show_logs(ctx):
             {"user": str(ctx.author.display_name)}
         )
         await ctx.send(f"❌ Error retrieving log information: {str(e)}")
+
+@bot.command(name="add_food")
+async def add_food_to_ground_truth(ctx, *, food_description: str = None):
+    """Add a food to the ground truth database with detailed nutrition info"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    if not food_description:
+        await ctx.send("❌ Please provide a food description!\nUsage: `!add_food butterbrezel mit honig`")
+        return
+    
+    try:
+        # Log command usage
+        bot_logger.log_user_command(
+            str(ctx.author.display_name),
+            "add_food_ground_truth",
+            str(ctx.channel)
+        )
+        
+        await ctx.send("🔍 Analyzing food for ground truth database... This will be used for future quick lookups!")
+        
+        # Use AI to analyze the food first
+        analysis = await AITextHandler.analyze_food_text(food_description)
+        
+        if not analysis:
+            await ctx.send("❌ Could not analyze this food. Please try again with more details.")
+            return
+        
+        # Create ground truth entry
+        ground_truth_entry = {
+            "food_name": analysis.food_name,
+            "calories": analysis.calories,
+            "protein": analysis.protein,
+            "carbohydrates": analysis.carbohydrates,
+            "fat": analysis.fat,
+            "confidence": 100,  # Ground truth is 100% confident
+            "description": analysis.description,
+            "vitamins": analysis.vitamins,
+            "minerals": analysis.minerals,
+            "fiber": analysis.fiber,
+            "sugar": analysis.sugar,
+            "saturated_fat": analysis.saturated_fat,
+            "cholesterol": analysis.cholesterol,
+            "keywords": [food_description.lower(), analysis.food_name.lower()]
+        }
+        
+        # Add to ground truth database
+        success = ground_truth_handler.add_food_to_ground_truth(food_description.lower(), ground_truth_entry)
+        
+        if success:
+            # Create success embed
+            embed = discord.Embed(
+                title="✅ Food Added to Ground Truth Database!",
+                color=0x00ff00
+            )
+            embed.add_field(name="🥗 Food", value=analysis.food_name, inline=True)
+            embed.add_field(name="🔑 Lookup Key", value=f'"{food_description.lower()}"', inline=True)
+            embed.add_field(name="🔥 Calories", value=f"{analysis.calories} kcal", inline=True)
+            
+            embed.add_field(name="📊 Macros", 
+                          value=f"P: {analysis.protein}g | C: {analysis.carbohydrates}g | F: {analysis.fat}g", 
+                          inline=False)
+            
+            embed.add_field(name="💡 Usage", 
+                          value=f"Next time someone types '{food_description}', this data will be used instantly!", 
+                          inline=False)
+            
+            embed.set_footer(text="Ground truth data provides instant, accurate nutrition info")
+            
+            await ctx.send(embed=embed)
+            
+        else:
+            await ctx.send("❌ Failed to add food to ground truth database. Please try again.")
+    
+    except Exception as e:
+        bot_logger.log_error(f"Error adding food to ground truth: {e}")
+        await ctx.send(f"❌ Error adding food: {e}")
+
+@bot.command(name="list_foods")
+async def list_ground_truth_foods(ctx):
+    """List all foods in the ground truth database"""
+    if ctx.channel.id != CALORIES_CHANNEL_ID:
+        await ctx.send("This command can only be used in the calories channel!")
+        return
+    
+    try:
+        foods = ground_truth_handler.foods_db.get("foods", {})
+        
+        if not foods:
+            await ctx.send("📭 No foods in ground truth database yet. Use `!add_food <description>` to add some!")
+            return
+        
+        embed = discord.Embed(
+            title="🗂️ Ground Truth Food Database",
+            description=f"Contains {len(foods)} reliable food entries",
+            color=0x00AA00
+        )
+        
+        food_list = []
+        for key, data in list(foods.items())[:20]:  # Limit to 20 foods
+            food_name = data.get("food_name", key)
+            calories = data.get("calories", 0)
+            food_list.append(f"• **{food_name}** ({calories} kcal)")
+        
+        embed.add_field(
+            name="🍽️ Available Foods",
+            value="\n".join(food_list),
+            inline=False
+        )
+        
+        if len(foods) > 20:
+            embed.add_field(
+                name="📊 More Foods",
+                value=f"... and {len(foods) - 20} more foods",
+                inline=False
+            )
+        
+        embed.set_footer(text="These foods provide instant, accurate nutrition data when mentioned")
+        
+        await ctx.send(embed=embed)
+        
+    except Exception as e:
+        await ctx.send(f"❌ Error listing foods: {e}")
 
 if __name__ == "__main__":
     if not DISCORD_TOKEN:

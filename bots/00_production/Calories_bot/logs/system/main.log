@@ -55,3 +55,88 @@
 2025-08-07 23:11:54,014 | INFO |   file_size: 374086
 2025-08-07 23:11:54,014 | INFO | 🔧 SYSTEM EVENT: CHART_CLEANUP
 2025-08-07 23:11:54,014 | INFO |   chart_path: /home/pi/Documents/discord/bots/00_production/Calories_bot/reports/calorie_report_Marc_2025_08.png
+2025-08-09 11:19:08,296 | INFO | ==================================================
+2025-08-09 11:19:08,302 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-09 11:19:08,302 | INFO | ==================================================
+2025-08-09 11:19:08,303 | INFO | Bot User: Marc Baumholz#5492
+2025-08-09 11:19:08,303 | INFO | Channel ID: 1382099540391497818
+2025-08-09 11:19:08,303 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-09 11:19:08,303 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-17 20:39:25,985 | INFO | ==================================================
+2025-08-17 20:39:25,985 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-17 20:39:25,985 | INFO | ==================================================
+2025-08-17 20:39:25,985 | INFO | Bot User: Marc Baumholz#5492
+2025-08-17 20:39:25,985 | INFO | Channel ID: 1382099540391497818
+2025-08-17 20:39:25,985 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-17 20:39:25,985 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-08-31 00:26:05,501 | INFO | ==================================================
+2025-08-31 00:26:05,503 | INFO | 🤖 CALORIES BOT STARTUP
+2025-08-31 00:26:05,505 | INFO | ==================================================
+2025-08-31 00:26:05,506 | INFO | Bot User: Marc Baumholz#5492
+2025-08-31 00:26:05,506 | INFO | Channel ID: 1382099540391497818
+2025-08-31 00:26:05,506 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-08-31 00:26:05,506 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-09-02 20:42:58,698 | INFO | ==================================================
+2025-09-02 20:42:58,698 | INFO | 🤖 CALORIES BOT STARTUP
+2025-09-02 20:42:58,698 | INFO | ==================================================
+2025-09-02 20:42:58,698 | INFO | Bot User: Marc Baumholz#5492
+2025-09-02 20:42:58,698 | INFO | Channel ID: 1382099540391497818
+2025-09-02 20:42:58,698 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-09-02 20:42:58,698 | INFO | 🚀 Bot is ready and monitoring for food images
+2025-09-04 06:13:21,958 | INFO | 🔍 Analyzing food text: Butter und Honig Brötchen
+2025-09-04 06:13:30,197 | INFO | 🤖 AI Text Response: {
+    "food_name": "Butter-Honig-Brötchen (1 mittleres Brötchen, ca. 65 g)",
+    "calories": 285,
+    "protein": 5.8,
+    "carbohydrates": 42.5,
+    "fat": 10.9,
+    "confidence": 88,
+    "description": "Ein klassisches deutsches Weizenbrötchen (ca. 50 g) bestrichen mit 10 g Butter und 5 g Honig. Typisches Frühstück oder Snack-Portion.",
+    "fiber": 2.1,
+    "sugar": 9.4,
+    "saturated_fat": 6.1,
+    "vitamins": {
+        "vitamin_c": 0.4,
+        "vitamin_a": 85,
+        "vitamin_b6": 0.08
+    },
+    "minerals": {
+        "calcium": 42,
+        "iron": 1.8,
+        "potassium": 135,
+        "sodium": 380
+    }
+}
+2025-09-07 14:17:20,629 | INFO | 🔍 Analyzing food text: 3 rote Wurst im Brötchen
+2025-09-07 14:17:26,871 | INFO | 🤖 AI Text Response: ```json
+{
+    "food_name": "3 Rote Wurst im Brötchen (ca. 270 g)",
+    "calories": 765,
+    "protein": 30.6,
+    "carbohydrates": 58.5,
+    "fat": 44.1,
+    "confidence": 82,
+    "description": "Drei gekochte Rote Bratwürste (à 80 g) in einem geteilten Weißbrötchen (ca. 90 g). Typische Imbiss-Portion, oft mit Senf serviert.",
+    "fiber": 2.7,
+    "sugar": 5.4,
+    "saturated_fat": 16.2,
+    "vitamins": {
+        "vitamin_c": 1.2,
+        "vitamin_a": 54,
+        "vitamin_b6": 0.48
+    },
+    "minerals": {
+        "calcium": 162,
+        "iron": 3.9,
+        "potassium": 513,
+        "sodium": 1386
+    }
+}
+```
+2025-09-07 19:29:15,061 | INFO | ==================================================
+2025-09-07 19:29:15,061 | INFO | 🤖 CALORIES BOT STARTUP
+2025-09-07 19:29:15,061 | INFO | ==================================================
+2025-09-07 19:29:15,061 | INFO | Bot User: Marc Baumholz#5492
+2025-09-07 19:29:15,061 | INFO | Channel ID: 1382099540391497818
+2025-09-07 19:29:15,061 | INFO | Database ID: 20ed42a1faf5807497c2f350ff84ea8d
+2025-09-07 19:29:15,061 | INFO | 🚀 Bot is ready and monitoring for food images
