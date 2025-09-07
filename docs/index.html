@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Guide to the production Discord bots with features and use cases.">
+    <title>Discord Production Bots Guide</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🤖</span>
+          <a class="brand-name" href="./">Discord Bots</a>
+        </div>
+        <nav class="nav">
+          <a href="#overview" class="nav-link">Overview</a>
+          <a href="#bots" class="nav-link">Bots</a>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview" class="hero">
+        <div class="container">
+          <h1>Production Discord Bots</h1>
+          <p class="subtitle">A clean, visual guide to the production bots: what they are, why they exist, and how they help. Click a bot to learn its features and real use cases.</p>
+          <div class="hero-cta">
+            <a href="#bots" class="button primary">Explore Bots</a>
+            <a href="https://github.com/MarcBaumholz/discord_personal_system" class="button secondary" target="_blank" rel="noopener">View Repository</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="bots" class="section">
+        <div class="container">
+          <h2>Browse Bots</h2>
+          <div class="bot-grid">
+            <a class="bot-card" href="bots/allgemeine-wohl.html">
+              <div class="bot-icon">🏠</div>
+              <h3>Allgemeine Wohl Bot</h3>
+              <p>Tracks household activities, categorizes with AI, and saves to Notion.</p>
+              <ul class="tags">
+                <li>AI</li><li>Notion</li><li>Tracking</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/calories.html">
+              <div class="bot-icon">🍽️</div>
+              <h3>Calories Bot</h3>
+              <p>Analyzes food images, estimates calories, and stores results in Notion with monthly reports.</p>
+              <ul class="tags">
+                <li>Vision</li><li>Notion</li><li>Reports</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/decision.html">
+              <div class="bot-icon">🧠</div>
+              <h3>Decision Bot</h3>
+              <p>Analyzes decisions against your values, goals, identity, and experiences.</p>
+              <ul class="tags">
+                <li>RAG</li><li>CSV</li><li>Analysis</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/erinnerungen.html">
+              <div class="bot-icon">⏰</div>
+              <h3>Erinnerungen Bot</h3>
+              <p>Daily birthday reminders from Notion and trash pickup reminders for your area.</p>
+              <ul class="tags">
+                <li>Notion</li><li>Schedule</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/health.html">
+              <div class="bot-icon">🏥</div>
+              <h3>Health Bot</h3>
+              <p>Fetches Oura Ring data, analyzes performance, and posts daily health reports.</p>
+              <ul class="tags">
+                <li>Oura</li><li>Analysis</li><li>Reports</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/meal-plan.html">
+              <div class="bot-icon">🍳</div>
+              <h3>Meal Plan Bot</h3>
+              <p>Generates weekly meal plans from Notion recipes and adds shopping lists to Todoist.</p>
+              <ul class="tags">
+                <li>Notion</li><li>Todoist</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/money.html">
+              <div class="bot-icon">💰</div>
+              <h3>Money Bot</h3>
+              <p>Parses money-related messages and receipts and saves structured entries to Notion.</p>
+              <ul class="tags">
+                <li>AI</li><li>Notion</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/preisvergleich.html">
+              <div class="bot-icon">🔎</div>
+              <h3>Preisvergleich Bot</h3>
+              <p>Finds weekly deals for products from your Notion watchlist and posts offers.</p>
+              <ul class="tags">
+                <li>Agent</li><li>Search</li><li>Notion</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/tagebuch.html">
+              <div class="bot-icon">📔</div>
+              <h3>Tagebuch Bot</h3>
+              <p>Saves journal entries to Notion with daily reminders and smart titles.</p>
+              <ul class="tags">
+                <li>Notion</li><li>Schedule</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/todo.html">
+              <div class="bot-icon">📋</div>
+              <h3>Todo Bot</h3>
+              <p>Turns channel messages into Todos with smart parsing and Todoist integration.</p>
+              <ul class="tags">
+                <li>Todoist</li><li>Parsing</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/weekly-todo.html">
+              <div class="bot-icon">✅</div>
+              <h3>Weekly Todo Bot</h3>
+              <p>Interactive daily/weekly household tasks list with emoji reactions and persistence.</p>
+              <ul class="tags">
+                <li>Interactive</li><li>Schedule</li>
+              </ul>
+            </a>
+            <a class="bot-card" href="bots/youtube.html">
+              <div class="bot-icon">📺</div>
+              <h3>YouTube Bot</h3>
+              <p>Posts daily videos from subscriptions or trending tech videos with rich embeds.</p>
+              <ul class="tags">
+                <li>YouTube API</li><li>Schedule</li>
+              </ul>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Built from the repository's production bots documentation. <a target="_blank" rel="noopener" href="https://github.com/MarcBaumholz/discord_personal_system">Open on GitHub</a></p>
+      </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+  </html>
