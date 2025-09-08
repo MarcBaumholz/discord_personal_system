@@ -10,6 +10,7 @@ __pycache__/
 bots/00_production/youtube_bot/token.pickle
 .env
 *.env
+!.env.example
 *.pickle
 *.pkl
 *.log
@@ -18,6 +19,20 @@ bots/learning_bot/LEARNING_BOT_EXECUTION_SUMMARY.md
 config.json
 secrets.json
 client_secrets.json
+
+# Security sensitive patterns - prevent accidental commits
+**/docker-compose*.yml.backup
+**/docker-compose*.yml.orig
+**/*token*
+**/*secret*
+**/*key*.json
+**/*credentials*.json
+**/*auth*.json
+
+# Bot specific sensitive files
+**/bot_tokens/
+**/api_keys/
+**/credentials/
 
 *.pickle
 # Distribution / packaging

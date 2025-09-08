@@ -8,8 +8,6 @@ services:
     container_name: discord-todo-bot
     restart: unless-stopped
     environment:
-      - DISCORD_TOKEN=${DISCORD_TOKEN}
-      - TODOIST_API_KEY=b420f2b62422561cfd1aaa5cf3fc025818376d8c
       - WEEKLY_PLANNING_CHANNEL_ID=1368180016785002536
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
