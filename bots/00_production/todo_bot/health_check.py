@@ -22,13 +22,15 @@ async def check_todoist_health():
     url = "https://api.todoist.com/rest/v2/tasks"
     
     try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=headers, timeout=10) as response:
+        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=5)) as session:
+            async with session.get(url, headers=headers) as response:
                 if response.status == 200:
                     tasks = await response.json()
                     return True, f"OK - {len(tasks)} active tasks"
                 else:
                     return False, f"HTTP {response.status}"
+    except asyncio.TimeoutError:
+        return False, "Timeout"
     except Exception as e:
         return False, f"Error: {e}"
 
@@ -55,8 +57,11 @@ async def main():
     """Run health checks"""
     if len(sys.argv) > 1 and sys.argv[1] == "--docker":
         # Docker health check mode - minimal output
-        todoist_ok, _ = await check_todoist_health()
-        sys.exit(0 if todoist_ok else 1)
+        try:
+            todoist_ok, _ = await check_todoist_health()
+            sys.exit(0 if todoist_ok else 1)
+        except Exception:
+            sys.exit(1)
     
     # Full health check mode
     print(f"🏥 Todo Bot Health Check - {datetime.now()}")

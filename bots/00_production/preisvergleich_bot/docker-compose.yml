@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     env_file:
       - ../../../.env
+    environment:
+      - DISCORD_CHANNEL_ID=1367031179278290986
     volumes:
       - ./logs:/app/logs
       - ../../../.env:/app/../../.env:ro

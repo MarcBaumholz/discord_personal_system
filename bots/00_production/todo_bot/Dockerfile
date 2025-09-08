@@ -31,9 +31,9 @@ USER todobot
 ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 
-# Health check using our custom health check script
+# Health check using simple health check script
 HEALTHCHECK --interval=60s --timeout=10s --start-period=30s --retries=3 \
-    CMD python health_check.py --docker
+    CMD python simple_health.py
 
 # Run the Todo bot
 CMD ["python", "todo_agent.py"]

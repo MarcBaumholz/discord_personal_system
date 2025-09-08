@@ -9,13 +9,13 @@ services:
     restart: unless-stopped
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
-      - TODOIST_API_KEY=${TODOIST_API_KEY}
-      - WEEKLY_PLANNING_CHANNEL_ID=${WEEKLY_PLANNING_CHANNEL_ID}
+      - TODOIST_API_KEY=b420f2b62422561cfd1aaa5cf3fc025818376d8c
+      - WEEKLY_PLANNING_CHANNEL_ID=1368180016785002536
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
-      - TIMEZONE=${TIMEZONE:-Europe/Berlin}
+      - TIMEZONE=Europe/Berlin
     env_file:
-      - ../../.env  # Use the main .env file
+      - ../.env  # Use the production bots .env file
     volumes:
       - ./logs:/app/logs
       - ./data:/app/data
@@ -28,7 +28,7 @@ services:
         max-size: "10m"
         max-file: "3"
     healthcheck:
-      test: ["CMD", "python", "health_check.py", "--docker"]
+      test: ["CMD", "python", "simple_health.py"]
       interval: 60s
       timeout: 10s
       retries: 3

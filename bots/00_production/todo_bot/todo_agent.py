@@ -196,6 +196,42 @@ class TodoBot(commands.Bot):
             logger.info(f'Successfully connected to Todoist. Found {len(tasks)} active tasks.')
         except Exception as e:
             logger.error(f'Failed to connect to Todoist: {e}')
+        
+        # Send startup notification to the todo channel
+        try:
+            channel = self.get_channel(self.todo_channel_id)
+            if channel:
+                embed = discord.Embed(
+                    title="🚀 Todo Bot ist online!",
+                    description="Ich kann automatisch Todos aus euren Nachrichten erstellen.",
+                    color=0x00ff00,
+                    timestamp=datetime.utcnow()
+                )
+                
+                embed.add_field(
+                    name="✨ Features",
+                    value="• **Smart Parsing**: Erkennt Prioritäten (urgent, wichtig)\n• **Datum Erkennung**: heute, morgen, Montag, etc.\n• **Familie Labels**: Marc, Maggie, gemeinsam\n• **Todoist Sync**: Direkte Integration",
+                    inline=False
+                )
+                
+                embed.add_field(
+                    name="💡 Beispiele",
+                    value="• *'Wichtig: Arzttermin morgen'* → Priorität 4, fällig morgen\n• *'Einkaufen für Maggie'* → Label: Maggie\n• *'Gemeinsam Wohnung putzen'* → Label: Familie",
+                    inline=False
+                )
+                
+                embed.add_field(
+                    name="🎯 Commands",
+                    value="• `!todo_stats` - Zeigt Todo Statistiken\n• `!todo_help` - Zeigt diese Hilfe\n• Einfach Nachrichten schreiben → werden automatisch zu Todos!",
+                    inline=False
+                )
+                
+                embed.set_footer(text="Bot erfolgreich gestartet und bereit für Aufgaben!")
+                
+                await channel.send(embed=embed)
+                logger.info("Sent startup notification to todo channel")
+        except Exception as e:
+            logger.error(f"Failed to send startup notification: {e}")
     
     async def on_message(self, message):
         """Handle incoming messages"""
