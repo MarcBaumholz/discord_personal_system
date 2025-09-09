@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de" class="bot-page">
+<html lang="en" class="bot-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Todo Bot</title>
+  <title>📋 Todo Bot - AI-Powered Task Management</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <a class="brand-name" href="../">Discord Bots</a>
       </div>
       <nav class="top-nav">
-        <a href="../#bots">Alle Bots</a>
+        <a href="../#bots">All Bots</a>
         <a href="https://github.com/MarcBaumholz/discord_personal_system/tree/main/bots/00_production/todo_bot#readme" target="_blank" rel="noopener">README</a>
       </nav>
     </div>
@@ -22,39 +22,192 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="kicker">Todoist • Parsing</div>
-        <h1>Todo Bot</h1>
-        <p class="lead">Erstellt automatisch Todos aus Channel-Nachrichten, erkennt Priorität/Datum/Labels und integriert sich mit Todoist. Vollständig getestet und stabil im Docker Container.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Funktionen</h2>
-        <div class="feature-list">
-          <div class="feature"><h4>Automatik</h4><p>Jede Nachricht → Todo Erstellung mit Smart Parsing.</p></div>
-          <div class="feature"><h4>Smart Parsing</h4><p>Erkennt Priorität (🔴🟠🟡🟢), Datum und Familienmitglieder automatisch.</p></div>
-          <div class="feature"><h4>Docker Deployment</h4><p>Läuft stabil im Container mit Health Checks und automatischen Restarts.</p></div>
-          <div class="feature"><h4>Comprehensive Testing</h4><p>9/9 Tests bestanden, 100% Erfolgsrate, inklusive "piuztzen" Funktionalität.</p></div>
-          <div class="feature"><h4>Commands</h4><p><code>!todo</code>, <code>!complete &lt;suche&gt;</code>, <code>!delete &lt;suche&gt;</code>, <code>!stats</code>, <code>!help_todo</code>.</p></div>
-          <div class="feature"><h4>Labels</h4><p>Marc/Maggie/Gemeinsam oder Username.</p></div>
+        <div class="kicker">🤖 Smart Parsing • 📊 Todoist Integration • 🎯 Priority Detection</div>
+        <h1>📋 Todo Bot</h1>
+        <p class="lead">Intelligent Discord bot that automatically converts channel messages into structured todos with smart parsing of priority, dates, and family members. Features comprehensive Todoist integration and advanced task management capabilities.</p>
+        
+        <div class="status-badges">
+          <span class="status-badge live">🟢 LIVE & OPERATIONAL</span>
+          <span class="status-badge feature">🤖 Smart Parsing</span>
+          <span class="status-badge feature">📊 Todoist API</span>
+          <span class="status-badge feature">🎯 Priority Detection</span>
         </div>
-        <div class="callout"><strong>Channel:</strong> 1368180016785002536</div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>Kurzbeispiele</h2>
-        <ul>
-          <li>„Wichtig: Einkaufen morgen" → Todo mit hoher Priorität, fällig morgen.</li>
-          <li>„Marc soll Müll rausbringen heute" → Label Marc, fällig heute.</li>
-          <li>„Gemeinsam: Urlaub planen nächste Woche" → Label Familie, nächste Woche.</li>
-        </ul>
+        <div class="notion-style-content">
+          
+          <!-- Why Section -->
+          <div class="notion-block">
+            <h2>🎯 Why This Bot Exists</h2>
+            <div class="notion-text">
+              <p>Managing todos manually is time-consuming and often leads to forgotten tasks. The Todo Bot streamlines task management by:</p>
+              <ul>
+                <li><strong>🤖 Automatic Todo Creation:</strong> Every Discord message becomes a structured todo automatically</li>
+                <li><strong>🧠 Smart Parsing:</strong> Intelligently detects priority, dates, and family members from natural language</li>
+                <li><strong>📊 Todoist Integration:</strong> Seamlessly syncs with Todoist for comprehensive task management</li>
+                <li><strong>🎯 Priority Detection:</strong> Automatically assigns priority levels based on keywords</li>
+                <li><strong>👨‍👩‍👧‍👦 Family Labels:</strong> Smart detection of family members for task assignment</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Discord Flow -->
+          <div class="notion-block">
+            <h2>💬 Discord Flow</h2>
+            <div class="discord-flow">
+              <div class="flow-step">
+                <div class="flow-icon">💬</div>
+                <div class="flow-content">
+                  <h4>1. Write Task Message</h4>
+                  <p>Simply write your task in natural language in Discord</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">🧠</div>
+                <div class="flow-content">
+                  <h4>2. Smart Parsing</h4>
+                  <p>Bot analyzes message for priority, dates, and family members</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">📊</div>
+                <div class="flow-content">
+                  <h4>3. Todoist Sync</h4>
+                  <p>Creates structured todo in Todoist with all detected information</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="notion-block">
+            <h2>✨ Core Features</h2>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Smart Parsing Engine</h3>
+                <p>Intelligently extracts priority, dates, and family members from natural language</p>
+                <div class="feature-tags">
+                  <span class="tag">AI Parsing</span>
+                  <span class="tag">Natural Language</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Priority Detection</h3>
+                <p>Automatically assigns priority levels: 🔴 High, 🟠 Medium-High, 🟡 Normal, 🟢 Low</p>
+                <div class="feature-tags">
+                  <span class="tag">Priority Mapping</span>
+                  <span class="tag">Visual Indicators</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>Date Recognition</h3>
+                <p>Detects dates from German and English expressions: heute, morgen, Montag, etc.</p>
+                <div class="feature-tags">
+                  <span class="tag">Date Parsing</span>
+                  <span class="tag">Multi-Language</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Member Detection</h3>
+                <p>Smart detection of family members: Marc, Maggie, Familie, or Discord username</p>
+                <div class="feature-tags">
+                  <span class="tag">Family Labels</span>
+                  <span class="tag">Smart Assignment</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Todoist Integration</h3>
+                <p>Full CRUD operations with Todoist API for comprehensive task management</p>
+                <div class="feature-tags">
+                  <span class="tag">Todoist API</span>
+                  <span class="tag">CRUD Operations</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Statistics & Analytics</h3>
+                <p>Comprehensive statistics and analytics for task management insights</p>
+                <div class="feature-tags">
+                  <span class="tag">Analytics</span>
+                  <span class="tag">Statistics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commands -->
+          <div class="notion-block">
+            <h2>💬 Available Commands</h2>
+            <div class="commands-list">
+              <div class="command">
+                <code>!todo</code>
+                <span>Show all active todos in a formatted list</span>
+              </div>
+              <div class="command">
+                <code>!complete &lt;search&gt;</code>
+                <span>Mark a todo as completed by searching for it</span>
+              </div>
+              <div class="command">
+                <code>!delete &lt;search&gt;</code>
+                <span>Delete a todo by searching for it</span>
+              </div>
+              <div class="command">
+                <code>!stats</code>
+                <span>Show comprehensive todo statistics and analytics</span>
+              </div>
+              <div class="command">
+                <code>!help_todo</code>
+                <span>Display help information and usage instructions</span>
+              </div>
+              <div class="command">
+                <code>Write Message</code>
+                <span>Simply write your task in natural language</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Status -->
+          <div class="notion-block status-block">
+            <h2>✅ Current Status (September 2025)</h2>
+            <div class="status-content">
+              <div class="status-item">
+                <span class="status-indicator live">🟢</span>
+                <span><strong>LIVE & OPERATIONAL</strong> - Bot running in Docker container</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🤖</span>
+                <span><strong>Smart Parsing:</strong> Priority, date, and family detection working</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">📊</span>
+                <span><strong>Todoist Integration:</strong> Full CRUD operations functional</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🧪</span>
+                <span><strong>Testing:</strong> 9/9 tests passing (100% success rate)</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator updated">📅</span>
+                <span><strong>Page Updated:</strong> <span id="pageLastUpdated">Loading...</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="container"><a href="../">Zurück zur Übersicht</a></div></footer>
+  <footer class="site-footer"><div class="container"><a href="../">Back home</a></div></footer>
   <script src="../assets/app.js"></script>
 </body>
 </html>
