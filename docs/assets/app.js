@@ -35,4 +35,41 @@
     e.preventDefault();
     el.scrollIntoView({behavior:'smooth', block:'start'});
   });
+
+  // Auto-update timestamp functionality
+  function updateLastModified() {
+    const lastUpdatedElement = document.getElementById('lastUpdated');
+    const pageLastUpdatedElement = document.getElementById('pageLastUpdated');
+    
+    // Get the last modified date from the document
+    const lastModified = new Date(document.lastModified);
+    
+    // Format the date in a user-friendly way
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'Europe/Berlin'
+    };
+    
+    const formattedDate = lastModified.toLocaleDateString('de-DE', options);
+    
+    // Update main page timestamp
+    if (lastUpdatedElement) {
+      lastUpdatedElement.textContent = `Last Updated: ${formattedDate}`;
+    }
+    
+    // Update bot detail page timestamp
+    if (pageLastUpdatedElement) {
+      pageLastUpdatedElement.textContent = formattedDate;
+    }
+  }
+
+  // Update timestamp when page loads
+  document.addEventListener('DOMContentLoaded', updateLastModified);
+  
+  // Also update immediately in case DOMContentLoaded already fired
+  updateLastModified();
 })();
