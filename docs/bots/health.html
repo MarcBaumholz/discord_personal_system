@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de" class="bot-page">
+<html lang="en" class="bot-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Health Bot</title>
+  <title>🏥 Health Bot - Oura Ring Health Analytics</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <a class="brand-name" href="../">Discord Bots</a>
       </div>
       <nav class="top-nav">
-        <a href="../#bots">Alle Bots</a>
+        <a href="../#bots">All Bots</a>
         <a href="https://github.com/MarcBaumholz/discord_personal_system/tree/main/bots/00_production/health_bot#readme" target="_blank" rel="noopener">README</a>
       </nav>
     </div>
@@ -22,36 +22,310 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="kicker">Oura • Analyse • Reports</div>
-        <h1>Health Bot</h1>
-        <p class="lead">Ruft Oura Ring Aktivitätsdaten ab, bewertet sie gegen Ziele und sendet täglich formatierte Gesundheitsberichte.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Funktionen</h2>
-        <div class="feature-list">
-          <div class="feature"><h4>Oura Integration</h4><p>Kalorien, Schritte, aktive Kalorien automatisch abrufen.</p></div>
-          <div class="feature"><h4>Analyse</h4><p>Status-Level: Excellent, Good, Average, Needs Improvement.</p></div>
-          <div class="feature"><h4>Befehle</h4><p><code>!health test</code>, <code>!health status</code>.</p></div>
+        <div class="kicker">🏃‍♂️ Oura Ring • 📊 Analytics • ⏰ Automation</div>
+        <h1>🏥 Health Bot</h1>
+        <p class="lead">Automated Discord bot that fetches daily Oura Ring health data, analyzes performance against personalized goals, and sends comprehensive health reports with actionable insights every morning at 8 AM.</p>
+        
+        <div class="status-badges">
+          <span class="status-badge live">🟢 LIVE & OPERATIONAL</span>
+          <span class="status-badge feature">📊 Daily Reports</span>
+          <span class="status-badge feature">🎯 Personalized Goals</span>
+          <span class="status-badge feature">⚡ Auto-Scheduling</span>
         </div>
-        <div class="callout"><strong>Channel:</strong> 1384293986251964527 • <strong>Schedule:</strong> 08:00</div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>Kurzbeispiele</h2>
-        <ul>
-          <li>08:00 täglicher Bericht mit Zielvergleich und Tipps.</li>
-          <li>Manueller Test mit <code>!health test</code>.</li>
-          <li>Konfiguration anzeigen mit <code>!health status</code>.</li>
-        </ul>
+        <div class="notion-style-content">
+          
+          <!-- Why Section -->
+          <div class="notion-block">
+            <h2>🎯 Why This Bot Exists</h2>
+            <div class="notion-text">
+              <p>Health tracking without insights is just data. The Health Bot transforms your Oura Ring data into actionable daily guidance by:</p>
+              <ul>
+                <li><strong>📊 Daily Analysis:</strong> Automatically analyzes your sleep, activity, and recovery data every morning</li>
+                <li><strong>🎯 Goal Tracking:</strong> Compares your performance against personalized health targets</li>
+                <li><strong>💡 Smart Insights:</strong> Provides 2-3 personalized recommendations based on your data</li>
+                <li><strong>📈 Progress Monitoring:</strong> Tracks trends and identifies patterns in your health journey</li>
+                <li><strong>⏰ Consistent Routine:</strong> Delivers reports at the same time every day for habit formation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Discord Flow -->
+          <div class="notion-block">
+            <h2>💬 Discord Flow</h2>
+            <div class="discord-flow">
+              <div class="flow-step">
+                <div class="flow-icon">⏰</div>
+                <div class="flow-content">
+                  <h4>1. Daily Trigger</h4>
+                  <p>Bot wakes up at 8:00 AM and fetches yesterday's Oura data</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">📊</div>
+                <div class="flow-content">
+                  <h4>2. Health Analysis</h4>
+                  <p>Analyzes calories, steps, active calories against your goals</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">💬</div>
+                <div class="flow-content">
+                  <h4>3. Report Delivery</h4>
+                  <p>Sends personalized health report with tips to Discord</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="notion-block">
+            <h2>✨ Core Features</h2>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🏃‍♂️</div>
+                <h3>Oura Ring Integration</h3>
+                <p>Seamlessly connects to your Oura Ring to fetch daily activity, sleep, and recovery data</p>
+                <div class="feature-tags">
+                  <span class="tag">Oura API</span>
+                  <span class="tag">Health Data</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Personalized Goals</h3>
+                <p>Customizable targets for calories (2200), active calories (450), and steps (8000)</p>
+                <div class="feature-tags">
+                  <span class="tag">Customizable</span>
+                  <span class="tag">Personal</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Health Status Levels</h3>
+                <p>Four-tier system: Excellent (90-100%), Good (70-89%), Average (50-69%), Needs Improvement (<50%)</p>
+                <div class="feature-tags">
+                  <span class="tag">Scoring</span>
+                  <span class="tag">Visual</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Smart Recommendations</h3>
+                <p>Provides 2-3 personalized health tips based on your daily performance and trends</p>
+                <div class="feature-tags">
+                  <span class="tag">AI Insights</span>
+                  <span class="tag">Actionable</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Automated Scheduling</h3>
+                <p>Consistent daily reports at 8:00 AM with startup notifications explaining bot functions</p>
+                <div class="feature-tags">
+                  <span class="tag">Automation</span>
+                  <span class="tag">Consistent</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Robust Error Handling</h3>
+                <p>Comprehensive API error handling and recovery mechanisms for reliable operation</p>
+                <div class="feature-tags">
+                  <span class="tag">Reliable</span>
+                  <span class="tag">Error Recovery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases -->
+          <div class="notion-block">
+            <h2>🎯 Real Use Cases</h2>
+            <div class="use-cases">
+              <div class="use-case">
+                <div class="use-case-icon">🌅</div>
+                <div class="use-case-content">
+                  <h3>Morning Health Check</h3>
+                  <p>Start your day with a comprehensive health report showing how well you performed yesterday</p>
+                  <div class="use-case-example">
+                    <strong>Example:</strong> "🟢 Excellent performance! 2,450 calories, 8,500 steps. Try adding 10 more minutes of walking today."
+                  </div>
+                </div>
+              </div>
+              <div class="use-case">
+                <div class="use-case-icon">📈</div>
+                <div class="use-case-content">
+                  <h3>Goal Progress Tracking</h3>
+                  <p>Monitor your progress toward health goals with daily feedback and trend analysis</p>
+                  <div class="use-case-example">
+                    <strong>Features:</strong> Daily goal comparison, weekly trends, personalized recommendations
+                  </div>
+                </div>
+              </div>
+              <div class="use-case">
+                <div class="use-case-icon">💪</div>
+                <div class="use-case-content">
+                  <h3>Fitness Motivation</h3>
+                  <p>Get daily motivation and insights to maintain consistent health and fitness habits</p>
+                  <div class="use-case-example">
+                    <strong>Benefit:</strong> Consistent daily feedback helps build and maintain healthy routines
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Health Status System -->
+          <div class="notion-block">
+            <h2>📊 Health Status System</h2>
+            <div class="health-status-grid">
+              <div class="status-level excellent">
+                <div class="status-icon">🟢</div>
+                <div class="status-info">
+                  <h3>Excellent (90-100%)</h3>
+                  <p>Outstanding performance in calories and activity. Keep up the great work!</p>
+                </div>
+              </div>
+              <div class="status-level good">
+                <div class="status-icon">🟡</div>
+                <div class="status-info">
+                  <h3>Good (70-89%)</h3>
+                  <p>Solid performance, close to your goals. Small improvements can make a big difference.</p>
+                </div>
+              </div>
+              <div class="status-level average">
+                <div class="status-icon">🟠</div>
+                <div class="status-info">
+                  <h3>Average (50-69%)</h3>
+                  <p>Room for improvement. Focus on one area at a time for better results.</p>
+                </div>
+              </div>
+              <div class="status-level needs-improvement">
+                <div class="status-icon">🔴</div>
+                <div class="status-info">
+                  <h3>Needs Improvement (<50%)</h3>
+                  <p>Low activity levels. Time to focus on more movement and better habits.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Details -->
+          <div class="notion-block">
+            <h2>🔧 Technical Stack</h2>
+            <div class="tech-stack">
+              <div class="tech-category">
+                <h3>🏃‍♂️ Health Integration</h3>
+                <ul>
+                  <li><strong>Oura API:</strong> Personal Access Token authentication</li>
+                  <li><strong>Data Points:</strong> Calories, steps, active calories, sleep, recovery</li>
+                  <li><strong>Real-time Sync:</strong> Daily data fetching and analysis</li>
+                </ul>
+              </div>
+              <div class="tech-category">
+                <h3>📊 Analytics Engine</h3>
+                <ul>
+                  <li><strong>Goal Comparison:</strong> Performance vs. personalized targets</li>
+                  <li><strong>Health Scoring:</strong> 4-tier status system (Excellent to Needs Improvement)</li>
+                  <li><strong>Trend Analysis:</strong> Pattern recognition and insights generation</li>
+                </ul>
+              </div>
+              <div class="tech-category">
+                <h3>⏰ Automation</h3>
+                <ul>
+                  <li><strong>Discord.py:</strong> Bot framework and message handling</li>
+                  <li><strong>Schedule:</strong> Daily 8:00 AM report generation</li>
+                  <li><strong>Error Handling:</strong> Robust API error recovery and logging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commands -->
+          <div class="notion-block">
+            <h2>💬 Available Commands</h2>
+            <div class="commands-list">
+              <div class="command">
+                <code>!health test</code>
+                <span>Manually generate a health report for testing</span>
+              </div>
+              <div class="command">
+                <code>!health status</code>
+                <span>Show bot status and current configuration</span>
+              </div>
+              <div class="command">
+                <code>Auto Daily</code>
+                <span>Automatic daily reports at 8:00 AM (no command needed)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration -->
+          <div class="notion-block">
+            <h2>⚙️ Configuration Options</h2>
+            <div class="config-grid">
+              <div class="config-item">
+                <h3>🎯 Goal Settings</h3>
+                <ul>
+                  <li><strong>TARGET_CALORIES:</strong> 2200 (default)</li>
+                  <li><strong>TARGET_ACTIVE_CALORIES:</strong> 450 (default)</li>
+                  <li><strong>TARGET_STEPS:</strong> 8000 (default)</li>
+                </ul>
+              </div>
+              <div class="config-item">
+                <h3>⏰ Schedule Settings</h3>
+                <ul>
+                  <li><strong>DAILY_SCHEDULE_TIME:</strong> 08:00 (24-hour format)</li>
+                  <li><strong>TIMEZONE:</strong> Europe/Berlin</li>
+                  <li><strong>CHANNEL_ID:</strong> 1384293986251964527</li>
+                </ul>
+              </div>
+              <div class="config-item">
+                <h3>🔧 API Settings</h3>
+                <ul>
+                  <li><strong>DISCORD_TOKEN:</strong> Bot authentication</li>
+                  <li><strong>OURA_ACCESS_TOKEN:</strong> Oura API access</li>
+                  <li><strong>LOG_LEVEL:</strong> INFO (configurable)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Status -->
+          <div class="notion-block status-block">
+            <h2>✅ Current Status (September 2025)</h2>
+            <div class="status-content">
+              <div class="status-item">
+                <span class="status-indicator live">🟢</span>
+                <span><strong>LIVE & OPERATIONAL</strong> - Bot running in Docker container</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🏃‍♂️</span>
+                <span><strong>Oura Integration:</strong> API connection active</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">⏰</span>
+                <span><strong>Scheduling:</strong> Daily 8:00 AM reports enabled</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🎯</span>
+                <span><strong>Goals:</strong> Personalized targets configured</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="container"><a href="../">Zurück zur Übersicht</a></div></footer>
+  <footer class="site-footer"><div class="container"><a href="../">Back home</a></div></footer>
   <script src="../assets/app.js"></script>
 </body>
 </html>

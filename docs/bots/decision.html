@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de" class="bot-page">
+<html lang="en" class="bot-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Decision Bot</title>
+  <title>🧠 Decision Bot - AI-Powered Decision Analysis</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <a class="brand-name" href="../">Discord Bots</a>
       </div>
       <nav class="top-nav">
-        <a href="../#bots">Alle Bots</a>
+        <a href="../#bots">All Bots</a>
         <a href="https://github.com/MarcBaumholz/discord_personal_system/tree/main/bots/00_production/decision_bot#readme" target="_blank" rel="noopener">README</a>
       </nav>
     </div>
@@ -22,38 +22,333 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="kicker">Werte • Ziele • Erfahrungen</div>
-        <h1>Decision Bot</h1>
-        <p class="lead">Analysiert Entscheidungsfragen gegen persönliche Werte, Ziele, Identität und Erfahrungen und liefert strukturierte Empfehlungen.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Funktionen</h2>
-        <div class="feature-list">
-          <div class="feature"><h4>CSV-Daten</h4><p>Nutzt <code>values.csv</code>, <code>goals.csv</code>, <code>identity.csv</code>, <code>experiences.csv</code>.</p></div>
-          <div class="feature"><h4>Analyse</h4><p>Alignment-Scoring, detaillierte Begründung, Handlungsempfehlungen, Reflexionsfragen.</p></div>
-          <div class="feature"><h4>Befehle</h4><p><code>!status</code>, <code>!reload</code>, <code>!help</code>.</p></div>
-        </div>
-        <div class="callout">
-          <strong>Channel:</strong> 1384282192171110412
+        <div class="kicker">🤖 RAG System • 📊 CSV Data • 🎯 Personal Analysis</div>
+        <h1>🧠 Decision Bot</h1>
+        <p class="lead">AI-powered Discord bot that analyzes your decisions against personal values, goals, identity, and experiences using CSV-based RAG system. Provides structured recommendations, reflection questions, and risk-benefit analysis.</p>
+        
+        <div class="status-badges">
+          <span class="status-badge ready">🟡 READY FOR DEPLOYMENT</span>
+          <span class="status-badge feature">📊 RAG Analysis</span>
+          <span class="status-badge feature">🎯 Personal Values</span>
+          <span class="status-badge feature">💭 Reflection Questions</span>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>Kurzbeispiele</h2>
-        <ul>
-          <li>„Soll ich den neuen Job annehmen?“ → Bewertung vs. Werte/Ziele, Empfehlungen.</li>
-          <li>„Ist ein Umzug sinnvoll?“ → Analyse inkl. Risiken/Nutzen.</li>
-          <li>„Mehr Zeit fürs Hobby?“ → Priorisierung und konkrete Schritte.</li>
+        <div class="notion-style-content">
+          
+          <!-- Why Section -->
+          <div class="notion-block">
+            <h2>🎯 Why This Bot Exists</h2>
+            <div class="notion-text">
+              <p>Making important life decisions can be overwhelming and emotionally charged. The Decision Bot provides objective, personalized analysis by:</p>
+              <ul>
+                <li><strong>🎯 Value Alignment:</strong> Analyzes decisions against your personal values and principles</li>
+                <li><strong>📊 Goal Consistency:</strong> Checks if decisions support your short and long-term goals</li>
+                <li><strong>🧠 Identity Match:</strong> Evaluates decisions against your personality traits and identity</li>
+                <li><strong>📚 Experience Learning:</strong> Uses your past experiences to provide relevant insights</li>
+                <li><strong>💭 Deep Reflection:</strong> Asks thought-provoking questions to help you think deeper</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Discord Flow -->
+          <div class="notion-block">
+            <h2>💬 Discord Flow</h2>
+            <div class="discord-flow">
+              <div class="flow-step">
+                <div class="flow-icon">❓</div>
+                <div class="flow-content">
+                  <h4>1. Ask Question</h4>
+                  <p>Post your decision question in the designated Discord channel</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">🤖</div>
+                <div class="flow-content">
+                  <h4>2. AI Analysis</h4>
+                  <p>Bot analyzes against your CSV data using OpenRouter AI</p>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-icon">📊</div>
+                <div class="flow-content">
+                  <h4>3. Structured Response</h4>
+                  <p>Receives alignment analysis, recommendations, and reflection questions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="notion-block">
+            <h2>✨ Core Features</h2>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>CSV Data Processing</h3>
+                <p>Automatically categorizes and processes your personal data from CSV files</p>
+                <div class="feature-tags">
+                  <span class="tag">CSV</span>
+                  <span class="tag">RAG</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Alignment Analysis</h3>
+                <p>Provides 1-10 scoring for values, goals, and identity alignment</p>
+                <div class="feature-tags">
+                  <span class="tag">Scoring</span>
+                  <span class="tag">Analysis</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Actionable Recommendations</h3>
+                <p>3-5 concrete, implementable steps for your decision</p>
+                <div class="feature-tags">
+                  <span class="tag">Practical</span>
+                  <span class="tag">Actionable</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">💭</div>
+                <h3>Reflection Questions</h3>
+                <p>Deep questions to help you think more thoroughly about your decision</p>
+                <div class="feature-tags">
+                  <span class="tag">Reflection</span>
+                  <span class="tag">Deep Thinking</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Risk-Benefit Analysis</h3>
+                <p>Comprehensive evaluation of positive impacts and potential challenges</p>
+                <div class="feature-tags">
+                  <span class="tag">Risk Analysis</span>
+                  <span class="tag">Benefits</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>German Language</h3>
+                <p>Native German responses with emojis and proper formatting</p>
+                <div class="feature-tags">
+                  <span class="tag">German</span>
+                  <span class="tag">Localized</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Structure -->
+          <div class="notion-block">
+            <h2>📁 Required CSV Data Structure</h2>
+            <div class="csv-structure">
+              <div class="csv-file">
+                <h3>📋 values.csv - Your Values & Principles</h3>
+                <div class="csv-example">
+                  <code>Category,Description,Importance<br>
+Value,Familie an erster Stelle,Hoch<br>
+Value,Authentizität leben,Hoch<br>
+Value,Kontinuierliches Lernen,Mittel</code>
+                </div>
+              </div>
+              <div class="csv-file">
+                <h3>🎯 goals.csv - Your Goals & Aspirations</h3>
+                <div class="csv-example">
+                  <code>Category,Description,Timeframe<br>
+Goal,Gesund und fit bleiben,Langfristig<br>
+Goal,Neues Hobby lernen,Kurzfristig<br>
+Goal,Karriere vorantreiben,Mittelfristig</code>
+                </div>
+              </div>
+              <div class="csv-file">
+                <h3>🧠 identity.csv - Your Personality Traits</h3>
+                <div class="csv-example">
+                  <code>Category,Description,Strength<br>
+Trait,Introvertiert,Hoch<br>
+Trait,Analytisch,Hoch<br>
+Trait,Empathisch,Mittel</code>
+                </div>
+              </div>
+              <div class="csv-file">
+                <h3>📚 experiences.csv - Important Life Experiences</h3>
+                <div class="csv-example">
+                  <code>Category,Description,Lesson<br>
+Experience,Job-Wechsel vor 2 Jahren,Work-Life-Balance ist wichtig<br>
+Experience,Umzug nach Stuttgart,Flexibilität zahlt sich aus</code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Format -->
+          <div class="notion-block">
+            <h2>📊 Response Format</h2>
+            <div class="response-format">
+              <div class="response-section">
+                <h3>🎯 ALIGNMENT-ANALYSE</h3>
+                <ul>
+                  <li>Bewertung der Übereinstimmung mit Werten (1-10)</li>
+                  <li>Bewertung der Übereinstimmung mit Zielen (1-10)</li>
+                  <li>Bewertung der Übereinstimmung mit Identität (1-10)</li>
+                </ul>
+              </div>
+              <div class="response-section">
+                <h3>🧠 DETAILLIERTE BEGRÜNDUNG</h3>
+                <ul>
+                  <li>Aspekte, die zu deinen Werten passen</li>
+                  <li>Unterstützung deiner Ziele</li>
+                  <li>Widersprüche zu Werten/Zielen</li>
+                </ul>
+              </div>
+              <div class="response-section">
+                <h3>⚡ HANDLUNGSEMPFEHLUNGEN</h3>
+                <ul>
+                  <li>3-5 konkrete, umsetzbare Schritte</li>
+                  <li>Prioritäten für die Entscheidung</li>
+                </ul>
+              </div>
+              <div class="response-section">
+                <h3>💭 REFLEXIONS-FRAGEN</h3>
+                <ul>
+                  <li>Tiefere Fragen zum Nachdenken</li>
+                </ul>
+              </div>
+              <div class="response-section">
+                <h3>⚠️ RISIKO-NUTZEN-BEWERTUNG</h3>
+                <ul>
+                  <li>Positive Auswirkungen</li>
+                  <li>Mögliche Herausforderungen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases -->
+          <div class="notion-block">
+            <h2>🎯 Real Use Cases</h2>
+            <div class="use-cases">
+              <div class="use-case">
+                <div class="use-case-icon">💼</div>
+                <div class="use-case-content">
+                  <h3>Career Decisions</h3>
+                  <p>Analyze job offers, career changes, or professional opportunities against your values and goals</p>
+                  <div class="use-case-example">
+                    <strong>Example:</strong> "Soll ich den neuen Job annehmen?" → Detailed analysis of work-life balance, career growth, and personal values alignment
+                  </div>
+                </div>
+              </div>
+              <div class="use-case">
+                <div class="use-case-icon">🏠</div>
+                <div class="use-case-content">
+                  <h3>Life Changes</h3>
+                  <p>Evaluate major life decisions like moving, relationships, or lifestyle changes</p>
+                  <div class="use-case-example">
+                    <strong>Example:</strong> "Ist es richtig, dass ich umziehe?" → Analysis considering family, career, and personal growth factors
+                  </div>
+                </div>
+              </div>
+              <div class="use-case">
+                <div class="use-case-icon">⚖️</div>
+                <div class="use-case-content">
+                  <h3>Daily Choices</h3>
+                  <p>Get guidance on smaller decisions that impact your daily life and habits</p>
+                  <div class="use-case-example">
+                    <strong>Example:</strong> "Soll ich mehr Zeit für meine Hobbys einplanen?" → Analysis of time management, personal fulfillment, and goal alignment
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Details -->
+          <div class="notion-block">
+            <h2>🔧 Technical Stack</h2>
+            <div class="tech-stack">
+              <div class="tech-category">
+                <h3>🤖 AI & Processing</h3>
+                <ul>
+                  <li><strong>OpenRouter API:</strong> DeepSeek model for decision analysis</li>
+                  <li><strong>CSV Processing:</strong> Automatic data categorization and loading</li>
+                  <li><strong>RAG System:</strong> Retrieval-Augmented Generation for personalized responses</li>
+                </ul>
+              </div>
+              <div class="tech-category">
+                <h3>📊 Data Management</h3>
+                <ul>
+                  <li><strong>CSV Files:</strong> Values, goals, identity, experiences</li>
+                  <li><strong>Memory Storage:</strong> Data loaded and cached for fast access</li>
+                  <li><strong>Auto-Detection:</strong> Smart column recognition for different CSV formats</li>
+                </ul>
+              </div>
+              <div class="tech-category">
+                <h3>💬 Discord Integration</h3>
+                <ul>
+                  <li><strong>Discord.py:</strong> Bot framework and message handling</li>
+                  <li><strong>Channel ID:</strong> 1384282192171110412 (designated decision channel)</li>
+                  <li><strong>Error Handling:</strong> Graceful handling of missing data and API errors</li>
         </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commands -->
+          <div class="notion-block">
+            <h2>💬 Available Commands</h2>
+            <div class="commands-list">
+              <div class="command">
+                <code>!status</code>
+                <span>Show current data status and loaded CSV information</span>
+              </div>
+              <div class="command">
+                <code>!reload</code>
+                <span>Reload CSV data files from the upload directory</span>
+              </div>
+              <div class="command">
+                <code>!help</code>
+                <span>Display help information and usage instructions</span>
+              </div>
+              <div class="command">
+                <code>Ask Question</code>
+                <span>Simply post your decision question in the channel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Status -->
+          <div class="notion-block status-block">
+            <h2>✅ Current Status (September 2025)</h2>
+            <div class="status-content">
+              <div class="status-item">
+                <span class="status-indicator ready">🟡</span>
+                <span><strong>READY FOR DEPLOYMENT</strong> - Code complete, not currently containerized</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🤖</span>
+                <span><strong>AI Integration:</strong> OpenRouter DeepSeek model ready</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">📊</span>
+                <span><strong>CSV Processing:</strong> Automatic data categorization implemented</span>
+              </div>
+              <div class="status-item">
+                <span class="status-indicator">🌍</span>
+                <span><strong>Language:</strong> German responses with emojis and formatting</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="container"><a href="../">Zurück zur Übersicht</a></div></footer>
+  <footer class="site-footer"><div class="container"><a href="../">Back home</a></div></footer>
   <script src="../assets/app.js"></script>
 </body>
 </html>
