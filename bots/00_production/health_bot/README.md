@@ -9,6 +9,7 @@ Ein automatisierter Discord Bot, der täglich Ihre Oura Ring Gesundheitsdaten ab
 - **Personalisierte Tipps**: 2-3 maßgeschneiderte Empfehlungen basierend auf Ihrer Leistung
 - **Discord Integration**: Schöne, formatierte Berichte als Rich Embeds
 - **Automatisierung**: Tägliche Berichte um 8:00 Uhr (konfigurierbar)
+- **Startup-Benachrichtigung**: Informative Startnachricht erklärt Bot-Funktionen und Ziele
 - **Fehlerbehandlung**: Robuste API-Fehlerbehandlung und Wiederherstellung
 
 ## 📊 Gesundheitsstatus-Levels
@@ -94,6 +95,18 @@ Alle Befehle können nur im konfigurierten Gesundheits-Kanal verwendet werden:
 
 - `!health test` - Manuell einen Gesundheitsbericht generieren
 - `!health status` - Bot-Status und Konfiguration anzeigen
+
+## 🚀 Startup-Benachrichtigung
+
+Wenn der Health Bot startet, sendet er automatisch eine informative Nachricht in den Gesundheits-Kanal, die folgende Informationen enthält:
+
+- **🔄 Automatische Berichte**: Zeitplan für tägliche Berichte
+- **📊 Überwachte Daten**: Welche Gesundheitsdaten analysiert werden
+- **🎯 Deine Ziele**: Personalisierte Zielwerte für Kalorien und Schritte
+- **💬 Befehle**: Verfügbare Bot-Befehle und Keywords
+- **🤖 Bot Status**: Aktueller Verbindungsstatus und Konfiguration
+
+Diese Startup-Nachricht hilft Benutzern zu verstehen, was der Bot macht und wie sie ihn verwenden können.
 
 ## 🧪 Tests ausführen
 

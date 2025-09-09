@@ -169,6 +169,32 @@ await manager.test_connection()
 - Personalisierte Geburtstagsgrüße
 - Wochenübersicht kommender Events
 
+## ✅ Current Status (September 2025)
+
+**🟢 BOT IS LIVE AND OPERATIONAL**
+
+The Erinnerungen Bot is currently running in a Docker container and fully functional.
+
+### Bot Status
+- **Container**: `erinnerungen_bot_erinnerungen-bot` - Running (Healthy)
+- **Uptime**: 38+ hours
+- **Health Check**: ✅ Healthy
+- **Last Restart**: September 8, 2025
+
+### Recent Updates
+- ✅ **Stable Operation**: Bot running continuously without issues
+- ✅ **Docker Health Checks**: Automated monitoring and restart capability
+- ✅ **Notion Integration**: Active database connectivity for birthdays
+- ✅ **Müllkalender Integration**: Working trash collection reminders
+- ✅ **Scheduled Tasks**: Daily reminders at 07:00 and 20:00
+
+### Tested Functionality
+- ✅ Birthday reminders from Notion database
+- ✅ Müllkalender (trash collection) reminders for Schweigheim
+- ✅ Discord message processing and notifications
+- ✅ Timezone-aware scheduling (Europe/Berlin)
+- ✅ Automated daily reminder system
+
 ## 📞 Support
 
 Bei Problemen oder Fragen:

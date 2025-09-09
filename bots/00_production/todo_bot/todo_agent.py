@@ -157,7 +157,7 @@ class TodoBot(commands.Bot):
         # Priority keywords mapping
         self.priority_keywords = {
             'urgent': 4, 'wichtig': 4, 'dringend': 4, 'sofort': 4,
-            'hoch': 3, 'high': 3, 'wichtig': 3,
+            'hoch': 3, 'high': 3,
             'normal': 2, 'medium': 2,
             'niedrig': 1, 'low': 1, 'später': 1
         }
@@ -292,8 +292,7 @@ class TodoBot(commands.Bot):
             'description': f'Created from Discord message by {message.author.display_name}\nOriginal: {message.content}',
             'priority': priority,
             'due_date': due_date,
-            'labels': labels,
-            'creator': message.author.display_name
+            'labels': labels
         }
     
     async def create_todo_from_message(self, message: discord.Message):

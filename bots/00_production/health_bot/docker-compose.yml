@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  health-bot:
+    build: .
+    container_name: health-bot
+    restart: unless-stopped
+    env_file:
+      - ../../../.env
+    environment:
+      # Health Bot Settings
+      - DAILY_SCHEDULE_TIME=09:00
+      - TARGET_CALORIES=2200
+      - TARGET_ACTIVE_CALORIES=450
+      - TARGET_STEPS=8000
+      
+      # Bot Status Settings
+      - BOT_STARTUP_MESSAGE=false
+      - BOT_NAME=Health Bot
+      - BOT_LOCATION=Docker Container
+      
+      # Timezone
+      - TZ=Europe/Berlin
+      
+      # Python settings
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    
+    volumes:
+      # Mount logs directory for persistence
+      - ./logs:/app/logs
+    
+    networks:
+      - discord-bots
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('https://api.ouraring.com/v2/usercollection/daily_sleep?start_date=2025-09-08&end_date=2025-09-08', timeout=5)"]
+      interval: 30m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  discord-bots:
+    external: true

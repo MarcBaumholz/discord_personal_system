@@ -22,6 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy bot files
 COPY bot.py .
+COPY category_mapper.py .
 
 # Create necessary directories
 RUN mkdir -p logs

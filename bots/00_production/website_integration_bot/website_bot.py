@@ -6,7 +6,6 @@ import json
 import os
 from datetime import datetime
 import subprocess
-import psutil
 from dotenv import load_dotenv
 
 # Load environment variables from main .env file
@@ -21,20 +20,20 @@ class WebsiteIntegrationBot(commands.Bot):
         self.overview_channel_id = 1361083427264266425
         self.website_url = "https://MarcBaumholz.github.io/discord_personal_system/"
         
-        # Bot status tracking
+        # Bot status tracking - Updated with current bot names and processes
         self.bot_processes = {
-            "Calories Bot": "calories_bot.py",
-            "Health Bot": "health_bot.py", 
-            "Decision Bot": "decision_bot.py",
-            "Erinnerungen Bot": "erinnerungen_bot.py",
-            "Tagebuch Bot": "tagebuch_bot.py",
-            "Preisvergleich Bot": "preisvergleich_bot.py",
-            "Meal Plan Bot": "meal_plan_bot.py",
-            "Weekly Todo Bot": "weekly_todo_bot.py",
-            "YouTube Bot": "youtube_bot.py",
-            "Money Bot": "bot.py",
-            "Allgemeine Wohl Bot": "allgemeine_wohl_bot.py",
-            "Todo Bot": "todo_agent.py"
+            "Calories Bot": "calories-bot",
+            "Health Bot": "health-bot", 
+            "Decision Bot": "decision-bot",
+            "Erinnerungen Bot": "erinnerungen-bot",
+            "Tagebuch Bot": "tagebuch-bot",
+            "Preisvergleich Bot": "preisvergleich-bot",
+            "Meal Plan Bot": "meal-plan-bot",
+            "Weekly Todo Bot": "weekly-todo-bot",
+            "YouTube Bot": "youtube-bot",
+            "Money Bot": "money-bot",
+            "Allgemeine Wohl Bot": "allgemeine-wohl-bot",
+            "Todo Bot": "discord-todo-bot"
         }
 
     async def on_ready(self):
@@ -75,12 +74,12 @@ class WebsiteIntegrationBot(commands.Bot):
         
         embed.add_field(
             name="✨ Features",
-            value="• **12 Production Bots** mit detaillierten Beschreibungen\n• **Use Cases** und praktische Beispiele\n• **Direkte Links** zu README-Dateien\n• **Responsive Design** mit Dark/Light Theme",
+            value="• **12 Production Bots** mit aktuellen Beschreibungen\n• **AI-Powered** Bots mit OpenRouter, LangChain, Notion\n• **Docker-Container** Status-Monitoring\n• **Real-time Updates** der Bot-Funktionalitäten\n• **Responsive Design** mit Dark/Light Theme",
             inline=False
         )
         
         embed.set_footer(
-            text="Website automatisch generiert aus Repository-Dokumentation",
+            text="Website mit aktuellen Bot-Informationen • Docker-Container Status • Letzte Aktualisierung: " + datetime.now().strftime("%d.%m.%Y %H:%M"),
             icon_url="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
         )
         
@@ -96,38 +95,38 @@ class WebsiteIntegrationBot(commands.Bot):
         bot_cards = [
             {
                 "name": "🍽️ Calories Bot",
-                "description": "Analyzes food images, estimates calories, and stores results in Notion with monthly reports.",
-                "features": "Vision • Notion • Reports",
+                "description": "AI-powered food analysis using OpenRouter vision models. Analyzes food images and text descriptions, estimates calories with confidence scores, and automatically saves to Notion database with monthly reports and charts.",
+                "features": "AI Vision • OpenRouter • Notion • Monthly Reports • Charts",
                 "url": f"{self.website_url}bots/calories.html"
             },
             {
                 "name": "🧠 Decision Bot", 
-                "description": "Analyzes decisions against your values, goals, identity, and experiences.",
-                "features": "RAG • CSV • Analysis",
+                "description": "Personal decision analysis using CSV-based RAG system. Analyzes decisions against your personal values, goals, identity, and experiences stored in CSV files with detailed recommendations.",
+                "features": "RAG • CSV Data • OpenRouter • Personal Analysis",
                 "url": f"{self.website_url}bots/decision.html"
             },
             {
                 "name": "⏰ Erinnerungen Bot",
-                "description": "Daily birthday reminders from Notion and trash pickup reminders for your area.",
-                "features": "Notion • Schedule",
+                "description": "Automated daily reminders system. Checks Notion database for birthdays and sends notifications at 7 AM, plus trash pickup reminders for Schweigheim area at 8 PM.",
+                "features": "Notion • Birthday Tracking • Trash Calendar • Scheduling",
                 "url": f"{self.website_url}bots/erinnerungen.html"
             },
             {
                 "name": "🏥 Health Bot",
-                "description": "Fetches Oura Ring data, analyzes performance, and posts daily health reports.",
-                "features": "Oura • Analysis • Reports",
+                "description": "Oura Ring health data integration. Fetches daily activity data (calories, steps, active calories), analyzes against personal goals, and sends personalized health reports with tips at 8 AM.",
+                "features": "Oura API • Health Analysis • Personalized Tips • Daily Reports",
                 "url": f"{self.website_url}bots/health.html"
             },
             {
                 "name": "🍳 Meal Plan Bot",
-                "description": "Generates weekly meal plans from Notion recipes and adds shopping lists to Todoist.",
-                "features": "Notion • Todoist",
+                "description": "Weekly meal planning with Notion integration. Fetches recipes from Notion database, randomly selects 3 for the week, generates meal prep plans and shopping lists, then adds items to Todoist.",
+                "features": "Notion • Todoist • AI Planning • Shopping Lists",
                 "url": f"{self.website_url}bots/meal-plan.html"
             },
             {
                 "name": "💰 Money Bot",
-                "description": "Parses money-related messages and receipts and saves structured entries to Notion.",
-                "features": "AI • Notion",
+                "description": "AI-powered expense tracking. Automatically processes text and image messages in money channel, uses OpenRouter AI to extract amounts, categories, and descriptions, saves structured entries to Notion.",
+                "features": "AI Analysis • OpenRouter • Notion • Receipt Processing",
                 "url": f"{self.website_url}bots/money.html"
             }
         ]
@@ -166,38 +165,38 @@ class WebsiteIntegrationBot(commands.Bot):
         remaining_bots = [
             {
                 "name": "🔎 Preisvergleich Bot",
-                "description": "Finds weekly deals for products from your Notion watchlist and posts offers.",
-                "features": "Agent • Search • Notion",
+                "description": "AI-powered deal finder using LangChain and LangGraph. Monitors Notion product watchlist, uses Tavily search API to find current offers, and posts detailed deal notifications every Sunday.",
+                "features": "LangChain • LangGraph • Tavily Search • Notion • AI Agent",
                 "url": f"{self.website_url}bots/preisvergleich.html"
             },
             {
                 "name": "📔 Tagebuch Bot", 
-                "description": "Saves journal entries to Notion with daily reminders and smart titles.",
-                "features": "Notion • Schedule",
+                "description": "Automated journal system with Notion integration. Saves journal entries with smart title generation, sends daily reminders at 10 PM, and maintains structured diary in Notion database.",
+                "features": "Notion • Smart Titles • Daily Reminders • German Language",
                 "url": f"{self.website_url}bots/tagebuch.html"
             },
             {
                 "name": "📋 Todo Bot",
-                "description": "Turns channel messages into Todos with smart parsing and Todoist integration.",
-                "features": "Todoist • Parsing",
+                "description": "Smart todo management with Todoist integration. Automatically converts channel messages to todos with intelligent parsing of priority, dates, and family members, plus complete todo management.",
+                "features": "Todoist • Smart Parsing • Priority Detection • Family Labels",
                 "url": f"{self.website_url}bots/todo.html"
             },
             {
                 "name": "✅ Weekly Todo Bot",
-                "description": "Interactive daily/weekly household tasks list with emoji reactions and persistence.",
-                "features": "Interactive • Schedule", 
+                "description": "Interactive household task management. Creates daily todo lists with emoji reactions, persistent progress tracking, automatic daily resets, and multi-user support.",
+                "features": "Interactive • Emoji Reactions • Persistence • Daily Reset",
                 "url": f"{self.website_url}bots/weekly-todo.html"
             },
             {
                 "name": "📺 YouTube Bot",
-                "description": "Posts daily videos from subscriptions or trending tech videos with rich embeds.",
-                "features": "YouTube API • Schedule",
+                "description": "Automated YouTube content delivery. Fetches daily videos from tech subscriptions, posts trending tech videos as fallback, includes video search functionality, and posts rich embeds at 9 AM.",
+                "features": "YouTube API • Tech Channels • Trending Videos • Rich Embeds",
                 "url": f"{self.website_url}bots/youtube.html"
             },
             {
                 "name": "🏠 Allgemeine Wohl Bot",
-                "description": "Tracks household activities and good deeds, categorizes with AI, and saves entries to Notion.",
-                "features": "AI • Notion • Tracking",
+                "description": "Household activity tracking system. Monitors Discord messages for household activities, uses OpenRouter AI for categorization, maintains ground truth database, and saves structured entries to Notion.",
+                "features": "AI Categorization • OpenRouter • Ground Truth • Notion • Statistics",
                 "url": f"{self.website_url}bots/allgemeine-wohl.html"
             }
         ]
@@ -234,18 +233,17 @@ class WebsiteIntegrationBot(commands.Bot):
             
         return status_summary
 
-    async def check_bot_running(self, process_name):
-        """Check if a bot process is running"""
+    async def check_bot_running(self, container_name):
+        """Check if a Docker container is running"""
         try:
-            for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
-                try:
-                    if proc.info['cmdline']:
-                        cmdline = ' '.join(proc.info['cmdline'])
-                        if process_name in cmdline and 'python' in cmdline.lower():
-                            return True
-                except (psutil.NoSuchProcess, psutil.AccessDenied):
-                    continue
-            return False
+            import subprocess
+            result = subprocess.run(
+                ['docker', 'ps', '--filter', f'name={container_name}', '--format', '{{.Status}}'],
+                capture_output=True,
+                text=True,
+                timeout=10
+            )
+            return 'Up' in result.stdout
         except Exception:
             return False
 

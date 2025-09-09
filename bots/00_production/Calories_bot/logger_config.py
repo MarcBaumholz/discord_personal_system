@@ -227,6 +227,30 @@ class CaloriesBotLogger:
         
         self._append_to_json_file(error_file, error_entry)
     
+    def log_warning(self, warning_type: str, warning_message: str, context: Dict[str, Any] = None):
+        """Log warning events"""
+        self.error_logger.warning(f"⚠️ {warning_type}: {warning_message}")
+        
+        if context:
+            self.error_logger.warning(f"Context: {context}")
+        
+        # JSON log for warnings
+        error_file = os.path.join(
+            self.log_dir, 
+            "errors", 
+            f"errors_{datetime.now().strftime('%Y%m%d')}.json"
+        )
+        
+        warning_entry = {
+            "timestamp": datetime.now().isoformat(),
+            "event": "warning",
+            "warning_type": warning_type,
+            "warning_message": warning_message,
+            "context": context or {}
+        }
+        
+        self._append_to_json_file(error_file, warning_entry)
+    
     def log_system_event(self, event_type: str, details: Dict[str, Any]):
         """Log system events"""
         self.main_logger.info(f"🔧 SYSTEM EVENT: {event_type}")

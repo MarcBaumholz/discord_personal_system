@@ -20,19 +20,35 @@ class SimpleOfferSearchAgent:
         Args:
             api_key: OpenRouter API key (defaults to OPENROUTER_API_KEY env variable)
         """
-        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
-        if not self.api_key:
-            raise ValueError("OpenRouter API key is required. Set OPENROUTER_API_KEY in .env or pass as argument.")
+        try:
+            self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+            if not self.api_key:
+                logger.error("OpenRouter API key is missing. Set OPENROUTER_API_KEY in .env or pass as argument.")
+                self.initialized = False
+                return
+            
+            # Default stores to check for offers
+            self.default_stores = ["Rewe", "Kaufland", "Edeka", "Lidl", "Aldi Süd", "Penny"]
+            self.base_url = "https://openrouter.ai/api/v1/chat/completions"
+            self.headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://localhost"  # Required by OpenRouter
+            }
+            self.initialized = True
+            logger.info("SimpleOfferSearchAgent initialized successfully")
+        except Exception as e:
+            logger.error(f"Error during SimpleOfferSearchAgent initialization: {e}")
+            self.initialized = False
+    
+    def is_initialized(self) -> bool:
+        """
+        Check if the SimpleOfferSearchAgent is properly initialized
         
-        # Default stores to check for offers
-        self.default_stores = ["Rewe", "Kaufland", "Edeka", "Lidl", "Aldi Süd", "Penny"]
-        self.base_url = "https://openrouter.ai/api/v1/chat/completions"
-        self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-            "HTTP-Referer": "https://localhost"  # Required by OpenRouter
-        }
-        logger.info("SimpleOfferSearchAgent initialized")
+        Returns:
+            True if initialized, False otherwise
+        """
+        return getattr(self, 'initialized', False)
     
     def find_offers(self, products: List[Dict[str, Any]], 
                    stores: Optional[List[str]] = None,
@@ -48,6 +64,15 @@ class SimpleOfferSearchAgent:
         Returns:
             Dictionary with search results and metadata
         """
+        if not self.is_initialized():
+            logger.error("SimpleOfferSearchAgent is not properly initialized. Cannot find offers.")
+            return {
+                "offers": [],
+                "total_savings": 0,
+                "successful_searches": 0,
+                "error": "Agent not properly initialized"
+            }
+        
         if stores is None:
             stores = self.default_stores
             
@@ -92,7 +117,7 @@ To find this information, you should search the internet for current flyers, pro
             
             # Prepare the request
             payload = {
-                "model": "meta-llama/llama-3.1-8b-instruct:free",  # Updated to newest free model
+                "model": "deepseek/deepseek-chat-v3-0324:free",  # Updated to DeepSeek model
                 "temperature": 0.2,
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 2000

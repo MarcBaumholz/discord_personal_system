@@ -1,10 +1,11 @@
 """Health data analyzer for generating status and insights."""
 from enum import Enum
-from typing import List
+from typing import List, Optional, Tuple
 from pydantic import BaseModel
 
 from oura_client import HealthData
 from config import Config
+from notion_calories_client import NotionCaloriesClient
 
 
 class HealthStatus(Enum):
@@ -23,6 +24,7 @@ class HealthInsight(BaseModel):
     tips: List[str]
     detailed_metrics: dict
     individual_insights: List[str]
+    calories_analysis: Optional[dict] = None  # Added calories analysis
 
 
 class HealthAnalyzer:
@@ -30,6 +32,15 @@ class HealthAnalyzer:
     
     def __init__(self):
         self.config = Config()
+        # Initialize Notion calories client
+        try:
+            self.calories_client = NotionCaloriesClient(
+                notion_token=self.config.NOTION_TOKEN,
+                database_id=self.config.FOODIATE_DB_ID
+            )
+        except Exception as e:
+            print(f"Warning: Could not initialize Notion calories client: {e}")
+            self.calories_client = None
     
     def analyze(self, health_data: HealthData) -> HealthInsight:
         """
@@ -101,13 +112,17 @@ class HealthAnalyzer:
         # Prepare detailed metrics
         detailed_metrics = self._prepare_detailed_metrics(health_data)
         
+        # Analyze calories (consumed vs burned)
+        calories_analysis = self._analyze_calories_balance(health_data)
+        
         return HealthInsight(
             status=status,
             score=overall_score,
             message=message,
             tips=tips,
             detailed_metrics=detailed_metrics,
-            individual_insights=individual_insights
+            individual_insights=individual_insights,
+            calories_analysis=calories_analysis
         )
     
     def _score_calories(self, total_calories: int) -> int:
@@ -468,3 +483,59 @@ class HealthAnalyzer:
             }
         
         return metrics 
+    
+    def _analyze_calories_balance(self, health_data: HealthData) -> Optional[dict]:
+        """
+        Analyze calories consumed vs burned from Notion database.
+        
+        Args:
+            health_data: Health data from Oura Ring
+            
+        Returns:
+            Dictionary with calories analysis or None if not available
+        """
+        if not self.calories_client:
+            return None
+        
+        try:
+            # Get yesterday's calories consumed from Notion
+            consumed_calories, food_entries = self.calories_client.get_yesterday_calories("Marc")
+            
+            if consumed_calories == 0:
+                return {
+                    "consumed_calories": 0,
+                    "burned_calories": health_data.total_calories,
+                    "net_calories": -health_data.total_calories,
+                    "balance_status": "no_food_data",
+                    "message": "No food data found for yesterday",
+                    "food_entries": []
+                }
+            
+            # Calculate net calories (consumed - burned)
+            burned_calories = health_data.total_calories
+            net_calories = consumed_calories - burned_calories
+            
+            # Determine balance status
+            if net_calories > 500:
+                balance_status = "calorie_surplus"
+                message = f"Calorie surplus: +{net_calories} kcal (consumed {consumed_calories}, burned {burned_calories})"
+            elif net_calories < -500:
+                balance_status = "calorie_deficit"
+                message = f"Calorie deficit: {net_calories} kcal (consumed {consumed_calories}, burned {burned_calories})"
+            else:
+                balance_status = "calorie_balanced"
+                message = f"Calorie balanced: {net_calories:+d} kcal (consumed {consumed_calories}, burned {burned_calories})"
+            
+            return {
+                "consumed_calories": consumed_calories,
+                "burned_calories": burned_calories,
+                "net_calories": net_calories,
+                "balance_status": balance_status,
+                "message": message,
+                "food_entries": food_entries,
+                "food_count": len(food_entries)
+            }
+            
+        except Exception as e:
+            print(f"Error analyzing calories balance: {e}")
+            return None

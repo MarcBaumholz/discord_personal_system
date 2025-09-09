@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2025-09-09T19:34:32.309409",
+    "event": "error",
+    "error_type": "Text processing error",
+    "error_message": "Error processing food text: 'CaloriesBotLogger' object has no attribute 'error'",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T19:40:11.097735",
+    "event": "error",
+    "error_type": "Test",
+    "error_message": "This works",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T19:40:58.156295",
+    "event": "error",
+    "error_type": "Test Error",
+    "error_message": "This should work now",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T19:41:29.927241",
+    "event": "error",
+    "error_type": "Test Error",
+    "error_message": "This should work now",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T19:41:29.927922",
+    "event": "warning",
+    "warning_type": "Test Warning",
+    "warning_message": "This should work now",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T20:44:09.443326",
+    "event": "error",
+    "error_type": "Text processing error",
+    "error_message": "Error processing food text: 'FoodAnalysisResult' object has no attribute 'get'",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-09T20:57:24.939810",
+    "event": "error",
+    "error_type": "Text processing error",
+    "error_message": "Error processing food text: 'FoodAnalysisResult' object has no attribute 'get'",
+    "context": {}
+  }
+]

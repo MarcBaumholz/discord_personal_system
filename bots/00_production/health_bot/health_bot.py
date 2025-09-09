@@ -74,8 +74,63 @@ class HealthBot(commands.Bot):
         logger.info(f'{self.user} has connected to Discord!')
         logger.info(f'Health channel ID: {self.config.HEALTH_CHANNEL_ID}')
         
-        # Send startup message
-        await self.status_manager.send_startup_message()
+        # Send custom health bot startup message
+        await self.send_health_bot_startup_message()
+    
+    async def send_health_bot_startup_message(self):
+        """Send a custom startup message explaining what the health bot does."""
+        logger.info("🏥 Sending custom Health Bot startup message...")
+        try:
+            channel = self.get_channel(self.config.HEALTH_CHANNEL_ID)
+            if not channel:
+                logger.error(f"Could not find health channel with ID {self.config.HEALTH_CHANNEL_ID}")
+                return
+            
+            # Create health bot specific startup embed
+            embed = discord.Embed(
+                title="🏥 Health Bot ist online!",
+                description="**Dein persönlicher Gesundheitsassistent ist bereit!**",
+                color=0x00ff88,  # Health green color
+                timestamp=datetime.now()
+            )
+            
+            embed.add_field(
+                name="🔄 Automatische Berichte",
+                value=f"Täglich um **{self.config.DAILY_SCHEDULE_TIME}** Uhr",
+                inline=True
+            )
+            
+            embed.add_field(
+                name="📊 Überwachte Daten",
+                value="• Kalorien (Gesamt & Aktiv)\n• Schritte\n• Oura Ring Daten",
+                inline=True
+            )
+            
+            embed.add_field(
+                name="🎯 Deine Ziele",
+                value=f"• Kalorien: {self.config.TARGET_CALORIES:,}\n• Aktiv: {self.config.TARGET_ACTIVE_CALORIES:,}\n• Schritte: {self.config.TARGET_STEPS:,}",
+                inline=True
+            )
+            
+            embed.add_field(
+                name="💬 Befehle",
+                value="• `health` - Sofortiger Bericht\n• `status` - Bot Status\n• `!healthtest` - Manueller Test",
+                inline=False
+            )
+            
+            embed.add_field(
+                name="🤖 Bot Status",
+                value="✅ Verbunden mit Discord\n✅ Oura API konfiguriert\n✅ Scheduler aktiv",
+                inline=False
+            )
+            
+            embed.set_footer(text="Health Bot • Dein täglicher Gesundheitsbegleiter")
+            
+            await channel.send(embed=embed)
+            logger.info("✅ Health Bot startup message sent successfully")
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to send health bot startup message: {e}")
     
     async def on_command_error(self, ctx, error):
         """Handle command errors gracefully."""
@@ -289,6 +344,11 @@ class HealthBot(commands.Bot):
                 inline=False
             )
         
+        # Add calories analysis if available
+        if hasattr(insight, 'calories_analysis') and insight.calories_analysis:
+            calories_data = insight.calories_analysis
+            self._add_calories_analysis_to_embed(embed, calories_data)
+        
         # Add tips
         if insight.tips:
             tips_text = "\n".join([f"• {tip}" for tip in insight.tips])
@@ -314,6 +374,73 @@ class HealthBot(commands.Bot):
         embed.set_footer(text="✅ Powered by Oura Ring - All data is LIVE and real-time synced")
         
         await channel.send(embed=embed)
+    
+    def _add_calories_analysis_to_embed(self, embed: discord.Embed, calories_data: dict):
+        """Add calories analysis to the Discord embed."""
+        try:
+            consumed = calories_data.get("consumed_calories", 0)
+            burned = calories_data.get("burned_calories", 0)
+            net = calories_data.get("net_calories", 0)
+            balance_status = calories_data.get("balance_status", "unknown")
+            food_count = calories_data.get("food_count", 0)
+            
+            # Determine emoji and color based on balance
+            if balance_status == "calorie_surplus":
+                emoji = "📈"
+                color_emoji = "🔴"
+            elif balance_status == "calorie_deficit":
+                emoji = "📉"
+                color_emoji = "🟡"
+            elif balance_status == "calorie_balanced":
+                emoji = "⚖️"
+                color_emoji = "🟢"
+            else:
+                emoji = "❓"
+                color_emoji = "⚪"
+            
+            # Create calories summary
+            calories_text = f"{color_emoji} **Calories Balance**\n"
+            calories_text += f"🍽️ **Consumed:** {consumed:,} kcal ({food_count} meals)\n"
+            calories_text += f"🔥 **Burned:** {burned:,} kcal\n"
+            calories_text += f"{emoji} **Net:** {net:+,} kcal"
+            
+            # Add status message
+            if balance_status == "calorie_surplus":
+                calories_text += "\n\n⚠️ **Calorie Surplus** - Consider reducing intake or increasing activity"
+            elif balance_status == "calorie_deficit":
+                calories_text += "\n\n💪 **Calorie Deficit** - Great for weight loss, ensure adequate nutrition"
+            elif balance_status == "calorie_balanced":
+                calories_text += "\n\n✅ **Well Balanced** - Perfect calorie balance for maintenance"
+            elif balance_status == "no_food_data":
+                calories_text += "\n\n📝 **No Food Data** - Track your meals to see calorie balance"
+            
+            embed.add_field(
+                name="🍽️ Calories Analysis",
+                value=calories_text,
+                inline=False
+            )
+            
+            # Add food entries if available
+            food_entries = calories_data.get("food_entries", [])
+            if food_entries and len(food_entries) > 0:
+                # Show top 5 food entries
+                top_foods = food_entries[:5]
+                food_text = "\n".join([
+                    f"• {entry['food_name']} ({entry['calories']} kcal)"
+                    for entry in top_foods
+                ])
+                
+                if len(food_entries) > 5:
+                    food_text += f"\n• ... and {len(food_entries) - 5} more meals"
+                
+                embed.add_field(
+                    name="🍽️ Yesterday's Meals",
+                    value=food_text,
+                    inline=False
+                )
+                
+        except Exception as e:
+            logger.error(f"Error adding calories analysis to embed: {e}")
     
     def _get_status_color(self, status: str) -> int:
         """Get Discord embed color based on status."""

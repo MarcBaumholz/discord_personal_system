@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-09-09T21:03:48.030463",
+  "event": "bot_startup",
+  "bot_user": "Marc Baumholz#5492",
+  "channel_id": 1382099540391497818,
+  "database_id": "20ed42a1faf5807497c2f350ff84ea8d",
+  "openrouter_configured": true,
+  "notion_configured": true
+}

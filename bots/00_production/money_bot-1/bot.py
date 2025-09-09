@@ -29,6 +29,7 @@ from sklearn.linear_model import LinearRegression
 # Import required libraries
 from notion_client import Client as NotionClient
 from openai import AsyncOpenAI
+from category_mapper import ManualCategoryMapper
 
 # Load environment variables from main discord directory
 env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
@@ -45,7 +46,10 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 # Initialize clients
 notion = NotionClient(auth=NOTION_TOKEN)
 
-# Use AsyncOpenAI for non-blocking API calls
+# Initialize manual category mapper
+category_mapper = ManualCategoryMapper()
+
+# Use AsyncOpenAI for non-blocking API calls (fallback only)
 from openai import AsyncOpenAI
 openai_client = AsyncOpenAI(
     api_key=OPENROUTER_API_KEY,
@@ -70,11 +74,68 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 class MoneyAnalyzer:
-    """Analyzes text and images for money-related information"""
+    """Analyzes text and images for money-related information using manual categorization first, AI as fallback"""
     
     @staticmethod
     async def analyze_text(text: str, author: str) -> Optional[Dict[str, Any]]:
-        """Analyze text for money information using AI"""
+        """Analyze text for money information using manual categorization first, AI as fallback"""
+        try:
+            logger.info(f"🔍 Analyzing text: '{text}' from {author}")
+            
+            # STEP 1: Try manual categorization first
+            manual_result = category_mapper.analyze_expense(text)
+            logger.info(f"📊 Manual analysis result: {manual_result}")
+            
+            # Check if manual categorization found both amount and category
+            if manual_result['amount'] is not None and manual_result['category'] is not None:
+                # Manual categorization successful
+                logger.info(f"✅ Manual categorization successful: {manual_result['category']} - €{manual_result['amount']:.2f}")
+                return {
+                    "amount": manual_result['amount'],
+                    "category": manual_result['category'],
+                    "description": manual_result['description'],
+                    "author": author,
+                    "type": "text",
+                    "method": "manual",
+                    "confidence": manual_result['confidence']
+                }
+            
+            # STEP 2: If manual categorization failed, try AI as fallback
+            if manual_result['amount'] is None or manual_result['category'] is None:
+                logger.info("🤖 Manual categorization incomplete, trying AI fallback...")
+                
+                try:
+                    ai_result = await MoneyAnalyzer._ai_analyze_text(text, author)
+                    if ai_result:
+                        ai_result['method'] = 'ai_fallback'
+                        logger.info(f"✅ AI fallback successful: {ai_result['category']} - €{ai_result['amount']:.2f}")
+                        return ai_result
+                except Exception as ai_error:
+                    logger.warning(f"AI fallback failed: {ai_error}")
+            
+            # STEP 3: If both failed, return manual result with "Other" category
+            if manual_result['amount'] is not None:
+                logger.info("⚠️ Using manual amount with 'Other' category")
+                return {
+                    "amount": manual_result['amount'],
+                    "category": "Other",
+                    "description": manual_result['description'],
+                    "author": author,
+                    "type": "text",
+                    "method": "manual_partial",
+                    "confidence": 50
+                }
+            
+            logger.info("❌ No amount found in text")
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error analyzing text: {e}")
+            return None
+    
+    @staticmethod
+    async def _ai_analyze_text(text: str, author: str) -> Optional[Dict[str, Any]]:
+        """AI fallback for text analysis"""
         try:
             prompt = f"""
             Analyze this text for money/expense information:
@@ -96,11 +157,11 @@ class MoneyAnalyzer:
             """
             
             response = await openai_client.chat.completions.create(
-                model="deepseek/deepseek-chat-v3.1:free",  # Free DeepSeek model - reliable and fast!
+                model="deepseek/deepseek-chat-v3.1:free",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=300,
                 temperature=0.3,
-                timeout=10  # Short timeout to prevent heartbeat blocking
+                timeout=10
             )
             
             response_text = response.choices[0].message.content.strip()
@@ -120,169 +181,31 @@ class MoneyAnalyzer:
                 }
             
         except Exception as e:
-            logger.error(f"Error analyzing text: {e}")
+            logger.error(f"Error in AI text analysis: {e}")
         
         return None
     
     @staticmethod
     async def analyze_image(image_url: str, author: str) -> Optional[Dict[str, Any]]:
-        """Analyze image for money information using AI vision"""
+        """Analyze image for money information - provides manual entry guidance instead of AI analysis"""
         try:
-            logger.info(f"Starting image analysis for {author}")
+            logger.info(f"📸 Image received from {author} - providing manual entry guidance")
             
-            # Download image and convert to base64
-            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30)) as session:
-                async with session.get(image_url) as response:
-                    if response.status != 200:
-                        logger.error(f"Failed to download image: HTTP {response.status}")
-                        return None
-                    
-                    image_data = await response.read()
-                    if len(image_data) == 0:
-                        logger.error("Downloaded image is empty")
-                        return None
-                    
-                    image_base64 = base64.b64encode(image_data).decode('utf-8')
-                    logger.info(f"Image downloaded successfully, size: {len(image_data)} bytes")
-            
-            prompt = """
-            Please analyze this receipt/expense image carefully and extract the financial information.
-            
-            Look for:
-            1. The total amount paid (in euros or convert to euros if different currency)
-            2. What type of expense this is (Food/Groceries, Transport, Shopping, Bills, Entertainment, etc.)
-            3. A brief description of what was purchased or the store name
-            
-            Think through the image step by step:
-            - What do you see in the image?
-            - Can you identify any prices or total amounts?
-            - What type of establishment or expense category does this represent?
-            
-            Respond with valid JSON only:
-            {
-                "amount": 12.50,
-                "category": "Food",
-                "description": "brief description of the purchase"
+            # For images, we now provide immediate guidance for manual entry
+            # This is much faster and more reliable than AI vision analysis
+            return {
+                "amount": 0,
+                "category": "Other", 
+                "description": "Image uploaded - please type amount and details manually for accurate tracking",
+                "author": author,
+                "type": "image",
+                "image_url": image_url,
+                "method": "manual_guidance",
+                "confidence": 100
             }
             
-            If you cannot clearly identify a monetary amount, set amount to 0.
-            """
-            
-            # Use DeepSeek as primary free model - reliable and excellent for analysis
-            models_to_try = [
-                "deepseek/deepseek-chat-v3.1:free",     # Primary free model - excellent performance
-                "anthropic/claude-3-haiku:beta",        # Backup free model
-            ]
-            
-            for model in models_to_try:
-                try:
-                    logger.info(f"Trying model: {model}")
-                    
-                    # Since DeepSeek might not support vision, provide helpful context for image analysis
-                    if "deepseek" in model.lower():
-                        # For DeepSeek, use intelligent text-based analysis
-                        logger.info(f"Using DeepSeek model {model} with smart image handling")
-                        
-                        smart_prompt = f"""
-                        A user has uploaded a receipt/expense image. While I cannot see the image directly, 
-                        please help analyze potential expense information by providing a template response.
-                        
-                        Common expense patterns to look for:
-                        - Gas stations (Aral, Shell, etc.): Usually Transport category, amounts 20-100 EUR
-                        - Grocery stores (Rewe, Edeka, etc.): Usually Food category, amounts 10-200 EUR
-                        - Restaurants: Usually Food category, amounts 15-80 EUR
-                        - Shopping: Usually Shopping category, various amounts
-                        
-                        Since this is an image upload, provide a response that indicates manual entry is needed:
-                        
-                        {{
-                            "amount": 0,
-                            "category": "Other",
-                            "description": "Image uploaded - please type amount and details manually for accurate tracking"
-                        }}
-                        
-                        Respond only with valid JSON in this exact format.
-                        """
-                        
-                        response = await openai_client.chat.completions.create(
-                            model=model,
-                            messages=[{"role": "user", "content": smart_prompt}],
-                            max_tokens=200,
-                            temperature=0.1,
-                            timeout=10  # Short timeout
-                        )
-                    else:
-                        # For other models that might support vision
-                        logger.info(f"Trying vision model {model}")
-                        response = await openai_client.chat.completions.create(
-                            model=model,
-                            messages=[
-                                {
-                                    "role": "user", 
-                                    "content": [
-                                        {"type": "text", "text": prompt},
-                                        {
-                                            "type": "image_url",
-                                            "image_url": {
-                                                "url": f"data:image/jpeg;base64,{image_base64}"
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            max_tokens=500,
-                            temperature=0.3,
-                            timeout=15  # Shorter timeout for vision models
-                        )
-                    
-                    response_text = response.choices[0].message.content.strip()
-                    logger.info(f"AI Image Analysis successful with {model}: {response_text}")
-                    break
-                    
-                except Exception as model_error:
-                    error_msg = str(model_error)
-                    logger.warning(f"Model {model} failed: {model_error}")
-                    
-                    # Check for rate limit errors
-                    if "429" in error_msg or "rate limit" in error_msg.lower():
-                        logger.info("Rate limit reached - providing manual entry guidance")
-                        return {
-                            "amount": 0,
-                            "category": "Other", 
-                            "description": "AI analysis unavailable (daily limit reached). Please type: '€72.41 fuel at Aral' to track this expense manually",
-                            "author": author,
-                            "type": "image",
-                            "image_url": image_url,
-                            "rate_limited": True
-                        }
-                    
-                    if model == models_to_try[-1]:  # Last model
-                        raise model_error
-                    continue
-            
-            # Extract JSON from response
-            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-            if json_match:
-                data = json.loads(json_match.group())
-                result = {
-                    "amount": float(data.get("amount", 0)),
-                    "category": data.get("category", "Other"),
-                    "description": data.get("description", "Image expense"),
-                    "author": author,
-                    "type": "image",
-                    "image_url": image_url
-                }
-                logger.info(f"Parsed result: {result}")
-                return result
-            else:
-                logger.warning("No JSON found in response")
-                return None
-            
-        except asyncio.TimeoutError:
-            logger.error("Image analysis timed out")
-            return None
         except Exception as e:
-            logger.error(f"Error analyzing image: {e}")
+            logger.error(f"Error processing image: {e}")
             return None
 
 class NotionManager:
@@ -746,15 +669,20 @@ async def on_ready():
             startup_message = (
                 "💰 **Money Bot is now online!** 🤖\n\n"
                 "I'm ready to help you track your expenses! Here's what I can do:\n"
+                "• ⚡ **Fast manual categorization** - recognizes common patterns instantly\n"
+                "• 🤖 **AI fallback** - only when manual categorization fails\n"
                 "• 📝 Analyze text messages for money amounts and categories\n"
-                "• 📸 Process receipt images and extract expense information\n"
+                "• 📸 Process receipt images with manual entry guidance\n"
                 "• 💾 Automatically save entries to your Notion database\n"
                 "• ✅ Provide instant feedback with reactions\n"
                 "• 📊 Generate monthly expense reports with charts\n\n"
                 "**Commands:**\n"
                 "• `!status` - Check bot status\n"
                 "• `!analysis [month] [year]` - Generate expense analysis\n\n"
-                "Just send me your expenses as text or upload receipt images and I'll handle the rest!\n"
+                "**How it works:**\n"
+                "• Type: `€72.41 fuel at Aral` → Instant categorization!\n"
+                "• Upload image → Get guidance for manual entry\n"
+                "• AI only used when manual patterns don't match\n\n"
                 "Monthly reports are automatically generated on the 1st of each month."
             )
             await channel.send(startup_message)
@@ -923,7 +851,19 @@ async def process_text_entry(message, author):
                 
                 if success:
                     await message.add_reaction("✅")
-                    await message.reply(f"💰 Saved: €{analysis['amount']:.2f} - {analysis['category']}")
+                    
+                    # Show method used and confidence
+                    method_emoji = "🤖" if analysis.get('method') == 'ai_fallback' else "⚡"
+                    method_text = "AI" if analysis.get('method') == 'ai_fallback' else "Manual"
+                    confidence = analysis.get('confidence', 0)
+                    
+                    response_msg = (
+                        f"💰 **Saved: €{analysis['amount']:.2f} - {analysis['category']}**\n"
+                        f"{method_emoji} **Method:** {method_text} categorization\n"
+                        f"📊 **Confidence:** {confidence}%"
+                    )
+                    
+                    await message.reply(response_msg)
                 else:
                     await message.add_reaction("❌")
             else:

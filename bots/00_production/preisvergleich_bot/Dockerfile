@@ -12,6 +12,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
+    wget \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first (for better Docker layer caching)
@@ -27,6 +29,7 @@ COPY notion_manager.py .
 COPY offer_finder.py .
 COPY scheduler.py .
 COPY simple_agent.py .
+COPY enhanced_agent.py .
 
 # Create necessary directories
 RUN mkdir -p logs

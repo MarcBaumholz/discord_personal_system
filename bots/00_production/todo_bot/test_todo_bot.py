@@ -101,7 +101,8 @@ def test_message_parsing():
         
         print(f"\n📝 Message: '{msg_text}'")
         print(f"   Content: {parsed['content']}")
-        print(f"   Priority: {parsed['priority']} {'🔴🟠🟡🟢'[parsed['priority']-1]}")
+        priority_emoji = ["", "🟢", "🟡", "🟠", "🔴"]
+        print(f"   Priority: {parsed['priority']} {priority_emoji[parsed['priority']]}")
         print(f"   Due Date: {parsed['due_date']}")
         print(f"   Labels: {parsed['labels']}")
 

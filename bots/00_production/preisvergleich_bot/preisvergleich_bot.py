@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Import our custom modules
 from notion_manager import NotionProductManager
-from simple_agent import SimpleOfferSearchAgent
+from enhanced_agent import EnhancedOfferSearchAgent
 from scheduler import OfferScheduler
 env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
@@ -51,38 +51,53 @@ async def on_ready():
     
     logger.info(f"Using channel ID: {CHANNEL_ID}")
     
+    # Get channel reference first
+    channel = client.get_channel(CHANNEL_ID)
+    if not channel:
+        logger.error(f"Could not find channel with ID {CHANNEL_ID}")
+        return
+    
     # Initialize our services
     try:
         notion_manager = NotionProductManager()
-        offer_agent = SimpleOfferSearchAgent()
+        if not notion_manager.is_initialized():
+            logger.error("Failed to initialize NotionProductManager. Check your NOTION_TOKEN and NOTION_DATABASE_ID in .env")
+            await channel.send("❌ **Configuration Error**: Could not connect to Notion. Please check the bot configuration.")
+            return
+        
+        offer_agent = EnhancedOfferSearchAgent()
+        if not offer_agent.is_initialized():
+            logger.error("Failed to initialize EnhancedOfferSearchAgent. Check your OPENROUTER_API_KEY and TAVILY_API_KEY in .env")
+            await channel.send("❌ **Configuration Error**: Could not initialize enhanced offer search agent. Please check the bot configuration.")
+            return
+        
         scheduler = OfferScheduler()
         
-        # Schedule weekly check for Sunday evening at 8 PM
-        scheduler.schedule_sunday_check(lambda: asyncio.create_task(check_offers()))
+        # Schedule weekly check for Sunday morning at 9 AM
+        scheduler.schedule_sunday_check(lambda: asyncio.create_task(check_offers()), hour=9, minute=0)
         
         logger.info("Preisvergleich Bot is ready!")
         
         # Send startup message
-        channel = client.get_channel(CHANNEL_ID)
         if channel:
             startup_message = (
                 "🔍 **Preisvergleich Bot ist online!** 🤖\n\n"
                 "Ich überwache Produktpreise für dich! Das kann ich:\n"
                 "• 👀 Automatische Überwachung deiner Notion-Wunschliste\n"
-                "• 💰 Wöchentliche Angebots-Checks (Sonntags 20:00)\n"
+                "• 💰 Wöchentliche Angebots-Checks (Sonntags 09:00)\n"
                 "• 🏷️ Preisvergleiche und Rabatt-Benachrichtigungen\n"
                 "• 📊 Detaillierte Angebots-Informationen mit Links\n"
                 "• 💸 Berechnung der Gesamt-Ersparnis\n\n"
                 "**Befehle:**\n"
                 "• `producthunt` - Sofortige Angebots-Suche starten\n\n"
-                "Ich checke automatisch jeden Sonntag um 20:00 Uhr!\n"
+                "Ich checke automatisch jeden Sonntag um 09:00 Uhr!\n"
                 "Stelle sicher, dass deine Wunschliste in Notion aktuell ist."
             )
             await channel.send(startup_message)
-        else:
-            logger.error(f"Could not find channel with ID {CHANNEL_ID}")
     except Exception as e:
         logger.error(f"Error initializing services: {e}")
+        if channel:
+            await channel.send(f"❌ **Initialization Error**: {str(e)}")
 
 @client.event
 async def on_message(message):
@@ -111,11 +126,29 @@ async def check_offers():
         logger.error(f"Could not find channel with ID {CHANNEL_ID}")
         return
     
+    # Check if services are properly initialized
+    global notion_manager, offer_agent
+    if notion_manager is None:
+        logger.error("NotionProductManager not initialized")
+        await channel.send("❌ **Error**: NotionProductManager not properly initialized")
+        return
+    
+    if not notion_manager.is_initialized():
+        logger.error("NotionProductManager not properly initialized")
+        await channel.send("❌ **Configuration Error**: Could not connect to Notion. Please check bot configuration.")
+        return
+    
+    if offer_agent is None or not offer_agent.is_initialized():
+        logger.error("EnhancedOfferSearchAgent not properly initialized")
+        await channel.send("❌ **Error**: Enhanced offer search agent not initialized")
+        return
+
     try:
         # Get products from Notion database
         products = notion_manager.get_watchlist()
         if not products:
             logger.warning("No products found in the watchlist")
+            await channel.send("ℹ️ **No Products**: Your Notion watchlist appears to be empty or inaccessible.")
             return
         
         logger.info(f"Checking offers for {len(products)} products")

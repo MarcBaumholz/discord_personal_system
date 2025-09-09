@@ -3,7 +3,8 @@ import os
 from typing import Optional
 from dotenv import load_dotenv
 
-env_path = os.path.join(os.path.dirname(__file__), '../../.env')
+# Load from main discord .env file
+env_path = os.path.join(os.path.dirname(__file__), '../../../.env')
 load_dotenv(env_path)
 
 
@@ -17,8 +18,12 @@ class Config:
     # Oura API settings
     OURA_ACCESS_TOKEN: str = os.getenv("OURA_ACCESS_TOKEN", "")
     
+    # Notion API settings
+    NOTION_TOKEN: str = os.getenv("NOTION_TOKEN", "")
+    FOODIATE_DB_ID: str = os.getenv("FOODIATE_DB_ID", "")
+    
     # Health bot settings
-    DAILY_SCHEDULE_TIME: str = os.getenv("DAILY_SCHEDULE_TIME", "08:00")
+    DAILY_SCHEDULE_TIME: str = os.getenv("DAILY_SCHEDULE_TIME", "09:00")
     TARGET_CALORIES: int = int(os.getenv("TARGET_CALORIES", "2200"))
     TARGET_ACTIVE_CALORIES: int = int(os.getenv("TARGET_ACTIVE_CALORIES", "450"))
     TARGET_STEPS: int = int(os.getenv("TARGET_STEPS", "8000"))

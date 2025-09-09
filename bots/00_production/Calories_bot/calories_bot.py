@@ -128,7 +128,7 @@ class GroundTruthHandler:
             return None
             
         except Exception as e:
-            bot_logger.error(f"Error searching ground truth: {e}")
+            bot_logger.log_error("Ground truth search error", f"Error searching ground truth: {e}")
             return None
     
     def _create_result_from_ground_truth(self, food_key: str, food_data: dict) -> FoodAnalysisResult:
@@ -166,7 +166,7 @@ class GroundTruthHandler:
             return True
             
         except Exception as e:
-            bot_logger.error(f"Error adding food to ground truth: {e}")
+            bot_logger.log_error("Ground truth add error", f"Error adding food to ground truth: {e}")
             return False
 
 class AITextHandler:
@@ -257,11 +257,11 @@ class AITextHandler:
                     analysis_source="ai"
                 )
             else:
-                bot_logger.warning("Could not extract JSON from AI response")
+                bot_logger.log_warning("AI response parsing", "Could not extract JSON from AI response")
                 return None
                 
         except Exception as e:
-            bot_logger.error(f"Error analyzing food text: {e}")
+            bot_logger.log_error("AI text analysis error", f"Error analyzing food text: {e}")
             return None
 
 class AIVisionHandler:
@@ -607,7 +607,18 @@ async def process_food_text(message: discord.Message):
         
         if ground_truth_result:
             # Found in ground truth database
-            bot_logger.log_food_analysis(ground_truth_result)
+            # Convert FoodAnalysisResult to dict for logging
+            ground_truth_dict = {
+                'food_name': ground_truth_result.food_name,
+                'calories': ground_truth_result.calories,
+                'confidence': ground_truth_result.confidence,
+                'protein': ground_truth_result.protein,
+                'carbohydrates': ground_truth_result.carbohydrates,
+                'fat': ground_truth_result.fat,
+                'user': message.author.display_name,
+                'analysis_source': ground_truth_result.analysis_source
+            }
+            bot_logger.log_food_analysis(ground_truth_dict)
             
             # Create enhanced embed
             embed = await create_enhanced_analysis_embed(ground_truth_result, source_text=food_text)

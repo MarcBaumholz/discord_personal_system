@@ -30,4 +30,30 @@ Simply react with 👍 in the erinnerungen channel to get meal suggestions for S
 - python-dotenv
 - requests
 - json
-- re 
+- re
+
+## ✅ Current Status (September 2025)
+
+**🟡 BOT READY FOR DEPLOYMENT**
+
+The Meal Plan Bot is fully developed and ready to run, but not currently deployed in Docker.
+
+### Development Status
+- **Code**: ✅ Complete and functional
+- **Docker**: ❌ Not currently containerized
+- **Deployment**: 🟡 Ready for manual startup
+- **Last Update**: September 2025
+
+### Features Ready
+- ✅ **Notion Integration**: Fetches recipes from Notion database
+- ✅ **AI Meal Planning**: Uses OpenRouter AI for comprehensive meal prep plans
+- ✅ **Todoist Integration**: Automatically adds shopping lists to Todoist
+- ✅ **Discord Integration**: Responds to thumbs up reactions
+- ✅ **Shopping List Generation**: Extracts and organizes shopping items
+- ✅ **Meal Prep Planning**: Detailed preparation instructions
+
+### To Deploy
+1. Set up environment variables in `.env` (DISCORD_TOKEN, NOTION_TOKEN, OPENROUTER_API_KEY, TODOIST_API_KEY)
+2. Ensure Notion database has recipe data
+3. Run: `python meal_plan_bot.py`
+4. Consider Docker containerization for production use 

@@ -14,6 +14,8 @@ An intelligent Discord bot that analyzes food images using AI vision, estimates 
 - **📈 Data Visualization**: Interactive charts showing daily calorie intake patterns
 - **⏰ Scheduled Automation**: Automatic reports sent on the 1st of each month
 - **👥 Multi-User Support**: Individual reports for each user with personalized insights
+- **🌍 Multi-Language Support**: Processes food descriptions in multiple languages including German
+- **🔧 Robust Error Handling**: Comprehensive error handling and logging system
 
 ## 🛠️ Tech Stack
 
@@ -354,6 +356,25 @@ logging.basicConfig(level=logging.DEBUG)
 
 ## 🚀 Deployment
 
+### Docker Deployment (Current Method)
+
+The bot is currently running using Docker Compose:
+
+```bash
+# Start the bot
+cd /home/pi/Documents/discord/bots/00_production/Calories_bot
+docker compose up -d
+
+# Check status
+docker ps | grep calories
+
+# View logs
+docker logs calories-bot
+
+# Restart bot
+./restart_bot.sh
+```
+
 ### Running as a Service (Linux)
 ```bash
 # Create systemd service
@@ -397,6 +418,32 @@ This project is open source. Please check individual API terms of service:
 - [Discord Terms](https://discord.com/terms)
 - [Notion Terms](https://www.notion.so/terms)
 
+## ✅ Current Status (September 2025)
+
+**🟢 BOT IS LIVE AND OPERATIONAL**
+
+The calories bot is currently running in a Docker container and fully functional. Recent updates include:
+
+### Recent Fixes Applied
+- **Fixed Critical Bug**: Resolved `'FoodAnalysisResult' object has no attribute 'get'` error
+- **Improved Logging**: Proper data type conversion before logging operations
+- **Enhanced Stability**: Bot now runs without crashes
+- **German Language Support**: Successfully processes German food descriptions
+
+### Tested Functionality
+- ✅ German food processing: "2 Brötchen mit honig und butter"
+- ✅ AI analysis and calorie estimation
+- ✅ Notion database integration
+- ✅ Discord embed generation
+- ✅ Error-free logging system
+
+### Bot Status
+- **Container**: Running in Docker
+- **Discord**: Connected and monitoring channel
+- **Notion**: Database integration active
+- **AI**: OpenRouter API functional
+- **Last Restart**: September 9, 2025
+
 ## 🆘 Support
 
 For issues and questions:
@@ -406,6 +453,14 @@ For issues and questions:
 4. Verify all API keys and permissions
 
 ## 🔄 Version History
+
+- **v1.1.0** - Bug Fixes and Stability Improvements (September 2025)
+  - ✅ **FIXED**: `'FoodAnalysisResult' object has no attribute 'get'` error
+  - ✅ **IMPROVED**: Proper data type handling for logging system
+  - ✅ **ENHANCED**: German food description processing
+  - ✅ **STABLE**: Bot now runs reliably without crashes
+  - ✅ **TESTED**: Comprehensive testing with German food inputs
+  - ✅ **LIVE**: Bot is currently running and operational
 
 - **v1.0.0** - Initial release with core functionality
   - AI food recognition using OpenRouter

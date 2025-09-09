@@ -166,3 +166,44 @@ h1 { font-size: 36px; margin: 0 0 10px; letter-spacing: .2px; }
 .top-nav { display: flex; align-items: center; gap: 10px; margin: 8px 0 0; }
 .top-nav a { color: var(--muted); }
 .top-nav a:hover { color: var(--text); }
+
+.status-overview {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status-indicator {
+  font-size: 16px;
+}
+
+.status-indicator.live {
+  color: #22c55e;
+}
+
+.status-indicator.ready {
+  color: #f59e0b;
+}
+
+.status-indicator.updated {
+  color: var(--primary);
+}
+
+.status-live {
+  color: #22c55e !important;
+  font-weight: 600;
+}
+
+.status-ready {
+  color: #f59e0b !important;
+  font-weight: 600;
+}

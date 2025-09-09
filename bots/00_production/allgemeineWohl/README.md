@@ -81,3 +81,29 @@ The container includes health checks to ensure the bot is running properly. Chec
 ```bash
 ./setup.sh status
 ```
+
+## ✅ Current Status (September 2025)
+
+**🟢 BOT IS LIVE AND OPERATIONAL**
+
+The Allgemeine Wohl Bot is currently running in a Docker container and fully functional.
+
+### Bot Status
+- **Container**: `allgemeinewohl_allgemeine-wohl-bot` - Running (Healthy)
+- **Uptime**: 38+ hours
+- **Health Check**: ✅ Healthy
+- **Last Restart**: September 8, 2025
+
+### Recent Updates
+- ✅ **Stable Operation**: Bot running continuously without issues
+- ✅ **Docker Health Checks**: Automated monitoring and restart capability
+- ✅ **Notion Integration**: Active database connectivity
+- ✅ **AI Analysis**: OpenRouter integration working properly
+- ✅ **Activity Tracking**: Successfully processing household activities
+
+### Tested Functionality
+- ✅ Household activity analysis and categorization
+- ✅ Ground truth database maintenance
+- ✅ Notion database integration
+- ✅ Discord message processing
+- ✅ AI-powered activity recognition

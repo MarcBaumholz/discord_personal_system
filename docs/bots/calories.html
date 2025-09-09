@@ -24,7 +24,7 @@
       <div class="container">
         <div class="kicker">Vision • Notion • Reports</div>
         <h1>Calories Bot</h1>
-        <p class="lead">Analyzes food images, estimates calories, and saves results to Notion. Sends automated monthly reports with charts and personalized insights.</p>
+        <p class="lead">Analyzes food images and text descriptions, estimates calories, and saves results to Notion. Sends automated monthly reports with charts and personalized insights. Now supports German food descriptions!</p>
       </div>
     </section>
 
@@ -32,9 +32,11 @@
       <div class="container">
         <h2>What it does</h2>
         <div class="feature-list">
-          <div class="feature"><h4>AI-Powered Vision</h4><p>Identifies foods and estimates calories via OpenRouter vision models.</p></div>
+          <div class="feature"><h4>AI-Powered Analysis</h4><p>Identifies foods from images and text descriptions via OpenRouter AI models.</p></div>
+          <div class="feature"><h4>Multi-Language Support</h4><p>Processes German food descriptions like "2 Brötchen mit honig und butter".</p></div>
           <div class="feature"><h4>Notion Integration</h4><p>Saves food, calories, date, person, confidence, and image to your database.</p></div>
           <div class="feature"><h4>Monthly Reports</h4><p>Generates charts and statistics sent on the 1st of each month.</p></div>
+          <div class="feature"><h4>Robust Error Handling</h4><p>Fixed critical bugs and improved stability for reliable operation.</p></div>
           <div class="feature"><h4>Commands</h4><p><code>!help_calories</code>, <code>!test_analysis</code>.</p></div>
         </div>
         <div class="callout">
@@ -48,6 +50,7 @@
         <h2>Short use cases</h2>
         <ul>
           <li>Upload a meal photo → bot replies with food, estimated kcal, confidence, and saves to Notion.</li>
+          <li>Send German text like "2 Brötchen mit honig und butter" → bot analyzes and provides nutritional info.</li>
           <li>On the 1st each month, receive a visual summary and insights for your tracked meals.</li>
           <li>Run tests with <code>!test_analysis</code> to verify connectivity and pipeline.</li>
         </ul>
