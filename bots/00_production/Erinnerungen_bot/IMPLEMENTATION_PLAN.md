@@ -11,7 +11,7 @@ The **Erinnerungen Bot** is an automated Discord reminder system that:
 - **Data Source**: Notion database (ID: 214d42a1faf580fa8eccd0ddfd69ca98)
 
 ### 🗑️ **Waste Collection Reminders** 
-- **When**: Every day at 20:00 (Berlin time)
+- **When**: Every day at 18:00 (Berlin time)
 - **What**: Checks if waste will be collected tomorrow in Schweigheim
 - **How**: Sends reminder with specific waste types (Restmüll, Bio, Gelber Sack, Papier)
 - **Data Source**: Automated calendar for Schweigheim, Baden-Württemberg
@@ -30,7 +30,7 @@ Erinnerungen Bot
 ├── 🤖 erinnerungen_bot.py     # Main Discord bot
 ├── 🎂 geburtstage.py          # Birthday manager (Notion integration)
 ├── 🗑️ muellkalender.py        # Waste calendar manager
-├── ⏰ scheduler.py            # Automated timing (07:00 & 20:00)
+├── ⏰ scheduler.py            # Automated timing (07:00 & 18:00)
 ├── 📝 notion_manager.py       # Notion API client
 └── 🔧 Configuration files
     ├── .env                   # API keys & secrets
@@ -108,7 +108,7 @@ Papier:      First Monday of each month
 
 ### **Automated Schedule**
 - **07:00 daily** → Birthday check + notifications
-- **20:00 daily** → Waste collection check + notifications
+- **18:00 daily** → Waste collection check + notifications
 
 ---
 

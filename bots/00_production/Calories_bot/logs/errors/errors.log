@@ -17,3 +17,5 @@
 2025-09-09 19:41:29,927 | WARNING | ⚠️ Test Warning: This should work now
 2025-09-09 20:44:09,443 | ERROR | ❌ Text processing error: Error processing food text: 'FoodAnalysisResult' object has no attribute 'get'
 2025-09-09 20:57:24,939 | ERROR | ❌ Text processing error: Error processing food text: 'FoodAnalysisResult' object has no attribute 'get'
+2025-09-11 10:54:33,337 | ERROR | ❌ TEST: Testing logger functionality
+2025-09-11 10:56:44,415 | ERROR | ❌ AI text analysis error: Error analyzing food text: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}

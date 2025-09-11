@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-09-11T10:56:43.361135",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "text_food_analysis",
+    "channel": "calories"
+  },
+  {
+    "timestamp": "2025-09-11T10:59:04.163732",
+    "event": "user_command",
+    "user": "Marc",
+    "command": "text_food_analysis",
+    "channel": "calories"
+  }
+]

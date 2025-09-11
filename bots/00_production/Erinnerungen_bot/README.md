@@ -12,7 +12,7 @@ Ein Discord Bot für automatische tägliche Erinnerungen mit zwei Hauptfunktione
 
 ### 2. 🗑️ Müllkalender-Erinnerungen  
 - Überprüfung des Müllkalenders für Schweigheim, Baden-Württemberg
-- Erinnerung am Vorabend (20:00 Uhr) wenn morgen Müll abgeholt wird
+- Erinnerung am Vorabend (18:00 Uhr) wenn morgen Müll abgeholt wird
 - Erkennung verschiedener Tonnenarten (Restmüll, Bio, Gelber Sack, Papier)
 - Praktische Tipps zur rechtzeitigen Bereitstellung
 
@@ -94,7 +94,7 @@ erinnerungen_bot/
 ## ⏰ Zeitplan
 
 - **07:00 Uhr**: Geburtstags-Check und Benachrichtigung
-- **20:00 Uhr**: Müllkalender-Check und Erinnerung für morgen
+- **18:00 Uhr**: Müllkalender-Check und Erinnerung für morgen
 
 ## 🗃️ Datenquellen
 
@@ -186,7 +186,7 @@ The Erinnerungen Bot is currently running in a Docker container and fully functi
 - ✅ **Docker Health Checks**: Automated monitoring and restart capability
 - ✅ **Notion Integration**: Active database connectivity for birthdays
 - ✅ **Müllkalender Integration**: Working trash collection reminders
-- ✅ **Scheduled Tasks**: Daily reminders at 07:00 and 20:00
+- ✅ **Scheduled Tasks**: Daily reminders at 07:00 and 18:00
 
 ### Tested Functionality
 - ✅ Birthday reminders from Notion database

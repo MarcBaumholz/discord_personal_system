@@ -33,10 +33,10 @@ class WhoopCycleScore(BaseModel):
 
 class WhoopCycle(BaseModel):
     """WHOOP cycle (physiological day) data."""
-    id: int
+    id: str  # Changed to string for UUID
     user_id: int
     start: datetime
-    end: datetime
+    end: Optional[datetime] = None  # Can be null
     timezone_offset: str
     score: Optional[WhoopCycleScore] = None
 
@@ -61,13 +61,13 @@ class WhoopSleepNeeded(BaseModel):
 
 class WhoopSleep(BaseModel):
     """WHOOP sleep data."""
-    id: int
+    id: str  # Changed to string for UUID
     user_id: int
     start: datetime
     end: datetime
     timezone_offset: str
     nap: bool
-    score: Optional[float] = None
+    score: Optional[dict] = None  # Changed to dict as it's a complex object
     stage_summary: Optional[WhoopSleepStageSummary] = None
     sleep_needed: Optional[WhoopSleepNeeded] = None
     respiratory_rate: Optional[float] = None
@@ -78,9 +78,9 @@ class WhoopSleep(BaseModel):
 
 class WhoopRecovery(BaseModel):
     """WHOOP recovery data."""
-    id: int
+    id: str  # Changed to string for UUID
     user_id: int
-    cycle_id: int
+    cycle_id: str  # Changed to string for UUID
     start: datetime
     end: datetime
     timezone_offset: str
@@ -112,12 +112,12 @@ class WhoopWorkoutZoneDuration(BaseModel):
 
 class WhoopWorkout(BaseModel):
     """WHOOP workout data."""
-    id: int
+    id: str  # Changed to string for UUID
     user_id: int
     start: datetime
     end: datetime
     timezone_offset: str
-    sport_id: int
+    sport_id: Optional[int] = None  # Optional as it may not exist in v2
     sport_name: str
     score: Optional[WhoopWorkoutScore] = None
     distance_meter: Optional[float] = None

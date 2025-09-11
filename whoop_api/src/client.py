@@ -14,6 +14,7 @@ from urllib3.util.retry import Retry
 from .config import WhoopConfig
 from .oauth import WhoopOAuth, WhoopOAuthError
 from .rate_limiter import WhoopRateLimiter
+from .token_manager import TokenManager
 from .models import (
     WhoopUser, WhoopBodyMeasurement, WhoopCycle, WhoopSleep, 
     WhoopRecovery, WhoopWorkout, WhoopPaginatedResponse, WhoopError
@@ -38,14 +39,16 @@ class WhoopAuthenticationError(WhoopAPIError):
 class WhoopClient:
     """Main client for WHOOP API v2."""
     
-    def __init__(self, config: WhoopConfig, oauth: Optional[WhoopOAuth] = None):
+    def __init__(self, config: WhoopConfig, oauth: Optional[WhoopOAuth] = None, token_manager: Optional[TokenManager] = None):
         """Initialize WHOOP API client."""
         self.config = config
         self.oauth = oauth or WhoopOAuth(config)
+        self.token_manager = token_manager or TokenManager()
         self.rate_limiter = WhoopRateLimiter(
             rpm=config.rate_limit_rpm,
             rpd=config.rate_limit_rpd
         )
+        self._current_tokens = None
         
         # Setup requests session with retry strategy
         self.session = requests.Session()
@@ -58,25 +61,70 @@ class WhoopClient:
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
     
+    def _get_auth_headers(self) -> Dict[str, str]:
+        """Get authentication headers, using saved tokens if available."""
+        # Try to get valid tokens from token manager
+        if not self._current_tokens:
+            self._current_tokens = self.token_manager.get_valid_tokens()
+        
+        if self._current_tokens:
+            return {
+                'Authorization': f"{self._current_tokens['token_type']} {self._current_tokens['access_token']}"
+            }
+        
+        # If no valid tokens, we need to authenticate
+        raise WhoopAuthenticationError("No valid tokens available. Please authenticate first.")
+    
+    def authenticate_with_callback(self, callback_url: str) -> bool:
+        """Authenticate using a callback URL and save tokens."""
+        try:
+            from .oauth import extract_code_from_url
+            code, state = extract_code_from_url(callback_url)
+            token_response = self.oauth.exchange_code_for_token(code)
+            
+            # Convert token response to dictionary for saving
+            token_dict = {
+                'access_token': token_response.access_token,
+                'refresh_token': token_response.refresh_token,
+                'expires_in': token_response.expires_in,
+                'token_type': token_response.token_type,
+                'scope': token_response.scope
+            }
+            
+            # Save tokens for future use
+            self.token_manager.save_tokens(token_dict)
+            self._current_tokens = {
+                'access_token': token_response.access_token,
+                'refresh_token': token_response.refresh_token,
+                'token_type': token_response.token_type,
+                'scope': token_response.scope
+            }
+            
+            return True
+        except Exception as e:
+            print(f"❌ Authentication failed: {e}")
+            return False
+    
+    def is_authenticated(self) -> bool:
+        """Check if we have valid authentication tokens."""
+        return self.token_manager.has_tokens()
+    
     def _make_request(self, method: str, endpoint: str, params: Optional[Dict] = None, 
                      data: Optional[Dict] = None) -> Dict[str, Any]:
         """Make authenticated request to WHOOP API with rate limiting."""
         # Wait for rate limit if needed
         self.rate_limiter.wait_if_needed()
         
-        # Get valid access token
+        # Get authentication headers
         try:
-            access_token = self.oauth.get_valid_access_token()
-        except WhoopOAuthError as e:
-            raise WhoopAuthenticationError(f"Authentication failed: {e}")
+            headers = self._get_auth_headers()
+            headers['Accept'] = 'application/json'
+            headers['Content-Type'] = 'application/json'
+        except WhoopAuthenticationError:
+            raise WhoopAuthenticationError("Please authenticate first using authenticate_with_callback()")
         
         # Prepare request
         url = f"{self.config.api_base_url}{endpoint}"
-        headers = {
-            "Authorization": f"Bearer {access_token}",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-        }
         
         try:
             response = self.session.request(

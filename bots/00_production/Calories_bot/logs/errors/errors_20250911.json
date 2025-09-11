@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-09-11T10:54:33.338018",
+    "event": "error",
+    "error_type": "TEST",
+    "error_message": "Testing logger functionality",
+    "context": {}
+  },
+  {
+    "timestamp": "2025-09-11T10:56:44.415906",
+    "event": "error",
+    "error_type": "AI text analysis error",
+    "error_message": "Error analyzing food text: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}",
+    "context": {}
+  }
+]
