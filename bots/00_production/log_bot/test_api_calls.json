@@ -1,0 +1,20 @@
+{
+  "daily_calls": {
+    "2025-09-11": {
+      "total_calls": 4,
+      "successful_calls": 3,
+      "failed_calls": 1,
+      "by_bot": {
+        "calories-bot": 3,
+        "allgemeine-wohl-bot": 1
+      },
+      "by_model": {
+        "moonshotai/kimi-k2:free": 2,
+        "qwen/qwen2.5-vl-72b-instruct:free": 1,
+        "deepseek/deepseek-chat-v3.1:free": 1
+      }
+    }
+  },
+  "total_calls": 4,
+  "last_reset": "2025-09-11"
+}

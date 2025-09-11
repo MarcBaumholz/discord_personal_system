@@ -20,6 +20,8 @@ BOT_SCRIPTS = [
     ("preisvergleich", "bots/00_production/preisvergleich_bot/preisvergleich_bot.py"),
     ("erinnerungen", "bots/00_production/Erinnerungen_bot/erinnerungen_bot.py"),
     ("todo", "bots/00_production/todo_bot/todo_agent.py"),
+    ("log", "bots/00_production/log_bot/log_bot.py"),
+    ("whoop", "bots/00_production/whoop_bot/bot.py"),
 ]
 
 processes = {}

@@ -7,6 +7,11 @@ import json
 import re
 from dotenv import load_dotenv
 import openai
+import sys
+
+# Add log bot directory to path for API monitoring
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'log_bot'))
+from api_monitor_shared import track_openrouter_call
 
 # --- Environment Variable Loading ---
 dotenv_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
@@ -154,7 +159,7 @@ Antwort als JSON:
     try:
         completion = await asyncio.to_thread(
             ai_client.chat.completions.create,
-            model="nousresearch/nous-hermes-2-mixtral-8x7b-dpo",
+            model="deepseek/deepseek-chat-v3.1:free",
             messages=[
                 {"role": "system", "content": "Du antwortest nur mit gültigem JSON. Keine Erklärungen."},
                 {"role": "user", "content": prompt}
@@ -162,6 +167,9 @@ Antwort als JSON:
             temperature=0.1,
             max_tokens=150,
         )
+        
+        # Track successful API call
+        track_openrouter_call("allgemeine-wohl-bot", "deepseek/deepseek-chat-v3.1:free", True)
         
         response_text = completion.choices[0].message.content.strip()
         print(f"🤖 AI Response: {response_text}")
@@ -181,6 +189,8 @@ Antwort als JSON:
                 return result
         
     except Exception as e:
+        # Track failed API call
+        track_openrouter_call("allgemeine-wohl-bot", "deepseek/deepseek-chat-v3.1:free", False)
         print(f"⚠️ AI Analyse Fehler: {e}")
     
     return {"success": False}

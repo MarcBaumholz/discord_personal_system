@@ -19,6 +19,11 @@ from datetime import datetime, timedelta
 from typing import Dict, Any, Optional
 import re
 import hashlib
+import sys
+
+# Add log bot directory to path for API monitoring
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'log_bot'))
+from api_monitor_shared import track_openrouter_call
 
 # API Clients
 from notion_client import Client as NotionClient
@@ -233,6 +238,9 @@ class AITextHandler:
                 temperature=0.3
             )
             
+            # Track successful API call
+            track_openrouter_call("calories-bot", "moonshotai/kimi-k2:free", True)
+            
             response_text = response.choices[0].message.content.strip()
             print(f"🤖 AI Text Response: {response_text}")
             
@@ -261,6 +269,8 @@ class AITextHandler:
                 return None
                 
         except Exception as e:
+            # Track failed API call
+            track_openrouter_call("calories-bot", "moonshotai/kimi-k2:free", False)
             bot_logger.log_error("AI text analysis error", f"Error analyzing food text: {e}")
             return None
 
@@ -357,6 +367,9 @@ class AIVisionHandler:
                 temperature=0.3
             )
             
+            # Track successful API call
+            track_openrouter_call("calories-bot", "qwen/qwen2.5-vl-72b-instruct:free", True)
+            
             # Parse the response
             response_text = response.choices[0].message.content.strip()
             print(f"🤖 AI Response: {response_text}")
@@ -420,6 +433,8 @@ class AIVisionHandler:
                                         protein, carbohydrates, fat)
                 
         except Exception as e:
+            # Track failed API call
+            track_openrouter_call("calories-bot", "qwen/qwen2.5-vl-72b-instruct:free", False)
             print(f"❌ Error in AI analysis: {e}")
             return None
 

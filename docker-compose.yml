@@ -26,6 +26,7 @@ services:
       - MEAL_PLAN_CHANNEL_ID=${MEAL_PLAN_CHANNEL_ID}
       - GENERAL_CHANNEL_ID=${GENERAL_CHANNEL_ID}
       - YOUTUBE_CHANNEL_ID=${YOUTUBE_CHANNEL_ID}
+      - LOGS_CHANNEL_ID=${LOGS_CHANNEL_ID}
       
       # API Keys
       - NOTION_API_KEY=${NOTION_TOKEN}
@@ -66,6 +67,48 @@ services:
         max-file: "3"
     healthcheck:
       test: ["CMD", "python", "-c", "import os; exit(0 if os.path.exists('/tmp/bots_running') else 1)"]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 20s
+
+  log-bot:
+    build: ./bots/00_production/log_bot
+    container_name: discord-log-bot
+    restart: unless-stopped
+    environment:
+      # Discord Configuration
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      
+      # Channel IDs
+      - LOGS_CHANNEL_ID=${LOGS_CHANNEL_ID}
+      - CALORIES_CHANNEL_ID=${CALORIES_CHANNEL_ID}
+      - FINANCE_CHANNEL_ID=${FINANCE_CHANNEL_ID}
+      - TODOLISTE_CHANNEL_ID=${TODOLISTE_CHANNEL_ID}
+      - HEALTH_CHANNEL_ID=${HEALTH_CHANNEL_ID}
+      - LEARNING_CHANNEL_ID=${LEARNING_CHANNEL_ID}
+      - RSS_CHANNEL_ID=${RSS_CHANNEL_ID}
+      - YOUTUBE_CHANNEL_ID=${YOUTUBE_CHANNEL_ID}
+      - MEAL_PLAN_CHANNEL_ID=${MEAL_PLAN_CHANNEL_ID}
+      - ROUTINE_CHANNEL_ID=${ROUTINE_CHANNEL_ID}
+      - WEEKLY_PLANNING_CHANNEL_ID=${WEEKLY_PLANNING_CHANNEL_ID}
+      - DECISION_CHANNEL_ID=${DECISION_CHANNEL_ID}
+      - ERINNERUNGEN_CHANNEL_ID=${ERINNERUNGEN_CHANNEL_ID}
+      - DB_CHANNEL_ID=${DB_CHANNEL_ID}
+      - GENERAL_CHANNEL_ID=${GENERAL_CHANNEL_ID}
+      - TAGEBUCH_CHANNEL_ID=${TAGEBUCH_CHANNEL_ID}
+    volumes:
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - discord-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; exit(0 if os.path.exists('/tmp/log_bot_running') else 1)"]
       interval: 60s
       timeout: 30s
       retries: 3
